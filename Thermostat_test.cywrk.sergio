@@ -58,6 +58,7 @@
 <v>Thermostat_test\test\Generated_Source\PSoC4\BLE_1</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\BLE_1_bless_isr</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\BLUE</v>
+<v>Thermostat_test\test\Generated_Source\PSoC4\CEPIN</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\cy_boot</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\cy_lfclk</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
@@ -72,7 +73,6 @@
 <v>Thermostat_test\test\Generated_Source\PSoC4\cycodeshareimport.ld</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\cycodeshareimport.scat</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\cydevice_trm.h</v>
-<v>Thermostat_test\test\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -110,6 +110,8 @@
 <v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_scps.lst</v>
 <v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLUE.lst</v>
 <v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLUE_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CEPIN.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CEPIN_PM.lst</v>
 <v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
 <v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
 <v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>

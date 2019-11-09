@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
   55              		.section	.text.CyBle_HidsInit,"ax",%progbits
   56              		.align	2
   57              		.global	CyBle_HidsInit
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 2
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 2
 
 
   58              		.code	16
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
   49:Generated_Source\PSoC4/BLE_1_hids.c ****                 0x001Du, /* Handle of the Client Characteristic Configuration descriptor */ 
   50:Generated_Source\PSoC4/BLE_1_hids.c ****                 CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, /* Handle of the Report Reference descriptor 
   51:Generated_Source\PSoC4/BLE_1_hids.c ****             },
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 3
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 3
 
 
   52:Generated_Source\PSoC4/BLE_1_hids.c ****         }, /* Information about boot report characteristics */ 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
   96:Generated_Source\PSoC4/BLE_1_hids.c ****     cyBle_hidscServiceCount = 0u;
   97:Generated_Source\PSoC4/BLE_1_hids.c **** 
   98:Generated_Source\PSoC4/BLE_1_hids.c **** #endif /* CYBLE_HIDS_CLIENT */
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 4
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 4
 
 
   99:Generated_Source\PSoC4/BLE_1_hids.c **** }
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
   97              		.cfi_offset 14, -4
   98 0002 82B0     		sub	sp, sp, #8
   99              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 5
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 5
 
 
  100 0004 00AF     		add	r7, sp, #0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  156:Generated_Source\PSoC4/BLE_1_hids.c **** * 
  157:Generated_Source\PSoC4/BLE_1_hids.c **** *  \param attrValue: The pointer to the characteristic value data that should be 
  158:Generated_Source\PSoC4/BLE_1_hids.c **** *               stored in the GATT database.
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 6
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 6
 
 
  159:Generated_Source\PSoC4/BLE_1_hids.c **** * 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  165 0030 BB1D     		adds	r3, r7, #6
  166 0032 1B78     		ldrb	r3, [r3]
  167 0034 072B     		cmp	r3, #7
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 7
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 7
 
 
  168 0036 04D9     		bls	.L7
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  185:Generated_Source\PSoC4/BLE_1_hids.c ****                 break;
  213              		.loc 1 185 0
  214 006e 7EE0     		b	.L18
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 8
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 8
 
 
  215              	.L14:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  261 00bc 2433     		adds	r3, r3, #36
  262 00be 1B88     		ldrh	r3, [r3]
  263 00c0 0B80     		strh	r3, [r1]
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 9
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 9
 
 
  194:Generated_Source\PSoC4/BLE_1_hids.c ****                 break;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  307 0106 1300     		movs	r3, r2
  308 0108 9B00     		lsls	r3, r3, #2
  309 010a 9B18     		adds	r3, r3, r2
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 10
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 10
 
 
  310 010c DB00     		lsls	r3, r3, #3
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  212:Generated_Source\PSoC4/BLE_1_hids.c ****                 }
  213:Generated_Source\PSoC4/BLE_1_hids.c ****                 else
  214:Generated_Source\PSoC4/BLE_1_hids.c ****                 {
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 11
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 11
 
 
  215:Generated_Source\PSoC4/BLE_1_hids.c ****                     charValueHandle = CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE;
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  396              		.loc 1 228 0
  397 019a 0823     		movs	r3, #8
  398 019c FB18     		adds	r3, r7, r3
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 12
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 12
 
 
  399 019e 3A68     		ldr	r2, [r7]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  442              	.LFB5:
  239:Generated_Source\PSoC4/BLE_1_hids.c **** 
  240:Generated_Source\PSoC4/BLE_1_hids.c **** 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 13
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 13
 
 
  241:Generated_Source\PSoC4/BLE_1_hids.c **** /****************************************************************************** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  461 0010 221C     		adds	r2, r4, #0
  462 0012 1A70     		strb	r2, [r3]
  463 0014 BB1D     		adds	r3, r7, #6
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 14
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 14
 
 
  464 0016 021C     		adds	r2, r0, #0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  507 0054 A8000000 		.word	.L34
  508 0058 70000000 		.word	.L35
  509 005c C4000000 		.word	.L36
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 15
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 15
 
 
  510 0060 E0000000 		.word	.L37
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  555 0098 9B00     		lsls	r3, r3, #2
  556 009a 9B18     		adds	r3, r3, r2
  557 009c DB00     		lsls	r3, r3, #3
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 16
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 16
 
 
  558 009e C318     		adds	r3, r0, r3
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  600              		.loc 1 307 0
  601 00e0 FB1D     		adds	r3, r7, #7
  602 00e2 1A78     		ldrb	r2, [r3]
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 17
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 17
 
 
  306:Generated_Source\PSoC4/BLE_1_hids.c ****                     cyBle_hidss[serviceIndex].bootReportArray[CYBLE_HIDS_BOOT_KYBRD_OUT_REP_INDX].r
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  647 012c C318     		adds	r3, r0, r3
  648 012e 0433     		adds	r3, r3, #4
  649 0130 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 18
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 18
 
 
  650 0132 9942     		cmp	r1, r3
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  692 0176 04D1     		bne	.L42
  327:Generated_Source\PSoC4/BLE_1_hids.c ****         {
  328:Generated_Source\PSoC4/BLE_1_hids.c ****             apiResult = CYBLE_ERROR_GATT_DB_INVALID_ATTR_HANDLE;
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 19
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 19
 
 
  693              		.loc 1 328 0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  340:Generated_Source\PSoC4/BLE_1_hids.c ****             }
  341:Generated_Source\PSoC4/BLE_1_hids.c ****         }
  342:Generated_Source\PSoC4/BLE_1_hids.c ****     }
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 20
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 20
 
 
  343:Generated_Source\PSoC4/BLE_1_hids.c ****     return (apiResult);
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  371:Generated_Source\PSoC4/BLE_1_hids.c **** * 
  372:Generated_Source\PSoC4/BLE_1_hids.c **** *  \param attrValue: The pointer to the location where characteristic descriptor
  373:Generated_Source\PSoC4/BLE_1_hids.c **** *               value data should be stored.
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 21
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 21
 
 
  374:Generated_Source\PSoC4/BLE_1_hids.c **** * 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  388:Generated_Source\PSoC4/BLE_1_hids.c ****     const CYBLE_HIDSS_REPORT_T *locReport;
  389:Generated_Source\PSoC4/BLE_1_hids.c ****     CYBLE_GATT_HANDLE_VALUE_PAIR_T locHandleValuePair;
  390:Generated_Source\PSoC4/BLE_1_hids.c **** 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 22
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 22
 
 
  391:Generated_Source\PSoC4/BLE_1_hids.c ****     if((serviceIndex >= CYBLE_HIDSS_SERVICE_COUNT) || (descrIndex >= CYBLE_HIDS_DESCR_COUNT) ||
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  402:Generated_Source\PSoC4/BLE_1_hids.c ****             {
  403:Generated_Source\PSoC4/BLE_1_hids.c ****                 locDescrHandle = cyBle_hidss[serviceIndex].reportMapErrdHandle;
  844              		.loc 1 403 0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 23
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 23
 
 
  845 0078 FB1D     		adds	r3, r7, #7
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  887 00c0 1A00     		movs	r2, r3
  888 00c2 0B00     		movs	r3, r1
  889 00c4 9B00     		lsls	r3, r3, #2
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 24
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 24
 
 
  890 00c6 5B18     		adds	r3, r3, r1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  425:Generated_Source\PSoC4/BLE_1_hids.c ****             }
  426:Generated_Source\PSoC4/BLE_1_hids.c ****             else if(descrIndex == CYBLE_HIDS_REPORT_RRD)
  935              		.loc 1 426 0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 25
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 25
 
 
  936 0114 7B1D     		adds	r3, r7, #5
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  444:Generated_Source\PSoC4/BLE_1_hids.c ****             /* Read value from database */
  445:Generated_Source\PSoC4/BLE_1_hids.c ****             locHandleValuePair.attrHandle = locDescrHandle;
  973              		.loc 1 445 0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 26
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 26
 
 
  974 014e 0C23     		movs	r3, #12
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1016              		@ sp needed
  1017 0194 B0BD     		pop	{r4, r5, r7, pc}
  1018              	.L62:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 27
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 27
 
 
  1019 0196 C046     		.align	2
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1051 0012 1800     		movs	r0, r3
  1052 0014 FFF7FEFF 		bl	CyBle_Get16ByPtr
  1053 0018 0300     		movs	r3, r0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 28
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 28
 
 
  1054 001a 1A00     		movs	r2, r3
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  493:Generated_Source\PSoC4/BLE_1_hids.c ****     }
  494:Generated_Source\PSoC4/BLE_1_hids.c **** #endif /* (CYBLE_BONDING_REQUIREMENT == CYBLE_BONDING_YES) */
  495:Generated_Source\PSoC4/BLE_1_hids.c **** 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 29
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 29
 
 
  496:Generated_Source\PSoC4/BLE_1_hids.c ****     return(eventCode);
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1129              		.cfi_def_cfa_offset 48
  1130 0004 00AF     		add	r7, sp, #0
  1131              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 30
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 30
 
 
  1132 0006 7860     		str	r0, [r7, #4]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  529:Generated_Source\PSoC4/BLE_1_hids.c ****             /* Protocol Mode characteristic write request */
  530:Generated_Source\PSoC4/BLE_1_hids.c ****             if(eventParam->handleValPair.attrHandle == cyBle_hidss[locServIndex].protocolModeHandle
  1172              		.loc 1 530 0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 31
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 31
 
 
  1173 0044 7B68     		ldr	r3, [r7, #4]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  538:Generated_Source\PSoC4/BLE_1_hids.c ****                             cyBle_eventHandlerFlag &= (uint8)~CYBLE_CALLBACK;
  1211              		.loc 1 538 0
  1212 0084 9823     		movs	r3, #152
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 32
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 32
 
 
  1213 0086 FF33     		adds	r3, r3, #255
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1257 00ce 9942     		cmp	r1, r3
  1258 00d0 28D1     		bne	.L78
  552:Generated_Source\PSoC4/BLE_1_hids.c ****             {
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 33
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 33
 
 
  553:Generated_Source\PSoC4/BLE_1_hids.c ****                 locCharValue.charIndex = CYBLE_HIDS_CONTROL_POINT;
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1295              		.loc 1 561 0
  1296 010a 49E1     		b	.L77
  1297              	.L82:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 34
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 34
 
 
  563:Generated_Source\PSoC4/BLE_1_hids.c ****                             cyBle_eventHandlerFlag &= (uint8)~CYBLE_CALLBACK;
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1340 014e 0C23     		movs	r3, #12
  1341 0150 FB18     		adds	r3, r7, r3
  1342 0152 5A60     		str	r2, [r3, #4]
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 35
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 35
 
 
  576:Generated_Source\PSoC4/BLE_1_hids.c ****                 eventCode = (uint32)CYBLE_EVT_HIDSS_REPORT_CHAR_WRITE;
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1388 019e FFF7FEFF 		bl	CyBle_HidssCccdWriteEventHandler
  1389 01a2 0300     		movs	r3, r0
  1390 01a4 BB61     		str	r3, [r7, #24]
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 36
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 36
 
 
  1391 01a6 FBE0     		b	.L77
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1436              	.L85:
  592:Generated_Source\PSoC4/BLE_1_hids.c ****             }
  593:Generated_Source\PSoC4/BLE_1_hids.c ****             else if(eventParam->handleValPair.attrHandle ==
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 37
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 37
 
 
  1437              		.loc 1 593 0
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1482 0238 7B68     		ldr	r3, [r7, #4]
  1483 023a 9989     		ldrh	r1, [r3, #12]
  602:Generated_Source\PSoC4/BLE_1_hids.c ****                         cyBle_hidss[locServIndex].bootReportArray[CYBLE_HIDS_BOOT_MOUSE_IN_REP_INDX
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 38
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 38
 
 
  1484              		.loc 1 602 0
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1527              		.loc 1 612 0
  1528 0284 1D23     		movs	r3, #29
  1529 0286 FB18     		adds	r3, r7, r3
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 39
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 39
 
 
  1530 0288 0022     		movs	r2, #0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1576 02da 1A1D     		adds	r2, r3, #4
  1577 02dc 0C23     		movs	r3, #12
  1578 02de FB18     		adds	r3, r7, r3
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 40
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 40
 
 
  1579 02e0 5A60     		str	r2, [r3, #4]
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  626:Generated_Source\PSoC4/BLE_1_hids.c ****                     {
  627:Generated_Source\PSoC4/BLE_1_hids.c ****                         locCharValue.charIndex = locCharIndex;
  1626              		.loc 1 627 0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 41
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 41
 
 
  1627 0330 0C23     		movs	r3, #12
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1675 0384 CB18     		adds	r3, r1, r3
  1676 0386 0433     		adds	r3, r3, #4
  1677 0388 1B78     		ldrb	r3, [r3]
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 42
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 42
 
 
  1678 038a 1D22     		movs	r2, #29
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1722 03d4 FB18     		adds	r3, r7, r3
  1723 03d6 1B78     		ldrb	r3, [r3]
  1724 03d8 002B     		cmp	r3, #0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 43
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 43
 
 
  1725 03da 0ED1     		bne	.L96
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1769              		.section	.text.CyBle_HidssSendNotification,"ax",%progbits
  1770              		.align	2
  1771              		.global	CyBle_HidssSendNotification
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 44
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 44
 
 
  1772              		.code	16
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1787              		.cfi_def_cfa_offset 56
  1788 0004 00AF     		add	r7, sp, #0
  1789              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 45
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 45
 
 
  1790 0006 3C1D     		adds	r4, r7, #4
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  701:Generated_Source\PSoC4/BLE_1_hids.c ****         {
  702:Generated_Source\PSoC4/BLE_1_hids.c ****             locReport = &cyBle_hidss[serviceIndex].bootReportArray[CYBLE_HIDS_BOOT_KYBRD_IN_REP_IND
  1832              		.loc 1 702 0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 46
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 46
 
 
  1833 004c FB1C     		adds	r3, r7, #3
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1878 0098 BB1C     		adds	r3, r7, #2
  1879 009a 1B78     		ldrb	r3, [r3]
  1880 009c D91F     		subs	r1, r3, #7
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 47
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 47
 
 
  1881 009e FB1C     		adds	r3, r7, #3
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  721:Generated_Source\PSoC4/BLE_1_hids.c ****         {
  722:Generated_Source\PSoC4/BLE_1_hids.c ****             apiResult = CYBLE_ERROR_INVALID_PARAMETER;
  1924              		.loc 1 722 0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 48
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 48
 
 
  1925 00e8 2623     		movs	r3, #38
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  1968 0134 002B     		cmp	r3, #0
  1969 0136 24D0     		beq	.L112
  734:Generated_Source\PSoC4/BLE_1_hids.c ****                 {
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 49
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 49
 
 
  735:Generated_Source\PSoC4/BLE_1_hids.c ****                     if(cyBle_state == CYBLE_STATE_CONNECTED)
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2011 017e 1A80     		strh	r2, [r3]
  2012 0180 1BE0     		b	.L104
  2013              	.L112:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 50
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 50
 
 
  748:Generated_Source\PSoC4/BLE_1_hids.c ****                     }
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2050 01bc FB18     		adds	r3, r7, r3
  2051 01be 1B88     		ldrh	r3, [r3]
  765:Generated_Source\PSoC4/BLE_1_hids.c **** }
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 51
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 51
 
 
  2052              		.loc 1 765 0
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2091              		.loc 1 780 0
  2092 000c FB1D     		adds	r3, r7, #7
  2093 000e 0022     		movs	r2, #0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 52
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 52
 
 
  2094 0010 1A70     		strb	r2, [r3]
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2138 005e 0132     		adds	r2, r2, #1
  2139 0060 1A70     		strb	r2, [r3]
  791:Generated_Source\PSoC4/BLE_1_hids.c ****     }while(locServIndex < CYBLE_HIDSS_SERVICE_COUNT);
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 53
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 53
 
 
  2140              		.loc 1 791 0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2193 0033 02       		.uleb128 0x2
  2194 0034 02       		.byte	0x2
  2195 0035 05       		.byte	0x5
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 54
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 54
 
 
  2196 0036 60370000 		.4byte	.LASF2
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2250 009f 08       		.byte	0x8
  2251 00a0 03120000 		.4byte	.LASF14
  2252 00a4 05       		.uleb128 0x5
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 55
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 55
 
 
  2253 00a5 6B000000 		.4byte	0x6b
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2307 0112 0B       		.uleb128 0xb
  2308 0113 5C200000 		.4byte	.LASF26
  2309 0117 22       		.byte	0x22
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 56
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 56
 
 
  2310 0118 0B       		.uleb128 0xb
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2364 0184 0B       		.uleb128 0xb
  2365 0185 E73A0000 		.4byte	.LASF45
  2366 0189 35       		.byte	0x35
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 57
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 57
 
 
  2367 018a 0B       		.uleb128 0xb
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2421 01f6 0B       		.uleb128 0xb
  2422 01f7 76390000 		.4byte	.LASF64
  2423 01fb 50       		.byte	0x50
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 58
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 58
 
 
  2424 01fc 0B       		.uleb128 0xb
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2478 0268 0B       		.uleb128 0xb
  2479 0269 BC400000 		.4byte	.LASF83
  2480 026d 7A       		.byte	0x7a
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 59
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 59
 
 
  2481 026e 0B       		.uleb128 0xb
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2535 02db 0A       		.byte	0xa
  2536 02dc 0B       		.uleb128 0xb
  2537 02dd AF080000 		.4byte	.LASF100
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 60
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 60
 
 
  2538 02e1 0B       		.byte	0xb
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2592 034d 0001     		.2byte	0x100
  2593 034f 0C       		.uleb128 0xc
  2594 0350 6E2A0000 		.4byte	.LASF119
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 61
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 61
 
 
  2595 0354 0101     		.2byte	0x101
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2649 03c5 09       		.byte	0x9
  2650 03c6 0B       		.uleb128 0xb
  2651 03c7 F2280000 		.4byte	.LASF134
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 62
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 62
 
 
  2652 03cb 0A       		.byte	0xa
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2706 0437 81       		.byte	0x81
  2707 0438 0B       		.uleb128 0xb
  2708 0439 800C0000 		.4byte	.LASF153
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 63
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 63
 
 
  2709 043d 81       		.byte	0x81
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2763 04ab 6B000000 		.4byte	0x6b
  2764 04af 01       		.byte	0x1
  2765 04b0 00       		.byte	0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 64
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 64
 
 
  2766 04b1 04       		.uleb128 0x4
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2820 0523 04       		.byte	0x4
  2821 0524 D801     		.2byte	0x1d8
  2822 0526 FA040000 		.4byte	0x4fa
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 65
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 65
 
 
  2823 052a 11       		.uleb128 0x11
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2877 0590 DB       		.byte	0xdb
  2878 0591 AE050000 		.4byte	0x5ae
  2879 0595 13       		.uleb128 0x13
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 66
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 66
 
 
  2880 0596 08120000 		.4byte	.LASF180
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2934 0602 06       		.byte	0x6
  2935 0603 0001     		.2byte	0x100
  2936 0605 77000000 		.4byte	0x77
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 67
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 67
 
 
  2937 0609 02       		.byte	0x2
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  2991 067a 0B       		.uleb128 0xb
  2992 067b A4140000 		.4byte	.LASF198
  2993 067f 05       		.byte	0x5
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 68
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 68
 
 
  2994 0680 0B       		.uleb128 0xb
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3048 06e9 32120000 		.4byte	.LASF214
  3049 06ed 09       		.byte	0x9
  3050 06ee 5B       		.byte	0x5b
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 69
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 69
 
 
  3051 06ef 99060000 		.4byte	0x699
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3105 075b 12       		.uleb128 0x12
  3106 075c 28       		.byte	0x28
  3107 075d 09       		.byte	0x9
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 70
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 70
 
 
  3108 075e 86       		.byte	0x86
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3162 07ca 81040000 		.4byte	0x481
  3163 07ce 24       		.byte	0x24
  3164 07cf 00       		.byte	0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 71
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 71
 
 
  3165 07d0 07       		.uleb128 0x7
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3219 083c 3A000000 		.4byte	0x3a
  3220 0840 0A       		.byte	0xa
  3221 0841 B1       		.byte	0xb1
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 72
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 72
 
 
  3222 0842 51100000 		.4byte	0x1051
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3276 08c2 1101     		.2byte	0x111
  3277 08c4 0C       		.uleb128 0xc
  3278 08c5 B03C0000 		.4byte	.LASF255
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 73
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 73
 
 
  3279 08c9 1201     		.2byte	0x112
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3333 0947 2401     		.2byte	0x124
  3334 0949 0C       		.uleb128 0xc
  3335 094a 56420000 		.4byte	.LASF274
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 74
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 74
 
 
  3336 094e 2501     		.2byte	0x125
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3390 09cc 3701     		.2byte	0x137
  3391 09ce 0C       		.uleb128 0xc
  3392 09cf 2C0C0000 		.4byte	.LASF293
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 75
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 75
 
 
  3393 09d3 3801     		.2byte	0x138
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3447 0a51 4A01     		.2byte	0x14a
  3448 0a53 0C       		.uleb128 0xc
  3449 0a54 033C0000 		.4byte	.LASF312
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 76
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 76
 
 
  3450 0a58 4B01     		.2byte	0x14b
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3504 0ad6 5D01     		.2byte	0x15d
  3505 0ad8 0C       		.uleb128 0xc
  3506 0ad9 1D400000 		.4byte	.LASF331
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 77
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 77
 
 
  3507 0add 5E01     		.2byte	0x15e
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3561 0b5b 7001     		.2byte	0x170
  3562 0b5d 0C       		.uleb128 0xc
  3563 0b5e 2B420000 		.4byte	.LASF350
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 78
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 78
 
 
  3564 0b62 7101     		.2byte	0x171
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3618 0be0 8301     		.2byte	0x183
  3619 0be2 0C       		.uleb128 0xc
  3620 0be3 71160000 		.4byte	.LASF369
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 79
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 79
 
 
  3621 0be7 8401     		.2byte	0x184
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3675 0c65 9601     		.2byte	0x196
  3676 0c67 0C       		.uleb128 0xc
  3677 0c68 BF410000 		.4byte	.LASF388
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 80
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 80
 
 
  3678 0c6c 9701     		.2byte	0x197
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3732 0cea A901     		.2byte	0x1a9
  3733 0cec 0C       		.uleb128 0xc
  3734 0ced FD1A0000 		.4byte	.LASF407
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 81
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 81
 
 
  3735 0cf1 AA01     		.2byte	0x1aa
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3789 0d6f BC01     		.2byte	0x1bc
  3790 0d71 0C       		.uleb128 0xc
  3791 0d72 F11C0000 		.4byte	.LASF426
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 82
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 82
 
 
  3792 0d76 BD01     		.2byte	0x1bd
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3846 0df4 CF01     		.2byte	0x1cf
  3847 0df6 0C       		.uleb128 0xc
  3848 0df7 D4300000 		.4byte	.LASF445
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 83
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 83
 
 
  3849 0dfb D001     		.2byte	0x1d0
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3903 0e79 E201     		.2byte	0x1e2
  3904 0e7b 0C       		.uleb128 0xc
  3905 0e7c 34000000 		.4byte	.LASF464
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 84
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 84
 
 
  3906 0e80 E301     		.2byte	0x1e3
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  3960 0efe F501     		.2byte	0x1f5
  3961 0f00 0C       		.uleb128 0xc
  3962 0f01 52010000 		.4byte	.LASF483
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 85
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 85
 
 
  3963 0f05 F601     		.2byte	0x1f6
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4017 0f83 0802     		.2byte	0x208
  4018 0f85 0C       		.uleb128 0xc
  4019 0f86 430D0000 		.4byte	.LASF502
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 86
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 86
 
 
  4020 0f8a 0902     		.2byte	0x209
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4074 1008 1B02     		.2byte	0x21b
  4075 100a 0C       		.uleb128 0xc
  4076 100b 3D360000 		.4byte	.LASF521
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 87
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 87
 
 
  4077 100f 1C02     		.2byte	0x21c
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4131 1083 6808     		.2byte	0x868
  4132 1085 51100000 		.4byte	0x1051
  4133 1089 19       		.uleb128 0x19
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 88
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 88
 
 
  4134 108a 98210000 		.4byte	.LASF574
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4188 10f9 A9       		.byte	0xa9
  4189 10fa 6B000000 		.4byte	0x6b
  4190 10fe 02       		.uleb128 0x2
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 89
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 89
 
 
  4191 10ff 91       		.byte	0x91
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4245 1164 71010000 		.4byte	.LASF235
  4246 1168 01       		.byte	0x1
  4247 1169 1201     		.2byte	0x112
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 90
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 90
 
 
  4248 116b E8060000 		.4byte	0x6e8
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4302 11d4 60120000 		.4byte	0x1260
  4303 11d8 1F       		.uleb128 0x1f
  4304 11d9 A70D0000 		.4byte	.LASF234
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 91
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 91
 
 
  4305 11dd 01       		.byte	0x1
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4359 1241 20       		.uleb128 0x20
  4360 1242 4E390000 		.4byte	.LASF548
  4361 1246 01       		.byte	0x1
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 92
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 92
 
 
  4362 1247 8401     		.2byte	0x184
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4416 12b3 1E       		.uleb128 0x1e
  4417 12b4 DB310000 		.4byte	.LASF551
  4418 12b8 01       		.byte	0x1
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 93
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 93
 
 
  4419 12b9 0102     		.2byte	0x201
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4473 1326 5C       		.sleb128 -36
  4474 1327 20       		.uleb128 0x20
  4475 1328 7B3D0000 		.4byte	.LASF550
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 94
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 94
 
 
  4476 132c 01       		.byte	0x1
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4530 139b 91       		.byte	0x91
  4531 139c 4A       		.sleb128 -54
  4532 139d 1F       		.uleb128 0x1f
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 95
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 95
 
 
  4533 139e 41030000 		.4byte	.LASF538
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4587 1408 01       		.uleb128 0x1
  4588 1409 9C       		.byte	0x9c
  4589 140a 2D140000 		.4byte	0x142d
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 96
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 96
 
 
  4590 140e 20       		.uleb128 0x20
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4644 1481 07       		.byte	0x7
  4645 1482 C602     		.2byte	0x2c6
  4646 1484 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 97
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 97
 
 
  4647 1488 17       		.uleb128 0x17
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4701 000b 55       		.uleb128 0x55
  4702 000c 17       		.uleb128 0x17
  4703 000d 11       		.uleb128 0x11
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 98
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 98
 
 
  4704 000e 01       		.uleb128 0x1
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4758 0044 07       		.uleb128 0x7
  4759 0045 0F       		.uleb128 0xf
  4760 0046 00       		.byte	0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 99
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 99
 
 
  4761 0047 0B       		.uleb128 0xb
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4815 007d 00       		.byte	0
  4816 007e 0D       		.uleb128 0xd
  4817 007f 04       		.uleb128 0x4
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 100
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 100
 
 
  4818 0080 01       		.byte	0x1
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4872 00b6 00       		.byte	0
  4873 00b7 00       		.byte	0
  4874 00b8 11       		.uleb128 0x11
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 101
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 101
 
 
  4875 00b9 16       		.uleb128 0x16
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4929 00ef 0D       		.uleb128 0xd
  4930 00f0 00       		.byte	0
  4931 00f1 03       		.uleb128 0x3
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 102
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 102
 
 
  4932 00f2 0E       		.uleb128 0xe
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  4986 0129 19       		.uleb128 0x19
  4987 012a 00       		.byte	0
  4988 012b 00       		.byte	0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 103
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 103
 
 
  4989 012c 1A       		.uleb128 0x1a
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5043 0163 13       		.uleb128 0x13
  5044 0164 11       		.uleb128 0x11
  5045 0165 01       		.uleb128 0x1
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 104
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 104
 
 
  5046 0166 12       		.uleb128 0x12
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5100 019e 00       		.byte	0
  5101 019f 03       		.uleb128 0x3
  5102 01a0 0E       		.uleb128 0xe
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 105
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 105
 
 
  5103 01a1 3A       		.uleb128 0x3a
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5157 01d8 01       		.uleb128 0x1
  5158 01d9 12       		.uleb128 0x12
  5159 01da 06       		.uleb128 0x6
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 106
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 106
 
 
  5160 01db 00       		.byte	0
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5214 0212 13       		.uleb128 0x13
  5215 0213 3F       		.uleb128 0x3f
  5216 0214 19       		.uleb128 0x19
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 107
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 107
 
 
  5217 0215 3C       		.uleb128 0x3c
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5271 0008 00000000 		.4byte	.LFB3
  5272 000c 1C000000 		.4byte	.LFE3
  5273 0010 00000000 		.4byte	.LFB4
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 108
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 108
 
 
  5274 0014 D4010000 		.4byte	.LFE4
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5303      455F4449 
  5303      535F4348 
  5303      41525F43 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 109
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 109
 
 
  5303      4F554E54 
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5323      545F4741 
  5323      5454435F 
  5323      494E434C 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 110
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 110
 
 
  5324              	.LASF37:
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5343      455F4556 
  5343      545F4741 
  5343      505F4445 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 111
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 111
 
 
  5343      56494345 
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5363      53535F49 
  5363      4E444943 
  5364              	.LASF356:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 112
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 112
 
 
  5365 0421 4359424C 		.ascii	"CYBLE_EVT_CTSC_READ_CHAR_RESPONSE\000"
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5383 054e 4359424C 		.ascii	"CYBLE_GATT_ERR_READ_NOT_PERMITTED\000"
  5383      455F4741 
  5383      54545F45 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 113
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 113
 
 
  5383      52525F52 
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5401      6C6C6261 
  5402              	.LASF69:
  5403 0686 4359424C 		.ascii	"CYBLE_EVT_GATTS_DATA_SIGNED_CMD_REQ\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 114
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 114
 
 
  5403      455F4556 
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5422      545F424C 
  5422      53435F4E 
  5422      4F544946 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 115
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 115
 
 
  5423              	.LASF192:
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5441              	.LASF100:
  5442 08af 4359424C 		.ascii	"CYBLE_ERROR_BT_ON_NOT_COMPLETED\000"
  5442      455F4552 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 116
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 116
 
 
  5442      524F525F 
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5460      00
  5461              	.LASF154:
  5462 09c3 4359424C 		.ascii	"CYBLE_GATTS_ERR_NETWORK_NOT_AVAILABLE\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 117
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 117
 
 
  5462      455F4741 
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5480      455F4556 
  5480      545F4350 
  5480      53435F57 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 118
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 118
 
 
  5480      52495445 
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5500 0c2c 4359424C 		.ascii	"CYBLE_EVT_BCSS_INDICATION_DISABLED\000"
  5500      455F4556 
  5500      545F4243 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 119
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 119
 
 
  5500      53535F49 
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5520      455F4556 
  5520      545F5544 
  5520      53535F52 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 120
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 120
 
 
  5520      4541445F 
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5540      4D6F6465 
  5540      48616E64 
  5540      6C6500
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 121
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 121
 
 
  5541              	.LASF108:
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5560      53544F50 
  5560      50454400 
  5561              	.LASF473:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 122
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 122
 
 
  5562 0f7a 4359424C 		.ascii	"CYBLE_EVT_RSCSS_INDICATION_ENABLED\000"
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5580      455F4556 
  5580      545F4741 
  5580      505F434F 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 123
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 123
 
 
  5580      4E4E5F45 
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5600      455F4556 
  5600      545F4741 
  5600      505F4441 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 124
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 124
 
 
  5600      54415F4C 
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5620      545F484F 
  5620      53545F49 
  5620      4E56414C 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 125
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 125
 
 
  5621              	.LASF138:
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5639 1414 454400   		.ascii	"ED\000"
  5640              	.LASF525:
  5641 1417 4359424C 		.ascii	"CYBLE_EVT_WSSS_INDICATION_CONFIRMED\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 126
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 126
 
 
  5641      455F4556 
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5659      455F4449 
  5659      535F4D4F 
  5659      44454C5F 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 127
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 127
 
 
  5659      4E554D42 
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5678              	.LASF90:
  5679 1653 4359424C 		.ascii	"CYBLE_ERROR_INVALID_PARAMETER\000"
  5679      455F4552 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 128
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 128
 
 
  5679      524F525F 
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5697      5C736572 
  5697      67696F5C 
  5697      446F6375 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 129
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 129
 
 
  5698 17af 7461745F 		.ascii	"tat_test\\test.cydsn\000"
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5716      545F4243 
  5716      53535F49 
  5716      4E444943 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 130
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 130
 
 
  5717              	.LASF150:
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5736 19e9 4359424C 		.ascii	"CYBLE_EVT_CSCSC_WRITE_DESCR_RESPONSE\000"
  5736      455F4556 
  5736      545F4353 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 131
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 131
 
 
  5736      4353435F 
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5753              	.LASF456:
  5754 1b6b 4359424C 		.ascii	"CYBLE_EVT_PASSC_READ_DESCR_RESPONSE\000"
  5754      455F4556 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 132
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 132
 
 
  5754      545F5041 
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5772      545F4849 
  5772      4453435F 
  5772      57524954 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 133
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 133
 
 
  5773              	.LASF5:
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5791              	.LASF282:
  5792 1de0 4359424C 		.ascii	"CYBLE_EVT_ANSC_READ_CHAR_RESPONSE\000"
  5792      455F4556 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 134
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 134
 
 
  5792      545F414E 
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5810      57524954 
  5811              	.LASF336:
  5812 1efc 4359424C 		.ascii	"CYBLE_EVT_CPSC_WRITE_CHAR_RESPONSE\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 135
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 135
 
 
  5812      455F4556 
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5830      455F4556 
  5830      545F504C 
  5830      5853535F 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 136
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 136
 
 
  5830      494E4449 
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5848      57524954 
  5849              	.LASF420:
  5850 2162 4359424C 		.ascii	"CYBLE_EVT_HTSC_NOTIFICATION\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 137
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 137
 
 
  5850      455F4556 
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5869              	.LASF402:
  5870 226b 4359424C 		.ascii	"CYBLE_EVT_HPSC_READ_CHAR_RESPONSE\000"
  5870      455F4556 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 138
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 138
 
 
  5870      545F4850 
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5889              	.LASF161:
  5890 23ab 4359424C 		.ascii	"CYBLE_GATT_ERR_PROCEDURE_ALREADY_IN_PROGRESS\000"
  5890      455F4741 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 139
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 139
 
 
  5890      54545F45 
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5908      53535F44 
  5908      45534352 
  5909              	.LASF363:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 140
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 140
 
 
  5910 24eb 4359424C 		.ascii	"CYBLE_EVT_ESSS_INDICATION_ENABLED\000"
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5928      52525F49 
  5928      4E535546 
  5929              	.LASF546:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 141
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 141
 
 
  5930 2630 64657363 		.ascii	"descrIndex\000"
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5950 272b 4359424C 		.ascii	"CYBLE_EVT_CTSS_NOTIFICATION_DISABLED\000"
  5950      455F4556 
  5950      545F4354 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 142
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 142
 
 
  5950      53535F4E 
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5968      4F53435F 
  5968      57524954 
  5969              	.LASF237:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 143
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 143
 
 
  5970 2885 4359424C 		.ascii	"CYBLE_AUTHENTICATION_REQUEST_REPLY\000"
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  5988      50435F53 
  5988      43414E5F 
  5989              	.LASF278:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 144
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 144
 
 
  5990 29b5 4359424C 		.ascii	"CYBLE_EVT_ANSS_NOTIFICATION_ENABLED\000"
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6008      455F4556 
  6008      545F4741 
  6008      5454435F 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 145
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 145
 
 
  6008      52454144 
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6026      55545F4F 
  6027              	.LASF379:
  6028 2bcd 4359424C 		.ascii	"CYBLE_EVT_GLSS_WRITE_CHAR\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 146
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 146
 
 
  6028      455F4556 
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6046      52454144 
  6047              	.LASF559:
  6048 2ce1 6E746652 		.ascii	"ntfReqParam\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 147
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 147
 
 
  6048      65715061 
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6066      45504F52 
  6066      545F5252 
  6067              	.LASF500:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 148
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 148
 
 
  6068 2e03 4359424C 		.ascii	"CYBLE_EVT_UDSS_NOTIFICATION_ENABLED\000"
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6087 2f39 4359424C 		.ascii	"CYBLE_EVT_GATTS_INDICATION_ENABLED\000"
  6087      455F4556 
  6087      545F4741 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 149
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 149
 
 
  6087      5454535F 
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6107      455F4556 
  6107      545F4149 
  6107      4F53535F 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 150
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 150
 
 
  6107      494E4449 
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6127      485F5752 
  6128              	.LASF375:
  6129 313a 4359424C 		.ascii	"CYBLE_EVT_GLSS_INDICATION_DISABLED\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 151
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 151
 
 
  6129      455F4556 
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6147      48616E64 
  6147      6C6500
  6148              	.LASF177:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 152
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 152
 
 
  6149 325a 61637475 		.ascii	"actualLength\000"
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6167      545F4741 
  6167      5454435F 
  6167      52454144 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 153
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 153
 
 
  6168              	.LASF452:
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6187      52454144 
  6188              	.LASF413:
  6189 348b 4359424C 		.ascii	"CYBLE_EVT_HRSC_WRITE_DESCR_RESPONSE\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 154
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 154
 
 
  6189      455F4556 
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6207      455F4849 
  6207      44535F42 
  6207      4F4F545F 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 155
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 155
 
 
  6207      4D4F5553 
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6226              	.LASF9:
  6227 36c8 75696E74 		.ascii	"uint8\000"
  6227      3800
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 156
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 156
 
 
  6228              	.LASF422:
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6247      4F53435F 
  6247      57524954 
  6248              	.LASF112:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 157
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 157
 
 
  6249 37d6 4359424C 		.ascii	"CYBLE_ERROR_HARDWARE_FAILURE\000"
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6267              	.LASF374:
  6268 3912 4359424C 		.ascii	"CYBLE_EVT_GLSS_INDICATION_ENABLED\000"
  6268      455F4556 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 158
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 158
 
 
  6268      545F474C 
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6286      4541445F 
  6287              	.LASF163:
  6288 3a35 4359424C 		.ascii	"CYBLE_GATT_ERR_CODE_T\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 159
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 159
 
 
  6288      455F4741 
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6306      455F4741 
  6306      54545F45 
  6306      52525F41 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 160
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 160
 
 
  6306      4E535F43 
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6324      5400
  6325              	.LASF314:
  6326 3c6a 4359424C 		.ascii	"CYBLE_EVT_CGMSS_INDICATION_DISABLED\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 161
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 161
 
 
  6326      455F4556 
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6344      5345435F 
  6344      4641494C 
  6345              	.LASF203:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 162
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 162
 
 
  6346 3d9c 4359424C 		.ascii	"CYBLE_HIDS_PROTOCOL_MODE\000"
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6364 3ebe 4359424C 		.ascii	"CYBLE_EVT_CTSC_NOTIFICATION\000"
  6364      455F4556 
  6364      545F4354 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 163
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 163
 
 
  6364      53435F4E 
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6385              	.LASF272:
  6386 3fc3 4359424C 		.ascii	"CYBLE_EVT_ANCSS_WRITE_CHAR\000"
  6386      455F4556 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 164
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 164
 
 
  6386      545F414E 
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6405              	.LASF238:
  6406 40e0 4359424C 		.ascii	"CYBLE_PASSKEY_ENTRY_REQUEST_REPLY\000"
  6406      455F5041 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 165
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 165
 
 
  6406      53534B45 
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6424      545F4950 
  6424      53435F52 
  6424      4541445F 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 166
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 166
 
 
  6425              	.LASF350:
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 1
  6444      44535F44 
  6444      45534352 
  6444      5F5400
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccxT4lMo.s 			page 167
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccXPZYnO.s 			page 167
 
 
  6445              	.LASF257:

@@ -21,6 +21,10 @@
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_In.h" value="HEADER;;;;;ADC_In" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_In_aliases.h" value="HEADER;;;;;ADC_In" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_In_PM.c" value="SOURCE_C;CortexM0;;;;ADC_In" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\CEPIN.c" value="SOURCE_C;CortexM0;;;;CEPIN" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\CEPIN.h" value="HEADER;;;;;CEPIN" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\CEPIN_aliases.h" value="HEADER;;;;;CEPIN" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\CEPIN_PM.c" value="SOURCE_C;CortexM0;;;;CEPIN" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\GREEN.c" value="SOURCE_C;CortexM0;;;;GREEN" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\GREEN.h" value="HEADER;;;;;GREEN" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\GREEN_aliases.h" value="HEADER;;;;;GREEN" />

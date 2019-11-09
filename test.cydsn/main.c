@@ -28,6 +28,8 @@ int main (void)
     
     I2C_1_Start();
     
+    CEPIN_Write(1);
+    
     uint8 write_buff[2] ={REG_CONFIG, REG_READ};
  
     

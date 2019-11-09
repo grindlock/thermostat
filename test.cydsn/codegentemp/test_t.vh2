@@ -1,9 +1,10 @@
 -- Project:   C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\test.cyprj
--- Generated: 11/09/2019 13:14:14
+-- Generated: 11/09/2019 13:40:33
 -- PSoC Creator  4.2
 
 ENTITY test IS
     PORT(
+        CEPIN(0)_PAD : OUT std_ulogic;
         GREEN(0)_PAD : OUT std_ulogic;
         BLUE(0)_PAD : OUT std_ulogic;
         RED(0)_PAD : OUT std_ulogic;
@@ -25,6 +26,7 @@ END test;
 ARCHITECTURE __DEFAULT__ OF test IS
     SIGNAL ADC_In(0)__PA : bit;
     SIGNAL BLUE(0)__PA : bit;
+    SIGNAL CEPIN(0)__PA : bit;
     SIGNAL ClockBlock_ECO : bit;
     SIGNAL ClockBlock_ExtClk : bit;
     SIGNAL ClockBlock_HFClk : bit;
@@ -92,15 +94,17 @@ ARCHITECTURE __DEFAULT__ OF test IS
     ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
     ATTRIBUTE lib_model OF ADC_In(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF ADC_In(0) : LABEL IS "P3[3]";
-    ATTRIBUTE lib_model OF GREEN(0) : LABEL IS "iocell2";
+    ATTRIBUTE lib_model OF CEPIN(0) : LABEL IS "iocell2";
+    ATTRIBUTE Location OF CEPIN(0) : LABEL IS "P0[5]";
+    ATTRIBUTE lib_model OF GREEN(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF GREEN(0) : LABEL IS "P3[7]";
-    ATTRIBUTE lib_model OF BLUE(0) : LABEL IS "iocell3";
+    ATTRIBUTE lib_model OF BLUE(0) : LABEL IS "iocell4";
     ATTRIBUTE Location OF BLUE(0) : LABEL IS "P3[6]";
-    ATTRIBUTE lib_model OF RED(0) : LABEL IS "iocell4";
+    ATTRIBUTE lib_model OF RED(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF RED(0) : LABEL IS "P4[0]";
-    ATTRIBUTE lib_model OF \I2C_1:sda(0)\ : LABEL IS "iocell5";
+    ATTRIBUTE lib_model OF \I2C_1:sda(0)\ : LABEL IS "iocell6";
     ATTRIBUTE Location OF \I2C_1:sda(0)\ : LABEL IS "P5[0]";
-    ATTRIBUTE lib_model OF \I2C_1:scl(0)\ : LABEL IS "iocell6";
+    ATTRIBUTE lib_model OF \I2C_1:scl(0)\ : LABEL IS "iocell7";
     ATTRIBUTE Location OF \I2C_1:scl(0)\ : LABEL IS "P5[1]";
     ATTRIBUTE Location OF \ADC_SAR_Seq_1:IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(15)]";
     ATTRIBUTE Location OF \ADC_SAR_Seq_1:cy_psoc4_sar\ : LABEL IS "F(SARADC,0)";
@@ -450,6 +454,96 @@ BEGIN
         PORT MAP(
             pa_out => ADC_In(0)__PA,
             oe => open,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    CEPIN:logicalport
+        GENERIC MAP(
+            drive_mode => "110",
+            ibuf_enabled => "1",
+            id => "9c416bdb-3b4f-4952-8e71-c07cb13cfb6f",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "O",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "00000000",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vohsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    CEPIN(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "CEPIN",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => CEPIN(0)__PA,
+            oe => open,
+            pad_in => CEPIN(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',

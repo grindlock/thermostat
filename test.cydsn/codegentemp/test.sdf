@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2019-11-09T18:14:14Z")
+ (DATE "2019-11-09T18:40:33Z")
  (DESIGN "test")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -22,6 +22,7 @@
     (INTERCONNECT \\ADC_SAR_Seq_1\:cy_psoc4_sar\\.irq \\ADC_SAR_Seq_1\:IRQ\\.interrupt (1.000:1.000:1.000))
     (INTERCONNECT \\BLE_1\:cy_m0s8_ble\\.interrupt \\BLE_1\:bless_isr\\.interrupt (1.000:1.000:1.000))
     (INTERCONNECT ClockBlock.ff_div_2 \\I2C_1\:SCB\\.clock (0.000:0.000:0.000))
+    (INTERCONNECT CEPIN\(0\)_PAD CEPIN\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT GREEN\(0\)_PAD GREEN\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT BLUE\(0\)_PAD BLUE\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT RED\(0\)_PAD RED\(0\).pad_in (0.000:0.000:0.000))

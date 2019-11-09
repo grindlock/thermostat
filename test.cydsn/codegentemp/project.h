@@ -21,6 +21,8 @@
 #include "ADC_SAR_Seq_1.h"
 #include "ADC_In.h"
 #include "ADC_In_aliases.h"
+#include "CEPIN.h"
+#include "CEPIN_aliases.h"
 #include "GREEN.h"
 #include "GREEN_aliases.h"
 #include "BLUE.h"
