@@ -38,10 +38,10 @@ int main (void)
     
     for(;;)
     {
-         I2C_1_I2CMasterWriteBuf(ADDR, (uint8 *) write_buff, 1, I2C_1_I2C_MODE_NO_STOP);
+         I2C_1_I2CMasterWriteBuf(ADDR, write_buff, 1, I2C_1_I2C_MODE_COMPLETE_XFER);
     while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT) == 0){}
     
-         I2C_1_I2CMasterReadBuf(ADDR, (uint8 *) read_buff, 1, I2C_1_I2C_MODE_REPEAT_START);
+         I2C_1_I2CMasterReadBuf(ADDR, read_buff, 1, I2C_1_I2C_MODE_REPEAT_START);
     while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_RD_CMPLT) == 0){}
     
     
