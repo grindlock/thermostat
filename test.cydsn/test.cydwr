@@ -3578,14 +3578,15 @@
     </Group>
     <Group key="4309abf7-5637-4b04-bbfc-ab55aefd7283">
       <Group key="0">
-        <Data key="Port Format" value="3,6" />
+        <Data key="Port Format" value="4,0" />
       </Group>
     </Group>
     <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">
       <Group key="0">
-        <Data key="Port Format" value="4,0" />
+        <Data key="Port Format" value="3,6" />
       </Group>
     </Group>
+    <Group key="UnAssigned Pins" />
   </Group>
   <Group key="PlaceDir">
     <Data key="count" value="0" />

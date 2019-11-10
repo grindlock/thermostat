@@ -313,7 +313,7 @@ Discarded input sections
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\test.a(BLUE.o)
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\test.a(BLUE.o)
  .text.BLUE_SetDriveMode
-                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\test.a(BLUE.o)
+                0x00000000       0x2c .\CortexM0\ARM_GCC_541\Debug\test.a(BLUE.o)
  .text.BLUE_Read
                 0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\test.a(BLUE.o)
  .text.BLUE_ReadDataReg
@@ -321,12 +321,12 @@ Discarded input sections
  .text.BLUE_SetInterruptMode
                 0x00000000       0x44 .\CortexM0\ARM_GCC_541\Debug\test.a(BLUE.o)
  .text.BLUE_ClearInterrupt
-                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\test.a(BLUE.o)
+                0x00000000       0x2c .\CortexM0\ARM_GCC_541\Debug\test.a(BLUE.o)
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\test.a(RED.o)
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\test.a(RED.o)
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\test.a(RED.o)
  .text.RED_SetDriveMode
-                0x00000000       0x2c .\CortexM0\ARM_GCC_541\Debug\test.a(RED.o)
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\test.a(RED.o)
  .text.RED_Read
                 0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\test.a(RED.o)
  .text.RED_ReadDataReg
@@ -334,7 +334,7 @@ Discarded input sections
  .text.RED_SetInterruptMode
                 0x00000000       0x44 .\CortexM0\ARM_GCC_541\Debug\test.a(RED.o)
  .text.RED_ClearInterrupt
-                0x00000000       0x2c .\CortexM0\ARM_GCC_541\Debug\test.a(RED.o)
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\test.a(RED.o)
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\test.a(CEPIN.o)
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\test.a(CEPIN.o)
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\test.a(CEPIN.o)
@@ -571,11 +571,11 @@ END GROUP
                 0x00000f84       0x48 .\CortexM0\ARM_GCC_541\Debug\test.a(GREEN.o)
                 0x00000f84                GREEN_Write
  .text.BLUE_Write
-                0x00000fcc       0x50 .\CortexM0\ARM_GCC_541\Debug\test.a(BLUE.o)
+                0x00000fcc       0x4c .\CortexM0\ARM_GCC_541\Debug\test.a(BLUE.o)
                 0x00000fcc                BLUE_Write
  .text.RED_Write
-                0x0000101c       0x4c .\CortexM0\ARM_GCC_541\Debug\test.a(RED.o)
-                0x0000101c                RED_Write
+                0x00001018       0x50 .\CortexM0\ARM_GCC_541\Debug\test.a(RED.o)
+                0x00001018                RED_Write
  .text.CEPIN_Write
                 0x00001068       0x50 .\CortexM0\ARM_GCC_541\Debug\test.a(CEPIN.o)
                 0x00001068                CEPIN_Write

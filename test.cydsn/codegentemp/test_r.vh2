@@ -1,5 +1,5 @@
 -- Project:   test
--- Generated: 11/09/2019 13:40:32
+-- Generated: 11/09/2019 14:22:35
 -- PSoC Creator  4.2
 
 ENTITY test IS
@@ -99,9 +99,9 @@ ARCHITECTURE __DEFAULT__ OF test IS
     ATTRIBUTE lib_model OF GREEN(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF GREEN(0) : LABEL IS "P3[7]";
     ATTRIBUTE lib_model OF BLUE(0) : LABEL IS "iocell4";
-    ATTRIBUTE Location OF BLUE(0) : LABEL IS "P3[6]";
+    ATTRIBUTE Location OF BLUE(0) : LABEL IS "P4[0]";
     ATTRIBUTE lib_model OF RED(0) : LABEL IS "iocell5";
-    ATTRIBUTE Location OF RED(0) : LABEL IS "P4[0]";
+    ATTRIBUTE Location OF RED(0) : LABEL IS "P3[6]";
     ATTRIBUTE lib_model OF \I2C_1:sda(0)\ : LABEL IS "iocell6";
     ATTRIBUTE Location OF \I2C_1:sda(0)\ : LABEL IS "P5[0]";
     ATTRIBUTE lib_model OF \I2C_1:scl(0)\ : LABEL IS "iocell7";

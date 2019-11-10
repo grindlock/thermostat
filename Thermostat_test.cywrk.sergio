@@ -150,6 +150,43 @@
 <VisibleNodeIds>
 <v>Thermostat_test</v>
 <v>Thermostat_test\test</v>
+<v>Thermostat_test\test\CortexM0</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_In.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_In_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_SAR_Seq_1.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_SAR_Seq_1_INT.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_SAR_Seq_1_intClock.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_SAR_Seq_1_IRQ.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_SAR_Seq_1_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_bas.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_bless_isr.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_dis.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_eventHandler.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_gatt.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_HAL_INT.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_HAL_PVT.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_hids.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_scps.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLUE.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLUE_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CEPIN.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CEPIN_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\GREEN.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\GREEN_PM.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>

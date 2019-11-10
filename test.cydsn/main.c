@@ -30,15 +30,17 @@ int main (void)
     
     CEPIN_Write(1);
     
-    uint8 write_buff[2] ={REG_CONFIG, REG_READ};
+    uint8 write_buff[2] ={REG_READ, 0};
  
     
-    I2C_1_I2CMasterWriteBuf(ADDR, (uint8 *) write_buff, 2, I2C_1_I2C_MODE_NO_STOP);
-    while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT) == 0){}
+   
     
     
     for(;;)
     {
+         I2C_1_I2CMasterWriteBuf(ADDR, (uint8 *) write_buff, 1, I2C_1_I2C_MODE_NO_STOP);
+    while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT) == 0){}
+    
          I2C_1_I2CMasterReadBuf(ADDR, (uint8 *) read_buff, 1, I2C_1_I2C_MODE_REPEAT_START);
     while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_RD_CMPLT) == 0){}
     

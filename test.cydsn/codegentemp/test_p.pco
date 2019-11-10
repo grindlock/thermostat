@@ -24,6 +24,6 @@ set_io "\I2C_1:sda(0)\" iocell 5 0
 set_io "ADC_In(0)" iocell 3 3
 set_io "CEPIN(0)" iocell 0 5
 set_io "GREEN(0)" iocell 3 7
-set_io "BLUE(0)" iocell 3 6
-set_io "RED(0)" iocell 4 0
+set_io "BLUE(0)" iocell 4 0
+set_io "RED(0)" iocell 3 6
 set_io "\I2C_1:scl(0)\" iocell 5 1
