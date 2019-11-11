@@ -30,18 +30,23 @@ int main (void)
     
     CEPIN_Write(1);
     
-    uint8 write_buff[2] ={REG_READ, 0};
+    uint8 write_buff[2] ={REG_CONFIG, 0xFF};
+    
+    // config the GPIO Exp to read.
+     I2C_1_I2CMasterWriteBuf(ADDR, (uint8 *) &write_buff, 2, I2C_1_I2C_MODE_COMPLETE_XFER);
+    while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT) == 0){}
  
     
    
-    
-    
+    // prepare to read 
+    write_buff[0] = REG_READ;
+    write_buff[1] = 0x00;
     for(;;)
     {
-         I2C_1_I2CMasterWriteBuf(ADDR, write_buff, 1, I2C_1_I2C_MODE_COMPLETE_XFER);
+         I2C_1_I2CMasterWriteBuf(ADDR, (uint8 *) &write_buff, 1, I2C_1_I2C_MODE_COMPLETE_XFER);
     while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT) == 0){}
     
-         I2C_1_I2CMasterReadBuf(ADDR, read_buff, 1, I2C_1_I2C_MODE_REPEAT_START);
+         I2C_1_I2CMasterReadBuf(ADDR, (uint8 *) &read_buff, 1, I2C_1_I2C_MODE_REPEAT_START);
     while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_RD_CMPLT) == 0){}
     
     
