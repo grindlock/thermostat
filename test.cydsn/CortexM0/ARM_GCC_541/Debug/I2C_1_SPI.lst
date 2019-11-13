@@ -1,0 +1,2712 @@
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"I2C_1_SPI.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	I2C_1_configSpi
+  20              		.section	.rodata
+  21              		.align	2
+  22              		.type	I2C_1_configSpi, %object
+  23              		.size	I2C_1_configSpi, 84
+  24              	I2C_1_configSpi:
+  25 0000 00000000 		.word	0
+  26 0004 00000000 		.word	0
+  27 0008 00000000 		.word	0
+  28 000c 10000000 		.word	16
+  29 0010 00000000 		.word	0
+  30 0014 00000000 		.word	0
+  31 0018 00000000 		.word	0
+  32 001c 08000000 		.word	8
+  33 0020 08000000 		.word	8
+  34 0024 01000000 		.word	1
+  35 0028 01000000 		.word	1
+  36 002c 00000000 		.word	0
+  37 0030 00000000 		.word	0
+  38 0034 00000000 		.word	0
+  39 0038 00000000 		.word	0
+  40 003c 01000000 		.word	1
+  41 0040 00000000 		.word	0
+  42 0044 07000000 		.word	7
+  43 0048 00000000 		.word	0
+  44 004c 00000000 		.word	0
+  45 0050 00       		.byte	0
+  46 0051 00       		.byte	0
+  47 0052 00       		.byte	0
+  48 0053 00       		.space	1
+  49              		.section	.text.I2C_1_SpiInit,"ax",%progbits
+  50              		.align	2
+  51              		.global	I2C_1_SpiInit
+  52              		.code	16
+  53              		.thumb_func
+  54              		.type	I2C_1_SpiInit, %function
+  55              	I2C_1_SpiInit:
+  56              	.LFB2:
+  57              		.file 1 "Generated_Source\\PSoC4\\I2C_1_SPI.c"
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 2
+
+
+   1:Generated_Source\PSoC4/I2C_1_SPI.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC4/I2C_1_SPI.c **** * \file I2C_1_SPI.c
+   3:Generated_Source\PSoC4/I2C_1_SPI.c **** * \version 4.0
+   4:Generated_Source\PSoC4/I2C_1_SPI.c **** *
+   5:Generated_Source\PSoC4/I2C_1_SPI.c **** * \brief
+   6:Generated_Source\PSoC4/I2C_1_SPI.c **** *  This file provides the source code to the API for the SCB Component in
+   7:Generated_Source\PSoC4/I2C_1_SPI.c **** *  SPI mode.
+   8:Generated_Source\PSoC4/I2C_1_SPI.c **** *
+   9:Generated_Source\PSoC4/I2C_1_SPI.c **** * Note:
+  10:Generated_Source\PSoC4/I2C_1_SPI.c **** *
+  11:Generated_Source\PSoC4/I2C_1_SPI.c **** *******************************************************************************
+  12:Generated_Source\PSoC4/I2C_1_SPI.c **** * \copyright
+  13:Generated_Source\PSoC4/I2C_1_SPI.c **** * Copyright 2013-2017, Cypress Semiconductor Corporation.  All rights reserved.
+  14:Generated_Source\PSoC4/I2C_1_SPI.c **** * You may use this file only in accordance with the license, terms, conditions,
+  15:Generated_Source\PSoC4/I2C_1_SPI.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:Generated_Source\PSoC4/I2C_1_SPI.c **** * the software package with which this file was provided.
+  17:Generated_Source\PSoC4/I2C_1_SPI.c **** *******************************************************************************/
+  18:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+  19:Generated_Source\PSoC4/I2C_1_SPI.c **** #include "I2C_1_PVT.h"
+  20:Generated_Source\PSoC4/I2C_1_SPI.c **** #include "I2C_1_SPI_UART_PVT.h"
+  21:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+  22:Generated_Source\PSoC4/I2C_1_SPI.c **** #if(I2C_1_SCB_MODE_UNCONFIG_CONST_CFG)
+  23:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+  24:Generated_Source\PSoC4/I2C_1_SPI.c ****     /***************************************
+  25:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  Configuration Structure Initialization
+  26:Generated_Source\PSoC4/I2C_1_SPI.c ****     ***************************************/
+  27:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+  28:Generated_Source\PSoC4/I2C_1_SPI.c ****     const I2C_1_SPI_INIT_STRUCT I2C_1_configSpi =
+  29:Generated_Source\PSoC4/I2C_1_SPI.c ****     {
+  30:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_MODE,
+  31:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_SUB_MODE,
+  32:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_CLOCK_MODE,
+  33:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_OVS_FACTOR,
+  34:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_MEDIAN_FILTER_ENABLE,
+  35:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_LATE_MISO_SAMPLE_ENABLE,
+  36:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_WAKE_ENABLE,
+  37:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_RX_DATA_BITS_NUM,
+  38:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_TX_DATA_BITS_NUM,
+  39:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_BITS_ORDER,
+  40:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_TRANSFER_SEPARATION,
+  41:Generated_Source\PSoC4/I2C_1_SPI.c ****         0u,
+  42:Generated_Source\PSoC4/I2C_1_SPI.c ****         NULL,
+  43:Generated_Source\PSoC4/I2C_1_SPI.c ****         0u,
+  44:Generated_Source\PSoC4/I2C_1_SPI.c ****         NULL,
+  45:Generated_Source\PSoC4/I2C_1_SPI.c ****         (uint32) I2C_1_SCB_IRQ_INTERNAL,
+  46:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_INTR_RX_MASK,
+  47:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_RX_TRIGGER_LEVEL,
+  48:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_INTR_TX_MASK,
+  49:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_TX_TRIGGER_LEVEL,
+  50:Generated_Source\PSoC4/I2C_1_SPI.c ****         (uint8) I2C_1_SPI_BYTE_MODE_ENABLE,
+  51:Generated_Source\PSoC4/I2C_1_SPI.c ****         (uint8) I2C_1_SPI_FREE_RUN_SCLK_ENABLE,
+  52:Generated_Source\PSoC4/I2C_1_SPI.c ****         (uint8) I2C_1_SPI_SS_POLARITY
+  53:Generated_Source\PSoC4/I2C_1_SPI.c ****     };
+  54:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+  55:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+  56:Generated_Source\PSoC4/I2C_1_SPI.c ****     /*******************************************************************************
+  57:Generated_Source\PSoC4/I2C_1_SPI.c ****     * Function Name: I2C_1_SpiInit
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 3
+
+
+  58:Generated_Source\PSoC4/I2C_1_SPI.c ****     ****************************************************************************//**
+  59:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+  60:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  Configures the I2C_1 for SPI operation.
+  61:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+  62:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  This function is intended specifically to be used when the I2C_1 
+  63:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  configuration is set to “Unconfigured I2C_1” in the customizer. 
+  64:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  After initializing the I2C_1 in SPI mode using this function, 
+  65:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  the component can be enabled using the I2C_1_Start() or 
+  66:Generated_Source\PSoC4/I2C_1_SPI.c ****     * I2C_1_Enable() function.
+  67:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  This function uses a pointer to a structure that provides the configuration 
+  68:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  settings. This structure contains the same information that would otherwise 
+  69:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  be provided by the customizer settings.
+  70:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+  71:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  \param config: pointer to a structure that contains the following list of 
+  72:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   fields. These fields match the selections available in the customizer. 
+  73:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   Refer to the customizer for further description of the settings.
+  74:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+  75:Generated_Source\PSoC4/I2C_1_SPI.c ****     *******************************************************************************/
+  76:Generated_Source\PSoC4/I2C_1_SPI.c ****     void I2C_1_SpiInit(const I2C_1_SPI_INIT_STRUCT *config)
+  77:Generated_Source\PSoC4/I2C_1_SPI.c ****     {
+  58              		.loc 1 77 0
+  59              		.cfi_startproc
+  60              		@ args = 0, pretend = 0, frame = 8
+  61              		@ frame_needed = 1, uses_anonymous_args = 0
+  62 0000 80B5     		push	{r7, lr}
+  63              		.cfi_def_cfa_offset 8
+  64              		.cfi_offset 7, -8
+  65              		.cfi_offset 14, -4
+  66 0002 82B0     		sub	sp, sp, #8
+  67              		.cfi_def_cfa_offset 16
+  68 0004 00AF     		add	r7, sp, #0
+  69              		.cfi_def_cfa_register 7
+  70 0006 7860     		str	r0, [r7, #4]
+  78:Generated_Source\PSoC4/I2C_1_SPI.c ****         if(NULL == config)
+  71              		.loc 1 78 0
+  72 0008 7B68     		ldr	r3, [r7, #4]
+  73 000a 002B     		cmp	r3, #0
+  74 000c 03D1     		bne	.L2
+  79:Generated_Source\PSoC4/I2C_1_SPI.c ****         {
+  80:Generated_Source\PSoC4/I2C_1_SPI.c ****             CYASSERT(0u != 0u); /* Halt execution due to bad function parameter */
+  75              		.loc 1 80 0 discriminator 1
+  76 000e 0020     		movs	r0, #0
+  77 0010 FFF7FEFF 		bl	CyHalt
+  81:Generated_Source\PSoC4/I2C_1_SPI.c ****         }
+  82:Generated_Source\PSoC4/I2C_1_SPI.c ****         else
+  83:Generated_Source\PSoC4/I2C_1_SPI.c ****         {
+  84:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Configure pins */
+  85:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_SetPins(I2C_1_SCB_MODE_SPI, config->mode, I2C_1_DUMMY_PARAM);
+  86:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+  87:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Store internal configuration */
+  88:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_scbMode       = (uint8) I2C_1_SCB_MODE_SPI;
+  89:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_scbEnableWake = (uint8) config->enableWake;
+  90:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_scbEnableIntr = (uint8) config->enableInterrupt;
+  91:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+  92:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Set RX direction internal variables */
+  93:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_rxBuffer      =         config->rxBuffer;
+  94:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_rxDataBits    = (uint8) config->rxDataBits;
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 4
+
+
+  95:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_rxBufferSize  =         config->rxBufferSize;
+  96:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+  97:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Set TX direction internal variables */
+  98:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_txBuffer      =         config->txBuffer;
+  99:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_txDataBits    = (uint8) config->txDataBits;
+ 100:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_txBufferSize  =         config->txBufferSize;
+ 101:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 102:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Configure SPI interface */
+ 103:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_CTRL_REG     = I2C_1_GET_CTRL_OVS(config->oversample)           |
+ 104:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_CTRL_BYTE_MODE(config->enableByteMode) |
+ 105:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_CTRL_EC_AM_MODE(config->enableWake)    |
+ 106:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_CTRL_SPI;
+ 107:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 108:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_SPI_CTRL_REG = I2C_1_GET_SPI_CTRL_CONTINUOUS    (config->transferSeperation)  |
+ 109:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SELECT_PRECEDE(config->submode &
+ 110:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                                           I2C_1_SPI_MODE_TI_PRECEDE
+ 111:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SCLK_MODE     (config->sclkMode)    
+ 112:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_LATE_MISO_SAMPLE(config->enableLateS
+ 113:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SCLK_CONTINUOUS(config->enableFreeRu
+ 114:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SSEL_POLARITY (config->polaritySs)  
+ 115:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SUB_MODE      (config->submode)     
+ 116:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_MASTER_MODE   (config->mode);
+ 117:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 118:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Configure RX direction */
+ 119:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_RX_CTRL_REG     =  I2C_1_GET_RX_CTRL_DATA_WIDTH(config->rxDataBits)         |
+ 120:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_RX_CTRL_BIT_ORDER (config->bitOrder)     
+ 121:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_RX_CTRL_MEDIAN    (config->enableMedianFi
+ 122:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_SPI_RX_CTRL;
+ 123:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 124:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_RX_FIFO_CTRL_REG = I2C_1_GET_RX_FIFO_CTRL_TRIGGER_LEVEL(config->rxTriggerLevel);
+ 125:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 126:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Configure TX direction */
+ 127:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_TX_CTRL_REG      = I2C_1_GET_TX_CTRL_DATA_WIDTH(config->txDataBits) |
+ 128:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_TX_CTRL_BIT_ORDER (config->bitOrder)   |
+ 129:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_SPI_TX_CTRL;
+ 130:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 131:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_TX_FIFO_CTRL_REG = I2C_1_GET_TX_FIFO_CTRL_TRIGGER_LEVEL(config->txTriggerLevel);
+ 132:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 133:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Configure interrupt with SPI handler but do not enable it */
+ 134:Generated_Source\PSoC4/I2C_1_SPI.c ****             CyIntDisable    (I2C_1_ISR_NUMBER);
+ 135:Generated_Source\PSoC4/I2C_1_SPI.c ****             CyIntSetPriority(I2C_1_ISR_NUMBER, I2C_1_ISR_PRIORITY);
+ 136:Generated_Source\PSoC4/I2C_1_SPI.c ****             (void) CyIntSetVector(I2C_1_ISR_NUMBER, &I2C_1_SPI_UART_ISR);
+ 137:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 138:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Configure interrupt sources */
+ 139:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_INTR_I2C_EC_MASK_REG = I2C_1_NO_INTR_SOURCES;
+ 140:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_INTR_SPI_EC_MASK_REG = I2C_1_NO_INTR_SOURCES;
+ 141:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_INTR_SLAVE_MASK_REG  = I2C_1_GET_SPI_INTR_SLAVE_MASK(config->rxInterruptMask);
+ 142:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_INTR_MASTER_MASK_REG = I2C_1_GET_SPI_INTR_MASTER_MASK(config->txInterruptMask);
+ 143:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_INTR_RX_MASK_REG     = I2C_1_GET_SPI_INTR_RX_MASK(config->rxInterruptMask);
+ 144:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_INTR_TX_MASK_REG     = I2C_1_GET_SPI_INTR_TX_MASK(config->txInterruptMask);
+ 145:Generated_Source\PSoC4/I2C_1_SPI.c ****             
+ 146:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Configure TX interrupt sources to restore. */
+ 147:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_IntrTxMask = LO16(I2C_1_INTR_TX_MASK_REG);
+ 148:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 149:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Set active SS0 */
+ 150:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_SpiSetActiveSlaveSelect(I2C_1_SPI_SLAVE_SELECT0);
+ 151:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 5
+
+
+ 152:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Clear RX buffer indexes */
+ 153:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_rxBufferHead     = 0u;
+ 154:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_rxBufferTail     = 0u;
+ 155:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_rxBufferOverflow = 0u;
+ 156:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 157:Generated_Source\PSoC4/I2C_1_SPI.c ****             /* Clear TX buffer indexes */
+ 158:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_txBufferHead = 0u;
+ 159:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_txBufferTail = 0u;
+ 160:Generated_Source\PSoC4/I2C_1_SPI.c ****         }
+ 161:Generated_Source\PSoC4/I2C_1_SPI.c ****     }
+  78              		.loc 1 161 0 discriminator 1
+  79 0014 09E1     		b	.L24
+  80              	.L2:
+  85:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+  81              		.loc 1 85 0
+  82 0016 7B68     		ldr	r3, [r7, #4]
+  83 0018 1B68     		ldr	r3, [r3]
+  84 001a 0022     		movs	r2, #0
+  85 001c 1900     		movs	r1, r3
+  86 001e 0220     		movs	r0, #2
+  87 0020 FFF7FEFF 		bl	I2C_1_SetPins
+  88:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_scbEnableWake = (uint8) config->enableWake;
+  88              		.loc 1 88 0
+  89 0024 834B     		ldr	r3, .L25
+  90 0026 0222     		movs	r2, #2
+  91 0028 1A70     		strb	r2, [r3]
+  89:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_scbEnableIntr = (uint8) config->enableInterrupt;
+  92              		.loc 1 89 0
+  93 002a 7B68     		ldr	r3, [r7, #4]
+  94 002c 9B69     		ldr	r3, [r3, #24]
+  95 002e DAB2     		uxtb	r2, r3
+  96 0030 814B     		ldr	r3, .L25+4
+  97 0032 1A70     		strb	r2, [r3]
+  90:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+  98              		.loc 1 90 0
+  99 0034 7B68     		ldr	r3, [r7, #4]
+ 100 0036 DB6B     		ldr	r3, [r3, #60]
+ 101 0038 DAB2     		uxtb	r2, r3
+ 102 003a 804B     		ldr	r3, .L25+8
+ 103 003c 1A70     		strb	r2, [r3]
+  93:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_rxDataBits    = (uint8) config->rxDataBits;
+ 104              		.loc 1 93 0
+ 105 003e 7B68     		ldr	r3, [r7, #4]
+ 106 0040 1A6B     		ldr	r2, [r3, #48]
+ 107 0042 7F4B     		ldr	r3, .L25+12
+ 108 0044 1A60     		str	r2, [r3]
+  94:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_rxBufferSize  =         config->rxBufferSize;
+ 109              		.loc 1 94 0
+ 110 0046 7B68     		ldr	r3, [r7, #4]
+ 111 0048 DB69     		ldr	r3, [r3, #28]
+ 112 004a DAB2     		uxtb	r2, r3
+ 113 004c 7D4B     		ldr	r3, .L25+16
+ 114 004e 1A70     		strb	r2, [r3]
+  95:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 115              		.loc 1 95 0
+ 116 0050 7B68     		ldr	r3, [r7, #4]
+ 117 0052 DA6A     		ldr	r2, [r3, #44]
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 6
+
+
+ 118 0054 7C4B     		ldr	r3, .L25+20
+ 119 0056 1A60     		str	r2, [r3]
+  98:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_txDataBits    = (uint8) config->txDataBits;
+ 120              		.loc 1 98 0
+ 121 0058 7B68     		ldr	r3, [r7, #4]
+ 122 005a 9A6B     		ldr	r2, [r3, #56]
+ 123 005c 7B4B     		ldr	r3, .L25+24
+ 124 005e 1A60     		str	r2, [r3]
+  99:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_txBufferSize  =         config->txBufferSize;
+ 125              		.loc 1 99 0
+ 126 0060 7B68     		ldr	r3, [r7, #4]
+ 127 0062 1B6A     		ldr	r3, [r3, #32]
+ 128 0064 DAB2     		uxtb	r2, r3
+ 129 0066 7A4B     		ldr	r3, .L25+28
+ 130 0068 1A70     		strb	r2, [r3]
+ 100:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 131              		.loc 1 100 0
+ 132 006a 7B68     		ldr	r3, [r7, #4]
+ 133 006c 5A6B     		ldr	r2, [r3, #52]
+ 134 006e 794B     		ldr	r3, .L25+32
+ 135 0070 1A60     		str	r2, [r3]
+ 103:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_CTRL_BYTE_MODE(config->enableByteMode) |
+ 136              		.loc 1 103 0
+ 137 0072 794A     		ldr	r2, .L25+36
+ 138 0074 7B68     		ldr	r3, [r7, #4]
+ 139 0076 DB68     		ldr	r3, [r3, #12]
+ 140 0078 013B     		subs	r3, r3, #1
+ 141 007a 0F21     		movs	r1, #15
+ 142 007c 1940     		ands	r1, r3
+ 104:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_CTRL_EC_AM_MODE(config->enableWake)    |
+ 143              		.loc 1 104 0
+ 144 007e 7B68     		ldr	r3, [r7, #4]
+ 145 0080 5020     		movs	r0, #80
+ 146 0082 1B5C     		ldrb	r3, [r3, r0]
+ 147 0084 002B     		cmp	r3, #0
+ 148 0086 02D0     		beq	.L4
+ 104:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_CTRL_EC_AM_MODE(config->enableWake)    |
+ 149              		.loc 1 104 0 is_stmt 0 discriminator 1
+ 150 0088 8023     		movs	r3, #128
+ 151 008a 1B01     		lsls	r3, r3, #4
+ 152 008c 00E0     		b	.L5
+ 153              	.L4:
+ 104:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_CTRL_EC_AM_MODE(config->enableWake)    |
+ 154              		.loc 1 104 0 discriminator 2
+ 155 008e 0023     		movs	r3, #0
+ 156              	.L5:
+ 103:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_CTRL_BYTE_MODE(config->enableByteMode) |
+ 157              		.loc 1 103 0 is_stmt 1
+ 158 0090 1943     		orrs	r1, r3
+ 105:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_CTRL_SPI;
+ 159              		.loc 1 105 0
+ 160 0092 7B68     		ldr	r3, [r7, #4]
+ 161 0094 9B69     		ldr	r3, [r3, #24]
+ 162 0096 002B     		cmp	r3, #0
+ 163 0098 02D0     		beq	.L6
+ 105:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_CTRL_SPI;
+ 164              		.loc 1 105 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 7
+
+
+ 165 009a 8023     		movs	r3, #128
+ 166 009c 5B00     		lsls	r3, r3, #1
+ 167 009e 00E0     		b	.L7
+ 168              	.L6:
+ 105:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_CTRL_SPI;
+ 169              		.loc 1 105 0 discriminator 2
+ 170 00a0 0023     		movs	r3, #0
+ 171              	.L7:
+ 104:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_CTRL_EC_AM_MODE(config->enableWake)    |
+ 172              		.loc 1 104 0 is_stmt 1
+ 173 00a2 0B43     		orrs	r3, r1
+ 105:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_CTRL_SPI;
+ 174              		.loc 1 105 0
+ 175 00a4 8021     		movs	r1, #128
+ 176 00a6 4904     		lsls	r1, r1, #17
+ 177 00a8 0B43     		orrs	r3, r1
+ 103:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_CTRL_BYTE_MODE(config->enableByteMode) |
+ 178              		.loc 1 103 0
+ 179 00aa 1360     		str	r3, [r2]
+ 108:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SELECT_PRECEDE(config->submode &
+ 180              		.loc 1 108 0
+ 181 00ac 6B4A     		ldr	r2, .L25+40
+ 182 00ae 7B68     		ldr	r3, [r7, #4]
+ 183 00b0 9B6A     		ldr	r3, [r3, #40]
+ 184 00b2 002B     		cmp	r3, #0
+ 185 00b4 01D0     		beq	.L8
+ 108:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SELECT_PRECEDE(config->submode &
+ 186              		.loc 1 108 0 is_stmt 0 discriminator 1
+ 187 00b6 0121     		movs	r1, #1
+ 188 00b8 00E0     		b	.L9
+ 189              	.L8:
+ 108:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SELECT_PRECEDE(config->submode &
+ 190              		.loc 1 108 0 discriminator 2
+ 191 00ba 0021     		movs	r1, #0
+ 192              	.L9:
+ 109:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                                           I2C_1_SPI_MODE_TI_PRECEDE
+ 193              		.loc 1 109 0 is_stmt 1
+ 194 00bc 7B68     		ldr	r3, [r7, #4]
+ 195 00be 5B68     		ldr	r3, [r3, #4]
+ 196 00c0 1020     		movs	r0, #16
+ 197 00c2 0340     		ands	r3, r0
+ 198 00c4 01D0     		beq	.L10
+ 109:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                                           I2C_1_SPI_MODE_TI_PRECEDE
+ 199              		.loc 1 109 0 is_stmt 0 discriminator 1
+ 200 00c6 0223     		movs	r3, #2
+ 201 00c8 00E0     		b	.L11
+ 202              	.L10:
+ 109:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                                           I2C_1_SPI_MODE_TI_PRECEDE
+ 203              		.loc 1 109 0 discriminator 2
+ 204 00ca 0023     		movs	r3, #0
+ 205              	.L11:
+ 108:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SELECT_PRECEDE(config->submode &
+ 206              		.loc 1 108 0 is_stmt 1
+ 207 00cc 1943     		orrs	r1, r3
+ 111:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_LATE_MISO_SAMPLE(config->enableLateS
+ 208              		.loc 1 111 0
+ 209 00ce 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 8
+
+
+ 210 00d0 9B68     		ldr	r3, [r3, #8]
+ 211 00d2 9B00     		lsls	r3, r3, #2
+ 212 00d4 0C20     		movs	r0, #12
+ 213 00d6 0340     		ands	r3, r0
+ 110:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SCLK_MODE     (config->sclkMode)    
+ 214              		.loc 1 110 0
+ 215 00d8 1943     		orrs	r1, r3
+ 112:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SCLK_CONTINUOUS(config->enableFreeRu
+ 216              		.loc 1 112 0
+ 217 00da 7B68     		ldr	r3, [r7, #4]
+ 218 00dc 5B69     		ldr	r3, [r3, #20]
+ 219 00de 002B     		cmp	r3, #0
+ 220 00e0 01D0     		beq	.L12
+ 112:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SCLK_CONTINUOUS(config->enableFreeRu
+ 221              		.loc 1 112 0 is_stmt 0 discriminator 1
+ 222 00e2 1023     		movs	r3, #16
+ 223 00e4 00E0     		b	.L13
+ 224              	.L12:
+ 112:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SCLK_CONTINUOUS(config->enableFreeRu
+ 225              		.loc 1 112 0 discriminator 2
+ 226 00e6 0023     		movs	r3, #0
+ 227              	.L13:
+ 111:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_LATE_MISO_SAMPLE(config->enableLateS
+ 228              		.loc 1 111 0 is_stmt 1
+ 229 00e8 1943     		orrs	r1, r3
+ 113:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SSEL_POLARITY (config->polaritySs)  
+ 230              		.loc 1 113 0
+ 231 00ea 7B68     		ldr	r3, [r7, #4]
+ 232 00ec 5120     		movs	r0, #81
+ 233 00ee 1B5C     		ldrb	r3, [r3, r0]
+ 234 00f0 002B     		cmp	r3, #0
+ 235 00f2 01D0     		beq	.L14
+ 113:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SSEL_POLARITY (config->polaritySs)  
+ 236              		.loc 1 113 0 is_stmt 0 discriminator 1
+ 237 00f4 2023     		movs	r3, #32
+ 238 00f6 00E0     		b	.L15
+ 239              	.L14:
+ 113:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SSEL_POLARITY (config->polaritySs)  
+ 240              		.loc 1 113 0 discriminator 2
+ 241 00f8 0023     		movs	r3, #0
+ 242              	.L15:
+ 112:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SCLK_CONTINUOUS(config->enableFreeRu
+ 243              		.loc 1 112 0 is_stmt 1
+ 244 00fa 1943     		orrs	r1, r3
+ 114:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SUB_MODE      (config->submode)     
+ 245              		.loc 1 114 0
+ 246 00fc 7B68     		ldr	r3, [r7, #4]
+ 247 00fe 5220     		movs	r0, #82
+ 248 0100 1B5C     		ldrb	r3, [r3, r0]
+ 249 0102 1802     		lsls	r0, r3, #8
+ 250 0104 F023     		movs	r3, #240
+ 251 0106 1B01     		lsls	r3, r3, #4
+ 252 0108 0340     		ands	r3, r0
+ 113:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SSEL_POLARITY (config->polaritySs)  
+ 253              		.loc 1 113 0
+ 254 010a 1943     		orrs	r1, r3
+ 115:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_MASTER_MODE   (config->mode);
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 9
+
+
+ 255              		.loc 1 115 0
+ 256 010c 7B68     		ldr	r3, [r7, #4]
+ 257 010e 5B68     		ldr	r3, [r3, #4]
+ 258 0110 1806     		lsls	r0, r3, #24
+ 259 0112 C023     		movs	r3, #192
+ 260 0114 9B04     		lsls	r3, r3, #18
+ 261 0116 0340     		ands	r3, r0
+ 114:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SUB_MODE      (config->submode)     
+ 262              		.loc 1 114 0
+ 263 0118 1943     		orrs	r1, r3
+ 116:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 264              		.loc 1 116 0
+ 265 011a 7B68     		ldr	r3, [r7, #4]
+ 266 011c 1B68     		ldr	r3, [r3]
+ 267 011e 002B     		cmp	r3, #0
+ 268 0120 02D0     		beq	.L16
+ 116:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 269              		.loc 1 116 0 is_stmt 0 discriminator 1
+ 270 0122 8023     		movs	r3, #128
+ 271 0124 1B06     		lsls	r3, r3, #24
+ 272 0126 00E0     		b	.L17
+ 273              	.L16:
+ 116:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 274              		.loc 1 116 0 discriminator 2
+ 275 0128 0023     		movs	r3, #0
+ 276              	.L17:
+ 115:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_MASTER_MODE   (config->mode);
+ 277              		.loc 1 115 0 is_stmt 1
+ 278 012a 0B43     		orrs	r3, r1
+ 108:Generated_Source\PSoC4/I2C_1_SPI.c ****                                             I2C_1_GET_SPI_CTRL_SELECT_PRECEDE(config->submode &
+ 279              		.loc 1 108 0
+ 280 012c 1360     		str	r3, [r2]
+ 119:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_RX_CTRL_BIT_ORDER (config->bitOrder)     
+ 281              		.loc 1 119 0
+ 282 012e 4C4A     		ldr	r2, .L25+44
+ 283 0130 7B68     		ldr	r3, [r7, #4]
+ 284 0132 DB69     		ldr	r3, [r3, #28]
+ 285 0134 013B     		subs	r3, r3, #1
+ 286 0136 0F21     		movs	r1, #15
+ 287 0138 1940     		ands	r1, r3
+ 120:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_RX_CTRL_MEDIAN    (config->enableMedianFi
+ 288              		.loc 1 120 0
+ 289 013a 7B68     		ldr	r3, [r7, #4]
+ 290 013c 5B6A     		ldr	r3, [r3, #36]
+ 291 013e 002B     		cmp	r3, #0
+ 292 0140 02D0     		beq	.L18
+ 120:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_RX_CTRL_MEDIAN    (config->enableMedianFi
+ 293              		.loc 1 120 0 is_stmt 0 discriminator 1
+ 294 0142 8023     		movs	r3, #128
+ 295 0144 5B00     		lsls	r3, r3, #1
+ 296 0146 00E0     		b	.L19
+ 297              	.L18:
+ 120:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_RX_CTRL_MEDIAN    (config->enableMedianFi
+ 298              		.loc 1 120 0 discriminator 2
+ 299 0148 0023     		movs	r3, #0
+ 300              	.L19:
+ 119:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_RX_CTRL_BIT_ORDER (config->bitOrder)     
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 10
+
+
+ 301              		.loc 1 119 0 is_stmt 1
+ 302 014a 1943     		orrs	r1, r3
+ 121:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_SPI_RX_CTRL;
+ 303              		.loc 1 121 0
+ 304 014c 7B68     		ldr	r3, [r7, #4]
+ 305 014e 1B69     		ldr	r3, [r3, #16]
+ 306 0150 002B     		cmp	r3, #0
+ 307 0152 02D0     		beq	.L20
+ 121:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_SPI_RX_CTRL;
+ 308              		.loc 1 121 0 is_stmt 0 discriminator 1
+ 309 0154 8023     		movs	r3, #128
+ 310 0156 9B00     		lsls	r3, r3, #2
+ 311 0158 00E0     		b	.L21
+ 312              	.L20:
+ 121:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_SPI_RX_CTRL;
+ 313              		.loc 1 121 0 discriminator 2
+ 314 015a 0023     		movs	r3, #0
+ 315              	.L21:
+ 120:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_RX_CTRL_MEDIAN    (config->enableMedianFi
+ 316              		.loc 1 120 0 is_stmt 1
+ 317 015c 0B43     		orrs	r3, r1
+ 121:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_SPI_RX_CTRL;
+ 318              		.loc 1 121 0
+ 319 015e 8021     		movs	r1, #128
+ 320 0160 0906     		lsls	r1, r1, #24
+ 321 0162 0B43     		orrs	r3, r1
+ 119:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_RX_CTRL_BIT_ORDER (config->bitOrder)     
+ 322              		.loc 1 119 0
+ 323 0164 1360     		str	r3, [r2]
+ 124:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 324              		.loc 1 124 0
+ 325 0166 3F4A     		ldr	r2, .L25+48
+ 326 0168 7B68     		ldr	r3, [r7, #4]
+ 327 016a 5B6C     		ldr	r3, [r3, #68]
+ 328 016c 0F21     		movs	r1, #15
+ 329 016e 0B40     		ands	r3, r1
+ 330 0170 1360     		str	r3, [r2]
+ 127:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_TX_CTRL_BIT_ORDER (config->bitOrder)   |
+ 331              		.loc 1 127 0
+ 332 0172 3D4A     		ldr	r2, .L25+52
+ 333 0174 7B68     		ldr	r3, [r7, #4]
+ 334 0176 1B6A     		ldr	r3, [r3, #32]
+ 335 0178 013B     		subs	r3, r3, #1
+ 336 017a 0F21     		movs	r1, #15
+ 337 017c 1940     		ands	r1, r3
+ 128:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_SPI_TX_CTRL;
+ 338              		.loc 1 128 0
+ 339 017e 7B68     		ldr	r3, [r7, #4]
+ 340 0180 5B6A     		ldr	r3, [r3, #36]
+ 341 0182 002B     		cmp	r3, #0
+ 342 0184 02D0     		beq	.L22
+ 128:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_SPI_TX_CTRL;
+ 343              		.loc 1 128 0 is_stmt 0 discriminator 1
+ 344 0186 8023     		movs	r3, #128
+ 345 0188 5B00     		lsls	r3, r3, #1
+ 346 018a 00E0     		b	.L23
+ 347              	.L22:
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 11
+
+
+ 128:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_SPI_TX_CTRL;
+ 348              		.loc 1 128 0 discriminator 2
+ 349 018c 0023     		movs	r3, #0
+ 350              	.L23:
+ 127:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_TX_CTRL_BIT_ORDER (config->bitOrder)   |
+ 351              		.loc 1 127 0 is_stmt 1
+ 352 018e 0B43     		orrs	r3, r1
+ 128:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_SPI_TX_CTRL;
+ 353              		.loc 1 128 0
+ 354 0190 8021     		movs	r1, #128
+ 355 0192 0906     		lsls	r1, r1, #24
+ 356 0194 0B43     		orrs	r3, r1
+ 127:Generated_Source\PSoC4/I2C_1_SPI.c ****                                                 I2C_1_GET_TX_CTRL_BIT_ORDER (config->bitOrder)   |
+ 357              		.loc 1 127 0
+ 358 0196 1360     		str	r3, [r2]
+ 131:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 359              		.loc 1 131 0
+ 360 0198 344A     		ldr	r2, .L25+56
+ 361 019a 7B68     		ldr	r3, [r7, #4]
+ 362 019c DB6C     		ldr	r3, [r3, #76]
+ 363 019e 0F21     		movs	r1, #15
+ 364 01a0 0B40     		ands	r3, r1
+ 365 01a2 1360     		str	r3, [r2]
+ 134:Generated_Source\PSoC4/I2C_1_SPI.c ****             CyIntSetPriority(I2C_1_ISR_NUMBER, I2C_1_ISR_PRIORITY);
+ 366              		.loc 1 134 0
+ 367 01a4 0920     		movs	r0, #9
+ 368 01a6 FFF7FEFF 		bl	CyIntDisable
+ 135:Generated_Source\PSoC4/I2C_1_SPI.c ****             (void) CyIntSetVector(I2C_1_ISR_NUMBER, &I2C_1_SPI_UART_ISR);
+ 369              		.loc 1 135 0
+ 370 01aa 0321     		movs	r1, #3
+ 371 01ac 0920     		movs	r0, #9
+ 372 01ae FFF7FEFF 		bl	CyIntSetPriority
+ 136:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 373              		.loc 1 136 0
+ 374 01b2 2F4B     		ldr	r3, .L25+60
+ 375 01b4 1900     		movs	r1, r3
+ 376 01b6 0920     		movs	r0, #9
+ 377 01b8 FFF7FEFF 		bl	CyIntSetVector
+ 139:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_INTR_SPI_EC_MASK_REG = I2C_1_NO_INTR_SOURCES;
+ 378              		.loc 1 139 0
+ 379 01bc 2D4B     		ldr	r3, .L25+64
+ 380 01be 0022     		movs	r2, #0
+ 381 01c0 1A60     		str	r2, [r3]
+ 140:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_INTR_SLAVE_MASK_REG  = I2C_1_GET_SPI_INTR_SLAVE_MASK(config->rxInterruptMask);
+ 382              		.loc 1 140 0
+ 383 01c2 2D4B     		ldr	r3, .L25+68
+ 384 01c4 0022     		movs	r2, #0
+ 385 01c6 1A60     		str	r2, [r3]
+ 141:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_INTR_MASTER_MASK_REG = I2C_1_GET_SPI_INTR_MASTER_MASK(config->txInterruptMask);
+ 386              		.loc 1 141 0
+ 387 01c8 2C4A     		ldr	r2, .L25+72
+ 388 01ca 7B68     		ldr	r3, [r7, #4]
+ 389 01cc 196C     		ldr	r1, [r3, #64]
+ 390 01ce 8023     		movs	r3, #128
+ 391 01d0 1B01     		lsls	r3, r3, #4
+ 392 01d2 0B40     		ands	r3, r1
+ 393 01d4 1360     		str	r3, [r2]
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 12
+
+
+ 142:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_INTR_RX_MASK_REG     = I2C_1_GET_SPI_INTR_RX_MASK(config->rxInterruptMask);
+ 394              		.loc 1 142 0
+ 395 01d6 2A4A     		ldr	r2, .L25+76
+ 396 01d8 7B68     		ldr	r3, [r7, #4]
+ 397 01da 996C     		ldr	r1, [r3, #72]
+ 398 01dc 8023     		movs	r3, #128
+ 399 01de 9B00     		lsls	r3, r3, #2
+ 400 01e0 0B40     		ands	r3, r1
+ 401 01e2 1360     		str	r3, [r2]
+ 143:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_INTR_TX_MASK_REG     = I2C_1_GET_SPI_INTR_TX_MASK(config->txInterruptMask);
+ 402              		.loc 1 143 0
+ 403 01e4 274A     		ldr	r2, .L25+80
+ 404 01e6 7B68     		ldr	r3, [r7, #4]
+ 405 01e8 1B6C     		ldr	r3, [r3, #64]
+ 406 01ea 2749     		ldr	r1, .L25+84
+ 407 01ec 0B40     		ands	r3, r1
+ 408 01ee 1360     		str	r3, [r2]
+ 144:Generated_Source\PSoC4/I2C_1_SPI.c ****             
+ 409              		.loc 1 144 0
+ 410 01f0 264A     		ldr	r2, .L25+88
+ 411 01f2 7B68     		ldr	r3, [r7, #4]
+ 412 01f4 9B6C     		ldr	r3, [r3, #72]
+ 413 01f6 2649     		ldr	r1, .L25+92
+ 414 01f8 0B40     		ands	r3, r1
+ 415 01fa 1360     		str	r3, [r2]
+ 147:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 416              		.loc 1 147 0
+ 417 01fc 234B     		ldr	r3, .L25+88
+ 418 01fe 1B68     		ldr	r3, [r3]
+ 419 0200 9AB2     		uxth	r2, r3
+ 420 0202 244B     		ldr	r3, .L25+96
+ 421 0204 1A80     		strh	r2, [r3]
+ 150:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 422              		.loc 1 150 0
+ 423 0206 0020     		movs	r0, #0
+ 424 0208 FFF7FEFF 		bl	I2C_1_SpiSetActiveSlaveSelect
+ 153:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_rxBufferTail     = 0u;
+ 425              		.loc 1 153 0
+ 426 020c 224B     		ldr	r3, .L25+100
+ 427 020e 0022     		movs	r2, #0
+ 428 0210 1A60     		str	r2, [r3]
+ 154:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_rxBufferOverflow = 0u;
+ 429              		.loc 1 154 0
+ 430 0212 224B     		ldr	r3, .L25+104
+ 431 0214 0022     		movs	r2, #0
+ 432 0216 1A60     		str	r2, [r3]
+ 155:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 433              		.loc 1 155 0
+ 434 0218 214B     		ldr	r3, .L25+108
+ 435 021a 0022     		movs	r2, #0
+ 436 021c 1A70     		strb	r2, [r3]
+ 158:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_txBufferTail = 0u;
+ 437              		.loc 1 158 0
+ 438 021e 214B     		ldr	r3, .L25+112
+ 439 0220 0022     		movs	r2, #0
+ 440 0222 1A60     		str	r2, [r3]
+ 159:Generated_Source\PSoC4/I2C_1_SPI.c ****         }
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 13
+
+
+ 441              		.loc 1 159 0
+ 442 0224 204B     		ldr	r3, .L25+116
+ 443 0226 0022     		movs	r2, #0
+ 444 0228 1A60     		str	r2, [r3]
+ 445              	.L24:
+ 446              		.loc 1 161 0
+ 447 022a C046     		nop
+ 448 022c BD46     		mov	sp, r7
+ 449 022e 02B0     		add	sp, sp, #8
+ 450              		@ sp needed
+ 451 0230 80BD     		pop	{r7, pc}
+ 452              	.L26:
+ 453 0232 C046     		.align	2
+ 454              	.L25:
+ 455 0234 00000000 		.word	I2C_1_scbMode
+ 456 0238 00000000 		.word	I2C_1_scbEnableWake
+ 457 023c 00000000 		.word	I2C_1_scbEnableIntr
+ 458 0240 00000000 		.word	I2C_1_rxBuffer
+ 459 0244 00000000 		.word	I2C_1_rxDataBits
+ 460 0248 00000000 		.word	I2C_1_rxBufferSize
+ 461 024c 00000000 		.word	I2C_1_txBuffer
+ 462 0250 00000000 		.word	I2C_1_txDataBits
+ 463 0254 00000000 		.word	I2C_1_txBufferSize
+ 464 0258 00002440 		.word	1076101120
+ 465 025c 20002440 		.word	1076101152
+ 466 0260 00032440 		.word	1076101888
+ 467 0264 04032440 		.word	1076101892
+ 468 0268 00022440 		.word	1076101632
+ 469 026c 04022440 		.word	1076101636
+ 470 0270 00000000 		.word	I2C_1_SPI_UART_ISR
+ 471 0274 880E2440 		.word	1076104840
+ 472 0278 C80E2440 		.word	1076104904
+ 473 027c 480F2440 		.word	1076105032
+ 474 0280 080F2440 		.word	1076104968
+ 475 0284 C80F2440 		.word	1076105160
+ 476 0288 FFF7FFFF 		.word	-2049
+ 477 028c 880F2440 		.word	1076105096
+ 478 0290 FFFDFFFF 		.word	-513
+ 479 0294 00000000 		.word	I2C_1_IntrTxMask
+ 480 0298 00000000 		.word	I2C_1_rxBufferHead
+ 481 029c 00000000 		.word	I2C_1_rxBufferTail
+ 482 02a0 00000000 		.word	I2C_1_rxBufferOverflow
+ 483 02a4 00000000 		.word	I2C_1_txBufferHead
+ 484 02a8 00000000 		.word	I2C_1_txBufferTail
+ 485              		.cfi_endproc
+ 486              	.LFE2:
+ 487              		.size	I2C_1_SpiInit, .-I2C_1_SpiInit
+ 488              		.section	.text.I2C_1_SpiPostEnable,"ax",%progbits
+ 489              		.align	2
+ 490              		.global	I2C_1_SpiPostEnable
+ 491              		.code	16
+ 492              		.thumb_func
+ 493              		.type	I2C_1_SpiPostEnable, %function
+ 494              	I2C_1_SpiPostEnable:
+ 495              	.LFB3:
+ 162:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 163:Generated_Source\PSoC4/I2C_1_SPI.c **** #else
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 14
+
+
+ 164:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 165:Generated_Source\PSoC4/I2C_1_SPI.c ****     /*******************************************************************************
+ 166:Generated_Source\PSoC4/I2C_1_SPI.c ****     * Function Name: I2C_1_SpiInit
+ 167:Generated_Source\PSoC4/I2C_1_SPI.c ****     ****************************************************************************//**
+ 168:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 169:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  Configures the SCB for the SPI operation.
+ 170:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 171:Generated_Source\PSoC4/I2C_1_SPI.c ****     *******************************************************************************/
+ 172:Generated_Source\PSoC4/I2C_1_SPI.c ****     void I2C_1_SpiInit(void)
+ 173:Generated_Source\PSoC4/I2C_1_SPI.c ****     {
+ 174:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Configure SPI interface */
+ 175:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_CTRL_REG     = I2C_1_SPI_DEFAULT_CTRL;
+ 176:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_CTRL_REG = I2C_1_SPI_DEFAULT_SPI_CTRL;
+ 177:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 178:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Configure TX and RX direction */
+ 179:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_RX_CTRL_REG      = I2C_1_SPI_DEFAULT_RX_CTRL;
+ 180:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_RX_FIFO_CTRL_REG = I2C_1_SPI_DEFAULT_RX_FIFO_CTRL;
+ 181:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 182:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Configure TX and RX direction */
+ 183:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_TX_CTRL_REG      = I2C_1_SPI_DEFAULT_TX_CTRL;
+ 184:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_TX_FIFO_CTRL_REG = I2C_1_SPI_DEFAULT_TX_FIFO_CTRL;
+ 185:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 186:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Configure interrupt with SPI handler but do not enable it */
+ 187:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if(I2C_1_SCB_IRQ_INTERNAL)
+ 188:Generated_Source\PSoC4/I2C_1_SPI.c ****             CyIntDisable    (I2C_1_ISR_NUMBER);
+ 189:Generated_Source\PSoC4/I2C_1_SPI.c ****             CyIntSetPriority(I2C_1_ISR_NUMBER, I2C_1_ISR_PRIORITY);
+ 190:Generated_Source\PSoC4/I2C_1_SPI.c ****             (void) CyIntSetVector(I2C_1_ISR_NUMBER, &I2C_1_SPI_UART_ISR);
+ 191:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SCB_IRQ_INTERNAL) */
+ 192:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 193:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Configure interrupt sources */
+ 194:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_INTR_I2C_EC_MASK_REG = I2C_1_SPI_DEFAULT_INTR_I2C_EC_MASK;
+ 195:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_INTR_SPI_EC_MASK_REG = I2C_1_SPI_DEFAULT_INTR_SPI_EC_MASK;
+ 196:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_INTR_SLAVE_MASK_REG  = I2C_1_SPI_DEFAULT_INTR_SLAVE_MASK;
+ 197:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_INTR_MASTER_MASK_REG = I2C_1_SPI_DEFAULT_INTR_MASTER_MASK;
+ 198:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_INTR_RX_MASK_REG     = I2C_1_SPI_DEFAULT_INTR_RX_MASK;
+ 199:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_INTR_TX_MASK_REG     = I2C_1_SPI_DEFAULT_INTR_TX_MASK;
+ 200:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 201:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Configure TX interrupt sources to restore. */
+ 202:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_IntrTxMask = LO16(I2C_1_INTR_TX_MASK_REG);
+ 203:Generated_Source\PSoC4/I2C_1_SPI.c ****             
+ 204:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set active SS0 for master */
+ 205:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SPI_MASTER_CONST)
+ 206:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SpiSetActiveSlaveSelect(I2C_1_SPI_SLAVE_SELECT0);
+ 207:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SPI_MASTER_CONST) */
+ 208:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 209:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if(I2C_1_INTERNAL_RX_SW_BUFFER_CONST)
+ 210:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_rxBufferHead     = 0u;
+ 211:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_rxBufferTail     = 0u;
+ 212:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_rxBufferOverflow = 0u;
+ 213:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_INTERNAL_RX_SW_BUFFER_CONST) */
+ 214:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 215:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if(I2C_1_INTERNAL_TX_SW_BUFFER_CONST)
+ 216:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_txBufferHead = 0u;
+ 217:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_txBufferTail = 0u;
+ 218:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_INTERNAL_TX_SW_BUFFER_CONST) */
+ 219:Generated_Source\PSoC4/I2C_1_SPI.c ****     }
+ 220:Generated_Source\PSoC4/I2C_1_SPI.c **** #endif /* (I2C_1_SCB_MODE_UNCONFIG_CONST_CFG) */
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 15
+
+
+ 221:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 222:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 223:Generated_Source\PSoC4/I2C_1_SPI.c **** /*******************************************************************************
+ 224:Generated_Source\PSoC4/I2C_1_SPI.c **** * Function Name: I2C_1_SpiPostEnable
+ 225:Generated_Source\PSoC4/I2C_1_SPI.c **** ****************************************************************************//**
+ 226:Generated_Source\PSoC4/I2C_1_SPI.c **** *
+ 227:Generated_Source\PSoC4/I2C_1_SPI.c **** *  Restores HSIOM settings for the SPI master output pins (SCLK and/or SS0-SS3) 
+ 228:Generated_Source\PSoC4/I2C_1_SPI.c **** *  to be controlled by the SCB SPI.
+ 229:Generated_Source\PSoC4/I2C_1_SPI.c **** *
+ 230:Generated_Source\PSoC4/I2C_1_SPI.c **** *******************************************************************************/
+ 231:Generated_Source\PSoC4/I2C_1_SPI.c **** void I2C_1_SpiPostEnable(void)
+ 232:Generated_Source\PSoC4/I2C_1_SPI.c **** {
+ 496              		.loc 1 232 0
+ 497              		.cfi_startproc
+ 498              		@ args = 0, pretend = 0, frame = 0
+ 499              		@ frame_needed = 1, uses_anonymous_args = 0
+ 500 0000 80B5     		push	{r7, lr}
+ 501              		.cfi_def_cfa_offset 8
+ 502              		.cfi_offset 7, -8
+ 503              		.cfi_offset 14, -4
+ 504 0002 00AF     		add	r7, sp, #0
+ 505              		.cfi_def_cfa_register 7
+ 233:Generated_Source\PSoC4/I2C_1_SPI.c **** #if(I2C_1_SCB_MODE_UNCONFIG_CONST_CFG)
+ 234:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 235:Generated_Source\PSoC4/I2C_1_SPI.c ****     if (I2C_1_CHECK_SPI_MASTER)
+ 506              		.loc 1 235 0
+ 507 0004 044B     		ldr	r3, .L28
+ 508 0006 1B68     		ldr	r3, [r3]
+ 236:Generated_Source\PSoC4/I2C_1_SPI.c ****     {
+ 237:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_CTS_SCLK_PIN)
+ 238:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set SCB SPI to drive output pin */
+ 239:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_CTS_SCLK_HSIOM_REG, I2C_1_CTS_SCLK_HSIOM_MASK,
+ 240:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_CTS_SCLK_HSIOM_POS, I2C_1_CTS_SCLK_HSIOM_SEL_SPI);
+ 241:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_CTS_SCLK_PIN) */
+ 242:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 243:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_RTS_SS0_PIN)
+ 244:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set SCB SPI to drive output pin */
+ 245:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_RTS_SS0_HSIOM_REG, I2C_1_RTS_SS0_HSIOM_MASK,
+ 246:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_RTS_SS0_HSIOM_POS, I2C_1_RTS_SS0_HSIOM_SEL_SPI);
+ 247:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_RTS_SS0_PIN) */
+ 248:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 249:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SS1_PIN)
+ 250:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set SCB SPI to drive output pin */
+ 251:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_SS1_HSIOM_REG, I2C_1_SS1_HSIOM_MASK,
+ 252:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_SS1_HSIOM_POS, I2C_1_SS1_HSIOM_SEL_SPI);
+ 253:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SS1_PIN) */
+ 254:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 255:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SS2_PIN)
+ 256:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set SCB SPI to drive output pin */
+ 257:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_SS2_HSIOM_REG, I2C_1_SS2_HSIOM_MASK,
+ 258:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_SS2_HSIOM_POS, I2C_1_SS2_HSIOM_SEL_SPI);
+ 259:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SS2_PIN) */
+ 260:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 261:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SS3_PIN)
+ 262:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set SCB SPI to drive output pin */
+ 263:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_SS3_HSIOM_REG, I2C_1_SS3_HSIOM_MASK,
+ 264:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_SS3_HSIOM_POS, I2C_1_SS3_HSIOM_SEL_SPI);
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 16
+
+
+ 265:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SS3_PIN) */
+ 266:Generated_Source\PSoC4/I2C_1_SPI.c ****     }
+ 267:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 268:Generated_Source\PSoC4/I2C_1_SPI.c **** #else
+ 269:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 270:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SPI_MASTER_SCLK_PIN)
+ 271:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set SCB SPI to drive output pin */
+ 272:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_SCLK_M_HSIOM_REG, I2C_1_SCLK_M_HSIOM_MASK,
+ 273:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_SCLK_M_HSIOM_POS, I2C_1_SCLK_M_HSIOM_SEL_SPI);
+ 274:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_MISO_SDA_TX_PIN_PIN) */
+ 275:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 276:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SPI_MASTER_SS0_PIN)
+ 277:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set SCB SPI to drive output pin */
+ 278:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_SS0_M_HSIOM_REG, I2C_1_SS0_M_HSIOM_MASK,
+ 279:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_SS0_M_HSIOM_POS, I2C_1_SS0_M_HSIOM_SEL_SPI);
+ 280:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SPI_MASTER_SS0_PIN) */
+ 281:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 282:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SPI_MASTER_SS1_PIN)
+ 283:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set SCB SPI to drive output pin */
+ 284:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_SS1_M_HSIOM_REG, I2C_1_SS1_M_HSIOM_MASK,
+ 285:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_SS1_M_HSIOM_POS, I2C_1_SS1_M_HSIOM_SEL_SPI);
+ 286:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SPI_MASTER_SS1_PIN) */
+ 287:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 288:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SPI_MASTER_SS2_PIN)
+ 289:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set SCB SPI to drive output pin */
+ 290:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_SS2_M_HSIOM_REG, I2C_1_SS2_M_HSIOM_MASK,
+ 291:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_SS2_M_HSIOM_POS, I2C_1_SS2_M_HSIOM_SEL_SPI);
+ 292:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SPI_MASTER_SS2_PIN) */
+ 293:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 294:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SPI_MASTER_SS3_PIN)
+ 295:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set SCB SPI to drive output pin */
+ 296:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_SS3_M_HSIOM_REG, I2C_1_SS3_M_HSIOM_MASK,
+ 297:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_SS3_M_HSIOM_POS, I2C_1_SS3_M_HSIOM_SEL_SPI);
+ 298:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SPI_MASTER_SS3_PIN) */
+ 299:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 300:Generated_Source\PSoC4/I2C_1_SPI.c **** #endif /* (I2C_1_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 301:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 302:Generated_Source\PSoC4/I2C_1_SPI.c ****     /* Restore TX interrupt sources. */
+ 303:Generated_Source\PSoC4/I2C_1_SPI.c ****     I2C_1_SetTxInterruptMode(I2C_1_IntrTxMask);
+ 509              		.loc 1 303 0
+ 510 0008 044B     		ldr	r3, .L28+4
+ 511 000a 054A     		ldr	r2, .L28+8
+ 512 000c 1288     		ldrh	r2, [r2]
+ 513 000e 1A60     		str	r2, [r3]
+ 304:Generated_Source\PSoC4/I2C_1_SPI.c **** }
+ 514              		.loc 1 304 0
+ 515 0010 C046     		nop
+ 516 0012 BD46     		mov	sp, r7
+ 517              		@ sp needed
+ 518 0014 80BD     		pop	{r7, pc}
+ 519              	.L29:
+ 520 0016 C046     		.align	2
+ 521              	.L28:
+ 522 0018 20002440 		.word	1076101152
+ 523 001c 880F2440 		.word	1076105096
+ 524 0020 00000000 		.word	I2C_1_IntrTxMask
+ 525              		.cfi_endproc
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 17
+
+
+ 526              	.LFE3:
+ 527              		.size	I2C_1_SpiPostEnable, .-I2C_1_SpiPostEnable
+ 528              		.section	.text.I2C_1_SpiStop,"ax",%progbits
+ 529              		.align	2
+ 530              		.global	I2C_1_SpiStop
+ 531              		.code	16
+ 532              		.thumb_func
+ 533              		.type	I2C_1_SpiStop, %function
+ 534              	I2C_1_SpiStop:
+ 535              	.LFB4:
+ 305:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 306:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 307:Generated_Source\PSoC4/I2C_1_SPI.c **** /*******************************************************************************
+ 308:Generated_Source\PSoC4/I2C_1_SPI.c **** * Function Name: I2C_1_SpiStop
+ 309:Generated_Source\PSoC4/I2C_1_SPI.c **** ****************************************************************************//**
+ 310:Generated_Source\PSoC4/I2C_1_SPI.c **** *
+ 311:Generated_Source\PSoC4/I2C_1_SPI.c **** *  Changes the HSIOM settings for the SPI master output pins 
+ 312:Generated_Source\PSoC4/I2C_1_SPI.c **** *  (SCLK and/or SS0-SS3) to keep them inactive after the block is disabled. 
+ 313:Generated_Source\PSoC4/I2C_1_SPI.c **** *  The output pins are controlled by the GPIO data register.
+ 314:Generated_Source\PSoC4/I2C_1_SPI.c **** *
+ 315:Generated_Source\PSoC4/I2C_1_SPI.c **** *******************************************************************************/
+ 316:Generated_Source\PSoC4/I2C_1_SPI.c **** void I2C_1_SpiStop(void)
+ 317:Generated_Source\PSoC4/I2C_1_SPI.c **** {
+ 536              		.loc 1 317 0
+ 537              		.cfi_startproc
+ 538              		@ args = 0, pretend = 0, frame = 0
+ 539              		@ frame_needed = 1, uses_anonymous_args = 0
+ 540 0000 80B5     		push	{r7, lr}
+ 541              		.cfi_def_cfa_offset 8
+ 542              		.cfi_offset 7, -8
+ 543              		.cfi_offset 14, -4
+ 544 0002 00AF     		add	r7, sp, #0
+ 545              		.cfi_def_cfa_register 7
+ 318:Generated_Source\PSoC4/I2C_1_SPI.c **** #if(I2C_1_SCB_MODE_UNCONFIG_CONST_CFG)
+ 319:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 320:Generated_Source\PSoC4/I2C_1_SPI.c ****     if (I2C_1_CHECK_SPI_MASTER)
+ 546              		.loc 1 320 0
+ 547 0004 0B4B     		ldr	r3, .L34
+ 548 0006 1B68     		ldr	r3, [r3]
+ 549 0008 002B     		cmp	r3, #0
+ 550 000a 08DA     		bge	.L31
+ 321:Generated_Source\PSoC4/I2C_1_SPI.c ****     {
+ 322:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_CTS_SCLK_PIN)
+ 323:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set output pin state after block is disabled */
+ 324:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_uart_cts_spi_sclk_Write(I2C_1_GET_SPI_SCLK_INACTIVE);
+ 325:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 326:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set GPIO to drive output pin */
+ 327:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_CTS_SCLK_HSIOM_REG, I2C_1_CTS_SCLK_HSIOM_MASK,
+ 328:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_CTS_SCLK_HSIOM_POS, I2C_1_CTS_SCLK_HSIOM_SEL_GPIO);
+ 329:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_uart_cts_spi_sclk_PIN) */
+ 330:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 331:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_RTS_SS0_PIN)
+ 332:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set output pin state after block is disabled */
+ 333:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_uart_rts_spi_ss0_Write(I2C_1_GET_SPI_SS0_INACTIVE);
+ 334:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 335:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set GPIO to drive output pin */
+ 336:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_RTS_SS0_HSIOM_REG, I2C_1_RTS_SS0_HSIOM_MASK,
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 18
+
+
+ 337:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_RTS_SS0_HSIOM_POS, I2C_1_RTS_SS0_HSIOM_SEL_GPIO);
+ 338:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_uart_rts_spi_ss0_PIN) */
+ 339:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 340:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SS1_PIN)
+ 341:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set output pin state after block is disabled */
+ 342:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_spi_ss1_Write(I2C_1_GET_SPI_SS1_INACTIVE);
+ 343:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 344:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set GPIO to drive output pin */
+ 345:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_SS1_HSIOM_REG, I2C_1_SS1_HSIOM_MASK,
+ 346:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_SS1_HSIOM_POS, I2C_1_SS1_HSIOM_SEL_GPIO);
+ 347:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SS1_PIN) */
+ 348:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 349:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SS2_PIN)
+ 350:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set output pin state after block is disabled */
+ 351:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_spi_ss2_Write(I2C_1_GET_SPI_SS2_INACTIVE);
+ 352:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 353:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set GPIO to drive output pin */
+ 354:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_SS2_HSIOM_REG, I2C_1_SS2_HSIOM_MASK,
+ 355:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_SS2_HSIOM_POS, I2C_1_SS2_HSIOM_SEL_GPIO);
+ 356:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SS2_PIN) */
+ 357:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 358:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SS3_PIN)
+ 359:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set output pin state after block is disabled */
+ 360:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_spi_ss3_Write(I2C_1_GET_SPI_SS3_INACTIVE);
+ 361:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 362:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Set GPIO to drive output pin */
+ 363:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SET_HSIOM_SEL(I2C_1_SS3_HSIOM_REG, I2C_1_SS3_HSIOM_MASK,
+ 364:Generated_Source\PSoC4/I2C_1_SPI.c ****                                        I2C_1_SS3_HSIOM_POS, I2C_1_SS3_HSIOM_SEL_GPIO);
+ 365:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SS3_PIN) */
+ 366:Generated_Source\PSoC4/I2C_1_SPI.c ****     
+ 367:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Store TX interrupt sources (exclude level triggered) for master. */
+ 368:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_IntrTxMask = LO16(I2C_1_GetTxInterruptMode() & I2C_1_INTR_SPIM_TX_RESTORE);
+ 551              		.loc 1 368 0
+ 552 000c 0A4B     		ldr	r3, .L34+4
+ 553 000e 1B68     		ldr	r3, [r3]
+ 554 0010 9BB2     		uxth	r3, r3
+ 555 0012 2022     		movs	r2, #32
+ 556 0014 1340     		ands	r3, r2
+ 557 0016 9AB2     		uxth	r2, r3
+ 558 0018 084B     		ldr	r3, .L34+8
+ 559 001a 1A80     		strh	r2, [r3]
+ 369:Generated_Source\PSoC4/I2C_1_SPI.c ****     }
+ 370:Generated_Source\PSoC4/I2C_1_SPI.c ****     else
+ 371:Generated_Source\PSoC4/I2C_1_SPI.c ****     {
+ 372:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Store TX interrupt sources (exclude level triggered) for slave. */
+ 373:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_IntrTxMask = LO16(I2C_1_GetTxInterruptMode() & I2C_1_INTR_SPIS_TX_RESTORE);
+ 374:Generated_Source\PSoC4/I2C_1_SPI.c ****     }
+ 375:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 376:Generated_Source\PSoC4/I2C_1_SPI.c **** #else
+ 377:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 378:Generated_Source\PSoC4/I2C_1_SPI.c **** #if (I2C_1_SPI_MASTER_SCLK_PIN)
+ 379:Generated_Source\PSoC4/I2C_1_SPI.c ****     /* Set output pin state after block is disabled */
+ 380:Generated_Source\PSoC4/I2C_1_SPI.c ****     I2C_1_sclk_m_Write(I2C_1_GET_SPI_SCLK_INACTIVE);
+ 381:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 382:Generated_Source\PSoC4/I2C_1_SPI.c ****     /* Set GPIO to drive output pin */
+ 383:Generated_Source\PSoC4/I2C_1_SPI.c ****     I2C_1_SET_HSIOM_SEL(I2C_1_SCLK_M_HSIOM_REG, I2C_1_SCLK_M_HSIOM_MASK,
+ 384:Generated_Source\PSoC4/I2C_1_SPI.c ****                                    I2C_1_SCLK_M_HSIOM_POS, I2C_1_SCLK_M_HSIOM_SEL_GPIO);
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 19
+
+
+ 385:Generated_Source\PSoC4/I2C_1_SPI.c **** #endif /* (I2C_1_MISO_SDA_TX_PIN_PIN) */
+ 386:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 387:Generated_Source\PSoC4/I2C_1_SPI.c **** #if (I2C_1_SPI_MASTER_SS0_PIN)
+ 388:Generated_Source\PSoC4/I2C_1_SPI.c ****     /* Set output pin state after block is disabled */
+ 389:Generated_Source\PSoC4/I2C_1_SPI.c ****     I2C_1_ss0_m_Write(I2C_1_GET_SPI_SS0_INACTIVE);
+ 390:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 391:Generated_Source\PSoC4/I2C_1_SPI.c ****     /* Set GPIO to drive output pin */
+ 392:Generated_Source\PSoC4/I2C_1_SPI.c ****     I2C_1_SET_HSIOM_SEL(I2C_1_SS0_M_HSIOM_REG, I2C_1_SS0_M_HSIOM_MASK,
+ 393:Generated_Source\PSoC4/I2C_1_SPI.c ****                                    I2C_1_SS0_M_HSIOM_POS, I2C_1_SS0_M_HSIOM_SEL_GPIO);
+ 394:Generated_Source\PSoC4/I2C_1_SPI.c **** #endif /* (I2C_1_SPI_MASTER_SS0_PIN) */
+ 395:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 396:Generated_Source\PSoC4/I2C_1_SPI.c **** #if (I2C_1_SPI_MASTER_SS1_PIN)
+ 397:Generated_Source\PSoC4/I2C_1_SPI.c ****     /* Set output pin state after block is disabled */
+ 398:Generated_Source\PSoC4/I2C_1_SPI.c ****     I2C_1_ss1_m_Write(I2C_1_GET_SPI_SS1_INACTIVE);
+ 399:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 400:Generated_Source\PSoC4/I2C_1_SPI.c ****     /* Set GPIO to drive output pin */
+ 401:Generated_Source\PSoC4/I2C_1_SPI.c ****     I2C_1_SET_HSIOM_SEL(I2C_1_SS1_M_HSIOM_REG, I2C_1_SS1_M_HSIOM_MASK,
+ 402:Generated_Source\PSoC4/I2C_1_SPI.c ****                                    I2C_1_SS1_M_HSIOM_POS, I2C_1_SS1_M_HSIOM_SEL_GPIO);
+ 403:Generated_Source\PSoC4/I2C_1_SPI.c **** #endif /* (I2C_1_SPI_MASTER_SS1_PIN) */
+ 404:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 405:Generated_Source\PSoC4/I2C_1_SPI.c **** #if (I2C_1_SPI_MASTER_SS2_PIN)
+ 406:Generated_Source\PSoC4/I2C_1_SPI.c ****     /* Set output pin state after block is disabled */
+ 407:Generated_Source\PSoC4/I2C_1_SPI.c ****     I2C_1_ss2_m_Write(I2C_1_GET_SPI_SS2_INACTIVE);
+ 408:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 409:Generated_Source\PSoC4/I2C_1_SPI.c ****     /* Set GPIO to drive output pin */
+ 410:Generated_Source\PSoC4/I2C_1_SPI.c ****     I2C_1_SET_HSIOM_SEL(I2C_1_SS2_M_HSIOM_REG, I2C_1_SS2_M_HSIOM_MASK,
+ 411:Generated_Source\PSoC4/I2C_1_SPI.c ****                                    I2C_1_SS2_M_HSIOM_POS, I2C_1_SS2_M_HSIOM_SEL_GPIO);
+ 412:Generated_Source\PSoC4/I2C_1_SPI.c **** #endif /* (I2C_1_SPI_MASTER_SS2_PIN) */
+ 413:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 414:Generated_Source\PSoC4/I2C_1_SPI.c **** #if (I2C_1_SPI_MASTER_SS3_PIN)
+ 415:Generated_Source\PSoC4/I2C_1_SPI.c ****     /* Set output pin state after block is disabled */
+ 416:Generated_Source\PSoC4/I2C_1_SPI.c ****     I2C_1_ss3_m_Write(I2C_1_GET_SPI_SS3_INACTIVE);
+ 417:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 418:Generated_Source\PSoC4/I2C_1_SPI.c ****     /* Set GPIO to drive output pin */
+ 419:Generated_Source\PSoC4/I2C_1_SPI.c ****     I2C_1_SET_HSIOM_SEL(I2C_1_SS3_M_HSIOM_REG, I2C_1_SS3_M_HSIOM_MASK,
+ 420:Generated_Source\PSoC4/I2C_1_SPI.c ****                                    I2C_1_SS3_M_HSIOM_POS, I2C_1_SS3_M_HSIOM_SEL_GPIO);
+ 421:Generated_Source\PSoC4/I2C_1_SPI.c **** #endif /* (I2C_1_SPI_MASTER_SS3_PIN) */
+ 422:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 423:Generated_Source\PSoC4/I2C_1_SPI.c ****     #if (I2C_1_SPI_MASTER_CONST)
+ 424:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Store TX interrupt sources (exclude level triggered). */
+ 425:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_IntrTxMask = LO16(I2C_1_GetTxInterruptMode() & I2C_1_INTR_SPIM_TX_RESTORE);
+ 426:Generated_Source\PSoC4/I2C_1_SPI.c ****     #else
+ 427:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Store TX interrupt sources (exclude level triggered). */
+ 428:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_IntrTxMask = LO16(I2C_1_GetTxInterruptMode() & I2C_1_INTR_SPIS_TX_RESTORE);
+ 429:Generated_Source\PSoC4/I2C_1_SPI.c ****     #endif /* (I2C_1_SPI_MASTER_CONST) */
+ 430:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 431:Generated_Source\PSoC4/I2C_1_SPI.c **** #endif /* (I2C_1_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 432:Generated_Source\PSoC4/I2C_1_SPI.c **** }
+ 560              		.loc 1 432 0
+ 561 001c 07E0     		b	.L33
+ 562              	.L31:
+ 373:Generated_Source\PSoC4/I2C_1_SPI.c ****     }
+ 563              		.loc 1 373 0
+ 564 001e 064B     		ldr	r3, .L34+4
+ 565 0020 1B68     		ldr	r3, [r3]
+ 566 0022 9BB2     		uxth	r3, r3
+ 567 0024 6022     		movs	r2, #96
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 20
+
+
+ 568 0026 1340     		ands	r3, r2
+ 569 0028 9AB2     		uxth	r2, r3
+ 570 002a 044B     		ldr	r3, .L34+8
+ 571 002c 1A80     		strh	r2, [r3]
+ 572              	.L33:
+ 573              		.loc 1 432 0
+ 574 002e C046     		nop
+ 575 0030 BD46     		mov	sp, r7
+ 576              		@ sp needed
+ 577 0032 80BD     		pop	{r7, pc}
+ 578              	.L35:
+ 579              		.align	2
+ 580              	.L34:
+ 581 0034 20002440 		.word	1076101152
+ 582 0038 880F2440 		.word	1076105096
+ 583 003c 00000000 		.word	I2C_1_IntrTxMask
+ 584              		.cfi_endproc
+ 585              	.LFE4:
+ 586              		.size	I2C_1_SpiStop, .-I2C_1_SpiStop
+ 587              		.section	.text.I2C_1_SpiSetActiveSlaveSelect,"ax",%progbits
+ 588              		.align	2
+ 589              		.global	I2C_1_SpiSetActiveSlaveSelect
+ 590              		.code	16
+ 591              		.thumb_func
+ 592              		.type	I2C_1_SpiSetActiveSlaveSelect, %function
+ 593              	I2C_1_SpiSetActiveSlaveSelect:
+ 594              	.LFB5:
+ 433:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 434:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 435:Generated_Source\PSoC4/I2C_1_SPI.c **** #if (I2C_1_SPI_MASTER_CONST)
+ 436:Generated_Source\PSoC4/I2C_1_SPI.c ****     /*******************************************************************************
+ 437:Generated_Source\PSoC4/I2C_1_SPI.c ****     * Function Name: I2C_1_SetActiveSlaveSelect
+ 438:Generated_Source\PSoC4/I2C_1_SPI.c ****     ****************************************************************************//**
+ 439:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 440:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  Selects one of the four slave select lines to be active during the transfer.
+ 441:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  After initialization the active slave select line is 0.
+ 442:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  The component should be in one of the following states to change the active
+ 443:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  slave select signal source correctly:
+ 444:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - The component is disabled.
+ 445:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - The component has completed transfer (TX FIFO is empty and the
+ 446:Generated_Source\PSoC4/I2C_1_SPI.c ****     *     SCB_INTR_MASTER_SPI_DONE status is set).
+ 447:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 448:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  This function does not check that these conditions are met.
+ 449:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  This function is only applicable to SPI Master mode of operation.
+ 450:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 451:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  \param slaveSelect: slave select line which will be active while the following
+ 452:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   transfer.
+ 453:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - I2C_1_SPI_SLAVE_SELECT0 - Slave select 0.
+ 454:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - I2C_1_SPI_SLAVE_SELECT1 - Slave select 1.
+ 455:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - I2C_1_SPI_SLAVE_SELECT2 - Slave select 2.
+ 456:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - I2C_1_SPI_SLAVE_SELECT3 - Slave select 3.
+ 457:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 458:Generated_Source\PSoC4/I2C_1_SPI.c ****     *******************************************************************************/
+ 459:Generated_Source\PSoC4/I2C_1_SPI.c ****     void I2C_1_SpiSetActiveSlaveSelect(uint32 slaveSelect)
+ 460:Generated_Source\PSoC4/I2C_1_SPI.c ****     {
+ 595              		.loc 1 460 0
+ 596              		.cfi_startproc
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 21
+
+
+ 597              		@ args = 0, pretend = 0, frame = 16
+ 598              		@ frame_needed = 1, uses_anonymous_args = 0
+ 599 0000 80B5     		push	{r7, lr}
+ 600              		.cfi_def_cfa_offset 8
+ 601              		.cfi_offset 7, -8
+ 602              		.cfi_offset 14, -4
+ 603 0002 84B0     		sub	sp, sp, #16
+ 604              		.cfi_def_cfa_offset 24
+ 605 0004 00AF     		add	r7, sp, #0
+ 606              		.cfi_def_cfa_register 7
+ 607 0006 7860     		str	r0, [r7, #4]
+ 461:Generated_Source\PSoC4/I2C_1_SPI.c ****         uint32 spiCtrl;
+ 462:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 463:Generated_Source\PSoC4/I2C_1_SPI.c ****         spiCtrl = I2C_1_SPI_CTRL_REG;
+ 608              		.loc 1 463 0
+ 609 0008 0A4B     		ldr	r3, .L37
+ 610 000a 1B68     		ldr	r3, [r3]
+ 611 000c FB60     		str	r3, [r7, #12]
+ 464:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 465:Generated_Source\PSoC4/I2C_1_SPI.c ****         spiCtrl &= (uint32) ~I2C_1_SPI_CTRL_SLAVE_SELECT_MASK;
+ 612              		.loc 1 465 0
+ 613 000e FB68     		ldr	r3, [r7, #12]
+ 614 0010 094A     		ldr	r2, .L37+4
+ 615 0012 1340     		ands	r3, r2
+ 616 0014 FB60     		str	r3, [r7, #12]
+ 466:Generated_Source\PSoC4/I2C_1_SPI.c ****         spiCtrl |= (uint32)  I2C_1_GET_SPI_CTRL_SS(slaveSelect);
+ 617              		.loc 1 466 0
+ 618 0016 7B68     		ldr	r3, [r7, #4]
+ 619 0018 9A06     		lsls	r2, r3, #26
+ 620 001a C023     		movs	r3, #192
+ 621 001c 1B05     		lsls	r3, r3, #20
+ 622 001e 1340     		ands	r3, r2
+ 623 0020 FA68     		ldr	r2, [r7, #12]
+ 624 0022 1343     		orrs	r3, r2
+ 625 0024 FB60     		str	r3, [r7, #12]
+ 467:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 468:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SPI_CTRL_REG = spiCtrl;
+ 626              		.loc 1 468 0
+ 627 0026 034B     		ldr	r3, .L37
+ 628 0028 FA68     		ldr	r2, [r7, #12]
+ 629 002a 1A60     		str	r2, [r3]
+ 469:Generated_Source\PSoC4/I2C_1_SPI.c ****     }
+ 630              		.loc 1 469 0
+ 631 002c C046     		nop
+ 632 002e BD46     		mov	sp, r7
+ 633 0030 04B0     		add	sp, sp, #16
+ 634              		@ sp needed
+ 635 0032 80BD     		pop	{r7, pc}
+ 636              	.L38:
+ 637              		.align	2
+ 638              	.L37:
+ 639 0034 20002440 		.word	1076101152
+ 640 0038 FFFFFFF3 		.word	-201326593
+ 641              		.cfi_endproc
+ 642              	.LFE5:
+ 643              		.size	I2C_1_SpiSetActiveSlaveSelect, .-I2C_1_SpiSetActiveSlaveSelect
+ 644              		.section	.text.I2C_1_SpiSetSlaveSelectPolarity,"ax",%progbits
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 22
+
+
+ 645              		.align	2
+ 646              		.global	I2C_1_SpiSetSlaveSelectPolarity
+ 647              		.code	16
+ 648              		.thumb_func
+ 649              		.type	I2C_1_SpiSetSlaveSelectPolarity, %function
+ 650              	I2C_1_SpiSetSlaveSelectPolarity:
+ 651              	.LFB6:
+ 470:Generated_Source\PSoC4/I2C_1_SPI.c **** #endif /* (I2C_1_SPI_MASTER_CONST) */
+ 471:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 472:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 473:Generated_Source\PSoC4/I2C_1_SPI.c **** #if !(I2C_1_CY_SCBIP_V0 || I2C_1_CY_SCBIP_V1)
+ 474:Generated_Source\PSoC4/I2C_1_SPI.c ****     /*******************************************************************************
+ 475:Generated_Source\PSoC4/I2C_1_SPI.c ****     * Function Name: I2C_1_SpiSetSlaveSelectPolarity
+ 476:Generated_Source\PSoC4/I2C_1_SPI.c ****     ****************************************************************************//**
+ 477:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 478:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  Sets active polarity for slave select line.
+ 479:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  The component should be in one of the following states to change the active
+ 480:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  slave select signal source correctly:
+ 481:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - The component is disabled.
+ 482:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - The component has completed transfer.
+ 483:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  
+ 484:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  This function does not check that these conditions are met.
+ 485:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 486:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  \param slaveSelect: slave select line to change active polarity.
+ 487:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - I2C_1_SPI_SLAVE_SELECT0 - Slave select 0.
+ 488:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - I2C_1_SPI_SLAVE_SELECT1 - Slave select 1.
+ 489:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - I2C_1_SPI_SLAVE_SELECT2 - Slave select 2.
+ 490:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - I2C_1_SPI_SLAVE_SELECT3 - Slave select 3.
+ 491:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 492:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  \param polarity: active polarity of slave select line.
+ 493:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - I2C_1_SPI_SS_ACTIVE_LOW  - Slave select is active low.
+ 494:Generated_Source\PSoC4/I2C_1_SPI.c ****     *   - I2C_1_SPI_SS_ACTIVE_HIGH - Slave select is active high.
+ 495:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 496:Generated_Source\PSoC4/I2C_1_SPI.c ****     *******************************************************************************/
+ 497:Generated_Source\PSoC4/I2C_1_SPI.c ****     void I2C_1_SpiSetSlaveSelectPolarity(uint32 slaveSelect, uint32 polarity)
+ 498:Generated_Source\PSoC4/I2C_1_SPI.c ****     {
+ 652              		.loc 1 498 0
+ 653              		.cfi_startproc
+ 654              		@ args = 0, pretend = 0, frame = 16
+ 655              		@ frame_needed = 1, uses_anonymous_args = 0
+ 656 0000 80B5     		push	{r7, lr}
+ 657              		.cfi_def_cfa_offset 8
+ 658              		.cfi_offset 7, -8
+ 659              		.cfi_offset 14, -4
+ 660 0002 84B0     		sub	sp, sp, #16
+ 661              		.cfi_def_cfa_offset 24
+ 662 0004 00AF     		add	r7, sp, #0
+ 663              		.cfi_def_cfa_register 7
+ 664 0006 7860     		str	r0, [r7, #4]
+ 665 0008 3960     		str	r1, [r7]
+ 499:Generated_Source\PSoC4/I2C_1_SPI.c ****         uint32 ssPolarity;
+ 500:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 501:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Get position of the polarity bit associated with slave select line */
+ 502:Generated_Source\PSoC4/I2C_1_SPI.c ****         ssPolarity = I2C_1_GET_SPI_CTRL_SSEL_POLARITY((uint32) 1u << slaveSelect);
+ 666              		.loc 1 502 0
+ 667 000a 0122     		movs	r2, #1
+ 668 000c 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 23
+
+
+ 669 000e 9A40     		lsls	r2, r2, r3
+ 670 0010 1300     		movs	r3, r2
+ 671 0012 1A02     		lsls	r2, r3, #8
+ 672 0014 F023     		movs	r3, #240
+ 673 0016 1B01     		lsls	r3, r3, #4
+ 674 0018 1340     		ands	r3, r2
+ 675 001a FB60     		str	r3, [r7, #12]
+ 503:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 504:Generated_Source\PSoC4/I2C_1_SPI.c ****         if (0u != polarity)
+ 676              		.loc 1 504 0
+ 677 001c 3B68     		ldr	r3, [r7]
+ 678 001e 002B     		cmp	r3, #0
+ 679 0020 06D0     		beq	.L40
+ 505:Generated_Source\PSoC4/I2C_1_SPI.c ****         {
+ 506:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_SPI_CTRL_REG |= (uint32)  ssPolarity;
+ 680              		.loc 1 506 0
+ 681 0022 094B     		ldr	r3, .L43
+ 682 0024 084A     		ldr	r2, .L43
+ 683 0026 1168     		ldr	r1, [r2]
+ 684 0028 FA68     		ldr	r2, [r7, #12]
+ 685 002a 0A43     		orrs	r2, r1
+ 686 002c 1A60     		str	r2, [r3]
+ 507:Generated_Source\PSoC4/I2C_1_SPI.c ****         }
+ 508:Generated_Source\PSoC4/I2C_1_SPI.c ****         else
+ 509:Generated_Source\PSoC4/I2C_1_SPI.c ****         {
+ 510:Generated_Source\PSoC4/I2C_1_SPI.c ****             I2C_1_SPI_CTRL_REG &= (uint32) ~ssPolarity;
+ 511:Generated_Source\PSoC4/I2C_1_SPI.c ****         }
+ 512:Generated_Source\PSoC4/I2C_1_SPI.c ****     }
+ 687              		.loc 1 512 0
+ 688 002e 06E0     		b	.L42
+ 689              	.L40:
+ 510:Generated_Source\PSoC4/I2C_1_SPI.c ****         }
+ 690              		.loc 1 510 0
+ 691 0030 054B     		ldr	r3, .L43
+ 692 0032 054A     		ldr	r2, .L43
+ 693 0034 1268     		ldr	r2, [r2]
+ 694 0036 F968     		ldr	r1, [r7, #12]
+ 695 0038 C943     		mvns	r1, r1
+ 696 003a 0A40     		ands	r2, r1
+ 697 003c 1A60     		str	r2, [r3]
+ 698              	.L42:
+ 699              		.loc 1 512 0
+ 700 003e C046     		nop
+ 701 0040 BD46     		mov	sp, r7
+ 702 0042 04B0     		add	sp, sp, #16
+ 703              		@ sp needed
+ 704 0044 80BD     		pop	{r7, pc}
+ 705              	.L44:
+ 706 0046 C046     		.align	2
+ 707              	.L43:
+ 708 0048 20002440 		.word	1076101152
+ 709              		.cfi_endproc
+ 710              	.LFE6:
+ 711              		.size	I2C_1_SpiSetSlaveSelectPolarity, .-I2C_1_SpiSetSlaveSelectPolarity
+ 712              		.section	.text.I2C_1_SpiSaveConfig,"ax",%progbits
+ 713              		.align	2
+ 714              		.global	I2C_1_SpiSaveConfig
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 24
+
+
+ 715              		.code	16
+ 716              		.thumb_func
+ 717              		.type	I2C_1_SpiSaveConfig, %function
+ 718              	I2C_1_SpiSaveConfig:
+ 719              	.LFB7:
+ 513:Generated_Source\PSoC4/I2C_1_SPI.c **** #endif /* !(I2C_1_CY_SCBIP_V0 || I2C_1_CY_SCBIP_V1) */
+ 514:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 515:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 516:Generated_Source\PSoC4/I2C_1_SPI.c **** #if(I2C_1_SPI_WAKE_ENABLE_CONST)
+ 517:Generated_Source\PSoC4/I2C_1_SPI.c ****     /*******************************************************************************
+ 518:Generated_Source\PSoC4/I2C_1_SPI.c ****     * Function Name: I2C_1_SpiSaveConfig
+ 519:Generated_Source\PSoC4/I2C_1_SPI.c ****     ****************************************************************************//**
+ 520:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 521:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  Clears INTR_SPI_EC.WAKE_UP and enables it. This interrupt
+ 522:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  source triggers when the master assigns the SS line and wakes up the device.
+ 523:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 524:Generated_Source\PSoC4/I2C_1_SPI.c ****     *******************************************************************************/
+ 525:Generated_Source\PSoC4/I2C_1_SPI.c ****     void I2C_1_SpiSaveConfig(void)
+ 526:Generated_Source\PSoC4/I2C_1_SPI.c ****     {
+ 720              		.loc 1 526 0
+ 721              		.cfi_startproc
+ 722              		@ args = 0, pretend = 0, frame = 0
+ 723              		@ frame_needed = 1, uses_anonymous_args = 0
+ 724 0000 80B5     		push	{r7, lr}
+ 725              		.cfi_def_cfa_offset 8
+ 726              		.cfi_offset 7, -8
+ 727              		.cfi_offset 14, -4
+ 728 0002 00AF     		add	r7, sp, #0
+ 729              		.cfi_def_cfa_register 7
+ 527:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Clear and enable SPI wakeup interrupt source */
+ 528:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_ClearSpiExtClkInterruptSource(I2C_1_INTR_SPI_EC_WAKE_UP);
+ 730              		.loc 1 528 0
+ 731 0004 044B     		ldr	r3, .L46
+ 732 0006 0122     		movs	r2, #1
+ 733 0008 1A60     		str	r2, [r3]
+ 529:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SetSpiExtClkInterruptMode(I2C_1_INTR_SPI_EC_WAKE_UP);
+ 734              		.loc 1 529 0
+ 735 000a 044B     		ldr	r3, .L46+4
+ 736 000c 0122     		movs	r2, #1
+ 737 000e 1A60     		str	r2, [r3]
+ 530:Generated_Source\PSoC4/I2C_1_SPI.c ****     }
+ 738              		.loc 1 530 0
+ 739 0010 C046     		nop
+ 740 0012 BD46     		mov	sp, r7
+ 741              		@ sp needed
+ 742 0014 80BD     		pop	{r7, pc}
+ 743              	.L47:
+ 744 0016 C046     		.align	2
+ 745              	.L46:
+ 746 0018 C00E2440 		.word	1076104896
+ 747 001c C80E2440 		.word	1076104904
+ 748              		.cfi_endproc
+ 749              	.LFE7:
+ 750              		.size	I2C_1_SpiSaveConfig, .-I2C_1_SpiSaveConfig
+ 751              		.section	.text.I2C_1_SpiRestoreConfig,"ax",%progbits
+ 752              		.align	2
+ 753              		.global	I2C_1_SpiRestoreConfig
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 25
+
+
+ 754              		.code	16
+ 755              		.thumb_func
+ 756              		.type	I2C_1_SpiRestoreConfig, %function
+ 757              	I2C_1_SpiRestoreConfig:
+ 758              	.LFB8:
+ 531:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 532:Generated_Source\PSoC4/I2C_1_SPI.c **** 
+ 533:Generated_Source\PSoC4/I2C_1_SPI.c ****     /*******************************************************************************
+ 534:Generated_Source\PSoC4/I2C_1_SPI.c ****     * Function Name: I2C_1_SpiRestoreConfig
+ 535:Generated_Source\PSoC4/I2C_1_SPI.c ****     ****************************************************************************//**
+ 536:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 537:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  Disables the INTR_SPI_EC.WAKE_UP interrupt source. After wakeup
+ 538:Generated_Source\PSoC4/I2C_1_SPI.c ****     *  slave does not drive the MISO line and the master receives 0xFF.
+ 539:Generated_Source\PSoC4/I2C_1_SPI.c ****     *
+ 540:Generated_Source\PSoC4/I2C_1_SPI.c ****     *******************************************************************************/
+ 541:Generated_Source\PSoC4/I2C_1_SPI.c ****     void I2C_1_SpiRestoreConfig(void)
+ 542:Generated_Source\PSoC4/I2C_1_SPI.c ****     {
+ 759              		.loc 1 542 0
+ 760              		.cfi_startproc
+ 761              		@ args = 0, pretend = 0, frame = 0
+ 762              		@ frame_needed = 1, uses_anonymous_args = 0
+ 763 0000 80B5     		push	{r7, lr}
+ 764              		.cfi_def_cfa_offset 8
+ 765              		.cfi_offset 7, -8
+ 766              		.cfi_offset 14, -4
+ 767 0002 00AF     		add	r7, sp, #0
+ 768              		.cfi_def_cfa_register 7
+ 543:Generated_Source\PSoC4/I2C_1_SPI.c ****         /* Disable SPI wakeup interrupt source */
+ 544:Generated_Source\PSoC4/I2C_1_SPI.c ****         I2C_1_SetSpiExtClkInterruptMode(I2C_1_NO_INTR_SOURCES);
+ 769              		.loc 1 544 0
+ 770 0004 024B     		ldr	r3, .L49
+ 771 0006 0022     		movs	r2, #0
+ 772 0008 1A60     		str	r2, [r3]
+ 545:Generated_Source\PSoC4/I2C_1_SPI.c ****     }
+ 773              		.loc 1 545 0
+ 774 000a C046     		nop
+ 775 000c BD46     		mov	sp, r7
+ 776              		@ sp needed
+ 777 000e 80BD     		pop	{r7, pc}
+ 778              	.L50:
+ 779              		.align	2
+ 780              	.L49:
+ 781 0010 C80E2440 		.word	1076104904
+ 782              		.cfi_endproc
+ 783              	.LFE8:
+ 784              		.size	I2C_1_SpiRestoreConfig, .-I2C_1_SpiRestoreConfig
+ 785              		.text
+ 786              	.Letext0:
+ 787              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 788              		.file 3 "Generated_Source\\PSoC4\\I2C_1_SPI_UART.h"
+ 789              		.file 4 "Generated_Source\\PSoC4\\I2C_1_PVT.h"
+ 790              		.file 5 "Generated_Source\\PSoC4\\I2C_1_SPI_UART_PVT.h"
+ 791              		.section	.debug_info,"",%progbits
+ 792              	.Ldebug_info0:
+ 793 0000 B7030000 		.4byte	0x3b7
+ 794 0004 0400     		.2byte	0x4
+ 795 0006 00000000 		.4byte	.Ldebug_abbrev0
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 26
+
+
+ 796 000a 04       		.byte	0x4
+ 797 000b 01       		.uleb128 0x1
+ 798 000c 34020000 		.4byte	.LASF70
+ 799 0010 0C       		.byte	0xc
+ 800 0011 03020000 		.4byte	.LASF71
+ 801 0015 24010000 		.4byte	.LASF72
+ 802 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 803 001d 00000000 		.4byte	0
+ 804 0021 00000000 		.4byte	.Ldebug_line0
+ 805 0025 02       		.uleb128 0x2
+ 806 0026 01       		.byte	0x1
+ 807 0027 06       		.byte	0x6
+ 808 0028 D0000000 		.4byte	.LASF0
+ 809 002c 02       		.uleb128 0x2
+ 810 002d 01       		.byte	0x1
+ 811 002e 08       		.byte	0x8
+ 812 002f 81030000 		.4byte	.LASF1
+ 813 0033 02       		.uleb128 0x2
+ 814 0034 02       		.byte	0x2
+ 815 0035 05       		.byte	0x5
+ 816 0036 9C030000 		.4byte	.LASF2
+ 817 003a 02       		.uleb128 0x2
+ 818 003b 02       		.byte	0x2
+ 819 003c 07       		.byte	0x7
+ 820 003d E2010000 		.4byte	.LASF3
+ 821 0041 02       		.uleb128 0x2
+ 822 0042 04       		.byte	0x4
+ 823 0043 05       		.byte	0x5
+ 824 0044 10010000 		.4byte	.LASF4
+ 825 0048 02       		.uleb128 0x2
+ 826 0049 04       		.byte	0x4
+ 827 004a 07       		.byte	0x7
+ 828 004b C1010000 		.4byte	.LASF5
+ 829 004f 02       		.uleb128 0x2
+ 830 0050 08       		.byte	0x8
+ 831 0051 05       		.byte	0x5
+ 832 0052 C2000000 		.4byte	.LASF6
+ 833 0056 02       		.uleb128 0x2
+ 834 0057 08       		.byte	0x8
+ 835 0058 07       		.byte	0x7
+ 836 0059 6E000000 		.4byte	.LASF7
+ 837 005d 03       		.uleb128 0x3
+ 838 005e 04       		.byte	0x4
+ 839 005f 05       		.byte	0x5
+ 840 0060 696E7400 		.ascii	"int\000"
+ 841 0064 02       		.uleb128 0x2
+ 842 0065 04       		.byte	0x4
+ 843 0066 07       		.byte	0x7
+ 844 0067 B4010000 		.4byte	.LASF8
+ 845 006b 04       		.uleb128 0x4
+ 846 006c 6E010000 		.4byte	.LASF9
+ 847 0070 02       		.byte	0x2
+ 848 0071 E401     		.2byte	0x1e4
+ 849 0073 2C000000 		.4byte	0x2c
+ 850 0077 04       		.uleb128 0x4
+ 851 0078 00000000 		.4byte	.LASF10
+ 852 007c 02       		.byte	0x2
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 27
+
+
+ 853 007d E501     		.2byte	0x1e5
+ 854 007f 3A000000 		.4byte	0x3a
+ 855 0083 04       		.uleb128 0x4
+ 856 0084 AD010000 		.4byte	.LASF11
+ 857 0088 02       		.byte	0x2
+ 858 0089 E601     		.2byte	0x1e6
+ 859 008b 48000000 		.4byte	0x48
+ 860 008f 02       		.uleb128 0x2
+ 861 0090 04       		.byte	0x4
+ 862 0091 04       		.byte	0x4
+ 863 0092 47030000 		.4byte	.LASF12
+ 864 0096 02       		.uleb128 0x2
+ 865 0097 08       		.byte	0x8
+ 866 0098 04       		.byte	0x4
+ 867 0099 87010000 		.4byte	.LASF13
+ 868 009d 02       		.uleb128 0x2
+ 869 009e 01       		.byte	0x1
+ 870 009f 08       		.byte	0x8
+ 871 00a0 29040000 		.4byte	.LASF14
+ 872 00a4 05       		.uleb128 0x5
+ 873 00a5 6B000000 		.4byte	0x6b
+ 874 00a9 04       		.uleb128 0x4
+ 875 00aa E6020000 		.4byte	.LASF15
+ 876 00ae 02       		.byte	0x2
+ 877 00af 9002     		.2byte	0x290
+ 878 00b1 B5000000 		.4byte	0xb5
+ 879 00b5 05       		.uleb128 0x5
+ 880 00b6 83000000 		.4byte	0x83
+ 881 00ba 02       		.uleb128 0x2
+ 882 00bb 08       		.byte	0x8
+ 883 00bc 04       		.byte	0x4
+ 884 00bd 11030000 		.4byte	.LASF16
+ 885 00c1 02       		.uleb128 0x2
+ 886 00c2 04       		.byte	0x4
+ 887 00c3 07       		.byte	0x7
+ 888 00c4 08030000 		.4byte	.LASF17
+ 889 00c8 06       		.uleb128 0x6
+ 890 00c9 54       		.byte	0x54
+ 891 00ca 03       		.byte	0x3
+ 892 00cb 0801     		.2byte	0x108
+ 893 00cd FD010000 		.4byte	0x1fd
+ 894 00d1 07       		.uleb128 0x7
+ 895 00d2 2E040000 		.4byte	.LASF18
+ 896 00d6 03       		.byte	0x3
+ 897 00d7 0E01     		.2byte	0x10e
+ 898 00d9 83000000 		.4byte	0x83
+ 899 00dd 00       		.byte	0
+ 900 00de 07       		.uleb128 0x7
+ 901 00df D5020000 		.4byte	.LASF19
+ 902 00e3 03       		.byte	0x3
+ 903 00e4 1701     		.2byte	0x117
+ 904 00e6 83000000 		.4byte	0x83
+ 905 00ea 04       		.byte	0x4
+ 906 00eb 07       		.uleb128 0x7
+ 907 00ec FF020000 		.4byte	.LASF20
+ 908 00f0 03       		.byte	0x3
+ 909 00f1 2001     		.2byte	0x120
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 28
+
+
+ 910 00f3 83000000 		.4byte	0x83
+ 911 00f7 08       		.byte	0x8
+ 912 00f8 07       		.uleb128 0x7
+ 913 00f9 CD030000 		.4byte	.LASF21
+ 914 00fd 03       		.byte	0x3
+ 915 00fe 2401     		.2byte	0x124
+ 916 0100 83000000 		.4byte	0x83
+ 917 0104 0C       		.byte	0xc
+ 918 0105 07       		.uleb128 0x7
+ 919 0106 BA030000 		.4byte	.LASF22
+ 920 010a 03       		.byte	0x3
+ 921 010b 2801     		.2byte	0x128
+ 922 010d 83000000 		.4byte	0x83
+ 923 0111 10       		.byte	0x10
+ 924 0112 07       		.uleb128 0x7
+ 925 0113 AB040000 		.4byte	.LASF23
+ 926 0117 03       		.byte	0x3
+ 927 0118 2D01     		.2byte	0x12d
+ 928 011a 83000000 		.4byte	0x83
+ 929 011e 14       		.byte	0x14
+ 930 011f 07       		.uleb128 0x7
+ 931 0120 19010000 		.4byte	.LASF24
+ 932 0124 03       		.byte	0x3
+ 933 0125 3201     		.2byte	0x132
+ 934 0127 83000000 		.4byte	0x83
+ 935 012b 18       		.byte	0x18
+ 936 012c 07       		.uleb128 0x7
+ 937 012d 95040000 		.4byte	.LASF25
+ 938 0131 03       		.byte	0x3
+ 939 0132 3801     		.2byte	0x138
+ 940 0134 83000000 		.4byte	0x83
+ 941 0138 1C       		.byte	0x1c
+ 942 0139 07       		.uleb128 0x7
+ 943 013a A0040000 		.4byte	.LASF26
+ 944 013e 03       		.byte	0x3
+ 945 013f 3E01     		.2byte	0x13e
+ 946 0141 83000000 		.4byte	0x83
+ 947 0145 20       		.byte	0x20
+ 948 0146 07       		.uleb128 0x7
+ 949 0147 DD020000 		.4byte	.LASF27
+ 950 014b 03       		.byte	0x3
+ 951 014c 4501     		.2byte	0x145
+ 952 014e 83000000 		.4byte	0x83
+ 953 0152 24       		.byte	0x24
+ 954 0153 07       		.uleb128 0x7
+ 955 0154 C2020000 		.4byte	.LASF28
+ 956 0158 03       		.byte	0x3
+ 957 0159 4D01     		.2byte	0x14d
+ 958 015b 83000000 		.4byte	0x83
+ 959 015f 28       		.byte	0x28
+ 960 0160 07       		.uleb128 0x7
+ 961 0161 8F030000 		.4byte	.LASF29
+ 962 0165 03       		.byte	0x3
+ 963 0166 5C01     		.2byte	0x15c
+ 964 0168 83000000 		.4byte	0x83
+ 965 016c 2C       		.byte	0x2c
+ 966 016d 07       		.uleb128 0x7
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 29
+
+
+ 967 016e F0000000 		.4byte	.LASF30
+ 968 0172 03       		.byte	0x3
+ 969 0173 6701     		.2byte	0x167
+ 970 0175 FD010000 		.4byte	0x1fd
+ 971 0179 30       		.byte	0x30
+ 972 017a 07       		.uleb128 0x7
+ 973 017b 61000000 		.4byte	.LASF31
+ 974 017f 03       		.byte	0x3
+ 975 0180 7401     		.2byte	0x174
+ 976 0182 83000000 		.4byte	0x83
+ 977 0186 34       		.byte	0x34
+ 978 0187 07       		.uleb128 0x7
+ 979 0188 8C040000 		.4byte	.LASF32
+ 980 018c 03       		.byte	0x3
+ 981 018d 7C01     		.2byte	0x17c
+ 982 018f FD010000 		.4byte	0x1fd
+ 983 0193 38       		.byte	0x38
+ 984 0194 07       		.uleb128 0x7
+ 985 0195 4B040000 		.4byte	.LASF33
+ 986 0199 03       		.byte	0x3
+ 987 019a 8101     		.2byte	0x181
+ 988 019c 83000000 		.4byte	0x83
+ 989 01a0 3C       		.byte	0x3c
+ 990 01a1 07       		.uleb128 0x7
+ 991 01a2 37030000 		.4byte	.LASF34
+ 992 01a6 03       		.byte	0x3
+ 993 01a7 8E01     		.2byte	0x18e
+ 994 01a9 83000000 		.4byte	0x83
+ 995 01ad 40       		.byte	0x40
+ 996 01ae 07       		.uleb128 0x7
+ 997 01af 28030000 		.4byte	.LASF35
+ 998 01b3 03       		.byte	0x3
+ 999 01b4 9301     		.2byte	0x193
+ 1000 01b6 83000000 		.4byte	0x83
+ 1001 01ba 44       		.byte	0x44
+ 1002 01bb 07       		.uleb128 0x7
+ 1003 01bc 7C040000 		.4byte	.LASF36
+ 1004 01c0 03       		.byte	0x3
+ 1005 01c1 A001     		.2byte	0x1a0
+ 1006 01c3 83000000 		.4byte	0x83
+ 1007 01c7 48       		.byte	0x48
+ 1008 01c8 07       		.uleb128 0x7
+ 1009 01c9 BE040000 		.4byte	.LASF37
+ 1010 01cd 03       		.byte	0x3
+ 1011 01ce A501     		.2byte	0x1a5
+ 1012 01d0 83000000 		.4byte	0x83
+ 1013 01d4 4C       		.byte	0x4c
+ 1014 01d5 07       		.uleb128 0x7
+ 1015 01d6 9E010000 		.4byte	.LASF38
+ 1016 01da 03       		.byte	0x3
+ 1017 01db AF01     		.2byte	0x1af
+ 1018 01dd 6B000000 		.4byte	0x6b
+ 1019 01e1 50       		.byte	0x50
+ 1020 01e2 07       		.uleb128 0x7
+ 1021 01e3 6F030000 		.4byte	.LASF39
+ 1022 01e7 03       		.byte	0x3
+ 1023 01e8 B801     		.2byte	0x1b8
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 30
+
+
+ 1024 01ea 6B000000 		.4byte	0x6b
+ 1025 01ee 51       		.byte	0x51
+ 1026 01ef 07       		.uleb128 0x7
+ 1027 01f0 F6030000 		.4byte	.LASF40
+ 1028 01f4 03       		.byte	0x3
+ 1029 01f5 C501     		.2byte	0x1c5
+ 1030 01f7 6B000000 		.4byte	0x6b
+ 1031 01fb 52       		.byte	0x52
+ 1032 01fc 00       		.byte	0
+ 1033 01fd 08       		.uleb128 0x8
+ 1034 01fe 04       		.byte	0x4
+ 1035 01ff 6B000000 		.4byte	0x6b
+ 1036 0203 04       		.uleb128 0x4
+ 1037 0204 98000000 		.4byte	.LASF41
+ 1038 0208 03       		.byte	0x3
+ 1039 0209 C601     		.2byte	0x1c6
+ 1040 020b C8000000 		.4byte	0xc8
+ 1041 020f 09       		.uleb128 0x9
+ 1042 0210 6E040000 		.4byte	.LASF44
+ 1043 0214 01       		.byte	0x1
+ 1044 0215 4C       		.byte	0x4c
+ 1045 0216 00000000 		.4byte	.LFB2
+ 1046 021a AC020000 		.4byte	.LFE2-.LFB2
+ 1047 021e 01       		.uleb128 0x1
+ 1048 021f 9C       		.byte	0x9c
+ 1049 0220 33020000 		.4byte	0x233
+ 1050 0224 0A       		.uleb128 0xa
+ 1051 0225 33040000 		.4byte	.LASF46
+ 1052 0229 01       		.byte	0x1
+ 1053 022a 4C       		.byte	0x4c
+ 1054 022b 33020000 		.4byte	0x233
+ 1055 022f 02       		.uleb128 0x2
+ 1056 0230 91       		.byte	0x91
+ 1057 0231 74       		.sleb128 -12
+ 1058 0232 00       		.byte	0
+ 1059 0233 08       		.uleb128 0x8
+ 1060 0234 04       		.byte	0x4
+ 1061 0235 39020000 		.4byte	0x239
+ 1062 0239 0B       		.uleb128 0xb
+ 1063 023a 03020000 		.4byte	0x203
+ 1064 023e 0C       		.uleb128 0xc
+ 1065 023f AE000000 		.4byte	.LASF42
+ 1066 0243 01       		.byte	0x1
+ 1067 0244 E7       		.byte	0xe7
+ 1068 0245 00000000 		.4byte	.LFB3
+ 1069 0249 24000000 		.4byte	.LFE3-.LFB3
+ 1070 024d 01       		.uleb128 0x1
+ 1071 024e 9C       		.byte	0x9c
+ 1072 024f 0D       		.uleb128 0xd
+ 1073 0250 26020000 		.4byte	.LASF43
+ 1074 0254 01       		.byte	0x1
+ 1075 0255 3C01     		.2byte	0x13c
+ 1076 0257 00000000 		.4byte	.LFB4
+ 1077 025b 40000000 		.4byte	.LFE4-.LFB4
+ 1078 025f 01       		.uleb128 0x1
+ 1079 0260 9C       		.byte	0x9c
+ 1080 0261 0E       		.uleb128 0xe
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 31
+
+
+ 1081 0262 D8030000 		.4byte	.LASF45
+ 1082 0266 01       		.byte	0x1
+ 1083 0267 CB01     		.2byte	0x1cb
+ 1084 0269 00000000 		.4byte	.LFB5
+ 1085 026d 3C000000 		.4byte	.LFE5-.LFB5
+ 1086 0271 01       		.uleb128 0x1
+ 1087 0272 9C       		.byte	0x9c
+ 1088 0273 96020000 		.4byte	0x296
+ 1089 0277 0F       		.uleb128 0xf
+ 1090 0278 1D040000 		.4byte	.LASF47
+ 1091 027c 01       		.byte	0x1
+ 1092 027d CB01     		.2byte	0x1cb
+ 1093 027f 83000000 		.4byte	0x83
+ 1094 0283 02       		.uleb128 0x2
+ 1095 0284 91       		.byte	0x91
+ 1096 0285 6C       		.sleb128 -20
+ 1097 0286 10       		.uleb128 0x10
+ 1098 0287 66010000 		.4byte	.LASF50
+ 1099 028b 01       		.byte	0x1
+ 1100 028c CD01     		.2byte	0x1cd
+ 1101 028e 83000000 		.4byte	0x83
+ 1102 0292 02       		.uleb128 0x2
+ 1103 0293 91       		.byte	0x91
+ 1104 0294 74       		.sleb128 -12
+ 1105 0295 00       		.byte	0
+ 1106 0296 0E       		.uleb128 0xe
+ 1107 0297 32000000 		.4byte	.LASF48
+ 1108 029b 01       		.byte	0x1
+ 1109 029c F101     		.2byte	0x1f1
+ 1110 029e 00000000 		.4byte	.LFB6
+ 1111 02a2 4C000000 		.4byte	.LFE6-.LFB6
+ 1112 02a6 01       		.uleb128 0x1
+ 1113 02a7 9C       		.byte	0x9c
+ 1114 02a8 DA020000 		.4byte	0x2da
+ 1115 02ac 0F       		.uleb128 0xf
+ 1116 02ad 1D040000 		.4byte	.LASF47
+ 1117 02b1 01       		.byte	0x1
+ 1118 02b2 F101     		.2byte	0x1f1
+ 1119 02b4 83000000 		.4byte	0x83
+ 1120 02b8 02       		.uleb128 0x2
+ 1121 02b9 91       		.byte	0x91
+ 1122 02ba 6C       		.sleb128 -20
+ 1123 02bb 0F       		.uleb128 0xf
+ 1124 02bc 01040000 		.4byte	.LASF49
+ 1125 02c0 01       		.byte	0x1
+ 1126 02c1 F101     		.2byte	0x1f1
+ 1127 02c3 83000000 		.4byte	0x83
+ 1128 02c7 02       		.uleb128 0x2
+ 1129 02c8 91       		.byte	0x91
+ 1130 02c9 68       		.sleb128 -24
+ 1131 02ca 10       		.uleb128 0x10
+ 1132 02cb 1D030000 		.4byte	.LASF51
+ 1133 02cf 01       		.byte	0x1
+ 1134 02d0 F301     		.2byte	0x1f3
+ 1135 02d2 83000000 		.4byte	0x83
+ 1136 02d6 02       		.uleb128 0x2
+ 1137 02d7 91       		.byte	0x91
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 32
+
+
+ 1138 02d8 74       		.sleb128 -12
+ 1139 02d9 00       		.byte	0
+ 1140 02da 0D       		.uleb128 0xd
+ 1141 02db A6030000 		.4byte	.LASF52
+ 1142 02df 01       		.byte	0x1
+ 1143 02e0 0D02     		.2byte	0x20d
+ 1144 02e2 00000000 		.4byte	.LFB7
+ 1145 02e6 20000000 		.4byte	.LFE7-.LFB7
+ 1146 02ea 01       		.uleb128 0x1
+ 1147 02eb 9C       		.byte	0x9c
+ 1148 02ec 0D       		.uleb128 0xd
+ 1149 02ed 1B000000 		.4byte	.LASF53
+ 1150 02f1 01       		.byte	0x1
+ 1151 02f2 1D02     		.2byte	0x21d
+ 1152 02f4 00000000 		.4byte	.LFB8
+ 1153 02f8 14000000 		.4byte	.LFE8-.LFB8
+ 1154 02fc 01       		.uleb128 0x1
+ 1155 02fd 9C       		.byte	0x9c
+ 1156 02fe 11       		.uleb128 0x11
+ 1157 02ff F5010000 		.4byte	.LASF54
+ 1158 0303 04       		.byte	0x4
+ 1159 0304 43       		.byte	0x43
+ 1160 0305 6B000000 		.4byte	0x6b
+ 1161 0309 11       		.uleb128 0x11
+ 1162 030a 07000000 		.4byte	.LASF55
+ 1163 030e 04       		.byte	0x4
+ 1164 030f 44       		.byte	0x44
+ 1165 0310 6B000000 		.4byte	0x6b
+ 1166 0314 11       		.uleb128 0x11
+ 1167 0315 DC000000 		.4byte	.LASF56
+ 1168 0319 04       		.byte	0x4
+ 1169 031a 45       		.byte	0x45
+ 1170 031b 6B000000 		.4byte	0x6b
+ 1171 031f 11       		.uleb128 0x11
+ 1172 0320 D3010000 		.4byte	.LASF57
+ 1173 0324 04       		.byte	0x4
+ 1174 0325 4C       		.byte	0x4c
+ 1175 0326 2A030000 		.4byte	0x32a
+ 1176 032a 08       		.uleb128 0x8
+ 1177 032b 04       		.byte	0x4
+ 1178 032c A4000000 		.4byte	0xa4
+ 1179 0330 11       		.uleb128 0x11
+ 1180 0331 4D030000 		.4byte	.LASF58
+ 1181 0335 04       		.byte	0x4
+ 1182 0336 4D       		.byte	0x4d
+ 1183 0337 6B000000 		.4byte	0x6b
+ 1184 033b 11       		.uleb128 0x11
+ 1185 033c 85000000 		.4byte	.LASF59
+ 1186 0340 04       		.byte	0x4
+ 1187 0341 4E       		.byte	0x4e
+ 1188 0342 83000000 		.4byte	0x83
+ 1189 0346 11       		.uleb128 0x11
+ 1190 0347 52000000 		.4byte	.LASF60
+ 1191 034b 04       		.byte	0x4
+ 1192 034c 50       		.byte	0x50
+ 1193 034d 2A030000 		.4byte	0x32a
+ 1194 0351 11       		.uleb128 0x11
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 33
+
+
+ 1195 0352 5E030000 		.4byte	.LASF61
+ 1196 0356 04       		.byte	0x4
+ 1197 0357 51       		.byte	0x51
+ 1198 0358 6B000000 		.4byte	0x6b
+ 1199 035c 11       		.uleb128 0x11
+ 1200 035d 5B040000 		.4byte	.LASF62
+ 1201 0361 04       		.byte	0x4
+ 1202 0362 52       		.byte	0x52
+ 1203 0363 83000000 		.4byte	0x83
+ 1204 0367 11       		.uleb128 0x11
+ 1205 0368 3A040000 		.4byte	.LASF63
+ 1206 036c 04       		.byte	0x4
+ 1207 036d 5B       		.byte	0x5b
+ 1208 036e 77000000 		.4byte	0x77
+ 1209 0372 12       		.uleb128 0x12
+ 1210 0373 8E010000 		.4byte	.LASF64
+ 1211 0377 01       		.byte	0x1
+ 1212 0378 1C       		.byte	0x1c
+ 1213 0379 39020000 		.4byte	0x239
+ 1214 037d 05       		.uleb128 0x5
+ 1215 037e 03       		.byte	0x3
+ 1216 037f 00000000 		.4byte	I2C_1_configSpi
+ 1217 0383 11       		.uleb128 0x11
+ 1218 0384 0A040000 		.4byte	.LASF65
+ 1219 0388 05       		.byte	0x5
+ 1220 0389 1F       		.byte	0x1f
+ 1221 038a B5000000 		.4byte	0xb5
+ 1222 038e 11       		.uleb128 0x11
+ 1223 038f 74010000 		.4byte	.LASF66
+ 1224 0393 05       		.byte	0x5
+ 1225 0394 20       		.byte	0x20
+ 1226 0395 B5000000 		.4byte	0xb5
+ 1227 0399 11       		.uleb128 0x11
+ 1228 039a F9000000 		.4byte	.LASF67
+ 1229 039e 05       		.byte	0x5
+ 1230 039f 2A       		.byte	0x2a
+ 1231 03a0 A4000000 		.4byte	0xa4
+ 1232 03a4 11       		.uleb128 0x11
+ 1233 03a5 EC020000 		.4byte	.LASF68
+ 1234 03a9 05       		.byte	0x5
+ 1235 03aa 2F       		.byte	0x2f
+ 1236 03ab B5000000 		.4byte	0xb5
+ 1237 03af 11       		.uleb128 0x11
+ 1238 03b0 CD040000 		.4byte	.LASF69
+ 1239 03b4 05       		.byte	0x5
+ 1240 03b5 30       		.byte	0x30
+ 1241 03b6 B5000000 		.4byte	0xb5
+ 1242 03ba 00       		.byte	0
+ 1243              		.section	.debug_abbrev,"",%progbits
+ 1244              	.Ldebug_abbrev0:
+ 1245 0000 01       		.uleb128 0x1
+ 1246 0001 11       		.uleb128 0x11
+ 1247 0002 01       		.byte	0x1
+ 1248 0003 25       		.uleb128 0x25
+ 1249 0004 0E       		.uleb128 0xe
+ 1250 0005 13       		.uleb128 0x13
+ 1251 0006 0B       		.uleb128 0xb
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 34
+
+
+ 1252 0007 03       		.uleb128 0x3
+ 1253 0008 0E       		.uleb128 0xe
+ 1254 0009 1B       		.uleb128 0x1b
+ 1255 000a 0E       		.uleb128 0xe
+ 1256 000b 55       		.uleb128 0x55
+ 1257 000c 17       		.uleb128 0x17
+ 1258 000d 11       		.uleb128 0x11
+ 1259 000e 01       		.uleb128 0x1
+ 1260 000f 10       		.uleb128 0x10
+ 1261 0010 17       		.uleb128 0x17
+ 1262 0011 00       		.byte	0
+ 1263 0012 00       		.byte	0
+ 1264 0013 02       		.uleb128 0x2
+ 1265 0014 24       		.uleb128 0x24
+ 1266 0015 00       		.byte	0
+ 1267 0016 0B       		.uleb128 0xb
+ 1268 0017 0B       		.uleb128 0xb
+ 1269 0018 3E       		.uleb128 0x3e
+ 1270 0019 0B       		.uleb128 0xb
+ 1271 001a 03       		.uleb128 0x3
+ 1272 001b 0E       		.uleb128 0xe
+ 1273 001c 00       		.byte	0
+ 1274 001d 00       		.byte	0
+ 1275 001e 03       		.uleb128 0x3
+ 1276 001f 24       		.uleb128 0x24
+ 1277 0020 00       		.byte	0
+ 1278 0021 0B       		.uleb128 0xb
+ 1279 0022 0B       		.uleb128 0xb
+ 1280 0023 3E       		.uleb128 0x3e
+ 1281 0024 0B       		.uleb128 0xb
+ 1282 0025 03       		.uleb128 0x3
+ 1283 0026 08       		.uleb128 0x8
+ 1284 0027 00       		.byte	0
+ 1285 0028 00       		.byte	0
+ 1286 0029 04       		.uleb128 0x4
+ 1287 002a 16       		.uleb128 0x16
+ 1288 002b 00       		.byte	0
+ 1289 002c 03       		.uleb128 0x3
+ 1290 002d 0E       		.uleb128 0xe
+ 1291 002e 3A       		.uleb128 0x3a
+ 1292 002f 0B       		.uleb128 0xb
+ 1293 0030 3B       		.uleb128 0x3b
+ 1294 0031 05       		.uleb128 0x5
+ 1295 0032 49       		.uleb128 0x49
+ 1296 0033 13       		.uleb128 0x13
+ 1297 0034 00       		.byte	0
+ 1298 0035 00       		.byte	0
+ 1299 0036 05       		.uleb128 0x5
+ 1300 0037 35       		.uleb128 0x35
+ 1301 0038 00       		.byte	0
+ 1302 0039 49       		.uleb128 0x49
+ 1303 003a 13       		.uleb128 0x13
+ 1304 003b 00       		.byte	0
+ 1305 003c 00       		.byte	0
+ 1306 003d 06       		.uleb128 0x6
+ 1307 003e 13       		.uleb128 0x13
+ 1308 003f 01       		.byte	0x1
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 35
+
+
+ 1309 0040 0B       		.uleb128 0xb
+ 1310 0041 0B       		.uleb128 0xb
+ 1311 0042 3A       		.uleb128 0x3a
+ 1312 0043 0B       		.uleb128 0xb
+ 1313 0044 3B       		.uleb128 0x3b
+ 1314 0045 05       		.uleb128 0x5
+ 1315 0046 01       		.uleb128 0x1
+ 1316 0047 13       		.uleb128 0x13
+ 1317 0048 00       		.byte	0
+ 1318 0049 00       		.byte	0
+ 1319 004a 07       		.uleb128 0x7
+ 1320 004b 0D       		.uleb128 0xd
+ 1321 004c 00       		.byte	0
+ 1322 004d 03       		.uleb128 0x3
+ 1323 004e 0E       		.uleb128 0xe
+ 1324 004f 3A       		.uleb128 0x3a
+ 1325 0050 0B       		.uleb128 0xb
+ 1326 0051 3B       		.uleb128 0x3b
+ 1327 0052 05       		.uleb128 0x5
+ 1328 0053 49       		.uleb128 0x49
+ 1329 0054 13       		.uleb128 0x13
+ 1330 0055 38       		.uleb128 0x38
+ 1331 0056 0B       		.uleb128 0xb
+ 1332 0057 00       		.byte	0
+ 1333 0058 00       		.byte	0
+ 1334 0059 08       		.uleb128 0x8
+ 1335 005a 0F       		.uleb128 0xf
+ 1336 005b 00       		.byte	0
+ 1337 005c 0B       		.uleb128 0xb
+ 1338 005d 0B       		.uleb128 0xb
+ 1339 005e 49       		.uleb128 0x49
+ 1340 005f 13       		.uleb128 0x13
+ 1341 0060 00       		.byte	0
+ 1342 0061 00       		.byte	0
+ 1343 0062 09       		.uleb128 0x9
+ 1344 0063 2E       		.uleb128 0x2e
+ 1345 0064 01       		.byte	0x1
+ 1346 0065 3F       		.uleb128 0x3f
+ 1347 0066 19       		.uleb128 0x19
+ 1348 0067 03       		.uleb128 0x3
+ 1349 0068 0E       		.uleb128 0xe
+ 1350 0069 3A       		.uleb128 0x3a
+ 1351 006a 0B       		.uleb128 0xb
+ 1352 006b 3B       		.uleb128 0x3b
+ 1353 006c 0B       		.uleb128 0xb
+ 1354 006d 27       		.uleb128 0x27
+ 1355 006e 19       		.uleb128 0x19
+ 1356 006f 11       		.uleb128 0x11
+ 1357 0070 01       		.uleb128 0x1
+ 1358 0071 12       		.uleb128 0x12
+ 1359 0072 06       		.uleb128 0x6
+ 1360 0073 40       		.uleb128 0x40
+ 1361 0074 18       		.uleb128 0x18
+ 1362 0075 9642     		.uleb128 0x2116
+ 1363 0077 19       		.uleb128 0x19
+ 1364 0078 01       		.uleb128 0x1
+ 1365 0079 13       		.uleb128 0x13
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 36
+
+
+ 1366 007a 00       		.byte	0
+ 1367 007b 00       		.byte	0
+ 1368 007c 0A       		.uleb128 0xa
+ 1369 007d 05       		.uleb128 0x5
+ 1370 007e 00       		.byte	0
+ 1371 007f 03       		.uleb128 0x3
+ 1372 0080 0E       		.uleb128 0xe
+ 1373 0081 3A       		.uleb128 0x3a
+ 1374 0082 0B       		.uleb128 0xb
+ 1375 0083 3B       		.uleb128 0x3b
+ 1376 0084 0B       		.uleb128 0xb
+ 1377 0085 49       		.uleb128 0x49
+ 1378 0086 13       		.uleb128 0x13
+ 1379 0087 02       		.uleb128 0x2
+ 1380 0088 18       		.uleb128 0x18
+ 1381 0089 00       		.byte	0
+ 1382 008a 00       		.byte	0
+ 1383 008b 0B       		.uleb128 0xb
+ 1384 008c 26       		.uleb128 0x26
+ 1385 008d 00       		.byte	0
+ 1386 008e 49       		.uleb128 0x49
+ 1387 008f 13       		.uleb128 0x13
+ 1388 0090 00       		.byte	0
+ 1389 0091 00       		.byte	0
+ 1390 0092 0C       		.uleb128 0xc
+ 1391 0093 2E       		.uleb128 0x2e
+ 1392 0094 00       		.byte	0
+ 1393 0095 3F       		.uleb128 0x3f
+ 1394 0096 19       		.uleb128 0x19
+ 1395 0097 03       		.uleb128 0x3
+ 1396 0098 0E       		.uleb128 0xe
+ 1397 0099 3A       		.uleb128 0x3a
+ 1398 009a 0B       		.uleb128 0xb
+ 1399 009b 3B       		.uleb128 0x3b
+ 1400 009c 0B       		.uleb128 0xb
+ 1401 009d 27       		.uleb128 0x27
+ 1402 009e 19       		.uleb128 0x19
+ 1403 009f 11       		.uleb128 0x11
+ 1404 00a0 01       		.uleb128 0x1
+ 1405 00a1 12       		.uleb128 0x12
+ 1406 00a2 06       		.uleb128 0x6
+ 1407 00a3 40       		.uleb128 0x40
+ 1408 00a4 18       		.uleb128 0x18
+ 1409 00a5 9742     		.uleb128 0x2117
+ 1410 00a7 19       		.uleb128 0x19
+ 1411 00a8 00       		.byte	0
+ 1412 00a9 00       		.byte	0
+ 1413 00aa 0D       		.uleb128 0xd
+ 1414 00ab 2E       		.uleb128 0x2e
+ 1415 00ac 00       		.byte	0
+ 1416 00ad 3F       		.uleb128 0x3f
+ 1417 00ae 19       		.uleb128 0x19
+ 1418 00af 03       		.uleb128 0x3
+ 1419 00b0 0E       		.uleb128 0xe
+ 1420 00b1 3A       		.uleb128 0x3a
+ 1421 00b2 0B       		.uleb128 0xb
+ 1422 00b3 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 37
+
+
+ 1423 00b4 05       		.uleb128 0x5
+ 1424 00b5 27       		.uleb128 0x27
+ 1425 00b6 19       		.uleb128 0x19
+ 1426 00b7 11       		.uleb128 0x11
+ 1427 00b8 01       		.uleb128 0x1
+ 1428 00b9 12       		.uleb128 0x12
+ 1429 00ba 06       		.uleb128 0x6
+ 1430 00bb 40       		.uleb128 0x40
+ 1431 00bc 18       		.uleb128 0x18
+ 1432 00bd 9742     		.uleb128 0x2117
+ 1433 00bf 19       		.uleb128 0x19
+ 1434 00c0 00       		.byte	0
+ 1435 00c1 00       		.byte	0
+ 1436 00c2 0E       		.uleb128 0xe
+ 1437 00c3 2E       		.uleb128 0x2e
+ 1438 00c4 01       		.byte	0x1
+ 1439 00c5 3F       		.uleb128 0x3f
+ 1440 00c6 19       		.uleb128 0x19
+ 1441 00c7 03       		.uleb128 0x3
+ 1442 00c8 0E       		.uleb128 0xe
+ 1443 00c9 3A       		.uleb128 0x3a
+ 1444 00ca 0B       		.uleb128 0xb
+ 1445 00cb 3B       		.uleb128 0x3b
+ 1446 00cc 05       		.uleb128 0x5
+ 1447 00cd 27       		.uleb128 0x27
+ 1448 00ce 19       		.uleb128 0x19
+ 1449 00cf 11       		.uleb128 0x11
+ 1450 00d0 01       		.uleb128 0x1
+ 1451 00d1 12       		.uleb128 0x12
+ 1452 00d2 06       		.uleb128 0x6
+ 1453 00d3 40       		.uleb128 0x40
+ 1454 00d4 18       		.uleb128 0x18
+ 1455 00d5 9742     		.uleb128 0x2117
+ 1456 00d7 19       		.uleb128 0x19
+ 1457 00d8 01       		.uleb128 0x1
+ 1458 00d9 13       		.uleb128 0x13
+ 1459 00da 00       		.byte	0
+ 1460 00db 00       		.byte	0
+ 1461 00dc 0F       		.uleb128 0xf
+ 1462 00dd 05       		.uleb128 0x5
+ 1463 00de 00       		.byte	0
+ 1464 00df 03       		.uleb128 0x3
+ 1465 00e0 0E       		.uleb128 0xe
+ 1466 00e1 3A       		.uleb128 0x3a
+ 1467 00e2 0B       		.uleb128 0xb
+ 1468 00e3 3B       		.uleb128 0x3b
+ 1469 00e4 05       		.uleb128 0x5
+ 1470 00e5 49       		.uleb128 0x49
+ 1471 00e6 13       		.uleb128 0x13
+ 1472 00e7 02       		.uleb128 0x2
+ 1473 00e8 18       		.uleb128 0x18
+ 1474 00e9 00       		.byte	0
+ 1475 00ea 00       		.byte	0
+ 1476 00eb 10       		.uleb128 0x10
+ 1477 00ec 34       		.uleb128 0x34
+ 1478 00ed 00       		.byte	0
+ 1479 00ee 03       		.uleb128 0x3
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 38
+
+
+ 1480 00ef 0E       		.uleb128 0xe
+ 1481 00f0 3A       		.uleb128 0x3a
+ 1482 00f1 0B       		.uleb128 0xb
+ 1483 00f2 3B       		.uleb128 0x3b
+ 1484 00f3 05       		.uleb128 0x5
+ 1485 00f4 49       		.uleb128 0x49
+ 1486 00f5 13       		.uleb128 0x13
+ 1487 00f6 02       		.uleb128 0x2
+ 1488 00f7 18       		.uleb128 0x18
+ 1489 00f8 00       		.byte	0
+ 1490 00f9 00       		.byte	0
+ 1491 00fa 11       		.uleb128 0x11
+ 1492 00fb 34       		.uleb128 0x34
+ 1493 00fc 00       		.byte	0
+ 1494 00fd 03       		.uleb128 0x3
+ 1495 00fe 0E       		.uleb128 0xe
+ 1496 00ff 3A       		.uleb128 0x3a
+ 1497 0100 0B       		.uleb128 0xb
+ 1498 0101 3B       		.uleb128 0x3b
+ 1499 0102 0B       		.uleb128 0xb
+ 1500 0103 49       		.uleb128 0x49
+ 1501 0104 13       		.uleb128 0x13
+ 1502 0105 3F       		.uleb128 0x3f
+ 1503 0106 19       		.uleb128 0x19
+ 1504 0107 3C       		.uleb128 0x3c
+ 1505 0108 19       		.uleb128 0x19
+ 1506 0109 00       		.byte	0
+ 1507 010a 00       		.byte	0
+ 1508 010b 12       		.uleb128 0x12
+ 1509 010c 34       		.uleb128 0x34
+ 1510 010d 00       		.byte	0
+ 1511 010e 03       		.uleb128 0x3
+ 1512 010f 0E       		.uleb128 0xe
+ 1513 0110 3A       		.uleb128 0x3a
+ 1514 0111 0B       		.uleb128 0xb
+ 1515 0112 3B       		.uleb128 0x3b
+ 1516 0113 0B       		.uleb128 0xb
+ 1517 0114 49       		.uleb128 0x49
+ 1518 0115 13       		.uleb128 0x13
+ 1519 0116 3F       		.uleb128 0x3f
+ 1520 0117 19       		.uleb128 0x19
+ 1521 0118 02       		.uleb128 0x2
+ 1522 0119 18       		.uleb128 0x18
+ 1523 011a 00       		.byte	0
+ 1524 011b 00       		.byte	0
+ 1525 011c 00       		.byte	0
+ 1526              		.section	.debug_aranges,"",%progbits
+ 1527 0000 4C000000 		.4byte	0x4c
+ 1528 0004 0200     		.2byte	0x2
+ 1529 0006 00000000 		.4byte	.Ldebug_info0
+ 1530 000a 04       		.byte	0x4
+ 1531 000b 00       		.byte	0
+ 1532 000c 0000     		.2byte	0
+ 1533 000e 0000     		.2byte	0
+ 1534 0010 00000000 		.4byte	.LFB2
+ 1535 0014 AC020000 		.4byte	.LFE2-.LFB2
+ 1536 0018 00000000 		.4byte	.LFB3
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 39
+
+
+ 1537 001c 24000000 		.4byte	.LFE3-.LFB3
+ 1538 0020 00000000 		.4byte	.LFB4
+ 1539 0024 40000000 		.4byte	.LFE4-.LFB4
+ 1540 0028 00000000 		.4byte	.LFB5
+ 1541 002c 3C000000 		.4byte	.LFE5-.LFB5
+ 1542 0030 00000000 		.4byte	.LFB6
+ 1543 0034 4C000000 		.4byte	.LFE6-.LFB6
+ 1544 0038 00000000 		.4byte	.LFB7
+ 1545 003c 20000000 		.4byte	.LFE7-.LFB7
+ 1546 0040 00000000 		.4byte	.LFB8
+ 1547 0044 14000000 		.4byte	.LFE8-.LFB8
+ 1548 0048 00000000 		.4byte	0
+ 1549 004c 00000000 		.4byte	0
+ 1550              		.section	.debug_ranges,"",%progbits
+ 1551              	.Ldebug_ranges0:
+ 1552 0000 00000000 		.4byte	.LFB2
+ 1553 0004 AC020000 		.4byte	.LFE2
+ 1554 0008 00000000 		.4byte	.LFB3
+ 1555 000c 24000000 		.4byte	.LFE3
+ 1556 0010 00000000 		.4byte	.LFB4
+ 1557 0014 40000000 		.4byte	.LFE4
+ 1558 0018 00000000 		.4byte	.LFB5
+ 1559 001c 3C000000 		.4byte	.LFE5
+ 1560 0020 00000000 		.4byte	.LFB6
+ 1561 0024 4C000000 		.4byte	.LFE6
+ 1562 0028 00000000 		.4byte	.LFB7
+ 1563 002c 20000000 		.4byte	.LFE7
+ 1564 0030 00000000 		.4byte	.LFB8
+ 1565 0034 14000000 		.4byte	.LFE8
+ 1566 0038 00000000 		.4byte	0
+ 1567 003c 00000000 		.4byte	0
+ 1568              		.section	.debug_line,"",%progbits
+ 1569              	.Ldebug_line0:
+ 1570 0000 E8010000 		.section	.debug_str,"MS",%progbits,1
+ 1570      02008100 
+ 1570      00000201 
+ 1570      FB0E0D00 
+ 1570      01010101 
+ 1571              	.LASF10:
+ 1572 0000 75696E74 		.ascii	"uint16\000"
+ 1572      313600
+ 1573              	.LASF55:
+ 1574 0007 4932435F 		.ascii	"I2C_1_scbEnableWake\000"
+ 1574      315F7363 
+ 1574      62456E61 
+ 1574      626C6557 
+ 1574      616B6500 
+ 1575              	.LASF53:
+ 1576 001b 4932435F 		.ascii	"I2C_1_SpiRestoreConfig\000"
+ 1576      315F5370 
+ 1576      69526573 
+ 1576      746F7265 
+ 1576      436F6E66 
+ 1577              	.LASF48:
+ 1578 0032 4932435F 		.ascii	"I2C_1_SpiSetSlaveSelectPolarity\000"
+ 1578      315F5370 
+ 1578      69536574 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 40
+
+
+ 1578      536C6176 
+ 1578      6553656C 
+ 1579              	.LASF60:
+ 1580 0052 4932435F 		.ascii	"I2C_1_txBuffer\000"
+ 1580      315F7478 
+ 1580      42756666 
+ 1580      657200
+ 1581              	.LASF31:
+ 1582 0061 74784275 		.ascii	"txBufferSize\000"
+ 1582      66666572 
+ 1582      53697A65 
+ 1582      00
+ 1583              	.LASF7:
+ 1584 006e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1584      206C6F6E 
+ 1584      6720756E 
+ 1584      7369676E 
+ 1584      65642069 
+ 1585              	.LASF59:
+ 1586 0085 4932435F 		.ascii	"I2C_1_rxBufferSize\000"
+ 1586      315F7278 
+ 1586      42756666 
+ 1586      65725369 
+ 1586      7A6500
+ 1587              	.LASF41:
+ 1588 0098 4932435F 		.ascii	"I2C_1_SPI_INIT_STRUCT\000"
+ 1588      315F5350 
+ 1588      495F494E 
+ 1588      49545F53 
+ 1588      54525543 
+ 1589              	.LASF42:
+ 1590 00ae 4932435F 		.ascii	"I2C_1_SpiPostEnable\000"
+ 1590      315F5370 
+ 1590      69506F73 
+ 1590      74456E61 
+ 1590      626C6500 
+ 1591              	.LASF6:
+ 1592 00c2 6C6F6E67 		.ascii	"long long int\000"
+ 1592      206C6F6E 
+ 1592      6720696E 
+ 1592      7400
+ 1593              	.LASF0:
+ 1594 00d0 7369676E 		.ascii	"signed char\000"
+ 1594      65642063 
+ 1594      68617200 
+ 1595              	.LASF56:
+ 1596 00dc 4932435F 		.ascii	"I2C_1_scbEnableIntr\000"
+ 1596      315F7363 
+ 1596      62456E61 
+ 1596      626C6549 
+ 1596      6E747200 
+ 1597              	.LASF30:
+ 1598 00f0 72784275 		.ascii	"rxBuffer\000"
+ 1598      66666572 
+ 1598      00
+ 1599              	.LASF67:
+ 1600 00f9 4932435F 		.ascii	"I2C_1_rxBufferOverflow\000"
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 41
+
+
+ 1600      315F7278 
+ 1600      42756666 
+ 1600      65724F76 
+ 1600      6572666C 
+ 1601              	.LASF4:
+ 1602 0110 6C6F6E67 		.ascii	"long int\000"
+ 1602      20696E74 
+ 1602      00
+ 1603              	.LASF24:
+ 1604 0119 656E6162 		.ascii	"enableWake\000"
+ 1604      6C655761 
+ 1604      6B6500
+ 1605              	.LASF72:
+ 1606 0124 433A5C55 		.ascii	"C:\\Users\\sergio\\Documents\\PSoC Creator\\Thermos"
+ 1606      73657273 
+ 1606      5C736572 
+ 1606      67696F5C 
+ 1606      446F6375 
+ 1607 0152 7461745F 		.ascii	"tat_test\\test.cydsn\000"
+ 1607      74657374 
+ 1607      5C746573 
+ 1607      742E6379 
+ 1607      64736E00 
+ 1608              	.LASF50:
+ 1609 0166 73706943 		.ascii	"spiCtrl\000"
+ 1609      74726C00 
+ 1610              	.LASF9:
+ 1611 016e 75696E74 		.ascii	"uint8\000"
+ 1611      3800
+ 1612              	.LASF66:
+ 1613 0174 4932435F 		.ascii	"I2C_1_rxBufferTail\000"
+ 1613      315F7278 
+ 1613      42756666 
+ 1613      65725461 
+ 1613      696C00
+ 1614              	.LASF13:
+ 1615 0187 646F7562 		.ascii	"double\000"
+ 1615      6C6500
+ 1616              	.LASF64:
+ 1617 018e 4932435F 		.ascii	"I2C_1_configSpi\000"
+ 1617      315F636F 
+ 1617      6E666967 
+ 1617      53706900 
+ 1618              	.LASF38:
+ 1619 019e 656E6162 		.ascii	"enableByteMode\000"
+ 1619      6C654279 
+ 1619      74654D6F 
+ 1619      646500
+ 1620              	.LASF11:
+ 1621 01ad 75696E74 		.ascii	"uint32\000"
+ 1621      333200
+ 1622              	.LASF8:
+ 1623 01b4 756E7369 		.ascii	"unsigned int\000"
+ 1623      676E6564 
+ 1623      20696E74 
+ 1623      00
+ 1624              	.LASF5:
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 42
+
+
+ 1625 01c1 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1625      20756E73 
+ 1625      69676E65 
+ 1625      6420696E 
+ 1625      7400
+ 1626              	.LASF57:
+ 1627 01d3 4932435F 		.ascii	"I2C_1_rxBuffer\000"
+ 1627      315F7278 
+ 1627      42756666 
+ 1627      657200
+ 1628              	.LASF3:
+ 1629 01e2 73686F72 		.ascii	"short unsigned int\000"
+ 1629      7420756E 
+ 1629      7369676E 
+ 1629      65642069 
+ 1629      6E7400
+ 1630              	.LASF54:
+ 1631 01f5 4932435F 		.ascii	"I2C_1_scbMode\000"
+ 1631      315F7363 
+ 1631      624D6F64 
+ 1631      6500
+ 1632              	.LASF71:
+ 1633 0203 47656E65 		.ascii	"Generated_Source\\PSoC4\\I2C_1_SPI.c\000"
+ 1633      72617465 
+ 1633      645F536F 
+ 1633      75726365 
+ 1633      5C50536F 
+ 1634              	.LASF43:
+ 1635 0226 4932435F 		.ascii	"I2C_1_SpiStop\000"
+ 1635      315F5370 
+ 1635      6953746F 
+ 1635      7000
+ 1636              	.LASF70:
+ 1637 0234 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1637      43313120 
+ 1637      352E342E 
+ 1637      31203230 
+ 1637      31363036 
+ 1638 0267 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1638      20726576 
+ 1638      6973696F 
+ 1638      6E203233 
+ 1638      37373135 
+ 1639 029a 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1639      66756E63 
+ 1639      74696F6E 
+ 1639      2D736563 
+ 1639      74696F6E 
+ 1640              	.LASF28:
+ 1641 02c2 7472616E 		.ascii	"transferSeperation\000"
+ 1641      73666572 
+ 1641      53657065 
+ 1641      72617469 
+ 1641      6F6E00
+ 1642              	.LASF19:
+ 1643 02d5 7375626D 		.ascii	"submode\000"
+ 1643      6F646500 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 43
+
+
+ 1644              	.LASF27:
+ 1645 02dd 6269744F 		.ascii	"bitOrder\000"
+ 1645      72646572 
+ 1645      00
+ 1646              	.LASF15:
+ 1647 02e6 72656733 		.ascii	"reg32\000"
+ 1647      3200
+ 1648              	.LASF68:
+ 1649 02ec 4932435F 		.ascii	"I2C_1_txBufferHead\000"
+ 1649      315F7478 
+ 1649      42756666 
+ 1649      65724865 
+ 1649      616400
+ 1650              	.LASF20:
+ 1651 02ff 73636C6B 		.ascii	"sclkMode\000"
+ 1651      4D6F6465 
+ 1651      00
+ 1652              	.LASF17:
+ 1653 0308 73697A65 		.ascii	"sizetype\000"
+ 1653      74797065 
+ 1653      00
+ 1654              	.LASF16:
+ 1655 0311 6C6F6E67 		.ascii	"long double\000"
+ 1655      20646F75 
+ 1655      626C6500 
+ 1656              	.LASF51:
+ 1657 031d 7373506F 		.ascii	"ssPolarity\000"
+ 1657      6C617269 
+ 1657      747900
+ 1658              	.LASF35:
+ 1659 0328 72785472 		.ascii	"rxTriggerLevel\000"
+ 1659      69676765 
+ 1659      724C6576 
+ 1659      656C00
+ 1660              	.LASF34:
+ 1661 0337 7278496E 		.ascii	"rxInterruptMask\000"
+ 1661      74657272 
+ 1661      7570744D 
+ 1661      61736B00 
+ 1662              	.LASF12:
+ 1663 0347 666C6F61 		.ascii	"float\000"
+ 1663      7400
+ 1664              	.LASF58:
+ 1665 034d 4932435F 		.ascii	"I2C_1_rxDataBits\000"
+ 1665      315F7278 
+ 1665      44617461 
+ 1665      42697473 
+ 1665      00
+ 1666              	.LASF61:
+ 1667 035e 4932435F 		.ascii	"I2C_1_txDataBits\000"
+ 1667      315F7478 
+ 1667      44617461 
+ 1667      42697473 
+ 1667      00
+ 1668              	.LASF39:
+ 1669 036f 656E6162 		.ascii	"enableFreeRunSclk\000"
+ 1669      6C654672 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 44
+
+
+ 1669      65655275 
+ 1669      6E53636C 
+ 1669      6B00
+ 1670              	.LASF1:
+ 1671 0381 756E7369 		.ascii	"unsigned char\000"
+ 1671      676E6564 
+ 1671      20636861 
+ 1671      7200
+ 1672              	.LASF29:
+ 1673 038f 72784275 		.ascii	"rxBufferSize\000"
+ 1673      66666572 
+ 1673      53697A65 
+ 1673      00
+ 1674              	.LASF2:
+ 1675 039c 73686F72 		.ascii	"short int\000"
+ 1675      7420696E 
+ 1675      7400
+ 1676              	.LASF52:
+ 1677 03a6 4932435F 		.ascii	"I2C_1_SpiSaveConfig\000"
+ 1677      315F5370 
+ 1677      69536176 
+ 1677      65436F6E 
+ 1677      66696700 
+ 1678              	.LASF22:
+ 1679 03ba 656E6162 		.ascii	"enableMedianFilter\000"
+ 1679      6C654D65 
+ 1679      6469616E 
+ 1679      46696C74 
+ 1679      657200
+ 1680              	.LASF21:
+ 1681 03cd 6F766572 		.ascii	"oversample\000"
+ 1681      73616D70 
+ 1681      6C6500
+ 1682              	.LASF45:
+ 1683 03d8 4932435F 		.ascii	"I2C_1_SpiSetActiveSlaveSelect\000"
+ 1683      315F5370 
+ 1683      69536574 
+ 1683      41637469 
+ 1683      7665536C 
+ 1684              	.LASF40:
+ 1685 03f6 706F6C61 		.ascii	"polaritySs\000"
+ 1685      72697479 
+ 1685      537300
+ 1686              	.LASF49:
+ 1687 0401 706F6C61 		.ascii	"polarity\000"
+ 1687      72697479 
+ 1687      00
+ 1688              	.LASF65:
+ 1689 040a 4932435F 		.ascii	"I2C_1_rxBufferHead\000"
+ 1689      315F7278 
+ 1689      42756666 
+ 1689      65724865 
+ 1689      616400
+ 1690              	.LASF47:
+ 1691 041d 736C6176 		.ascii	"slaveSelect\000"
+ 1691      6553656C 
+ 1691      65637400 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 45
+
+
+ 1692              	.LASF14:
+ 1693 0429 63686172 		.ascii	"char\000"
+ 1693      00
+ 1694              	.LASF18:
+ 1695 042e 6D6F6465 		.ascii	"mode\000"
+ 1695      00
+ 1696              	.LASF46:
+ 1697 0433 636F6E66 		.ascii	"config\000"
+ 1697      696700
+ 1698              	.LASF63:
+ 1699 043a 4932435F 		.ascii	"I2C_1_IntrTxMask\000"
+ 1699      315F496E 
+ 1699      74725478 
+ 1699      4D61736B 
+ 1699      00
+ 1700              	.LASF33:
+ 1701 044b 656E6162 		.ascii	"enableInterrupt\000"
+ 1701      6C65496E 
+ 1701      74657272 
+ 1701      75707400 
+ 1702              	.LASF62:
+ 1703 045b 4932435F 		.ascii	"I2C_1_txBufferSize\000"
+ 1703      315F7478 
+ 1703      42756666 
+ 1703      65725369 
+ 1703      7A6500
+ 1704              	.LASF44:
+ 1705 046e 4932435F 		.ascii	"I2C_1_SpiInit\000"
+ 1705      315F5370 
+ 1705      69496E69 
+ 1705      7400
+ 1706              	.LASF36:
+ 1707 047c 7478496E 		.ascii	"txInterruptMask\000"
+ 1707      74657272 
+ 1707      7570744D 
+ 1707      61736B00 
+ 1708              	.LASF32:
+ 1709 048c 74784275 		.ascii	"txBuffer\000"
+ 1709      66666572 
+ 1709      00
+ 1710              	.LASF25:
+ 1711 0495 72784461 		.ascii	"rxDataBits\000"
+ 1711      74614269 
+ 1711      747300
+ 1712              	.LASF26:
+ 1713 04a0 74784461 		.ascii	"txDataBits\000"
+ 1713      74614269 
+ 1713      747300
+ 1714              	.LASF23:
+ 1715 04ab 656E6162 		.ascii	"enableLateSampling\000"
+ 1715      6C654C61 
+ 1715      74655361 
+ 1715      6D706C69 
+ 1715      6E6700
+ 1716              	.LASF37:
+ 1717 04be 74785472 		.ascii	"txTriggerLevel\000"
+ 1717      69676765 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc0XrIjW.s 			page 46
+
+
+ 1717      724C6576 
+ 1717      656C00
+ 1718              	.LASF69:
+ 1719 04cd 4932435F 		.ascii	"I2C_1_txBufferTail\000"
+ 1719      315F7478 
+ 1719      42756666 
+ 1719      65725461 
+ 1719      696C00
+ 1720              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

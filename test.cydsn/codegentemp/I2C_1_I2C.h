@@ -27,8 +27,8 @@
 ****************************************/
 
 #define I2C_1_I2C_MODE                   (2u)
-#define I2C_1_I2C_OVS_FACTOR_LOW         (8u)
-#define I2C_1_I2C_OVS_FACTOR_HIGH        (8u)
+#define I2C_1_I2C_OVS_FACTOR_LOW         (7u)
+#define I2C_1_I2C_OVS_FACTOR_HIGH        (13u)
 #define I2C_1_I2C_MEDIAN_FILTER_ENABLE   (1u)
 #define I2C_1_I2C_SLAVE_ADDRESS          (0x8u)
 #define I2C_1_I2C_SLAVE_ADDRESS_MASK     (0xFEu)
@@ -139,10 +139,10 @@
 
     /* Select oversampling factor low and high */
     #define I2C_1_I2C_OVS_FACTOR_LOW_MIN     ((0u != I2C_1_I2C_MANUAL_OVS_CONTROL) ? \
-                                                            (8u) : (8u))
+                                                            (7u) : (7u))
 
     #define I2C_1_I2C_OVS_FACTOR_HIGH_MIN    ((0u != I2C_1_I2C_MANUAL_OVS_CONTROL) ? \
-                                                            (8u) : (8u))
+                                                            (13u) : (13u))
 
 #endif /* (I2C_1_SCB_MODE_UNCONFIG_CONST_CFG) */
 

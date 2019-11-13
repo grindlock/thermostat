@@ -13,14 +13,6 @@
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\cyfitteriar.inc" value="HEADER;;;;;" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_SAR_Seq_1.c" value="SOURCE_C;CortexM0;;;;ADC_SAR_Seq_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_SAR_Seq_1.h" value="HEADER;;;;;ADC_SAR_Seq_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_SAR_Seq_1_PM.c" value="SOURCE_C;CortexM0;;;;ADC_SAR_Seq_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_SAR_Seq_1_INT.c" value="SOURCE_C;CortexM0;;;;ADC_SAR_Seq_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_In.c" value="SOURCE_C;CortexM0;;;;ADC_In" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_In.h" value="HEADER;;;;;ADC_In" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_In_aliases.h" value="HEADER;;;;;ADC_In" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_In_PM.c" value="SOURCE_C;CortexM0;;;;ADC_In" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\CEPIN.c" value="SOURCE_C;CortexM0;;;;CEPIN" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\CEPIN.h" value="HEADER;;;;;CEPIN" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\CEPIN_aliases.h" value="HEADER;;;;;CEPIN" />
@@ -33,6 +25,12 @@
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLUE.h" value="HEADER;;;;;BLUE" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLUE_aliases.h" value="HEADER;;;;;BLUE" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLUE_PM.c" value="SOURCE_C;CortexM0;;;;BLUE" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\MyUART_AsmGnu.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;MyUART" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\MyUART_AsmRv.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;MyUART" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\MyUART.c" value="SOURCE_C;CortexM0;;;;MyUART" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\MyUART.h" value="HEADER;;;;;MyUART" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\MyUART_PVT.h" value="HEADER;;;;;MyUART" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\MyUART_AsmIar.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;e9305a93-d091-4da5-bdc7-2813049dcdbf;;MyUART" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RED.c" value="SOURCE_C;CortexM0;;;;RED" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RED.h" value="HEADER;;;;;RED" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RED_aliases.h" value="HEADER;;;;;RED" />
@@ -50,36 +48,18 @@
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\I2C_1_I2C_PVT.h" value="HEADER;;;;;I2C_1" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\I2C_1_PVT.h" value="HEADER;;;;;I2C_1" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\I2C_1_BOOT.h" value="HEADER;;;;;I2C_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_gatt.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_hids.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_bas.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_bas.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_gatt.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_eventHandler.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_hids.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_HAL_INT.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_HAL_PVT.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_HAL_PVT.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_STACK_PVT.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_StackGap.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_StackGatt.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_StackGattDb.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_StackHostMain.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_StackL2cap.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_scps.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_scps.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_dis.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_dis.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_StackGattServer.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_StackGattClient.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_Stack.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_eventHandler.h" value="HEADER;;;;;BLE_1" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_SAR_Seq_1_IRQ.c" value="SOURCE_C;CortexM0;;;;ADC_SAR_Seq_1_IRQ" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_SAR_Seq_1_IRQ.h" value="HEADER;;;;;ADC_SAR_Seq_1_IRQ" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_SAR_Seq_1_intClock.c" value="SOURCE_C;CortexM0;;;;ADC_SAR_Seq_1_intClock" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\ADC_SAR_Seq_1_intClock.h" value="HEADER;;;;;ADC_SAR_Seq_1_intClock" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\Comp_out.c" value="SOURCE_C;CortexM0;;;;Comp_out" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\Comp_out.h" value="HEADER;;;;;Comp_out" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\Comp_out_aliases.h" value="HEADER;;;;;Comp_out" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\Comp_out_PM.c" value="SOURCE_C;CortexM0;;;;Comp_out" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\HighF_out.c" value="SOURCE_C;CortexM0;;;;HighF_out" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\HighF_out.h" value="HEADER;;;;;HighF_out" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\HighF_out_aliases.h" value="HEADER;;;;;HighF_out" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\HighF_out_PM.c" value="SOURCE_C;CortexM0;;;;HighF_out" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\LowF_out.c" value="SOURCE_C;CortexM0;;;;LowF_out" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\LowF_out.h" value="HEADER;;;;;LowF_out" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\LowF_out_aliases.h" value="HEADER;;;;;LowF_out" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\LowF_out_PM.c" value="SOURCE_C;CortexM0;;;;LowF_out" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\I2C_1_SCBCLK.c" value="SOURCE_C;CortexM0;;;;I2C_1_SCBCLK" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\I2C_1_SCBCLK.h" value="HEADER;;;;;I2C_1_SCBCLK" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\I2C_1_sda.c" value="SOURCE_C;CortexM0;;;;I2C_1_sda" />
@@ -92,8 +72,6 @@
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\I2C_1_scl_PM.c" value="SOURCE_C;CortexM0;;;;I2C_1_scl" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\I2C_1_SCB_IRQ.c" value="SOURCE_C;CortexM0;;;;I2C_1_SCB_IRQ" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\I2C_1_SCB_IRQ.h" value="HEADER;;;;;I2C_1_SCB_IRQ" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_bless_isr.c" value="SOURCE_C;CortexM0;;;;BLE_1_bless_isr" />
-  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\BLE_1_bless_isr.h" value="HEADER;;;;;BLE_1_bless_isr" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\cy_em_eeprom.c" value="SOURCE_C;CortexM0;;;;Em_EEPROM_Dynamic" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\cy_em_eeprom.h" value="HEADER;;;;;Em_EEPROM_Dynamic" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\cm0gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />

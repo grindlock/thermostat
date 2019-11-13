@@ -1,0 +1,3876 @@
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"I2C_1_EZI2C.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.comm	I2C_1_curStatus,1,1
+  20              		.comm	I2C_1_fsmState,1,1
+  21              		.comm	I2C_1_dataBuffer1,4,4
+  22              		.comm	I2C_1_bufSizeBuf1,2,2
+  23              		.comm	I2C_1_protectBuf1,2,2
+  24              		.comm	I2C_1_offsetBuf1,2,2
+  25              		.comm	I2C_1_indexBuf1,2,2
+  26              		.comm	I2C_1_addrBuf1,1,1
+  27              		.comm	I2C_1_addrBuf2,1,1
+  28              		.comm	I2C_1_dataBuffer2,4,4
+  29              		.comm	I2C_1_bufSizeBuf2,2,2
+  30              		.comm	I2C_1_protectBuf2,2,2
+  31              		.comm	I2C_1_offsetBuf2,2,2
+  32              		.comm	I2C_1_indexBuf2,2,2
+  33              		.global	I2C_1_configEzI2C
+  34              		.section	.rodata
+  35              		.align	2
+  36              		.type	I2C_1_configEzI2C, %object
+  37              		.size	I2C_1_configEzI2C, 32
+  38              	I2C_1_configEzI2C:
+  39 0000 01000000 		.word	1
+  40 0004 01000000 		.word	1
+  41 0008 00000000 		.word	0
+  42 000c 08000000 		.word	8
+  43 0010 09000000 		.word	9
+  44 0014 00000000 		.word	0
+  45 0018 00000000 		.word	0
+  46 001c 00       		.byte	0
+  47 001d 000000   		.space	3
+  48              		.section	.text.I2C_1_EzI2CInit,"ax",%progbits
+  49              		.align	2
+  50              		.global	I2C_1_EzI2CInit
+  51              		.code	16
+  52              		.thumb_func
+  53              		.type	I2C_1_EzI2CInit, %function
+  54              	I2C_1_EzI2CInit:
+  55              	.LFB2:
+  56              		.file 1 "Generated_Source\\PSoC4\\I2C_1_EZI2C.c"
+   1:Generated_Source\PSoC4/I2C_1_EZI2C.c **** /***************************************************************************//**
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 2
+
+
+   2:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \file I2C_1_EZI2C.c
+   3:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \version 4.0
+   4:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+   5:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \brief
+   6:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  This file provides the source code to the API for the SCB Component in
+   7:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  EZI2C mode.
+   8:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+   9:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * Note:
+  10:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+  11:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *******************************************************************************
+  12:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \copyright
+  13:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * Copyright 2013-2017, Cypress Semiconductor Corporation.  All rights reserved.
+  14:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * You may use this file only in accordance with the license, terms, conditions,
+  15:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * the software package with which this file was provided.
+  17:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *******************************************************************************/
+  18:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  19:Generated_Source\PSoC4/I2C_1_EZI2C.c **** #include "I2C_1_PVT.h"
+  20:Generated_Source\PSoC4/I2C_1_EZI2C.c **** #include "I2C_1_EZI2C_PVT.h"
+  21:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  22:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  23:Generated_Source\PSoC4/I2C_1_EZI2C.c **** /***************************************
+  24:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *      EZI2C Private Vars
+  25:Generated_Source\PSoC4/I2C_1_EZI2C.c **** ***************************************/
+  26:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  27:Generated_Source\PSoC4/I2C_1_EZI2C.c **** volatile uint8 I2C_1_curStatus; /* Status byte */
+  28:Generated_Source\PSoC4/I2C_1_EZI2C.c **** uint8 I2C_1_fsmState;           /* FSM state   */
+  29:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  30:Generated_Source\PSoC4/I2C_1_EZI2C.c **** /* Variables intended to be used with Buffer 1: Primary slave address */
+  31:Generated_Source\PSoC4/I2C_1_EZI2C.c **** volatile uint8 * I2C_1_dataBuffer1; /* Pointer to data buffer 1 */
+  32:Generated_Source\PSoC4/I2C_1_EZI2C.c **** uint16 I2C_1_bufSizeBuf1;           /* Size of buffer 1 in bytes      */
+  33:Generated_Source\PSoC4/I2C_1_EZI2C.c **** uint16 I2C_1_protectBuf1;           /* Start index of write protected area buffer 1 */
+  34:Generated_Source\PSoC4/I2C_1_EZI2C.c **** uint16 I2C_1_offsetBuf1; /* Current offset within buffer 1 */
+  35:Generated_Source\PSoC4/I2C_1_EZI2C.c **** uint16 I2C_1_indexBuf1;             /* Current index within buffer 1  */
+  36:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  37:Generated_Source\PSoC4/I2C_1_EZI2C.c **** #if(I2C_1_SECONDARY_ADDRESS_ENABLE_CONST)
+  38:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     uint8 I2C_1_addrBuf1; /* Primary slave address. Used for software comparison   */
+  39:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     uint8 I2C_1_addrBuf2; /* Secondary slave address. Used for software comparison */
+  40:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  41:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /* Variables intended to be used with Buffer 2: Primary slave address */
+  42:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     volatile uint8 * I2C_1_dataBuffer2; /* Pointer to data buffer 2 */
+  43:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     uint16 I2C_1_bufSizeBuf2;           /* Size of buffer 2 in bytes */
+  44:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     uint16 I2C_1_protectBuf2;           /* Start index of write protected area buffer 2 */
+  45:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     uint16 I2C_1_offsetBuf2; /* Current offset within buffer 2 */
+  46:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     uint16 I2C_1_indexBuf2;             /* Current index within buffer 2 */
+  47:Generated_Source\PSoC4/I2C_1_EZI2C.c **** #endif /* (I2C_1_SECONDARY_ADDRESS_ENABLE_CONST) */
+  48:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  49:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  50:Generated_Source\PSoC4/I2C_1_EZI2C.c **** /***************************************
+  51:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *      EZI2C Private Functions
+  52:Generated_Source\PSoC4/I2C_1_EZI2C.c **** ***************************************/
+  53:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  54:Generated_Source\PSoC4/I2C_1_EZI2C.c **** #if(I2C_1_SECONDARY_ADDRESS_ENABLE_CONST)
+  55:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     static uint32 I2C_1_EzI2CUpdateRxMatchReg(uint32 addr1, uint32 addr2);
+  56:Generated_Source\PSoC4/I2C_1_EZI2C.c **** #endif /* (I2C_1_SECONDARY_ADDRESS_ENABLE_CONST) */
+  57:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  58:Generated_Source\PSoC4/I2C_1_EZI2C.c **** #if(I2C_1_SCB_MODE_UNCONFIG_CONST_CFG)
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 3
+
+
+  59:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  60:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /***************************************
+  61:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Configuration Structure Initialization
+  62:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     ***************************************/
+  63:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  64:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /* Constant configuration of EZI2C */
+  65:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     const I2C_1_EZI2C_INIT_STRUCT I2C_1_configEzI2C =
+  66:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+  67:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_EZI2C_CLOCK_STRETCHING,
+  68:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_EZI2C_MEDIAN_FILTER_ENABLE,
+  69:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_EZI2C_NUMBER_OF_ADDRESSES,
+  70:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_EZI2C_PRIMARY_SLAVE_ADDRESS,
+  71:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_EZI2C_SECONDARY_SLAVE_ADDRESS,
+  72:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_EZI2C_SUB_ADDRESS_SIZE,
+  73:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_EZI2C_WAKE_ENABLE,
+  74:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_EZI2C_BYTE_MODE_ENABLE
+  75:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     };
+  76:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  77:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /*******************************************************************************
+  78:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * Function Name: I2C_1_EzI2CInit
+  79:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     ****************************************************************************//**
+  80:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+  81:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Configures the I2C_1 for EZI2C operation.
+  82:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+  83:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  This function is intended specifically to be used when the I2C_1 
+  84:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  configuration is set to “Unconfigured I2C_1” in the customizer. 
+  85:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  After initializing the I2C_1 in EZI2C mode using this function, 
+  86:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  the component can be enabled using the I2C_1_Start() or 
+  87:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * I2C_1_Enable() function.
+  88:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  This function uses a pointer to a structure that provides the configuration 
+  89:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  settings. This structure contains the same information that would otherwise 
+  90:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  be provided by the customizer settings.
+  91:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+  92:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \param config: pointer to a structure that contains the following list of 
+  93:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  fields. These fields match the selections available in the customizer. 
+  94:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Refer to the customizer for further description of the settings.
+  95:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+  96:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *******************************************************************************/
+  97:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     void I2C_1_EzI2CInit(const I2C_1_EZI2C_INIT_STRUCT *config)
+  98:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+  57              		.loc 1 98 0
+  58              		.cfi_startproc
+  59              		@ args = 0, pretend = 0, frame = 8
+  60              		@ frame_needed = 1, uses_anonymous_args = 0
+  61 0000 90B5     		push	{r4, r7, lr}
+  62              		.cfi_def_cfa_offset 12
+  63              		.cfi_offset 4, -12
+  64              		.cfi_offset 7, -8
+  65              		.cfi_offset 14, -4
+  66 0002 83B0     		sub	sp, sp, #12
+  67              		.cfi_def_cfa_offset 24
+  68 0004 00AF     		add	r7, sp, #0
+  69              		.cfi_def_cfa_register 7
+  70 0006 7860     		str	r0, [r7, #4]
+  99:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         if(NULL == config)
+  71              		.loc 1 99 0
+  72 0008 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 4
+
+
+  73 000a 002B     		cmp	r3, #0
+  74 000c 03D1     		bne	.L2
+ 100:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         {
+ 101:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             CYASSERT(0u != 0u); /* Halt execution due to bad function parameter */
+  75              		.loc 1 101 0 discriminator 1
+  76 000e 0020     		movs	r0, #0
+  77 0010 FFF7FEFF 		bl	CyHalt
+ 102:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 103:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         else
+ 104:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         {
+ 105:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Configure pins */
+ 106:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SetPins(I2C_1_SCB_MODE_EZI2C, I2C_1_DUMMY_PARAM,
+ 107:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                                       I2C_1_DUMMY_PARAM);
+ 108:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 109:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Store internal configuration */
+ 110:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_scbMode       = (uint8) I2C_1_SCB_MODE_EZI2C;
+ 111:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_scbEnableWake = (uint8) config->enableWake;
+ 112:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_scbEnableIntr = (uint8) I2C_1_SCB_IRQ_INTERNAL;
+ 113:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 114:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_numberOfAddr  = (uint8) config->numberOfAddresses;
+ 115:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_subAddrSize   = (uint8) config->subAddrSize;
+ 116:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 117:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         #if (I2C_1_CY_SCBIP_V0)
+ 118:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Adjust SDA filter settings. Ticket ID#150521 */
+ 119:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SET_I2C_CFG_SDA_FILT_TRIM(I2C_1_EC_AM_I2C_CFG_SDA_FILT_TRIM);
+ 120:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         #endif /* (I2C_1_CY_SCBIP_V0) */
+ 121:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 122:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Adjust AF and DF filter settings, AF = 1, DF = 0. Ticket ID#176179 */
+ 123:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_I2C_CFG_ANALOG_FITER_ENABLE;
+ 124:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 125:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Configure I2C interface */
+ 126:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_CTRL_REG     = I2C_1_GET_CTRL_BYTE_MODE  (config->enableByteMode)    |
+ 127:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                             I2C_1_GET_CTRL_ADDR_ACCEPT(config->numberOfAddresses) |
+ 128:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                             I2C_1_GET_CTRL_EC_AM_MODE (config->enableWake);
+ 129:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 130:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_I2C_CTRL_REG = I2C_1_EZI2C_CTRL;
+ 131:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 132:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Configure RX direction */
+ 133:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_RX_CTRL_REG = I2C_1_EZI2C_RX_CTRL |
+ 134:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                         I2C_1_GET_RX_CTRL_MEDIAN(I2C_1_DIGITAL_FILTER_DISABLE);
+ 135:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                 ;
+ 136:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_RX_FIFO_CTRL_REG = I2C_1_CLEAR_REG;
+ 137:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 138:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Set default address and mask */
+ 139:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             if(I2C_1_EZI2C_PRIMARY_ADDRESS == config->numberOfAddresses)
+ 140:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             {
+ 141:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 I2C_1_RX_MATCH_REG = I2C_1_EzI2CUpdateRxMatchReg(config->primarySlaveAddr,
+ 142:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                                                        config->prim
+ 143:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             }
+ 144:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             else
+ 145:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             {
+ 146:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 I2C_1_RX_MATCH_REG = I2C_1_EzI2CUpdateRxMatchReg(config->primarySlaveAddr,
+ 147:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                                                        config->seco
+ 148:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             }
+ 149:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 150:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Configure TX direction */
+ 151:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_TX_CTRL_REG      = I2C_1_EZI2C_TX_CTRL;
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 5
+
+
+ 152:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_TX_FIFO_CTRL_REG = ((0u != (config->enableClockStretch)) ?
+ 153:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                  I2C_1_CLEAR_REG : I2C_1_EZI2C_TX_FIFO_CTRL);
+ 154:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 155:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Configure interrupt sources */
+ 156:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         #if (!I2C_1_CY_SCBIP_V1)
+ 157:Generated_Source\PSoC4/I2C_1_EZI2C.c ****            I2C_1_INTR_SPI_EC_MASK_REG = I2C_1_NO_INTR_SOURCES;
+ 158:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         #endif /* (!I2C_1_CY_SCBIP_V1) */
+ 159:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 160:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_INTR_I2C_EC_MASK_REG = I2C_1_NO_INTR_SOURCES;
+ 161:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_INTR_MASTER_MASK_REG = I2C_1_NO_INTR_SOURCES;
+ 162:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_INTR_SLAVE_MASK_REG  = I2C_1_EZI2C_INTR_SLAVE_MASK;
+ 163:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_INTR_TX_MASK_REG     = I2C_1_NO_INTR_SOURCES;
+ 164:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 165:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Configure interrupt with EZI2C handler but do not enable it */
+ 166:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             CyIntDisable    (I2C_1_ISR_NUMBER);
+ 167:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             CyIntSetPriority(I2C_1_ISR_NUMBER, I2C_1_ISR_PRIORITY);
+ 168:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             (void) CyIntSetVector(I2C_1_ISR_NUMBER, (0u != (config->enableClockStretch)) ?
+ 169:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                                       (&I2C_1_EZI2C_STRETCH_ISR) :
+ 170:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                                       (&I2C_1_EZI2C_NO_STRETCH_ISR)
+ 171:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 172:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             if(0u != (config->enableClockStretch))
+ 173:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             {
+ 174:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 /* Configure interrupt sources */
+ 175:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 I2C_1_INTR_SLAVE_MASK_REG |= I2C_1_INTR_SLAVE_I2C_ADDR_MATCH;
+ 176:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 I2C_1_INTR_RX_MASK_REG     = I2C_1_NO_INTR_SOURCES;
+ 177:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             }
+ 178:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             else
+ 179:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             {
+ 180:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 /* Enable Auto ACK/NACK features */
+ 181:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 I2C_1_I2C_CTRL_REG |= I2C_1_EZI2C_CTRL_AUTO;
+ 182:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 183:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 /* Configure RX interrupt source */
+ 184:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 I2C_1_INTR_SLAVE_MASK_REG |= I2C_1_INTR_SLAVE_I2C_START;
+ 185:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 I2C_1_INTR_RX_MASK_REG     = I2C_1_INTR_RX_NOT_EMPTY;
+ 186:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             }
+ 187:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 188:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Configure global variables */
+ 189:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_fsmState = I2C_1_EZI2C_FSM_IDLE;
+ 190:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 191:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_curStatus  = 0u;
+ 192:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_indexBuf1  = 0u;
+ 193:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_offsetBuf1 = 0u;
+ 194:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_indexBuf2  = 0u;
+ 195:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_offsetBuf2 = 0u;
+ 196:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 197:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_addrBuf1 = (uint8) config->primarySlaveAddr;
+ 198:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_addrBuf2 = (uint8) config->secondarySlaveAddr;
+ 199:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 200:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+  78              		.loc 1 200 0 discriminator 1
+  79 0014 CDE0     		b	.L20
+  80              	.L2:
+ 106:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                                       I2C_1_DUMMY_PARAM);
+  81              		.loc 1 106 0
+  82 0016 0022     		movs	r2, #0
+  83 0018 0021     		movs	r1, #0
+  84 001a 0820     		movs	r0, #8
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 6
+
+
+  85 001c FFF7FEFF 		bl	I2C_1_SetPins
+ 110:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_scbEnableWake = (uint8) config->enableWake;
+  86              		.loc 1 110 0
+  87 0020 664B     		ldr	r3, .L21
+  88 0022 0822     		movs	r2, #8
+  89 0024 1A70     		strb	r2, [r3]
+ 111:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_scbEnableIntr = (uint8) I2C_1_SCB_IRQ_INTERNAL;
+  90              		.loc 1 111 0
+  91 0026 7B68     		ldr	r3, [r7, #4]
+  92 0028 9B69     		ldr	r3, [r3, #24]
+  93 002a DAB2     		uxtb	r2, r3
+  94 002c 644B     		ldr	r3, .L21+4
+  95 002e 1A70     		strb	r2, [r3]
+ 112:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+  96              		.loc 1 112 0
+  97 0030 644B     		ldr	r3, .L21+8
+  98 0032 0122     		movs	r2, #1
+  99 0034 1A70     		strb	r2, [r3]
+ 114:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_subAddrSize   = (uint8) config->subAddrSize;
+ 100              		.loc 1 114 0
+ 101 0036 7B68     		ldr	r3, [r7, #4]
+ 102 0038 9B68     		ldr	r3, [r3, #8]
+ 103 003a DAB2     		uxtb	r2, r3
+ 104 003c 624B     		ldr	r3, .L21+12
+ 105 003e 1A70     		strb	r2, [r3]
+ 115:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 106              		.loc 1 115 0
+ 107 0040 7B68     		ldr	r3, [r7, #4]
+ 108 0042 5B69     		ldr	r3, [r3, #20]
+ 109 0044 DAB2     		uxtb	r2, r3
+ 110 0046 614B     		ldr	r3, .L21+16
+ 111 0048 1A70     		strb	r2, [r3]
+ 123:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 112              		.loc 1 123 0
+ 113 004a 614B     		ldr	r3, .L21+20
+ 114 004c 604A     		ldr	r2, .L21+20
+ 115 004e 1268     		ldr	r2, [r2]
+ 116 0050 6049     		ldr	r1, .L21+24
+ 117 0052 0A43     		orrs	r2, r1
+ 118 0054 1A60     		str	r2, [r3]
+ 126:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                             I2C_1_GET_CTRL_ADDR_ACCEPT(config->numberOfAddresses) |
+ 119              		.loc 1 126 0
+ 120 0056 604A     		ldr	r2, .L21+28
+ 121 0058 7B68     		ldr	r3, [r7, #4]
+ 122 005a 1B7F     		ldrb	r3, [r3, #28]
+ 123 005c 002B     		cmp	r3, #0
+ 124 005e 02D0     		beq	.L4
+ 126:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                             I2C_1_GET_CTRL_ADDR_ACCEPT(config->numberOfAddresses) |
+ 125              		.loc 1 126 0 is_stmt 0 discriminator 1
+ 126 0060 8023     		movs	r3, #128
+ 127 0062 1901     		lsls	r1, r3, #4
+ 128 0064 00E0     		b	.L5
+ 129              	.L4:
+ 126:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                             I2C_1_GET_CTRL_ADDR_ACCEPT(config->numberOfAddresses) |
+ 130              		.loc 1 126 0 discriminator 2
+ 131 0066 0021     		movs	r1, #0
+ 132              	.L5:
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 7
+
+
+ 127:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                             I2C_1_GET_CTRL_EC_AM_MODE (config->enableWake);
+ 133              		.loc 1 127 0 is_stmt 1
+ 134 0068 7B68     		ldr	r3, [r7, #4]
+ 135 006a 9B68     		ldr	r3, [r3, #8]
+ 136 006c 002B     		cmp	r3, #0
+ 137 006e 02D0     		beq	.L6
+ 127:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                             I2C_1_GET_CTRL_EC_AM_MODE (config->enableWake);
+ 138              		.loc 1 127 0 is_stmt 0 discriminator 1
+ 139 0070 8023     		movs	r3, #128
+ 140 0072 5B02     		lsls	r3, r3, #9
+ 141 0074 00E0     		b	.L7
+ 142              	.L6:
+ 127:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                             I2C_1_GET_CTRL_EC_AM_MODE (config->enableWake);
+ 143              		.loc 1 127 0 discriminator 2
+ 144 0076 0023     		movs	r3, #0
+ 145              	.L7:
+ 126:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                             I2C_1_GET_CTRL_ADDR_ACCEPT(config->numberOfAddresses) |
+ 146              		.loc 1 126 0 is_stmt 1
+ 147 0078 1943     		orrs	r1, r3
+ 128:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 148              		.loc 1 128 0
+ 149 007a 7B68     		ldr	r3, [r7, #4]
+ 150 007c 9B69     		ldr	r3, [r3, #24]
+ 151 007e 002B     		cmp	r3, #0
+ 152 0080 02D0     		beq	.L8
+ 128:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 153              		.loc 1 128 0 is_stmt 0 discriminator 1
+ 154 0082 8023     		movs	r3, #128
+ 155 0084 5B00     		lsls	r3, r3, #1
+ 156 0086 00E0     		b	.L9
+ 157              	.L8:
+ 128:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 158              		.loc 1 128 0 discriminator 2
+ 159 0088 0023     		movs	r3, #0
+ 160              	.L9:
+ 127:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                             I2C_1_GET_CTRL_EC_AM_MODE (config->enableWake);
+ 161              		.loc 1 127 0 is_stmt 1
+ 162 008a 0B43     		orrs	r3, r1
+ 126:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                             I2C_1_GET_CTRL_ADDR_ACCEPT(config->numberOfAddresses) |
+ 163              		.loc 1 126 0
+ 164 008c 1360     		str	r3, [r2]
+ 130:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 165              		.loc 1 130 0
+ 166 008e 534B     		ldr	r3, .L21+32
+ 167 0090 534A     		ldr	r2, .L21+36
+ 168 0092 1A60     		str	r2, [r3]
+ 133:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                         I2C_1_GET_RX_CTRL_MEDIAN(I2C_1_DIGITAL_FILTER_DISABLE);
+ 169              		.loc 1 133 0
+ 170 0094 534B     		ldr	r3, .L21+40
+ 171 0096 544A     		ldr	r2, .L21+44
+ 172 0098 1A60     		str	r2, [r3]
+ 136:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 173              		.loc 1 136 0
+ 174 009a 544B     		ldr	r3, .L21+48
+ 175 009c 0022     		movs	r2, #0
+ 176 009e 1A60     		str	r2, [r3]
+ 139:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             {
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 8
+
+
+ 177              		.loc 1 139 0
+ 178 00a0 7B68     		ldr	r3, [r7, #4]
+ 179 00a2 9B68     		ldr	r3, [r3, #8]
+ 180 00a4 002B     		cmp	r3, #0
+ 181 00a6 0BD1     		bne	.L10
+ 141:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                                                        config->prim
+ 182              		.loc 1 141 0
+ 183 00a8 514C     		ldr	r4, .L21+52
+ 184 00aa 7B68     		ldr	r3, [r7, #4]
+ 185 00ac DA68     		ldr	r2, [r3, #12]
+ 186 00ae 7B68     		ldr	r3, [r7, #4]
+ 187 00b0 DB68     		ldr	r3, [r3, #12]
+ 188 00b2 1900     		movs	r1, r3
+ 189 00b4 1000     		movs	r0, r2
+ 190 00b6 FFF7FEFF 		bl	I2C_1_EzI2CUpdateRxMatchReg
+ 191 00ba 0300     		movs	r3, r0
+ 192 00bc 2360     		str	r3, [r4]
+ 193 00be 0AE0     		b	.L11
+ 194              	.L10:
+ 146:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                                                        config->seco
+ 195              		.loc 1 146 0
+ 196 00c0 4B4C     		ldr	r4, .L21+52
+ 197 00c2 7B68     		ldr	r3, [r7, #4]
+ 198 00c4 DA68     		ldr	r2, [r3, #12]
+ 199 00c6 7B68     		ldr	r3, [r7, #4]
+ 200 00c8 1B69     		ldr	r3, [r3, #16]
+ 201 00ca 1900     		movs	r1, r3
+ 202 00cc 1000     		movs	r0, r2
+ 203 00ce FFF7FEFF 		bl	I2C_1_EzI2CUpdateRxMatchReg
+ 204 00d2 0300     		movs	r3, r0
+ 205 00d4 2360     		str	r3, [r4]
+ 206              	.L11:
+ 151:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_TX_FIFO_CTRL_REG = ((0u != (config->enableClockStretch)) ?
+ 207              		.loc 1 151 0
+ 208 00d6 474B     		ldr	r3, .L21+56
+ 209 00d8 434A     		ldr	r2, .L21+44
+ 210 00da 1A60     		str	r2, [r3]
+ 152:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                  I2C_1_CLEAR_REG : I2C_1_EZI2C_TX_FIFO_CTRL);
+ 211              		.loc 1 152 0
+ 212 00dc 464A     		ldr	r2, .L21+60
+ 213 00de 7B68     		ldr	r3, [r7, #4]
+ 214 00e0 1B68     		ldr	r3, [r3]
+ 153:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 215              		.loc 1 153 0
+ 216 00e2 002B     		cmp	r3, #0
+ 217 00e4 01D0     		beq	.L12
+ 153:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 218              		.loc 1 153 0 is_stmt 0 discriminator 1
+ 219 00e6 0023     		movs	r3, #0
+ 220 00e8 00E0     		b	.L13
+ 221              	.L12:
+ 153:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 222              		.loc 1 153 0 discriminator 2
+ 223 00ea 0223     		movs	r3, #2
+ 224              	.L13:
+ 152:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                  I2C_1_CLEAR_REG : I2C_1_EZI2C_TX_FIFO_CTRL);
+ 225              		.loc 1 152 0 is_stmt 1
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 9
+
+
+ 226 00ec 1360     		str	r3, [r2]
+ 157:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         #endif /* (!I2C_1_CY_SCBIP_V1) */
+ 227              		.loc 1 157 0
+ 228 00ee 434B     		ldr	r3, .L21+64
+ 229 00f0 0022     		movs	r2, #0
+ 230 00f2 1A60     		str	r2, [r3]
+ 160:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_INTR_MASTER_MASK_REG = I2C_1_NO_INTR_SOURCES;
+ 231              		.loc 1 160 0
+ 232 00f4 424B     		ldr	r3, .L21+68
+ 233 00f6 0022     		movs	r2, #0
+ 234 00f8 1A60     		str	r2, [r3]
+ 161:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_INTR_SLAVE_MASK_REG  = I2C_1_EZI2C_INTR_SLAVE_MASK;
+ 235              		.loc 1 161 0
+ 236 00fa 424B     		ldr	r3, .L21+72
+ 237 00fc 0022     		movs	r2, #0
+ 238 00fe 1A60     		str	r2, [r3]
+ 162:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_INTR_TX_MASK_REG     = I2C_1_NO_INTR_SOURCES;
+ 239              		.loc 1 162 0
+ 240 0100 414B     		ldr	r3, .L21+76
+ 241 0102 1222     		movs	r2, #18
+ 242 0104 FF32     		adds	r2, r2, #255
+ 243 0106 1A60     		str	r2, [r3]
+ 163:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 244              		.loc 1 163 0
+ 245 0108 404B     		ldr	r3, .L21+80
+ 246 010a 0022     		movs	r2, #0
+ 247 010c 1A60     		str	r2, [r3]
+ 166:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             CyIntSetPriority(I2C_1_ISR_NUMBER, I2C_1_ISR_PRIORITY);
+ 248              		.loc 1 166 0
+ 249 010e 0920     		movs	r0, #9
+ 250 0110 FFF7FEFF 		bl	CyIntDisable
+ 167:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             (void) CyIntSetVector(I2C_1_ISR_NUMBER, (0u != (config->enableClockStretch)) ?
+ 251              		.loc 1 167 0
+ 252 0114 0321     		movs	r1, #3
+ 253 0116 0920     		movs	r0, #9
+ 254 0118 FFF7FEFF 		bl	CyIntSetPriority
+ 168:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                                       (&I2C_1_EZI2C_STRETCH_ISR) :
+ 255              		.loc 1 168 0
+ 256 011c 7B68     		ldr	r3, [r7, #4]
+ 257 011e 1B68     		ldr	r3, [r3]
+ 258 0120 002B     		cmp	r3, #0
+ 259 0122 01D0     		beq	.L14
+ 168:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                                       (&I2C_1_EZI2C_STRETCH_ISR) :
+ 260              		.loc 1 168 0 is_stmt 0 discriminator 1
+ 261 0124 3A4B     		ldr	r3, .L21+84
+ 262 0126 00E0     		b	.L15
+ 263              	.L14:
+ 168:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                                       (&I2C_1_EZI2C_STRETCH_ISR) :
+ 264              		.loc 1 168 0 discriminator 2
+ 265 0128 3A4B     		ldr	r3, .L21+88
+ 266              	.L15:
+ 168:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                                       (&I2C_1_EZI2C_STRETCH_ISR) :
+ 267              		.loc 1 168 0 discriminator 4
+ 268 012a 1900     		movs	r1, r3
+ 269 012c 0920     		movs	r0, #9
+ 270 012e FFF7FEFF 		bl	CyIntSetVector
+ 172:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             {
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 10
+
+
+ 271              		.loc 1 172 0 is_stmt 1 discriminator 4
+ 272 0132 7B68     		ldr	r3, [r7, #4]
+ 273 0134 1B68     		ldr	r3, [r3]
+ 274 0136 002B     		cmp	r3, #0
+ 275 0138 09D0     		beq	.L16
+ 175:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 I2C_1_INTR_RX_MASK_REG     = I2C_1_NO_INTR_SOURCES;
+ 276              		.loc 1 175 0
+ 277 013a 334B     		ldr	r3, .L21+76
+ 278 013c 324A     		ldr	r2, .L21+76
+ 279 013e 1268     		ldr	r2, [r2]
+ 280 0140 4021     		movs	r1, #64
+ 281 0142 0A43     		orrs	r2, r1
+ 282 0144 1A60     		str	r2, [r3]
+ 176:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             }
+ 283              		.loc 1 176 0
+ 284 0146 344B     		ldr	r3, .L21+92
+ 285 0148 0022     		movs	r2, #0
+ 286 014a 1A60     		str	r2, [r3]
+ 287 014c 0FE0     		b	.L17
+ 288              	.L16:
+ 181:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 289              		.loc 1 181 0
+ 290 014e 234B     		ldr	r3, .L21+32
+ 291 0150 224A     		ldr	r2, .L21+32
+ 292 0152 1268     		ldr	r2, [r2]
+ 293 0154 F021     		movs	r1, #240
+ 294 0156 0902     		lsls	r1, r1, #8
+ 295 0158 0A43     		orrs	r2, r1
+ 296 015a 1A60     		str	r2, [r3]
+ 184:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 I2C_1_INTR_RX_MASK_REG     = I2C_1_INTR_RX_NOT_EMPTY;
+ 297              		.loc 1 184 0
+ 298 015c 2A4B     		ldr	r3, .L21+76
+ 299 015e 2A4A     		ldr	r2, .L21+76
+ 300 0160 1268     		ldr	r2, [r2]
+ 301 0162 2021     		movs	r1, #32
+ 302 0164 0A43     		orrs	r2, r1
+ 303 0166 1A60     		str	r2, [r3]
+ 185:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             }
+ 304              		.loc 1 185 0
+ 305 0168 2B4B     		ldr	r3, .L21+92
+ 306 016a 0422     		movs	r2, #4
+ 307 016c 1A60     		str	r2, [r3]
+ 308              	.L17:
+ 189:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 309              		.loc 1 189 0
+ 310 016e 174B     		ldr	r3, .L21+16
+ 311 0170 1B78     		ldrb	r3, [r3]
+ 312 0172 002B     		cmp	r3, #0
+ 313 0174 01D0     		beq	.L18
+ 189:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 314              		.loc 1 189 0 is_stmt 0 discriminator 1
+ 315 0176 0222     		movs	r2, #2
+ 316 0178 00E0     		b	.L19
+ 317              	.L18:
+ 189:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 318              		.loc 1 189 0 discriminator 2
+ 319 017a 0022     		movs	r2, #0
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 11
+
+
+ 320              	.L19:
+ 189:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 321              		.loc 1 189 0 discriminator 4
+ 322 017c 274B     		ldr	r3, .L21+96
+ 323 017e 1A70     		strb	r2, [r3]
+ 191:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_indexBuf1  = 0u;
+ 324              		.loc 1 191 0 is_stmt 1 discriminator 4
+ 325 0180 274B     		ldr	r3, .L21+100
+ 326 0182 0022     		movs	r2, #0
+ 327 0184 1A70     		strb	r2, [r3]
+ 192:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_offsetBuf1 = 0u;
+ 328              		.loc 1 192 0 discriminator 4
+ 329 0186 274B     		ldr	r3, .L21+104
+ 330 0188 0022     		movs	r2, #0
+ 331 018a 1A80     		strh	r2, [r3]
+ 193:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_indexBuf2  = 0u;
+ 332              		.loc 1 193 0 discriminator 4
+ 333 018c 264B     		ldr	r3, .L21+108
+ 334 018e 0022     		movs	r2, #0
+ 335 0190 1A80     		strh	r2, [r3]
+ 194:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_offsetBuf2 = 0u;
+ 336              		.loc 1 194 0 discriminator 4
+ 337 0192 264B     		ldr	r3, .L21+112
+ 338 0194 0022     		movs	r2, #0
+ 339 0196 1A80     		strh	r2, [r3]
+ 195:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 340              		.loc 1 195 0 discriminator 4
+ 341 0198 254B     		ldr	r3, .L21+116
+ 342 019a 0022     		movs	r2, #0
+ 343 019c 1A80     		strh	r2, [r3]
+ 197:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_addrBuf2 = (uint8) config->secondarySlaveAddr;
+ 344              		.loc 1 197 0 discriminator 4
+ 345 019e 7B68     		ldr	r3, [r7, #4]
+ 346 01a0 DB68     		ldr	r3, [r3, #12]
+ 347 01a2 DAB2     		uxtb	r2, r3
+ 348 01a4 234B     		ldr	r3, .L21+120
+ 349 01a6 1A70     		strb	r2, [r3]
+ 198:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 350              		.loc 1 198 0 discriminator 4
+ 351 01a8 7B68     		ldr	r3, [r7, #4]
+ 352 01aa 1B69     		ldr	r3, [r3, #16]
+ 353 01ac DAB2     		uxtb	r2, r3
+ 354 01ae 224B     		ldr	r3, .L21+124
+ 355 01b0 1A70     		strb	r2, [r3]
+ 356              	.L20:
+ 357              		.loc 1 200 0
+ 358 01b2 C046     		nop
+ 359 01b4 BD46     		mov	sp, r7
+ 360 01b6 03B0     		add	sp, sp, #12
+ 361              		@ sp needed
+ 362 01b8 90BD     		pop	{r4, r7, pc}
+ 363              	.L22:
+ 364 01ba C046     		.align	2
+ 365              	.L21:
+ 366 01bc 00000000 		.word	I2C_1_scbMode
+ 367 01c0 00000000 		.word	I2C_1_scbEnableWake
+ 368 01c4 00000000 		.word	I2C_1_scbEnableIntr
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 12
+
+
+ 369 01c8 00000000 		.word	I2C_1_numberOfAddr
+ 370 01cc 00000000 		.word	I2C_1_subAddrSize
+ 371 01d0 70002440 		.word	1076101232
+ 372 01d4 10100000 		.word	4112
+ 373 01d8 00002440 		.word	1076101120
+ 374 01dc 60002440 		.word	1076101216
+ 375 01e0 00080040 		.word	1073743872
+ 376 01e4 00032440 		.word	1076101888
+ 377 01e8 07010080 		.word	-2147483385
+ 378 01ec 04032440 		.word	1076101892
+ 379 01f0 10032440 		.word	1076101904
+ 380 01f4 00022440 		.word	1076101632
+ 381 01f8 04022440 		.word	1076101636
+ 382 01fc C80E2440 		.word	1076104904
+ 383 0200 880E2440 		.word	1076104840
+ 384 0204 080F2440 		.word	1076104968
+ 385 0208 480F2440 		.word	1076105032
+ 386 020c 880F2440 		.word	1076105096
+ 387 0210 00000000 		.word	I2C_1_EZI2C_STRETCH_ISR
+ 388 0214 00000000 		.word	I2C_1_EZI2C_NO_STRETCH_ISR
+ 389 0218 C80F2440 		.word	1076105160
+ 390 021c 00000000 		.word	I2C_1_fsmState
+ 391 0220 00000000 		.word	I2C_1_curStatus
+ 392 0224 00000000 		.word	I2C_1_indexBuf1
+ 393 0228 00000000 		.word	I2C_1_offsetBuf1
+ 394 022c 00000000 		.word	I2C_1_indexBuf2
+ 395 0230 00000000 		.word	I2C_1_offsetBuf2
+ 396 0234 00000000 		.word	I2C_1_addrBuf1
+ 397 0238 00000000 		.word	I2C_1_addrBuf2
+ 398              		.cfi_endproc
+ 399              	.LFE2:
+ 400              		.size	I2C_1_EzI2CInit, .-I2C_1_EzI2CInit
+ 401              		.section	.text.I2C_1_EzI2CStop,"ax",%progbits
+ 402              		.align	2
+ 403              		.global	I2C_1_EzI2CStop
+ 404              		.code	16
+ 405              		.thumb_func
+ 406              		.type	I2C_1_EzI2CStop, %function
+ 407              	I2C_1_EzI2CStop:
+ 408              	.LFB3:
+ 201:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 202:Generated_Source\PSoC4/I2C_1_EZI2C.c **** #else
+ 203:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 204:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /*******************************************************************************
+ 205:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * Function Name: I2C_1_EzI2CInit
+ 206:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     ****************************************************************************//**
+ 207:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 208:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Configures the SCB for the EZI2C operation.
+ 209:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 210:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *******************************************************************************/
+ 211:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     void I2C_1_EzI2CInit(void)
+ 212:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 213:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         /* Configure I2C interface */
+ 214:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_CTRL_REG     = I2C_1_EZI2C_DEFAULT_CTRL;
+ 215:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_I2C_CTRL_REG = I2C_1_EZI2C_DEFAULT_I2C_CTRL;
+ 216:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 217:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #if (I2C_1_CY_SCBIP_V0)
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 13
+
+
+ 218:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         /* Adjust SDA filter settings. Ticket ID#150521 */
+ 219:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_SET_I2C_CFG_SDA_FILT_TRIM(I2C_1_EC_AM_I2C_CFG_SDA_FILT_TRIM);
+ 220:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #endif /* (I2C_1_CY_SCBIP_V0) */
+ 221:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 222:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         /* Configure RX direction */
+ 223:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_RX_CTRL_REG      = I2C_1_EZI2C_DEFAULT_RX_CTRL;
+ 224:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_RX_FIFO_CTRL_REG = I2C_1_EZI2C_DEFAULT_RX_FIFO_CTRL;
+ 225:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 226:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         /* Set default address and mask */
+ 227:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_RX_MATCH_REG     = I2C_1_EZI2C_DEFAULT_RX_MATCH;
+ 228:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 229:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         /* Configure TX direction */
+ 230:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_TX_CTRL_REG      = I2C_1_EZI2C_DEFAULT_TX_CTRL;
+ 231:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_TX_FIFO_CTRL_REG = I2C_1_EZI2C_DEFAULT_TX_FIFO_CTRL;
+ 232:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 233:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         /* Configure interrupt with EZI2C handler but do not enable it */
+ 234:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #if !defined (CY_EXTERNAL_INTERRUPT_CONFIG)
+ 235:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         CyIntDisable    (I2C_1_ISR_NUMBER);
+ 236:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         CyIntSetPriority(I2C_1_ISR_NUMBER, I2C_1_ISR_PRIORITY);
+ 237:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 238:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #if (I2C_1_EZI2C_SCL_STRETCH_ENABLE_CONST)
+ 239:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         (void) CyIntSetVector(I2C_1_ISR_NUMBER, &I2C_1_EZI2C_STRETCH_ISR);
+ 240:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #else
+ 241:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         (void) CyIntSetVector(I2C_1_ISR_NUMBER, &I2C_1_EZI2C_NO_STRETCH_ISR);
+ 242:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #endif /* (I2C_1_EZI2C_SCL_STRETCH_ENABLE_CONST) */
+ 243:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 244:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #endif /* !defined (CY_EXTERNAL_INTERRUPT_CONFIG) */
+ 245:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 246:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         /* Configure interrupt sources */
+ 247:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #if (!I2C_1_CY_SCBIP_V1)
+ 248:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_INTR_SPI_EC_MASK_REG = I2C_1_EZI2C_DEFAULT_INTR_SPI_EC_MASK;
+ 249:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #endif /* (!I2C_1_CY_SCBIP_V1) */
+ 250:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 251:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_INTR_I2C_EC_MASK_REG = I2C_1_EZI2C_DEFAULT_INTR_I2C_EC_MASK;
+ 252:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_INTR_SLAVE_MASK_REG  = I2C_1_EZI2C_DEFAULT_INTR_SLAVE_MASK;
+ 253:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_INTR_MASTER_MASK_REG = I2C_1_EZI2C_DEFAULT_INTR_MASTER_MASK;
+ 254:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_INTR_RX_MASK_REG     = I2C_1_EZI2C_DEFAULT_INTR_RX_MASK;
+ 255:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_INTR_TX_MASK_REG     = I2C_1_EZI2C_DEFAULT_INTR_TX_MASK;
+ 256:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 257:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         /* Configure global variables */
+ 258:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_fsmState = I2C_1_EZI2C_FSM_IDLE;
+ 259:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 260:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_curStatus  = 0u;
+ 261:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_indexBuf1  = 0u;
+ 262:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_offsetBuf1 = 0u;
+ 263:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 264:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #if(I2C_1_SECONDARY_ADDRESS_ENABLE_CONST)
+ 265:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_indexBuf2  = 0u;
+ 266:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_offsetBuf2 = 0u;
+ 267:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 268:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_addrBuf1 = I2C_1_EZI2C_PRIMARY_SLAVE_ADDRESS;
+ 269:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_addrBuf2 = I2C_1_EZI2C_SECONDARY_SLAVE_ADDRESS;
+ 270:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #endif /* (I2C_1_SECONDARY_ADDRESS_ENABLE_CONST) */
+ 271:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 272:Generated_Source\PSoC4/I2C_1_EZI2C.c **** #endif /* (I2C_1_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 273:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 274:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 14
+
+
+ 275:Generated_Source\PSoC4/I2C_1_EZI2C.c **** /*******************************************************************************
+ 276:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * Function Name: I2C_1_EzI2CStop
+ 277:Generated_Source\PSoC4/I2C_1_EZI2C.c **** ****************************************************************************//**
+ 278:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 279:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  Resets the EZI2C FSM into the default state.
+ 280:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 281:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *******************************************************************************/
+ 282:Generated_Source\PSoC4/I2C_1_EZI2C.c **** void I2C_1_EzI2CStop(void)
+ 283:Generated_Source\PSoC4/I2C_1_EZI2C.c **** {
+ 409              		.loc 1 283 0
+ 410              		.cfi_startproc
+ 411              		@ args = 0, pretend = 0, frame = 0
+ 412              		@ frame_needed = 1, uses_anonymous_args = 0
+ 413 0000 80B5     		push	{r7, lr}
+ 414              		.cfi_def_cfa_offset 8
+ 415              		.cfi_offset 7, -8
+ 416              		.cfi_offset 14, -4
+ 417 0002 00AF     		add	r7, sp, #0
+ 418              		.cfi_def_cfa_register 7
+ 284:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     I2C_1_fsmState = I2C_1_EZI2C_FSM_IDLE;
+ 419              		.loc 1 284 0
+ 420 0004 054B     		ldr	r3, .L26
+ 421 0006 1B78     		ldrb	r3, [r3]
+ 422 0008 002B     		cmp	r3, #0
+ 423 000a 01D0     		beq	.L24
+ 424              		.loc 1 284 0 is_stmt 0 discriminator 1
+ 425 000c 0222     		movs	r2, #2
+ 426 000e 00E0     		b	.L25
+ 427              	.L24:
+ 428              		.loc 1 284 0 discriminator 2
+ 429 0010 0022     		movs	r2, #0
+ 430              	.L25:
+ 431              		.loc 1 284 0 discriminator 4
+ 432 0012 034B     		ldr	r3, .L26+4
+ 433 0014 1A70     		strb	r2, [r3]
+ 285:Generated_Source\PSoC4/I2C_1_EZI2C.c **** }
+ 434              		.loc 1 285 0 is_stmt 1 discriminator 4
+ 435 0016 C046     		nop
+ 436 0018 BD46     		mov	sp, r7
+ 437              		@ sp needed
+ 438 001a 80BD     		pop	{r7, pc}
+ 439              	.L27:
+ 440              		.align	2
+ 441              	.L26:
+ 442 001c 00000000 		.word	I2C_1_subAddrSize
+ 443 0020 00000000 		.word	I2C_1_fsmState
+ 444              		.cfi_endproc
+ 445              	.LFE3:
+ 446              		.size	I2C_1_EzI2CStop, .-I2C_1_EzI2CStop
+ 447              		.section	.text.I2C_1_EzI2CGetActivity,"ax",%progbits
+ 448              		.align	2
+ 449              		.global	I2C_1_EzI2CGetActivity
+ 450              		.code	16
+ 451              		.thumb_func
+ 452              		.type	I2C_1_EzI2CGetActivity, %function
+ 453              	I2C_1_EzI2CGetActivity:
+ 454              	.LFB4:
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 15
+
+
+ 286:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 287:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 288:Generated_Source\PSoC4/I2C_1_EZI2C.c **** /*******************************************************************************
+ 289:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * Function Name: I2C_1_EzI2CGetActivity
+ 290:Generated_Source\PSoC4/I2C_1_EZI2C.c **** ****************************************************************************//**
+ 291:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 292:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  Returns the EZI2C slave status.
+ 293:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  The read, write and error status flags reset to zero after this function
+ 294:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  call. The busy status flag is cleared when the transaction intended for
+ 295:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  the EZI2C slave completes.
+ 296:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 297:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \return
+ 298:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  Returns the status of the EZI2C Slave activity.
+ 299:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  - I2C_1_EZI2C_STATUS_READ1 - Read transfer complete. The transfer 
+ 300:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    used the primary slave address. The error condition status bit must be 
+ 301:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    checked to ensure that read transfer was completed successfully.
+ 302:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  - I2C_1_EZI2C_STATUS_WRITE1 - Write transfer complete. The buffer 
+ 303:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    content was modified. The transfer used the primary slave address. 
+ 304:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    The error condition status bit must be checked to ensure that write 
+ 305:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    transfer was completed successfully.
+ 306:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  - I2C_1_EZI2C_STATUS_READ2 - Read transfer complete. The transfer
+ 307:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    used the secondary slave address. The error condition status bit must be 
+ 308:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    checked to ensure that read transfer was completed successfully.
+ 309:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  - I2C_1_EZI2C_STATUS_WRITE2 - Write transfer complete. The buffer
+ 310:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    content was modified. The transfer used the secondary slave address. 
+ 311:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    The error condition status bit must be checked to ensure that write 
+ 312:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    transfer was completed successfully.
+ 313:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  - I2C_1_EZI2C_STATUS_BUSY - A transfer intended for the primary 
+ 314:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    or secondary address is in progress. The status bit is set after an 
+ 315:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    address match and cleared on a Stop or ReStart condition.
+ 316:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  - I2C_1_EZI2C_STATUS_ERR - An error occurred during a transfer 
+ 317:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    intended for the primary or secondary slave address. The sources of error
+ 318:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    are: misplaced Start or Stop condition or lost arbitration while slave 
+ 319:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    drives SDA.
+ 320:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    The write buffer may contain invalid byte or part of the transaction when 
+ 321:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    I2C_1_EZI2C_STATUS_ERR and I2C_1_EZI2C_STATUS_WRITE1/2 
+ 322:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *    is set. It is recommended to discard buffer content in this case.
+ 323:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 324:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \globalvars
+ 325:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  I2C_1_curStatus - used to store the current status of the EZI2C 
+ 326:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  slave.
+ 327:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 328:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *******************************************************************************/
+ 329:Generated_Source\PSoC4/I2C_1_EZI2C.c **** uint32 I2C_1_EzI2CGetActivity(void)
+ 330:Generated_Source\PSoC4/I2C_1_EZI2C.c **** {
+ 455              		.loc 1 330 0
+ 456              		.cfi_startproc
+ 457              		@ args = 0, pretend = 0, frame = 8
+ 458              		@ frame_needed = 1, uses_anonymous_args = 0
+ 459 0000 80B5     		push	{r7, lr}
+ 460              		.cfi_def_cfa_offset 8
+ 461              		.cfi_offset 7, -8
+ 462              		.cfi_offset 14, -4
+ 463 0002 82B0     		sub	sp, sp, #8
+ 464              		.cfi_def_cfa_offset 16
+ 465 0004 00AF     		add	r7, sp, #0
+ 466              		.cfi_def_cfa_register 7
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 16
+
+
+ 331:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     uint32 status;
+ 332:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 333:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     I2C_1_DisableInt();  /* Lock from interruption */
+ 467              		.loc 1 333 0
+ 468 0006 0920     		movs	r0, #9
+ 469 0008 FFF7FEFF 		bl	CyIntDisable
+ 334:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 335:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     status = I2C_1_curStatus;
+ 470              		.loc 1 335 0
+ 471 000c 1A4B     		ldr	r3, .L36
+ 472 000e 1B78     		ldrb	r3, [r3]
+ 473 0010 DBB2     		uxtb	r3, r3
+ 474 0012 7B60     		str	r3, [r7, #4]
+ 336:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 337:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /* Relay on address match event from HW as bus busy status */
+ 338:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     if(I2C_1_EZI2C_SCL_STRETCH_DISABLE)
+ 475              		.loc 1 338 0
+ 476 0014 194B     		ldr	r3, .L36+4
+ 477 0016 1B68     		ldr	r3, [r3]
+ 478 0018 4022     		movs	r2, #64
+ 479 001a 1340     		ands	r3, r2
+ 480 001c 1CD1     		bne	.L29
+ 339:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 340:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         /* For I2C_1_CY_SCBIP_V0 the wake is prohibited by customizer */
+ 341:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         if(I2C_1_EZI2C_EC_AM_ENABLE)
+ 481              		.loc 1 341 0
+ 482 001e 184B     		ldr	r3, .L36+8
+ 483 0020 1A68     		ldr	r2, [r3]
+ 484 0022 8023     		movs	r3, #128
+ 485 0024 5B00     		lsls	r3, r3, #1
+ 486 0026 1340     		ands	r3, r2
+ 487 0028 0BD0     		beq	.L30
+ 342:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         {
+ 343:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             status |= I2C_1_CHECK_INTR_I2C_EC(I2C_1_INTR_I2C_EC_WAKE_UP) ?
+ 488              		.loc 1 343 0
+ 489 002a 164B     		ldr	r3, .L36+12
+ 490 002c 1B68     		ldr	r3, [r3]
+ 491 002e 0122     		movs	r2, #1
+ 492 0030 1340     		ands	r3, r2
+ 344:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         I2C_1_EZI2C_STATUS_BUSY : 0u;
+ 493              		.loc 1 344 0
+ 494 0032 01D0     		beq	.L31
+ 495              		.loc 1 344 0 is_stmt 0 discriminator 1
+ 496 0034 2023     		movs	r3, #32
+ 497 0036 00E0     		b	.L32
+ 498              	.L31:
+ 499              		.loc 1 344 0 discriminator 2
+ 500 0038 0023     		movs	r3, #0
+ 501              	.L32:
+ 343:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         I2C_1_EZI2C_STATUS_BUSY : 0u;
+ 502              		.loc 1 343 0 is_stmt 1 discriminator 4
+ 503 003a 7A68     		ldr	r2, [r7, #4]
+ 504 003c 1343     		orrs	r3, r2
+ 505 003e 7B60     		str	r3, [r7, #4]
+ 506 0040 0AE0     		b	.L29
+ 507              	.L30:
+ 345:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 17
+
+
+ 346:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         else
+ 347:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         {
+ 348:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             status |= I2C_1_CHECK_INTR_SLAVE(I2C_1_INTR_SLAVE_I2C_ADDR_MATCH) ?
+ 508              		.loc 1 348 0
+ 509 0042 114B     		ldr	r3, .L36+16
+ 510 0044 1B68     		ldr	r3, [r3]
+ 511 0046 4022     		movs	r2, #64
+ 512 0048 1340     		ands	r3, r2
+ 349:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         I2C_1_EZI2C_STATUS_BUSY : 0u;
+ 513              		.loc 1 349 0
+ 514 004a 01D0     		beq	.L33
+ 515              		.loc 1 349 0 is_stmt 0 discriminator 1
+ 516 004c 2023     		movs	r3, #32
+ 517 004e 00E0     		b	.L34
+ 518              	.L33:
+ 519              		.loc 1 349 0 discriminator 2
+ 520 0050 0023     		movs	r3, #0
+ 521              	.L34:
+ 348:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         I2C_1_EZI2C_STATUS_BUSY : 0u;
+ 522              		.loc 1 348 0 is_stmt 1 discriminator 4
+ 523 0052 7A68     		ldr	r2, [r7, #4]
+ 524 0054 1343     		orrs	r3, r2
+ 525 0056 7B60     		str	r3, [r7, #4]
+ 526              	.L29:
+ 350:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 351:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         
+ 352:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 353:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     
+ 354:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 355:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     I2C_1_curStatus &= ((uint8) ~I2C_1_EZI2C_CLEAR_STATUS);
+ 527              		.loc 1 355 0
+ 528 0058 074B     		ldr	r3, .L36
+ 529 005a 1B78     		ldrb	r3, [r3]
+ 530 005c DBB2     		uxtb	r3, r3
+ 531 005e 1F22     		movs	r2, #31
+ 532 0060 9343     		bics	r3, r2
+ 533 0062 DAB2     		uxtb	r2, r3
+ 534 0064 044B     		ldr	r3, .L36
+ 535 0066 1A70     		strb	r2, [r3]
+ 356:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 357:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     I2C_1_EnableInt();   /* Release lock */
+ 536              		.loc 1 357 0
+ 537 0068 0920     		movs	r0, #9
+ 538 006a FFF7FEFF 		bl	CyIntEnable
+ 358:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 359:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     return(status);
+ 539              		.loc 1 359 0
+ 540 006e 7B68     		ldr	r3, [r7, #4]
+ 360:Generated_Source\PSoC4/I2C_1_EZI2C.c **** }
+ 541              		.loc 1 360 0
+ 542 0070 1800     		movs	r0, r3
+ 543 0072 BD46     		mov	sp, r7
+ 544 0074 02B0     		add	sp, sp, #8
+ 545              		@ sp needed
+ 546 0076 80BD     		pop	{r7, pc}
+ 547              	.L37:
+ 548              		.align	2
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 18
+
+
+ 549              	.L36:
+ 550 0078 00000000 		.word	I2C_1_curStatus
+ 551 007c 480F2440 		.word	1076105032
+ 552 0080 00002440 		.word	1076101120
+ 553 0084 800E2440 		.word	1076104832
+ 554 0088 400F2440 		.word	1076105024
+ 555              		.cfi_endproc
+ 556              	.LFE4:
+ 557              		.size	I2C_1_EzI2CGetActivity, .-I2C_1_EzI2CGetActivity
+ 558              		.section	.text.I2C_1_EzI2CSetAddress1,"ax",%progbits
+ 559              		.align	2
+ 560              		.global	I2C_1_EzI2CSetAddress1
+ 561              		.code	16
+ 562              		.thumb_func
+ 563              		.type	I2C_1_EzI2CSetAddress1, %function
+ 564              	I2C_1_EzI2CSetAddress1:
+ 565              	.LFB5:
+ 361:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 362:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 363:Generated_Source\PSoC4/I2C_1_EZI2C.c **** /*******************************************************************************
+ 364:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * Function Name: I2C_1_EzI2CSetAddress1
+ 365:Generated_Source\PSoC4/I2C_1_EZI2C.c **** ****************************************************************************//**
+ 366:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 367:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  Sets the primary EZI2C slave address.
+ 368:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 369:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \param address: I2C slave address for the secondary device.
+ 370:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  This address is the 7-bit right-justified slave address and does not 
+ 371:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *   include the R/W bit.
+ 372:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 373:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  The address value is not checked to see if it violates the I2C spec. 
+ 374:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  The preferred addresses are in the range between 8 and 120 (0x08 to 0x78).
+ 375:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 376:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \globalvars
+ 377:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  I2C_1_addrBuf1 - used to store the primary 7-bit slave address 
+ 378:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  value.
+ 379:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 380:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *******************************************************************************/
+ 381:Generated_Source\PSoC4/I2C_1_EZI2C.c **** void I2C_1_EzI2CSetAddress1(uint32 address)
+ 382:Generated_Source\PSoC4/I2C_1_EZI2C.c **** {
+ 566              		.loc 1 382 0
+ 567              		.cfi_startproc
+ 568              		@ args = 0, pretend = 0, frame = 16
+ 569              		@ frame_needed = 1, uses_anonymous_args = 0
+ 570 0000 90B5     		push	{r4, r7, lr}
+ 571              		.cfi_def_cfa_offset 12
+ 572              		.cfi_offset 4, -12
+ 573              		.cfi_offset 7, -8
+ 574              		.cfi_offset 14, -4
+ 575 0002 85B0     		sub	sp, sp, #20
+ 576              		.cfi_def_cfa_offset 32
+ 577 0004 00AF     		add	r7, sp, #0
+ 578              		.cfi_def_cfa_register 7
+ 579 0006 7860     		str	r0, [r7, #4]
+ 383:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     if(I2C_1_SECONDARY_ADDRESS_ENABLE)
+ 580              		.loc 1 383 0
+ 581 0008 144B     		ldr	r3, .L42
+ 582 000a 1B78     		ldrb	r3, [r3]
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 19
+
+
+ 583 000c 002B     		cmp	r3, #0
+ 584 000e 0FD0     		beq	.L39
+ 384:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 385:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_addrBuf1 = (uint8) address;
+ 585              		.loc 1 385 0
+ 586 0010 7B68     		ldr	r3, [r7, #4]
+ 587 0012 DAB2     		uxtb	r2, r3
+ 588 0014 124B     		ldr	r3, .L42+4
+ 589 0016 1A70     		strb	r2, [r3]
+ 386:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 387:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_RX_MATCH_REG = 
+ 590              		.loc 1 387 0
+ 591 0018 124C     		ldr	r4, .L42+8
+ 388:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         I2C_1_EzI2CUpdateRxMatchReg(address, (uint32) I2C_1_addrBuf2);
+ 592              		.loc 1 388 0
+ 593 001a 134B     		ldr	r3, .L42+12
+ 594 001c 1B78     		ldrb	r3, [r3]
+ 595 001e 1A00     		movs	r2, r3
+ 596 0020 7B68     		ldr	r3, [r7, #4]
+ 597 0022 1100     		movs	r1, r2
+ 598 0024 1800     		movs	r0, r3
+ 599 0026 FFF7FEFF 		bl	I2C_1_EzI2CUpdateRxMatchReg
+ 600 002a 0300     		movs	r3, r0
+ 387:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         I2C_1_EzI2CUpdateRxMatchReg(address, (uint32) I2C_1_addrBuf2);
+ 601              		.loc 1 387 0
+ 602 002c 2360     		str	r3, [r4]
+ 389:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 390:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     else
+ 391:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 392:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         uint32 matchReg;
+ 393:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 394:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         matchReg = I2C_1_RX_MATCH_REG;
+ 395:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 396:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         /* Set address. */
+ 397:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         matchReg &= (uint32) ~I2C_1_RX_MATCH_ADDR_MASK;
+ 398:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         matchReg |= (uint32)  I2C_1_GET_I2C_8BIT_ADDRESS(address);
+ 399:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 400:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_RX_MATCH_REG = matchReg;
+ 401:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 402:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     
+ 403:Generated_Source\PSoC4/I2C_1_EZI2C.c **** }
+ 603              		.loc 1 403 0
+ 604 002e 10E0     		b	.L41
+ 605              	.L39:
+ 606              	.LBB2:
+ 394:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 607              		.loc 1 394 0
+ 608 0030 0C4B     		ldr	r3, .L42+8
+ 609 0032 1B68     		ldr	r3, [r3]
+ 610 0034 FB60     		str	r3, [r7, #12]
+ 397:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         matchReg |= (uint32)  I2C_1_GET_I2C_8BIT_ADDRESS(address);
+ 611              		.loc 1 397 0
+ 612 0036 FB68     		ldr	r3, [r7, #12]
+ 613 0038 FF22     		movs	r2, #255
+ 614 003a 9343     		bics	r3, r2
+ 615 003c FB60     		str	r3, [r7, #12]
+ 398:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 20
+
+
+ 616              		.loc 1 398 0
+ 617 003e 7B68     		ldr	r3, [r7, #4]
+ 618 0040 5B00     		lsls	r3, r3, #1
+ 619 0042 FF22     		movs	r2, #255
+ 620 0044 1340     		ands	r3, r2
+ 621 0046 FA68     		ldr	r2, [r7, #12]
+ 622 0048 1343     		orrs	r3, r2
+ 623 004a FB60     		str	r3, [r7, #12]
+ 400:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 624              		.loc 1 400 0
+ 625 004c 054B     		ldr	r3, .L42+8
+ 626 004e FA68     		ldr	r2, [r7, #12]
+ 627 0050 1A60     		str	r2, [r3]
+ 628              	.L41:
+ 629              	.LBE2:
+ 630              		.loc 1 403 0
+ 631 0052 C046     		nop
+ 632 0054 BD46     		mov	sp, r7
+ 633 0056 05B0     		add	sp, sp, #20
+ 634              		@ sp needed
+ 635 0058 90BD     		pop	{r4, r7, pc}
+ 636              	.L43:
+ 637 005a C046     		.align	2
+ 638              	.L42:
+ 639 005c 00000000 		.word	I2C_1_numberOfAddr
+ 640 0060 00000000 		.word	I2C_1_addrBuf1
+ 641 0064 10032440 		.word	1076101904
+ 642 0068 00000000 		.word	I2C_1_addrBuf2
+ 643              		.cfi_endproc
+ 644              	.LFE5:
+ 645              		.size	I2C_1_EzI2CSetAddress1, .-I2C_1_EzI2CSetAddress1
+ 646              		.section	.text.I2C_1_EzI2CGetAddress1,"ax",%progbits
+ 647              		.align	2
+ 648              		.global	I2C_1_EzI2CGetAddress1
+ 649              		.code	16
+ 650              		.thumb_func
+ 651              		.type	I2C_1_EzI2CGetAddress1, %function
+ 652              	I2C_1_EzI2CGetAddress1:
+ 653              	.LFB6:
+ 404:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 405:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 406:Generated_Source\PSoC4/I2C_1_EZI2C.c **** /*******************************************************************************
+ 407:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * Function Name: I2C_1_EzI2CGetAddress1
+ 408:Generated_Source\PSoC4/I2C_1_EZI2C.c **** ****************************************************************************//**
+ 409:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 410:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  Returns primary the EZ I2C slave address.
+ 411:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  This address is the 7-bit right-justified slave address and does not include 
+ 412:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  the R/W bit.
+ 413:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 414:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \return
+ 415:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  Primary EZI2C slave address.
+ 416:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 417:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \globalvars
+ 418:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  I2C_1_addrBuf1 - used to store the primary 7-bit slave address 
+ 419:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  value.
+ 420:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 421:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *******************************************************************************/
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 21
+
+
+ 422:Generated_Source\PSoC4/I2C_1_EZI2C.c **** uint32 I2C_1_EzI2CGetAddress1(void)
+ 423:Generated_Source\PSoC4/I2C_1_EZI2C.c **** {
+ 654              		.loc 1 423 0
+ 655              		.cfi_startproc
+ 656              		@ args = 0, pretend = 0, frame = 8
+ 657              		@ frame_needed = 1, uses_anonymous_args = 0
+ 658 0000 80B5     		push	{r7, lr}
+ 659              		.cfi_def_cfa_offset 8
+ 660              		.cfi_offset 7, -8
+ 661              		.cfi_offset 14, -4
+ 662 0002 82B0     		sub	sp, sp, #8
+ 663              		.cfi_def_cfa_offset 16
+ 664 0004 00AF     		add	r7, sp, #0
+ 665              		.cfi_def_cfa_register 7
+ 424:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     uint32 address;
+ 425:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 426:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     if(I2C_1_SECONDARY_ADDRESS_ENABLE)
+ 666              		.loc 1 426 0
+ 667 0006 094B     		ldr	r3, .L48
+ 668 0008 1B78     		ldrb	r3, [r3]
+ 669 000a 002B     		cmp	r3, #0
+ 670 000c 03D0     		beq	.L45
+ 427:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 428:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         address = (uint32) I2C_1_addrBuf1;
+ 671              		.loc 1 428 0
+ 672 000e 084B     		ldr	r3, .L48+4
+ 673 0010 1B78     		ldrb	r3, [r3]
+ 674 0012 7B60     		str	r3, [r7, #4]
+ 675 0014 05E0     		b	.L46
+ 676              	.L45:
+ 429:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 430:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     else
+ 431:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 432:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         address = (I2C_1_GET_RX_MATCH_ADDR(I2C_1_RX_MATCH_REG) >>
+ 677              		.loc 1 432 0
+ 678 0016 074B     		ldr	r3, .L48+8
+ 679 0018 1B68     		ldr	r3, [r3]
+ 680 001a FF22     		movs	r2, #255
+ 681 001c 1340     		ands	r3, r2
+ 682 001e 5B08     		lsrs	r3, r3, #1
+ 683 0020 7B60     		str	r3, [r7, #4]
+ 684              	.L46:
+ 433:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                    I2C_1_I2C_SLAVE_ADDR_POS);
+ 434:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 435:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     
+ 436:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 437:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     return(address);
+ 685              		.loc 1 437 0
+ 686 0022 7B68     		ldr	r3, [r7, #4]
+ 438:Generated_Source\PSoC4/I2C_1_EZI2C.c **** }
+ 687              		.loc 1 438 0
+ 688 0024 1800     		movs	r0, r3
+ 689 0026 BD46     		mov	sp, r7
+ 690 0028 02B0     		add	sp, sp, #8
+ 691              		@ sp needed
+ 692 002a 80BD     		pop	{r7, pc}
+ 693              	.L49:
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 22
+
+
+ 694              		.align	2
+ 695              	.L48:
+ 696 002c 00000000 		.word	I2C_1_numberOfAddr
+ 697 0030 00000000 		.word	I2C_1_addrBuf1
+ 698 0034 10032440 		.word	1076101904
+ 699              		.cfi_endproc
+ 700              	.LFE6:
+ 701              		.size	I2C_1_EzI2CGetAddress1, .-I2C_1_EzI2CGetAddress1
+ 702              		.section	.text.I2C_1_EzI2CSetBuffer1,"ax",%progbits
+ 703              		.align	2
+ 704              		.global	I2C_1_EzI2CSetBuffer1
+ 705              		.code	16
+ 706              		.thumb_func
+ 707              		.type	I2C_1_EzI2CSetBuffer1, %function
+ 708              	I2C_1_EzI2CSetBuffer1:
+ 709              	.LFB7:
+ 439:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 440:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 441:Generated_Source\PSoC4/I2C_1_EZI2C.c **** /*******************************************************************************
+ 442:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * Function Name: I2C_1_EzI2CSetBuffer1
+ 443:Generated_Source\PSoC4/I2C_1_EZI2C.c **** ****************************************************************************//**
+ 444:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 445:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  Sets up the data buffer to be exposed to the I2C master on a primary slave
+ 446:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  address request.
+ 447:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 448:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \param bufSize: Size of the buffer in bytes.
+ 449:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \param rwBoundary: Number of data bytes starting from the beginning of the 
+ 450:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  buffer with read and write access. Data bytes located at offset rwBoundary 
+ 451:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  or greater are read only.
+ 452:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  This value must be less than or equal to the buffer size.
+ 453:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \param buffer: Pointer to the data buffer.
+ 454:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 455:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \sideeffect
+ 456:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  Calling this function in the middle of a transaction intended for the 
+ 457:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  primary slave address leads to unexpected behavior.
+ 458:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 459:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \globalvars
+ 460:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  I2C_1_dataBuffer1 – the pointer to the buffer to be exposed to the
+ 461:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  master on a primary address.
+ 462:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  I2C_1_bufSizeBuf1 - the size of the buffer to be exposed to the 
+ 463:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  master on a primary address.
+ 464:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  I2C_1_protectBuf1 - the start index of the read-only region in the
+ 465:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  buffer to be exposed to the master on a primary address. The read-only region
+ 466:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  continues up to the end the buffer.
+ 467:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 468:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *******************************************************************************/
+ 469:Generated_Source\PSoC4/I2C_1_EZI2C.c **** void I2C_1_EzI2CSetBuffer1(uint32 bufSize, uint32 rwBoundary, volatile uint8 * buffer)
+ 470:Generated_Source\PSoC4/I2C_1_EZI2C.c **** {
+ 710              		.loc 1 470 0
+ 711              		.cfi_startproc
+ 712              		@ args = 0, pretend = 0, frame = 16
+ 713              		@ frame_needed = 1, uses_anonymous_args = 0
+ 714 0000 80B5     		push	{r7, lr}
+ 715              		.cfi_def_cfa_offset 8
+ 716              		.cfi_offset 7, -8
+ 717              		.cfi_offset 14, -4
+ 718 0002 84B0     		sub	sp, sp, #16
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 23
+
+
+ 719              		.cfi_def_cfa_offset 24
+ 720 0004 00AF     		add	r7, sp, #0
+ 721              		.cfi_def_cfa_register 7
+ 722 0006 F860     		str	r0, [r7, #12]
+ 723 0008 B960     		str	r1, [r7, #8]
+ 724 000a 7A60     		str	r2, [r7, #4]
+ 471:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     if (NULL != buffer)
+ 725              		.loc 1 471 0
+ 726 000c 7B68     		ldr	r3, [r7, #4]
+ 727 000e 002B     		cmp	r3, #0
+ 728 0010 10D0     		beq	.L52
+ 472:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 473:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_DisableInt();  /* Lock from interruption */
+ 729              		.loc 1 473 0
+ 730 0012 0920     		movs	r0, #9
+ 731 0014 FFF7FEFF 		bl	CyIntDisable
+ 474:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 475:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_dataBuffer1 =  buffer;
+ 732              		.loc 1 475 0
+ 733 0018 084B     		ldr	r3, .L53
+ 734 001a 7A68     		ldr	r2, [r7, #4]
+ 735 001c 1A60     		str	r2, [r3]
+ 476:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_bufSizeBuf1 = (uint16) bufSize;
+ 736              		.loc 1 476 0
+ 737 001e FB68     		ldr	r3, [r7, #12]
+ 738 0020 9AB2     		uxth	r2, r3
+ 739 0022 074B     		ldr	r3, .L53+4
+ 740 0024 1A80     		strh	r2, [r3]
+ 477:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_protectBuf1 = (uint16) rwBoundary;
+ 741              		.loc 1 477 0
+ 742 0026 BB68     		ldr	r3, [r7, #8]
+ 743 0028 9AB2     		uxth	r2, r3
+ 744 002a 064B     		ldr	r3, .L53+8
+ 745 002c 1A80     		strh	r2, [r3]
+ 478:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 479:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_EnableInt();   /* Release lock */
+ 746              		.loc 1 479 0
+ 747 002e 0920     		movs	r0, #9
+ 748 0030 FFF7FEFF 		bl	CyIntEnable
+ 749              	.L52:
+ 480:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 481:Generated_Source\PSoC4/I2C_1_EZI2C.c **** }
+ 750              		.loc 1 481 0
+ 751 0034 C046     		nop
+ 752 0036 BD46     		mov	sp, r7
+ 753 0038 04B0     		add	sp, sp, #16
+ 754              		@ sp needed
+ 755 003a 80BD     		pop	{r7, pc}
+ 756              	.L54:
+ 757              		.align	2
+ 758              	.L53:
+ 759 003c 00000000 		.word	I2C_1_dataBuffer1
+ 760 0040 00000000 		.word	I2C_1_bufSizeBuf1
+ 761 0044 00000000 		.word	I2C_1_protectBuf1
+ 762              		.cfi_endproc
+ 763              	.LFE7:
+ 764              		.size	I2C_1_EzI2CSetBuffer1, .-I2C_1_EzI2CSetBuffer1
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 24
+
+
+ 765              		.section	.text.I2C_1_EzI2CSetReadBoundaryBuffer1,"ax",%progbits
+ 766              		.align	2
+ 767              		.global	I2C_1_EzI2CSetReadBoundaryBuffer1
+ 768              		.code	16
+ 769              		.thumb_func
+ 770              		.type	I2C_1_EzI2CSetReadBoundaryBuffer1, %function
+ 771              	I2C_1_EzI2CSetReadBoundaryBuffer1:
+ 772              	.LFB8:
+ 482:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 483:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 484:Generated_Source\PSoC4/I2C_1_EZI2C.c **** /*******************************************************************************
+ 485:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * Function Name: I2C_1_EzI2CSetReadBoundaryBuffer1
+ 486:Generated_Source\PSoC4/I2C_1_EZI2C.c **** ****************************************************************************//**
+ 487:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 488:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  Sets the read only boundary in the data buffer to be exposed to the I2C
+ 489:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  master on a primary slave address request.
+ 490:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 491:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \param rwBoundry: Number of data bytes starting from the beginning of the 
+ 492:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  buffer with read and write access. Data bytes located at offset rwBoundary 
+ 493:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  or greater are read only.
+ 494:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  This value must be less than or equal to the buffer size.
+ 495:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 496:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \sideeffect
+ 497:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  Calling this function in the middle of a transaction intended for the 
+ 498:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  primary slave address leads to unexpected behavior.
+ 499:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 500:Generated_Source\PSoC4/I2C_1_EZI2C.c **** * \globalvars
+ 501:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  I2C_1_protectBuf1 - the start index of the read-only region in the
+ 502:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  buffer to be exposed to the master on a primary address. The read-only region
+ 503:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *  continues up to the end the buffer.
+ 504:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *
+ 505:Generated_Source\PSoC4/I2C_1_EZI2C.c **** *******************************************************************************/
+ 506:Generated_Source\PSoC4/I2C_1_EZI2C.c **** void I2C_1_EzI2CSetReadBoundaryBuffer1(uint32 rwBoundary)
+ 507:Generated_Source\PSoC4/I2C_1_EZI2C.c **** {
+ 773              		.loc 1 507 0
+ 774              		.cfi_startproc
+ 775              		@ args = 0, pretend = 0, frame = 8
+ 776              		@ frame_needed = 1, uses_anonymous_args = 0
+ 777 0000 80B5     		push	{r7, lr}
+ 778              		.cfi_def_cfa_offset 8
+ 779              		.cfi_offset 7, -8
+ 780              		.cfi_offset 14, -4
+ 781 0002 82B0     		sub	sp, sp, #8
+ 782              		.cfi_def_cfa_offset 16
+ 783 0004 00AF     		add	r7, sp, #0
+ 784              		.cfi_def_cfa_register 7
+ 785 0006 7860     		str	r0, [r7, #4]
+ 508:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     I2C_1_protectBuf1 = (uint16) rwBoundary;
+ 786              		.loc 1 508 0
+ 787 0008 7B68     		ldr	r3, [r7, #4]
+ 788 000a 9AB2     		uxth	r2, r3
+ 789 000c 024B     		ldr	r3, .L56
+ 790 000e 1A80     		strh	r2, [r3]
+ 509:Generated_Source\PSoC4/I2C_1_EZI2C.c **** }
+ 791              		.loc 1 509 0
+ 792 0010 C046     		nop
+ 793 0012 BD46     		mov	sp, r7
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 25
+
+
+ 794 0014 02B0     		add	sp, sp, #8
+ 795              		@ sp needed
+ 796 0016 80BD     		pop	{r7, pc}
+ 797              	.L57:
+ 798              		.align	2
+ 799              	.L56:
+ 800 0018 00000000 		.word	I2C_1_protectBuf1
+ 801              		.cfi_endproc
+ 802              	.LFE8:
+ 803              		.size	I2C_1_EzI2CSetReadBoundaryBuffer1, .-I2C_1_EzI2CSetReadBoundaryBuffer1
+ 804              		.section	.text.I2C_1_EzI2CUpdateRxMatchReg,"ax",%progbits
+ 805              		.align	2
+ 806              		.code	16
+ 807              		.thumb_func
+ 808              		.type	I2C_1_EzI2CUpdateRxMatchReg, %function
+ 809              	I2C_1_EzI2CUpdateRxMatchReg:
+ 810              	.LFB9:
+ 510:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 511:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 512:Generated_Source\PSoC4/I2C_1_EZI2C.c **** #if(I2C_1_SECONDARY_ADDRESS_ENABLE_CONST)
+ 513:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /*******************************************************************************
+ 514:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * Function Name: I2C_1_EzI2CUpdateRxMatchReg
+ 515:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     ****************************************************************************//**
+ 516:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 517:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Returns the value of the RX MATCH register for addr1 and addr2. The addr1 is
+ 518:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  accepted as the primary address and it is written to RX_MATCH.ADDRESS
+ 519:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  (addr1 << 0x01).
+ 520:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  The RX_MATCH.MASK is set as follow: addr1 and addr2 equal bits set to 1
+ 521:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  otherwise 0.
+ 522:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 523:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \param addr1: I2C slave address for the primary device.
+ 524:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \param addr2: I2C slave address for the secondary device.
+ 525:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  This address is the 7-bit right-justified slave address and does
+ 526:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  not include the R/W bit.
+ 527:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 528:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \return
+ 529:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Value of RX MATCH register.
+ 530:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 531:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *******************************************************************************/
+ 532:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     static uint32 I2C_1_EzI2CUpdateRxMatchReg(uint32 addr1, uint32 addr2)
+ 533:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 811              		.loc 1 533 0
+ 812              		.cfi_startproc
+ 813              		@ args = 0, pretend = 0, frame = 16
+ 814              		@ frame_needed = 1, uses_anonymous_args = 0
+ 815 0000 80B5     		push	{r7, lr}
+ 816              		.cfi_def_cfa_offset 8
+ 817              		.cfi_offset 7, -8
+ 818              		.cfi_offset 14, -4
+ 819 0002 84B0     		sub	sp, sp, #16
+ 820              		.cfi_def_cfa_offset 24
+ 821 0004 00AF     		add	r7, sp, #0
+ 822              		.cfi_def_cfa_register 7
+ 823 0006 7860     		str	r0, [r7, #4]
+ 824 0008 3960     		str	r1, [r7]
+ 534:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         uint32 matchReg;
+ 535:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 26
+
+
+ 536:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         matchReg  = ~(addr1 ^ addr2); /* If (addr1 and addr2) bit matches - mask bit equals 1, in o
+ 825              		.loc 1 536 0
+ 826 000a 7A68     		ldr	r2, [r7, #4]
+ 827 000c 3B68     		ldr	r3, [r7]
+ 828 000e 5340     		eors	r3, r2
+ 829 0010 DB43     		mvns	r3, r3
+ 830 0012 FB60     		str	r3, [r7, #12]
+ 537:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 538:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         matchReg  = (uint32) (I2C_1_GET_I2C_8BIT_ADDRESS(matchReg) << I2C_1_RX_MATCH_MASK_POS);
+ 831              		.loc 1 538 0
+ 832 0014 FB68     		ldr	r3, [r7, #12]
+ 833 0016 5A04     		lsls	r2, r3, #17
+ 834 0018 FF23     		movs	r3, #255
+ 835 001a 1B04     		lsls	r3, r3, #16
+ 836 001c 1340     		ands	r3, r2
+ 837 001e FB60     		str	r3, [r7, #12]
+ 539:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         matchReg |= I2C_1_GET_I2C_8BIT_ADDRESS(addr1);
+ 838              		.loc 1 539 0
+ 839 0020 7B68     		ldr	r3, [r7, #4]
+ 840 0022 5B00     		lsls	r3, r3, #1
+ 841 0024 FF22     		movs	r2, #255
+ 842 0026 1340     		ands	r3, r2
+ 843 0028 FA68     		ldr	r2, [r7, #12]
+ 844 002a 1343     		orrs	r3, r2
+ 845 002c FB60     		str	r3, [r7, #12]
+ 540:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 541:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         return(matchReg);
+ 846              		.loc 1 541 0
+ 847 002e FB68     		ldr	r3, [r7, #12]
+ 542:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 848              		.loc 1 542 0
+ 849 0030 1800     		movs	r0, r3
+ 850 0032 BD46     		mov	sp, r7
+ 851 0034 04B0     		add	sp, sp, #16
+ 852              		@ sp needed
+ 853 0036 80BD     		pop	{r7, pc}
+ 854              		.cfi_endproc
+ 855              	.LFE9:
+ 856              		.size	I2C_1_EzI2CUpdateRxMatchReg, .-I2C_1_EzI2CUpdateRxMatchReg
+ 857              		.section	.text.I2C_1_EzI2CSetAddress2,"ax",%progbits
+ 858              		.align	2
+ 859              		.global	I2C_1_EzI2CSetAddress2
+ 860              		.code	16
+ 861              		.thumb_func
+ 862              		.type	I2C_1_EzI2CSetAddress2, %function
+ 863              	I2C_1_EzI2CSetAddress2:
+ 864              	.LFB10:
+ 543:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 544:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /*******************************************************************************
+ 545:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * Function Name: I2C_1_EzI2CSetAddress2
+ 546:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     ****************************************************************************//**
+ 547:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 548:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Sets the secondary EZI2C slave address.
+ 549:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 550:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \param address: secondary I2C slave address.
+ 551:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  This address is the 7-bit right-justified slave address and does not 
+ 552:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  include the R/W bit.
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 27
+
+
+ 553:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  The address value is not checked to see if it violates the I2C spec. 
+ 554:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  The preferred addresses are in the range between 8 and 120 (0x08 to 0x78).
+ 555:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 556:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \globalvars
+ 557:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  I2C_1_addrBuf2 - used to store the secondary 7-bit slave address 
+ 558:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  value.
+ 559:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 560:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *******************************************************************************/
+ 561:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     void I2C_1_EzI2CSetAddress2(uint32 address)
+ 562:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 865              		.loc 1 562 0
+ 866              		.cfi_startproc
+ 867              		@ args = 0, pretend = 0, frame = 8
+ 868              		@ frame_needed = 1, uses_anonymous_args = 0
+ 869 0000 90B5     		push	{r4, r7, lr}
+ 870              		.cfi_def_cfa_offset 12
+ 871              		.cfi_offset 4, -12
+ 872              		.cfi_offset 7, -8
+ 873              		.cfi_offset 14, -4
+ 874 0002 83B0     		sub	sp, sp, #12
+ 875              		.cfi_def_cfa_offset 24
+ 876 0004 00AF     		add	r7, sp, #0
+ 877              		.cfi_def_cfa_register 7
+ 878 0006 7860     		str	r0, [r7, #4]
+ 563:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_addrBuf2 = (uint8) address;
+ 879              		.loc 1 563 0
+ 880 0008 7B68     		ldr	r3, [r7, #4]
+ 881 000a DAB2     		uxtb	r2, r3
+ 882 000c 084B     		ldr	r3, .L61
+ 883 000e 1A70     		strb	r2, [r3]
+ 564:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 565:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_RX_MATCH_REG = 
+ 884              		.loc 1 565 0
+ 885 0010 084C     		ldr	r4, .L61+4
+ 566:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         I2C_1_EzI2CUpdateRxMatchReg((uint32) I2C_1_addrBuf1, address);
+ 886              		.loc 1 566 0
+ 887 0012 094B     		ldr	r3, .L61+8
+ 888 0014 1B78     		ldrb	r3, [r3]
+ 889 0016 1A00     		movs	r2, r3
+ 890 0018 7B68     		ldr	r3, [r7, #4]
+ 891 001a 1900     		movs	r1, r3
+ 892 001c 1000     		movs	r0, r2
+ 893 001e FFF7FEFF 		bl	I2C_1_EzI2CUpdateRxMatchReg
+ 894 0022 0300     		movs	r3, r0
+ 565:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         I2C_1_EzI2CUpdateRxMatchReg((uint32) I2C_1_addrBuf1, address);
+ 895              		.loc 1 565 0
+ 896 0024 2360     		str	r3, [r4]
+ 567:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 897              		.loc 1 567 0
+ 898 0026 C046     		nop
+ 899 0028 BD46     		mov	sp, r7
+ 900 002a 03B0     		add	sp, sp, #12
+ 901              		@ sp needed
+ 902 002c 90BD     		pop	{r4, r7, pc}
+ 903              	.L62:
+ 904 002e C046     		.align	2
+ 905              	.L61:
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 28
+
+
+ 906 0030 00000000 		.word	I2C_1_addrBuf2
+ 907 0034 10032440 		.word	1076101904
+ 908 0038 00000000 		.word	I2C_1_addrBuf1
+ 909              		.cfi_endproc
+ 910              	.LFE10:
+ 911              		.size	I2C_1_EzI2CSetAddress2, .-I2C_1_EzI2CSetAddress2
+ 912              		.section	.text.I2C_1_EzI2CGetAddress2,"ax",%progbits
+ 913              		.align	2
+ 914              		.global	I2C_1_EzI2CGetAddress2
+ 915              		.code	16
+ 916              		.thumb_func
+ 917              		.type	I2C_1_EzI2CGetAddress2, %function
+ 918              	I2C_1_EzI2CGetAddress2:
+ 919              	.LFB11:
+ 568:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 569:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 570:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /*******************************************************************************
+ 571:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * Function Name: I2C_1_EzI2CGetAddress2
+ 572:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     ****************************************************************************//**
+ 573:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 574:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Returns the secondary EZ I2C slave address.
+ 575:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  This address is the 7-bit right-justified slave address and does not include 
+ 576:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  the R/W bit.
+ 577:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 578:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \return
+ 579:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Secondary I2C slave address.
+ 580:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 581:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \globalvars
+ 582:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  I2C_1_addrBuf2 - used to store the secondary 7-bit slave address 
+ 583:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  value.
+ 584:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 585:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *******************************************************************************/
+ 586:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     uint32 I2C_1_EzI2CGetAddress2(void)
+ 587:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 920              		.loc 1 587 0
+ 921              		.cfi_startproc
+ 922              		@ args = 0, pretend = 0, frame = 0
+ 923              		@ frame_needed = 1, uses_anonymous_args = 0
+ 924 0000 80B5     		push	{r7, lr}
+ 925              		.cfi_def_cfa_offset 8
+ 926              		.cfi_offset 7, -8
+ 927              		.cfi_offset 14, -4
+ 928 0002 00AF     		add	r7, sp, #0
+ 929              		.cfi_def_cfa_register 7
+ 588:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         return((uint32) I2C_1_addrBuf2);
+ 930              		.loc 1 588 0
+ 931 0004 024B     		ldr	r3, .L65
+ 932 0006 1B78     		ldrb	r3, [r3]
+ 589:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 933              		.loc 1 589 0
+ 934 0008 1800     		movs	r0, r3
+ 935 000a BD46     		mov	sp, r7
+ 936              		@ sp needed
+ 937 000c 80BD     		pop	{r7, pc}
+ 938              	.L66:
+ 939 000e C046     		.align	2
+ 940              	.L65:
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 29
+
+
+ 941 0010 00000000 		.word	I2C_1_addrBuf2
+ 942              		.cfi_endproc
+ 943              	.LFE11:
+ 944              		.size	I2C_1_EzI2CGetAddress2, .-I2C_1_EzI2CGetAddress2
+ 945              		.section	.text.I2C_1_EzI2CSetBuffer2,"ax",%progbits
+ 946              		.align	2
+ 947              		.global	I2C_1_EzI2CSetBuffer2
+ 948              		.code	16
+ 949              		.thumb_func
+ 950              		.type	I2C_1_EzI2CSetBuffer2, %function
+ 951              	I2C_1_EzI2CSetBuffer2:
+ 952              	.LFB12:
+ 590:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 591:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 592:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /*******************************************************************************
+ 593:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * Function Name: I2C_1_EzI2CSetBuffer2
+ 594:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     ****************************************************************************//**
+ 595:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 596:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Sets up the data buffer to be exposed to the I2C master on a secondary slave
+ 597:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  address request.
+ 598:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 599:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \param bufSize: Size of the buffer in bytes.
+ 600:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \param rwBoundary: Number of data bytes starting from the beginning of the 
+ 601:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  buffer with read and write access. Data bytes located at offset rwBoundary 
+ 602:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  or greater are read only.
+ 603:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  This value must be less than or equal to the buffer size.
+ 604:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \param buffer: Pointer to the data buffer.
+ 605:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 606:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \sideeffects
+ 607:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Calling this function in the middle of a transaction intended for the 
+ 608:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  secondary slave address leads to unexpected behavior.
+ 609:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 610:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \globalvars
+ 611:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  I2C_1_dataBuffer2 – the pointer to the buffer to be exposed to the
+ 612:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  master on a secondary address.
+ 613:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  I2C_1_bufSizeBuf2 - the size of the buffer to be exposed to the 
+ 614:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  master on a secondary address.
+ 615:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  I2C_1_protectBuf2 - the start index of the read-only region in the
+ 616:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  buffer to be exposed to the master on a secondary address. The read-only 
+ 617:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  region continues up to the end the buffer.
+ 618:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 619:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *******************************************************************************/
+ 620:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     void I2C_1_EzI2CSetBuffer2(uint32 bufSize, uint32 rwBoundary, volatile uint8 * buffer)
+ 621:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 953              		.loc 1 621 0
+ 954              		.cfi_startproc
+ 955              		@ args = 0, pretend = 0, frame = 16
+ 956              		@ frame_needed = 1, uses_anonymous_args = 0
+ 957 0000 80B5     		push	{r7, lr}
+ 958              		.cfi_def_cfa_offset 8
+ 959              		.cfi_offset 7, -8
+ 960              		.cfi_offset 14, -4
+ 961 0002 84B0     		sub	sp, sp, #16
+ 962              		.cfi_def_cfa_offset 24
+ 963 0004 00AF     		add	r7, sp, #0
+ 964              		.cfi_def_cfa_register 7
+ 965 0006 F860     		str	r0, [r7, #12]
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 30
+
+
+ 966 0008 B960     		str	r1, [r7, #8]
+ 967 000a 7A60     		str	r2, [r7, #4]
+ 622:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         if (NULL != buffer)
+ 968              		.loc 1 622 0
+ 969 000c 7B68     		ldr	r3, [r7, #4]
+ 970 000e 002B     		cmp	r3, #0
+ 971 0010 10D0     		beq	.L69
+ 623:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         {
+ 624:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_DisableInt();  /* Lock from interruption */
+ 972              		.loc 1 624 0
+ 973 0012 0920     		movs	r0, #9
+ 974 0014 FFF7FEFF 		bl	CyIntDisable
+ 625:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 626:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_dataBuffer2 =  buffer;
+ 975              		.loc 1 626 0
+ 976 0018 084B     		ldr	r3, .L70
+ 977 001a 7A68     		ldr	r2, [r7, #4]
+ 978 001c 1A60     		str	r2, [r3]
+ 627:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_bufSizeBuf2 = (uint16) bufSize;
+ 979              		.loc 1 627 0
+ 980 001e FB68     		ldr	r3, [r7, #12]
+ 981 0020 9AB2     		uxth	r2, r3
+ 982 0022 074B     		ldr	r3, .L70+4
+ 983 0024 1A80     		strh	r2, [r3]
+ 628:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_protectBuf2 = (uint16) rwBoundary;
+ 984              		.loc 1 628 0
+ 985 0026 BB68     		ldr	r3, [r7, #8]
+ 986 0028 9AB2     		uxth	r2, r3
+ 987 002a 064B     		ldr	r3, .L70+8
+ 988 002c 1A80     		strh	r2, [r3]
+ 629:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 630:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_EnableInt();   /* Release lock */
+ 989              		.loc 1 630 0
+ 990 002e 0920     		movs	r0, #9
+ 991 0030 FFF7FEFF 		bl	CyIntEnable
+ 992              	.L69:
+ 631:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 632:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 993              		.loc 1 632 0
+ 994 0034 C046     		nop
+ 995 0036 BD46     		mov	sp, r7
+ 996 0038 04B0     		add	sp, sp, #16
+ 997              		@ sp needed
+ 998 003a 80BD     		pop	{r7, pc}
+ 999              	.L71:
+ 1000              		.align	2
+ 1001              	.L70:
+ 1002 003c 00000000 		.word	I2C_1_dataBuffer2
+ 1003 0040 00000000 		.word	I2C_1_bufSizeBuf2
+ 1004 0044 00000000 		.word	I2C_1_protectBuf2
+ 1005              		.cfi_endproc
+ 1006              	.LFE12:
+ 1007              		.size	I2C_1_EzI2CSetBuffer2, .-I2C_1_EzI2CSetBuffer2
+ 1008              		.section	.text.I2C_1_EzI2CSetReadBoundaryBuffer2,"ax",%progbits
+ 1009              		.align	2
+ 1010              		.global	I2C_1_EzI2CSetReadBoundaryBuffer2
+ 1011              		.code	16
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 31
+
+
+ 1012              		.thumb_func
+ 1013              		.type	I2C_1_EzI2CSetReadBoundaryBuffer2, %function
+ 1014              	I2C_1_EzI2CSetReadBoundaryBuffer2:
+ 1015              	.LFB13:
+ 633:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 634:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 635:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /*******************************************************************************
+ 636:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * Function Name: I2C_1_EzI2CSetReadBoundaryBuffer2
+ 637:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     ****************************************************************************//**
+ 638:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 639:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Sets the read only boundary in the data buffer to be exposed to the I2C
+ 640:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  master on a secondary address request.
+ 641:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 642:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  \param rwBoundary: Number of data bytes starting from the beginning of the
+ 643:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *   buffer with read and write access. Data bytes located at offset rwBoundary 
+ 644:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *   or greater are read only.
+ 645:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *   This value must be less than or equal to the buffer size.
+ 646:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 647:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  \sideeffect
+ 648:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *   Calling this function in the middle of a transaction intended for the 
+ 649:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *   secondary slave address leads to unexpected behavior.
+ 650:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 651:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * \globalvars
+ 652:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  I2C_1_protectBuf2 - the start index of the read-only region in the
+ 653:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  buffer to be exposed to the master on a secondary address. The read-only 
+ 654:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  region continues up to the end the buffe
+ 655:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 656:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *******************************************************************************/
+ 657:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     void I2C_1_EzI2CSetReadBoundaryBuffer2(uint32 rwBoundary)
+ 658:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 1016              		.loc 1 658 0
+ 1017              		.cfi_startproc
+ 1018              		@ args = 0, pretend = 0, frame = 8
+ 1019              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1020 0000 80B5     		push	{r7, lr}
+ 1021              		.cfi_def_cfa_offset 8
+ 1022              		.cfi_offset 7, -8
+ 1023              		.cfi_offset 14, -4
+ 1024 0002 82B0     		sub	sp, sp, #8
+ 1025              		.cfi_def_cfa_offset 16
+ 1026 0004 00AF     		add	r7, sp, #0
+ 1027              		.cfi_def_cfa_register 7
+ 1028 0006 7860     		str	r0, [r7, #4]
+ 659:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         I2C_1_protectBuf2 = (uint16) rwBoundary;
+ 1029              		.loc 1 659 0
+ 1030 0008 7B68     		ldr	r3, [r7, #4]
+ 1031 000a 9AB2     		uxth	r2, r3
+ 1032 000c 024B     		ldr	r3, .L73
+ 1033 000e 1A80     		strh	r2, [r3]
+ 660:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 1034              		.loc 1 660 0
+ 1035 0010 C046     		nop
+ 1036 0012 BD46     		mov	sp, r7
+ 1037 0014 02B0     		add	sp, sp, #8
+ 1038              		@ sp needed
+ 1039 0016 80BD     		pop	{r7, pc}
+ 1040              	.L74:
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 32
+
+
+ 1041              		.align	2
+ 1042              	.L73:
+ 1043 0018 00000000 		.word	I2C_1_protectBuf2
+ 1044              		.cfi_endproc
+ 1045              	.LFE13:
+ 1046              		.size	I2C_1_EzI2CSetReadBoundaryBuffer2, .-I2C_1_EzI2CSetReadBoundaryBuffer2
+ 1047              		.section	.text.I2C_1_EzI2CSaveConfig,"ax",%progbits
+ 1048              		.align	2
+ 1049              		.global	I2C_1_EzI2CSaveConfig
+ 1050              		.code	16
+ 1051              		.thumb_func
+ 1052              		.type	I2C_1_EzI2CSaveConfig, %function
+ 1053              	I2C_1_EzI2CSaveConfig:
+ 1054              	.LFB14:
+ 661:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 662:Generated_Source\PSoC4/I2C_1_EZI2C.c **** #endif /* (I2C_1_SECONDARY_ADDRESS_ENABLE_CONST) */
+ 663:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 664:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 665:Generated_Source\PSoC4/I2C_1_EZI2C.c **** #if(I2C_1_EZI2C_WAKE_ENABLE_CONST)
+ 666:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /*******************************************************************************
+ 667:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * Function Name: I2C_1_EzI2CSaveConfig
+ 668:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     ****************************************************************************//**
+ 669:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 670:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Clock stretching is  enabled: Enables INTR_I2C_EC.WAKE_UP interrupt source.
+ 671:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  It triggers on the slave address match.
+ 672:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Clock stretching is disabled: Waits until the I2C slave becomes free and
+ 673:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  disables the block to perform reconfiguration from the active mode operation
+ 674:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  to deep sleep with wake up on the address match: enables INTR_I2C_EC.WAKE_UP
+ 675:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  interrupt source and disables the INTR_S and INTR_TX interrupt sources.
+ 676:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  The block is disabled before reconfiguration and enabled when
+ 677:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  it is completed.
+ 678:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 679:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *******************************************************************************/
+ 680:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     void I2C_1_EzI2CSaveConfig(void)
+ 681:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 1055              		.loc 1 681 0
+ 1056              		.cfi_startproc
+ 1057              		@ args = 0, pretend = 0, frame = 8
+ 1058              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1059 0000 90B5     		push	{r4, r7, lr}
+ 1060              		.cfi_def_cfa_offset 12
+ 1061              		.cfi_offset 4, -12
+ 1062              		.cfi_offset 7, -8
+ 1063              		.cfi_offset 14, -4
+ 1064 0002 83B0     		sub	sp, sp, #12
+ 1065              		.cfi_def_cfa_offset 24
+ 1066 0004 00AF     		add	r7, sp, #0
+ 1067              		.cfi_def_cfa_register 7
+ 682:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #if(I2C_1_CY_SCBIP_V0)
+ 683:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 684:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         if(I2C_1_EZI2C_SCL_STRETCH_ENABLE)
+ 685:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         {
+ 686:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Enable wakeup interrupt source on address match */
+ 687:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SetI2CExtClkInterruptMode(I2C_1_INTR_I2C_EC_WAKE_UP);
+ 688:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 689:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         
+ 690:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 33
+
+
+ 691:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #else
+ 692:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         uint8 enableInt;
+ 693:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 694:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         enableInt = (uint8) I2C_1_INTR_I2C_EC_WAKE_UP;
+ 1068              		.loc 1 694 0
+ 1069 0006 FB1D     		adds	r3, r7, #7
+ 1070 0008 0122     		movs	r2, #1
+ 1071 000a 1A70     		strb	r2, [r3]
+ 695:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 696:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         if(I2C_1_EZI2C_SCL_STRETCH_ENABLE)
+ 1072              		.loc 1 696 0
+ 1073 000c 2F4B     		ldr	r3, .L82
+ 1074 000e 1B68     		ldr	r3, [r3]
+ 1075 0010 4022     		movs	r2, #64
+ 1076 0012 1340     		ands	r3, r2
+ 1077 0014 04D0     		beq	.L76
+ 697:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         {
+ 698:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         #if (I2C_1_SCB_CLK_INTERNAL)
+ 699:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Disable clock to internal address match logic. Ticket ID #187931 */
+ 700:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SCBCLK_Stop();
+ 701:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         #endif /* (I2C_1_SCB_CLK_INTERNAL) */
+ 702:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 703:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Enable interrupt source to wakeup device */
+ 704:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SetI2CExtClkInterruptMode(enableInt);
+ 1078              		.loc 1 704 0
+ 1079 0016 2E4B     		ldr	r3, .L82+4
+ 1080 0018 FA1D     		adds	r2, r7, #7
+ 1081 001a 1278     		ldrb	r2, [r2]
+ 1082 001c 1A60     		str	r2, [r3]
+ 705:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 706:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         else
+ 707:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         {
+ 708:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             for(;;) /* Wait for end of transaction intended to slave */
+ 709:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             {
+ 710:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 if(0u == (I2C_1_GetI2CExtClkInterruptSource() & I2C_1_INTR_I2C_EC_WAKE_UP))
+ 711:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 {
+ 712:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                     enableInt = CyEnterCriticalSection();
+ 713:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 714:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                     if(0u == (I2C_1_GetI2CExtClkInterruptSource() & I2C_1_INTR_I2C_EC_WAKE_UP))
+ 715:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                     {
+ 716:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         /* Attempts to set NACK command before disable block */
+ 717:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         I2C_1_I2C_SLAVE_GENERATE_NACK;
+ 718:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 719:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         if(0u == (I2C_1_GetI2CExtClkInterruptSource() & I2C_1_INTR_I2C_EC_WAKE_UP))
+ 720:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         {
+ 721:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                             /* NACK command was set before. It is safe to disable block */
+ 722:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                             I2C_1_CTRL_REG &= (uint32) ~I2C_1_CTRL_ENABLED;
+ 723:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                             I2C_1_DisableInt();
+ 724:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 725:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                             CyExitCriticalSection(enableInt);
+ 726:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                             break;
+ 727:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         }
+ 728:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         else
+ 729:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         {
+ 730:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                             /* Clear NACK command to prevent data NACK */
+ 731:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                             I2C_1_I2C_SLAVE_CLEAR_NACK;
+ 732:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         }
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 34
+
+
+ 733:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                     }
+ 734:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 735:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                     CyExitCriticalSection(enableInt);
+ 736:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 }
+ 737:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             }
+ 738:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 739:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Disable all active mode interrupt sources */
+ 740:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SetTxInterruptMode(I2C_1_NO_INTR_SOURCES);
+ 741:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SetSlaveInterruptMode(I2C_1_NO_INTR_SOURCES);
+ 742:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_ClearPendingInt();
+ 743:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_EnableInt();
+ 744:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 745:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Enable wakeup interrupt on address match */
+ 746:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SetI2CExtClkInterruptMode(I2C_1_INTR_I2C_EC_WAKE_UP);
+ 747:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 748:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             enableInt = CyEnterCriticalSection();
+ 749:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 750:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_CTRL_REG |= (uint32) I2C_1_CTRL_ENABLED;
+ 751:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_I2C_SLAVE_GENERATE_NACK;
+ 752:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 753:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             CyExitCriticalSection(enableInt);
+ 754:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 755:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         
+ 756:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #endif /* (I2C_1_CY_SCBIP_V0) */
+ 757:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 1083              		.loc 1 757 0
+ 1084 001e 52E0     		b	.L75
+ 1085              	.L76:
+ 710:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 {
+ 1086              		.loc 1 710 0
+ 1087 0020 2C4B     		ldr	r3, .L82+8
+ 1088 0022 1B68     		ldr	r3, [r3]
+ 1089 0024 0122     		movs	r2, #1
+ 1090 0026 1340     		ands	r3, r2
+ 1091 0028 FAD1     		bne	.L76
+ 712:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 1092              		.loc 1 712 0
+ 1093 002a FC1D     		adds	r4, r7, #7
+ 1094 002c FFF7FEFF 		bl	CyEnterCriticalSection
+ 1095 0030 0300     		movs	r3, r0
+ 1096 0032 2370     		strb	r3, [r4]
+ 714:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                     {
+ 1097              		.loc 1 714 0
+ 1098 0034 274B     		ldr	r3, .L82+8
+ 1099 0036 1B68     		ldr	r3, [r3]
+ 1100 0038 0122     		movs	r2, #1
+ 1101 003a 1340     		ands	r3, r2
+ 1102 003c 3DD1     		bne	.L79
+ 717:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 1103              		.loc 1 717 0
+ 1104 003e 264B     		ldr	r3, .L82+12
+ 1105 0040 0222     		movs	r2, #2
+ 1106 0042 1A60     		str	r2, [r3]
+ 719:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         {
+ 1107              		.loc 1 719 0
+ 1108 0044 234B     		ldr	r3, .L82+8
+ 1109 0046 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 35
+
+
+ 1110 0048 0122     		movs	r2, #1
+ 1111 004a 1340     		ands	r3, r2
+ 1112 004c 32D1     		bne	.L80
+ 722:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                             I2C_1_DisableInt();
+ 1113              		.loc 1 722 0
+ 1114 004e 234B     		ldr	r3, .L82+16
+ 1115 0050 224A     		ldr	r2, .L82+16
+ 1116 0052 1268     		ldr	r2, [r2]
+ 1117 0054 5200     		lsls	r2, r2, #1
+ 1118 0056 5208     		lsrs	r2, r2, #1
+ 1119 0058 1A60     		str	r2, [r3]
+ 723:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 1120              		.loc 1 723 0
+ 1121 005a 0920     		movs	r0, #9
+ 1122 005c FFF7FEFF 		bl	CyIntDisable
+ 725:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                             break;
+ 1123              		.loc 1 725 0
+ 1124 0060 FB1D     		adds	r3, r7, #7
+ 1125 0062 1B78     		ldrb	r3, [r3]
+ 1126 0064 1800     		movs	r0, r3
+ 1127 0066 FFF7FEFF 		bl	CyExitCriticalSection
+ 726:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         }
+ 1128              		.loc 1 726 0
+ 1129 006a C046     		nop
+ 740:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SetSlaveInterruptMode(I2C_1_NO_INTR_SOURCES);
+ 1130              		.loc 1 740 0
+ 1131 006c 1C4B     		ldr	r3, .L82+20
+ 1132 006e 0022     		movs	r2, #0
+ 1133 0070 1A60     		str	r2, [r3]
+ 741:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_ClearPendingInt();
+ 1134              		.loc 1 741 0
+ 1135 0072 164B     		ldr	r3, .L82
+ 1136 0074 0022     		movs	r2, #0
+ 1137 0076 1A60     		str	r2, [r3]
+ 742:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_EnableInt();
+ 1138              		.loc 1 742 0
+ 1139 0078 0920     		movs	r0, #9
+ 1140 007a FFF7FEFF 		bl	CyIntClearPending
+ 743:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 1141              		.loc 1 743 0
+ 1142 007e 0920     		movs	r0, #9
+ 1143 0080 FFF7FEFF 		bl	CyIntEnable
+ 746:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 1144              		.loc 1 746 0
+ 1145 0084 124B     		ldr	r3, .L82+4
+ 1146 0086 0122     		movs	r2, #1
+ 1147 0088 1A60     		str	r2, [r3]
+ 748:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 1148              		.loc 1 748 0
+ 1149 008a FC1D     		adds	r4, r7, #7
+ 1150 008c FFF7FEFF 		bl	CyEnterCriticalSection
+ 1151 0090 0300     		movs	r3, r0
+ 1152 0092 2370     		strb	r3, [r4]
+ 750:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_I2C_SLAVE_GENERATE_NACK;
+ 1153              		.loc 1 750 0
+ 1154 0094 114B     		ldr	r3, .L82+16
+ 1155 0096 114A     		ldr	r2, .L82+16
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 36
+
+
+ 1156 0098 1268     		ldr	r2, [r2]
+ 1157 009a 8021     		movs	r1, #128
+ 1158 009c 0906     		lsls	r1, r1, #24
+ 1159 009e 0A43     		orrs	r2, r1
+ 1160 00a0 1A60     		str	r2, [r3]
+ 751:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 1161              		.loc 1 751 0
+ 1162 00a2 0D4B     		ldr	r3, .L82+12
+ 1163 00a4 0222     		movs	r2, #2
+ 1164 00a6 1A60     		str	r2, [r3]
+ 753:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 1165              		.loc 1 753 0
+ 1166 00a8 FB1D     		adds	r3, r7, #7
+ 1167 00aa 1B78     		ldrb	r3, [r3]
+ 1168 00ac 1800     		movs	r0, r3
+ 1169 00ae FFF7FEFF 		bl	CyExitCriticalSection
+ 1170              		.loc 1 757 0
+ 1171 00b2 08E0     		b	.L75
+ 1172              	.L80:
+ 731:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                         }
+ 1173              		.loc 1 731 0
+ 1174 00b4 084B     		ldr	r3, .L82+12
+ 1175 00b6 0022     		movs	r2, #0
+ 1176 00b8 1A60     		str	r2, [r3]
+ 1177              	.L79:
+ 735:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                 }
+ 1178              		.loc 1 735 0
+ 1179 00ba FB1D     		adds	r3, r7, #7
+ 1180 00bc 1B78     		ldrb	r3, [r3]
+ 1181 00be 1800     		movs	r0, r3
+ 1182 00c0 FFF7FEFF 		bl	CyExitCriticalSection
+ 737:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 1183              		.loc 1 737 0
+ 1184 00c4 ACE7     		b	.L76
+ 1185              	.L75:
+ 1186              		.loc 1 757 0
+ 1187 00c6 BD46     		mov	sp, r7
+ 1188 00c8 03B0     		add	sp, sp, #12
+ 1189              		@ sp needed
+ 1190 00ca 90BD     		pop	{r4, r7, pc}
+ 1191              	.L83:
+ 1192              		.align	2
+ 1193              	.L82:
+ 1194 00cc 480F2440 		.word	1076105032
+ 1195 00d0 880E2440 		.word	1076104840
+ 1196 00d4 800E2440 		.word	1076104832
+ 1197 00d8 6C002440 		.word	1076101228
+ 1198 00dc 00002440 		.word	1076101120
+ 1199 00e0 880F2440 		.word	1076105096
+ 1200              		.cfi_endproc
+ 1201              	.LFE14:
+ 1202              		.size	I2C_1_EzI2CSaveConfig, .-I2C_1_EzI2CSaveConfig
+ 1203              		.section	.text.I2C_1_EzI2CRestoreConfig,"ax",%progbits
+ 1204              		.align	2
+ 1205              		.global	I2C_1_EzI2CRestoreConfig
+ 1206              		.code	16
+ 1207              		.thumb_func
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 37
+
+
+ 1208              		.type	I2C_1_EzI2CRestoreConfig, %function
+ 1209              	I2C_1_EzI2CRestoreConfig:
+ 1210              	.LFB15:
+ 758:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 759:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 760:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     /*******************************************************************************
+ 761:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     * Function Name: I2C_1_EzI2CRestoreConfig
+ 762:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     ****************************************************************************//**
+ 763:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 764:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Clock stretching is  enabled: Disables the INTR_I2C_EC.WAKE_UP interrupt
+ 765:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  source.
+ 766:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Clock stretching is disabled: Reconfigures the EZI2C component from
+ 767:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  Deep Sleep (wake up on the address match) to active operation: disables
+ 768:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  the INTR_I2C_EC.WAKE_UP interrupt source and restores the INTR_S
+ 769:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  interrupt sources to operate in the active mode.
+ 770:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  The block is disabled before reconfiguration and enabled when
+ 771:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *  it is completed.
+ 772:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *
+ 773:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     *******************************************************************************/
+ 774:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     void I2C_1_EzI2CRestoreConfig(void)
+ 775:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     {
+ 1211              		.loc 1 775 0
+ 1212              		.cfi_startproc
+ 1213              		@ args = 0, pretend = 0, frame = 0
+ 1214              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1215 0000 80B5     		push	{r7, lr}
+ 1216              		.cfi_def_cfa_offset 8
+ 1217              		.cfi_offset 7, -8
+ 1218              		.cfi_offset 14, -4
+ 1219 0002 00AF     		add	r7, sp, #0
+ 1220              		.cfi_def_cfa_register 7
+ 776:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #if(I2C_1_CY_SCBIP_V0)
+ 777:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 778:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         if(I2C_1_EZI2C_SCL_STRETCH_ENABLE)
+ 779:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         {
+ 780:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Disable wakeup interrupt on address match */
+ 781:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SetI2CExtClkInterruptMode(I2C_1_NO_INTR_SOURCES);
+ 782:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 783:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         
+ 784:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 785:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #else
+ 786:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 787:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         if(I2C_1_EZI2C_SCL_STRETCH_ENABLE)
+ 1221              		.loc 1 787 0
+ 1222 0004 114B     		ldr	r3, .L88
+ 1223 0006 1B68     		ldr	r3, [r3]
+ 1224 0008 4022     		movs	r2, #64
+ 1225 000a 1340     		ands	r3, r2
+ 1226 000c 03D0     		beq	.L85
+ 788:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         {
+ 789:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Disable wakeup interrupt source on address match */
+ 790:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SetI2CExtClkInterruptMode(I2C_1_NO_INTR_SOURCES);
+ 1227              		.loc 1 790 0
+ 1228 000e 104B     		ldr	r3, .L88+4
+ 1229 0010 0022     		movs	r2, #0
+ 1230 0012 1A60     		str	r2, [r3]
+ 791:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 38
+
+
+ 792:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         #if (I2C_1_SCB_CLK_INTERNAL)
+ 793:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Enable clock to internal address match logic. Ticket ID #187931 */
+ 794:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SCBCLK_Start();
+ 795:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         #endif /* (I2C_1_SCB_CLK_INTERNAL) */
+ 796:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 797:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         else
+ 798:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         {
+ 799:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* NACK will be driven on the bus by wakeup or NACK command.
+ 800:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             * It is safe to disable block to restore active mode configuration.
+ 801:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             */
+ 802:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_CTRL_REG &= (uint32) ~I2C_1_CTRL_ENABLED;
+ 803:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 804:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             /* Restore active mode interrupt sources */
+ 805:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SetI2CExtClkInterruptMode(I2C_1_NO_INTR_SOURCES);
+ 806:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SetSlaveInterruptMode(I2C_1_EZI2C_INTR_SLAVE_MASK |
+ 807:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                    I2C_1_INTR_SLAVE_I2C_START);
+ 808:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_ClearPendingInt();
+ 809:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 810:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_CTRL_REG |= (uint32) I2C_1_CTRL_ENABLED;
+ 811:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 812:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         
+ 813:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 814:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     #endif /* (I2C_1_CY_SCBIP_V0) */
+ 815:Generated_Source\PSoC4/I2C_1_EZI2C.c ****     }
+ 1231              		.loc 1 815 0
+ 1232 0014 16E0     		b	.L87
+ 1233              	.L85:
+ 802:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 1234              		.loc 1 802 0
+ 1235 0016 0F4B     		ldr	r3, .L88+8
+ 1236 0018 0E4A     		ldr	r2, .L88+8
+ 1237 001a 1268     		ldr	r2, [r2]
+ 1238 001c 5200     		lsls	r2, r2, #1
+ 1239 001e 5208     		lsrs	r2, r2, #1
+ 1240 0020 1A60     		str	r2, [r3]
+ 805:Generated_Source\PSoC4/I2C_1_EZI2C.c ****             I2C_1_SetSlaveInterruptMode(I2C_1_EZI2C_INTR_SLAVE_MASK |
+ 1241              		.loc 1 805 0
+ 1242 0022 0B4B     		ldr	r3, .L88+4
+ 1243 0024 0022     		movs	r2, #0
+ 1244 0026 1A60     		str	r2, [r3]
+ 806:Generated_Source\PSoC4/I2C_1_EZI2C.c ****                                                    I2C_1_INTR_SLAVE_I2C_START);
+ 1245              		.loc 1 806 0
+ 1246 0028 084B     		ldr	r3, .L88
+ 1247 002a 3222     		movs	r2, #50
+ 1248 002c FF32     		adds	r2, r2, #255
+ 1249 002e 1A60     		str	r2, [r3]
+ 808:Generated_Source\PSoC4/I2C_1_EZI2C.c **** 
+ 1250              		.loc 1 808 0
+ 1251 0030 0920     		movs	r0, #9
+ 1252 0032 FFF7FEFF 		bl	CyIntClearPending
+ 810:Generated_Source\PSoC4/I2C_1_EZI2C.c ****         }
+ 1253              		.loc 1 810 0
+ 1254 0036 074B     		ldr	r3, .L88+8
+ 1255 0038 064A     		ldr	r2, .L88+8
+ 1256 003a 1268     		ldr	r2, [r2]
+ 1257 003c 8021     		movs	r1, #128
+ 1258 003e 0906     		lsls	r1, r1, #24
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 39
+
+
+ 1259 0040 0A43     		orrs	r2, r1
+ 1260 0042 1A60     		str	r2, [r3]
+ 1261              	.L87:
+ 1262              		.loc 1 815 0
+ 1263 0044 C046     		nop
+ 1264 0046 BD46     		mov	sp, r7
+ 1265              		@ sp needed
+ 1266 0048 80BD     		pop	{r7, pc}
+ 1267              	.L89:
+ 1268 004a C046     		.align	2
+ 1269              	.L88:
+ 1270 004c 480F2440 		.word	1076105032
+ 1271 0050 880E2440 		.word	1076104840
+ 1272 0054 00002440 		.word	1076101120
+ 1273              		.cfi_endproc
+ 1274              	.LFE15:
+ 1275              		.size	I2C_1_EzI2CRestoreConfig, .-I2C_1_EzI2CRestoreConfig
+ 1276              		.text
+ 1277              	.Letext0:
+ 1278              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 1279              		.file 3 "Generated_Source\\PSoC4\\I2C_1_EZI2C.h"
+ 1280              		.file 4 "Generated_Source\\PSoC4\\I2C_1_PVT.h"
+ 1281              		.section	.debug_info,"",%progbits
+ 1282              	.Ldebug_info0:
+ 1283 0000 D9040000 		.4byte	0x4d9
+ 1284 0004 0400     		.2byte	0x4
+ 1285 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1286 000a 04       		.byte	0x4
+ 1287 000b 01       		.uleb128 0x1
+ 1288 000c B5020000 		.4byte	.LASF69
+ 1289 0010 0C       		.byte	0xc
+ 1290 0011 07000000 		.4byte	.LASF70
+ 1291 0015 43010000 		.4byte	.LASF71
+ 1292 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1293 001d 00000000 		.4byte	0
+ 1294 0021 00000000 		.4byte	.Ldebug_line0
+ 1295 0025 02       		.uleb128 0x2
+ 1296 0026 01       		.byte	0x1
+ 1297 0027 06       		.byte	0x6
+ 1298 0028 A1000000 		.4byte	.LASF0
+ 1299 002c 02       		.uleb128 0x2
+ 1300 002d 01       		.byte	0x1
+ 1301 002e 08       		.byte	0x8
+ 1302 002f EA030000 		.4byte	.LASF1
+ 1303 0033 02       		.uleb128 0x2
+ 1304 0034 02       		.byte	0x2
+ 1305 0035 05       		.byte	0x5
+ 1306 0036 2F040000 		.4byte	.LASF2
+ 1307 003a 02       		.uleb128 0x2
+ 1308 003b 02       		.byte	0x2
+ 1309 003c 07       		.byte	0x7
+ 1310 003d 88020000 		.4byte	.LASF3
+ 1311 0041 02       		.uleb128 0x2
+ 1312 0042 04       		.byte	0x4
+ 1313 0043 05       		.byte	0x5
+ 1314 0044 2F010000 		.4byte	.LASF4
+ 1315 0048 02       		.uleb128 0x2
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 40
+
+
+ 1316 0049 04       		.byte	0x4
+ 1317 004a 07       		.byte	0x7
+ 1318 004b 76020000 		.4byte	.LASF5
+ 1319 004f 02       		.uleb128 0x2
+ 1320 0050 08       		.byte	0x8
+ 1321 0051 05       		.byte	0x5
+ 1322 0052 93000000 		.4byte	.LASF6
+ 1323 0056 02       		.uleb128 0x2
+ 1324 0057 08       		.byte	0x8
+ 1325 0058 07       		.byte	0x7
+ 1326 0059 70000000 		.4byte	.LASF7
+ 1327 005d 03       		.uleb128 0x3
+ 1328 005e 04       		.byte	0x4
+ 1329 005f 05       		.byte	0x5
+ 1330 0060 696E7400 		.ascii	"int\000"
+ 1331 0064 02       		.uleb128 0x2
+ 1332 0065 04       		.byte	0x4
+ 1333 0066 07       		.byte	0x7
+ 1334 0067 29020000 		.4byte	.LASF8
+ 1335 006b 04       		.uleb128 0x4
+ 1336 006c C9010000 		.4byte	.LASF9
+ 1337 0070 02       		.byte	0x2
+ 1338 0071 E401     		.2byte	0x1e4
+ 1339 0073 2C000000 		.4byte	0x2c
+ 1340 0077 04       		.uleb128 0x4
+ 1341 0078 00000000 		.4byte	.LASF10
+ 1342 007c 02       		.byte	0x2
+ 1343 007d E501     		.2byte	0x1e5
+ 1344 007f 3A000000 		.4byte	0x3a
+ 1345 0083 04       		.uleb128 0x4
+ 1346 0084 FD010000 		.4byte	.LASF11
+ 1347 0088 02       		.byte	0x2
+ 1348 0089 E601     		.2byte	0x1e6
+ 1349 008b 48000000 		.4byte	0x48
+ 1350 008f 02       		.uleb128 0x2
+ 1351 0090 04       		.byte	0x4
+ 1352 0091 04       		.byte	0x4
+ 1353 0092 D4030000 		.4byte	.LASF12
+ 1354 0096 02       		.uleb128 0x2
+ 1355 0097 08       		.byte	0x8
+ 1356 0098 04       		.byte	0x4
+ 1357 0099 D8010000 		.4byte	.LASF13
+ 1358 009d 02       		.uleb128 0x2
+ 1359 009e 01       		.byte	0x1
+ 1360 009f 08       		.byte	0x8
+ 1361 00a0 54040000 		.4byte	.LASF14
+ 1362 00a4 05       		.uleb128 0x5
+ 1363 00a5 6B000000 		.4byte	0x6b
+ 1364 00a9 04       		.uleb128 0x4
+ 1365 00aa 43030000 		.4byte	.LASF15
+ 1366 00ae 02       		.byte	0x2
+ 1367 00af 9002     		.2byte	0x290
+ 1368 00b1 B5000000 		.4byte	0xb5
+ 1369 00b5 05       		.uleb128 0x5
+ 1370 00b6 83000000 		.4byte	0x83
+ 1371 00ba 02       		.uleb128 0x2
+ 1372 00bb 08       		.byte	0x8
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 41
+
+
+ 1373 00bc 04       		.byte	0x4
+ 1374 00bd 76030000 		.4byte	.LASF16
+ 1375 00c1 02       		.uleb128 0x2
+ 1376 00c2 04       		.byte	0x4
+ 1377 00c3 07       		.byte	0x7
+ 1378 00c4 6D030000 		.4byte	.LASF17
+ 1379 00c8 06       		.uleb128 0x6
+ 1380 00c9 20       		.byte	0x20
+ 1381 00ca 03       		.byte	0x3
+ 1382 00cb 61       		.byte	0x61
+ 1383 00cc 31010000 		.4byte	0x131
+ 1384 00d0 07       		.uleb128 0x7
+ 1385 00d1 04020000 		.4byte	.LASF18
+ 1386 00d5 03       		.byte	0x3
+ 1387 00d6 66       		.byte	0x66
+ 1388 00d7 83000000 		.4byte	0x83
+ 1389 00db 00       		.byte	0
+ 1390 00dc 07       		.uleb128 0x7
+ 1391 00dd 39040000 		.4byte	.LASF19
+ 1392 00e1 03       		.byte	0x3
+ 1393 00e2 6B       		.byte	0x6b
+ 1394 00e3 83000000 		.4byte	0x83
+ 1395 00e7 04       		.byte	0x4
+ 1396 00e8 07       		.uleb128 0x7
+ 1397 00e9 17020000 		.4byte	.LASF20
+ 1398 00ed 03       		.byte	0x3
+ 1399 00ee 71       		.byte	0x71
+ 1400 00ef 83000000 		.4byte	0x83
+ 1401 00f3 08       		.byte	0x8
+ 1402 00f4 07       		.uleb128 0x7
+ 1403 00f5 C3030000 		.4byte	.LASF21
+ 1404 00f9 03       		.byte	0x3
+ 1405 00fa 75       		.byte	0x75
+ 1406 00fb 83000000 		.4byte	0x83
+ 1407 00ff 0C       		.byte	0xc
+ 1408 0100 07       		.uleb128 0x7
+ 1409 0101 9E040000 		.4byte	.LASF22
+ 1410 0105 03       		.byte	0x3
+ 1411 0106 79       		.byte	0x79
+ 1412 0107 83000000 		.4byte	0x83
+ 1413 010b 10       		.byte	0x10
+ 1414 010c 07       		.uleb128 0x7
+ 1415 010d 87000000 		.4byte	.LASF23
+ 1416 0111 03       		.byte	0x3
+ 1417 0112 7F       		.byte	0x7f
+ 1418 0113 83000000 		.4byte	0x83
+ 1419 0117 14       		.byte	0x14
+ 1420 0118 07       		.uleb128 0x7
+ 1421 0119 38010000 		.4byte	.LASF24
+ 1422 011d 03       		.byte	0x3
+ 1423 011e 84       		.byte	0x84
+ 1424 011f 83000000 		.4byte	0x83
+ 1425 0123 18       		.byte	0x18
+ 1426 0124 07       		.uleb128 0x7
+ 1427 0125 EE010000 		.4byte	.LASF25
+ 1428 0129 03       		.byte	0x3
+ 1429 012a 8D       		.byte	0x8d
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 42
+
+
+ 1430 012b 6B000000 		.4byte	0x6b
+ 1431 012f 1C       		.byte	0x1c
+ 1432 0130 00       		.byte	0
+ 1433 0131 08       		.uleb128 0x8
+ 1434 0132 01050000 		.4byte	.LASF26
+ 1435 0136 03       		.byte	0x3
+ 1436 0137 8E       		.byte	0x8e
+ 1437 0138 C8000000 		.4byte	0xc8
+ 1438 013c 09       		.uleb128 0x9
+ 1439 013d 8A030000 		.4byte	.LASF27
+ 1440 0141 01       		.byte	0x1
+ 1441 0142 61       		.byte	0x61
+ 1442 0143 00000000 		.4byte	.LFB2
+ 1443 0147 3C020000 		.4byte	.LFE2-.LFB2
+ 1444 014b 01       		.uleb128 0x1
+ 1445 014c 9C       		.byte	0x9c
+ 1446 014d 60010000 		.4byte	0x160
+ 1447 0151 0A       		.uleb128 0xa
+ 1448 0152 59040000 		.4byte	.LASF29
+ 1449 0156 01       		.byte	0x1
+ 1450 0157 61       		.byte	0x61
+ 1451 0158 60010000 		.4byte	0x160
+ 1452 015c 02       		.uleb128 0x2
+ 1453 015d 91       		.byte	0x91
+ 1454 015e 6C       		.sleb128 -20
+ 1455 015f 00       		.byte	0
+ 1456 0160 0B       		.uleb128 0xb
+ 1457 0161 04       		.byte	0x4
+ 1458 0162 66010000 		.4byte	0x166
+ 1459 0166 0C       		.uleb128 0xc
+ 1460 0167 31010000 		.4byte	0x131
+ 1461 016b 0D       		.uleb128 0xd
+ 1462 016c DA030000 		.4byte	.LASF47
+ 1463 0170 01       		.byte	0x1
+ 1464 0171 1A01     		.2byte	0x11a
+ 1465 0173 00000000 		.4byte	.LFB3
+ 1466 0177 24000000 		.4byte	.LFE3-.LFB3
+ 1467 017b 01       		.uleb128 0x1
+ 1468 017c 9C       		.byte	0x9c
+ 1469 017d 0E       		.uleb128 0xe
+ 1470 017e 59000000 		.4byte	.LASF33
+ 1471 0182 01       		.byte	0x1
+ 1472 0183 4901     		.2byte	0x149
+ 1473 0185 83000000 		.4byte	0x83
+ 1474 0189 00000000 		.4byte	.LFB4
+ 1475 018d 8C000000 		.4byte	.LFE4-.LFB4
+ 1476 0191 01       		.uleb128 0x1
+ 1477 0192 9C       		.byte	0x9c
+ 1478 0193 A7010000 		.4byte	0x1a7
+ 1479 0197 0F       		.uleb128 0xf
+ 1480 0198 E7040000 		.4byte	.LASF31
+ 1481 019c 01       		.byte	0x1
+ 1482 019d 4B01     		.2byte	0x14b
+ 1483 019f 83000000 		.4byte	0x83
+ 1484 01a3 02       		.uleb128 0x2
+ 1485 01a4 91       		.byte	0x91
+ 1486 01a5 74       		.sleb128 -12
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 43
+
+
+ 1487 01a6 00       		.byte	0
+ 1488 01a7 10       		.uleb128 0x10
+ 1489 01a8 DF000000 		.4byte	.LASF28
+ 1490 01ac 01       		.byte	0x1
+ 1491 01ad 7D01     		.2byte	0x17d
+ 1492 01af 00000000 		.4byte	.LFB5
+ 1493 01b3 6C000000 		.4byte	.LFE5-.LFB5
+ 1494 01b7 01       		.uleb128 0x1
+ 1495 01b8 9C       		.byte	0x9c
+ 1496 01b9 E6010000 		.4byte	0x1e6
+ 1497 01bd 11       		.uleb128 0x11
+ 1498 01be 82030000 		.4byte	.LASF30
+ 1499 01c2 01       		.byte	0x1
+ 1500 01c3 7D01     		.2byte	0x17d
+ 1501 01c5 83000000 		.4byte	0x83
+ 1502 01c9 02       		.uleb128 0x2
+ 1503 01ca 91       		.byte	0x91
+ 1504 01cb 64       		.sleb128 -28
+ 1505 01cc 12       		.uleb128 0x12
+ 1506 01cd 30000000 		.4byte	.LBB2
+ 1507 01d1 22000000 		.4byte	.LBE2-.LBB2
+ 1508 01d5 0F       		.uleb128 0xf
+ 1509 01d6 CF010000 		.4byte	.LASF32
+ 1510 01da 01       		.byte	0x1
+ 1511 01db 8801     		.2byte	0x188
+ 1512 01dd 83000000 		.4byte	0x83
+ 1513 01e1 02       		.uleb128 0x2
+ 1514 01e2 91       		.byte	0x91
+ 1515 01e3 6C       		.sleb128 -20
+ 1516 01e4 00       		.byte	0
+ 1517 01e5 00       		.byte	0
+ 1518 01e6 13       		.uleb128 0x13
+ 1519 01e7 AC030000 		.4byte	.LASF34
+ 1520 01eb 01       		.byte	0x1
+ 1521 01ec A601     		.2byte	0x1a6
+ 1522 01ee 83000000 		.4byte	0x83
+ 1523 01f2 00000000 		.4byte	.LFB6
+ 1524 01f6 38000000 		.4byte	.LFE6-.LFB6
+ 1525 01fa 01       		.uleb128 0x1
+ 1526 01fb 9C       		.byte	0x9c
+ 1527 01fc 10020000 		.4byte	0x210
+ 1528 0200 0F       		.uleb128 0xf
+ 1529 0201 82030000 		.4byte	.LASF30
+ 1530 0205 01       		.byte	0x1
+ 1531 0206 A801     		.2byte	0x1a8
+ 1532 0208 83000000 		.4byte	0x83
+ 1533 020c 02       		.uleb128 0x2
+ 1534 020d 91       		.byte	0x91
+ 1535 020e 74       		.sleb128 -12
+ 1536 020f 00       		.byte	0
+ 1537 0210 10       		.uleb128 0x10
+ 1538 0211 03040000 		.4byte	.LASF35
+ 1539 0215 01       		.byte	0x1
+ 1540 0216 D501     		.2byte	0x1d5
+ 1541 0218 00000000 		.4byte	.LFB7
+ 1542 021c 48000000 		.4byte	.LFE7-.LFB7
+ 1543 0220 01       		.uleb128 0x1
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 44
+
+
+ 1544 0221 9C       		.byte	0x9c
+ 1545 0222 54020000 		.4byte	0x254
+ 1546 0226 11       		.uleb128 0x11
+ 1547 0227 4C040000 		.4byte	.LASF36
+ 1548 022b 01       		.byte	0x1
+ 1549 022c D501     		.2byte	0x1d5
+ 1550 022e 83000000 		.4byte	0x83
+ 1551 0232 02       		.uleb128 0x2
+ 1552 0233 91       		.byte	0x91
+ 1553 0234 74       		.sleb128 -12
+ 1554 0235 11       		.uleb128 0x11
+ 1555 0236 F8030000 		.4byte	.LASF37
+ 1556 023a 01       		.byte	0x1
+ 1557 023b D501     		.2byte	0x1d5
+ 1558 023d 83000000 		.4byte	0x83
+ 1559 0241 02       		.uleb128 0x2
+ 1560 0242 91       		.byte	0x91
+ 1561 0243 70       		.sleb128 -16
+ 1562 0244 11       		.uleb128 0x11
+ 1563 0245 77040000 		.4byte	.LASF38
+ 1564 0249 01       		.byte	0x1
+ 1565 024a D501     		.2byte	0x1d5
+ 1566 024c 54020000 		.4byte	0x254
+ 1567 0250 02       		.uleb128 0x2
+ 1568 0251 91       		.byte	0x91
+ 1569 0252 6C       		.sleb128 -20
+ 1570 0253 00       		.byte	0
+ 1571 0254 0B       		.uleb128 0xb
+ 1572 0255 04       		.byte	0x4
+ 1573 0256 A4000000 		.4byte	0xa4
+ 1574 025a 14       		.uleb128 0x14
+ 1575 025b 85010000 		.4byte	.LASF39
+ 1576 025f 01       		.byte	0x1
+ 1577 0260 FA01     		.2byte	0x1fa
+ 1578 0262 00000000 		.4byte	.LFB8
+ 1579 0266 1C000000 		.4byte	.LFE8-.LFB8
+ 1580 026a 01       		.uleb128 0x1
+ 1581 026b 9C       		.byte	0x9c
+ 1582 026c 80020000 		.4byte	0x280
+ 1583 0270 11       		.uleb128 0x11
+ 1584 0271 F8030000 		.4byte	.LASF37
+ 1585 0275 01       		.byte	0x1
+ 1586 0276 FA01     		.2byte	0x1fa
+ 1587 0278 83000000 		.4byte	0x83
+ 1588 027c 02       		.uleb128 0x2
+ 1589 027d 91       		.byte	0x91
+ 1590 027e 74       		.sleb128 -12
+ 1591 027f 00       		.byte	0
+ 1592 0280 15       		.uleb128 0x15
+ 1593 0281 36020000 		.4byte	.LASF72
+ 1594 0285 01       		.byte	0x1
+ 1595 0286 1402     		.2byte	0x214
+ 1596 0288 83000000 		.4byte	0x83
+ 1597 028c 00000000 		.4byte	.LFB9
+ 1598 0290 38000000 		.4byte	.LFE9-.LFB9
+ 1599 0294 01       		.uleb128 0x1
+ 1600 0295 9C       		.byte	0x9c
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 45
+
+
+ 1601 0296 C8020000 		.4byte	0x2c8
+ 1602 029a 11       		.uleb128 0x11
+ 1603 029b A9020000 		.4byte	.LASF40
+ 1604 029f 01       		.byte	0x1
+ 1605 02a0 1402     		.2byte	0x214
+ 1606 02a2 83000000 		.4byte	0x83
+ 1607 02a6 02       		.uleb128 0x2
+ 1608 02a7 91       		.byte	0x91
+ 1609 02a8 6C       		.sleb128 -20
+ 1610 02a9 11       		.uleb128 0x11
+ 1611 02aa AF020000 		.4byte	.LASF41
+ 1612 02ae 01       		.byte	0x1
+ 1613 02af 1402     		.2byte	0x214
+ 1614 02b1 83000000 		.4byte	0x83
+ 1615 02b5 02       		.uleb128 0x2
+ 1616 02b6 91       		.byte	0x91
+ 1617 02b7 68       		.sleb128 -24
+ 1618 02b8 0F       		.uleb128 0xf
+ 1619 02b9 CF010000 		.4byte	.LASF32
+ 1620 02bd 01       		.byte	0x1
+ 1621 02be 1602     		.2byte	0x216
+ 1622 02c0 83000000 		.4byte	0x83
+ 1623 02c4 02       		.uleb128 0x2
+ 1624 02c5 91       		.byte	0x91
+ 1625 02c6 74       		.sleb128 -12
+ 1626 02c7 00       		.byte	0
+ 1627 02c8 10       		.uleb128 0x10
+ 1628 02c9 F6000000 		.4byte	.LASF42
+ 1629 02cd 01       		.byte	0x1
+ 1630 02ce 3102     		.2byte	0x231
+ 1631 02d0 00000000 		.4byte	.LFB10
+ 1632 02d4 3C000000 		.4byte	.LFE10-.LFB10
+ 1633 02d8 01       		.uleb128 0x1
+ 1634 02d9 9C       		.byte	0x9c
+ 1635 02da EE020000 		.4byte	0x2ee
+ 1636 02de 11       		.uleb128 0x11
+ 1637 02df 82030000 		.4byte	.LASF30
+ 1638 02e3 01       		.byte	0x1
+ 1639 02e4 3102     		.2byte	0x231
+ 1640 02e6 83000000 		.4byte	0x83
+ 1641 02ea 02       		.uleb128 0x2
+ 1642 02eb 91       		.byte	0x91
+ 1643 02ec 6C       		.sleb128 -20
+ 1644 02ed 00       		.byte	0
+ 1645 02ee 16       		.uleb128 0x16
+ 1646 02ef 60040000 		.4byte	.LASF73
+ 1647 02f3 01       		.byte	0x1
+ 1648 02f4 4A02     		.2byte	0x24a
+ 1649 02f6 83000000 		.4byte	0x83
+ 1650 02fa 00000000 		.4byte	.LFB11
+ 1651 02fe 14000000 		.4byte	.LFE11-.LFB11
+ 1652 0302 01       		.uleb128 0x1
+ 1653 0303 9C       		.byte	0x9c
+ 1654 0304 10       		.uleb128 0x10
+ 1655 0305 19040000 		.4byte	.LASF43
+ 1656 0309 01       		.byte	0x1
+ 1657 030a 6C02     		.2byte	0x26c
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 46
+
+
+ 1658 030c 00000000 		.4byte	.LFB12
+ 1659 0310 48000000 		.4byte	.LFE12-.LFB12
+ 1660 0314 01       		.uleb128 0x1
+ 1661 0315 9C       		.byte	0x9c
+ 1662 0316 48030000 		.4byte	0x348
+ 1663 031a 11       		.uleb128 0x11
+ 1664 031b 4C040000 		.4byte	.LASF36
+ 1665 031f 01       		.byte	0x1
+ 1666 0320 6C02     		.2byte	0x26c
+ 1667 0322 83000000 		.4byte	0x83
+ 1668 0326 02       		.uleb128 0x2
+ 1669 0327 91       		.byte	0x91
+ 1670 0328 74       		.sleb128 -12
+ 1671 0329 11       		.uleb128 0x11
+ 1672 032a F8030000 		.4byte	.LASF37
+ 1673 032e 01       		.byte	0x1
+ 1674 032f 6C02     		.2byte	0x26c
+ 1675 0331 83000000 		.4byte	0x83
+ 1676 0335 02       		.uleb128 0x2
+ 1677 0336 91       		.byte	0x91
+ 1678 0337 70       		.sleb128 -16
+ 1679 0338 11       		.uleb128 0x11
+ 1680 0339 77040000 		.4byte	.LASF38
+ 1681 033d 01       		.byte	0x1
+ 1682 033e 6C02     		.2byte	0x26c
+ 1683 0340 54020000 		.4byte	0x254
+ 1684 0344 02       		.uleb128 0x2
+ 1685 0345 91       		.byte	0x91
+ 1686 0346 6C       		.sleb128 -20
+ 1687 0347 00       		.byte	0
+ 1688 0348 14       		.uleb128 0x14
+ 1689 0349 A7010000 		.4byte	.LASF44
+ 1690 034d 01       		.byte	0x1
+ 1691 034e 9102     		.2byte	0x291
+ 1692 0350 00000000 		.4byte	.LFB13
+ 1693 0354 1C000000 		.4byte	.LFE13-.LFB13
+ 1694 0358 01       		.uleb128 0x1
+ 1695 0359 9C       		.byte	0x9c
+ 1696 035a 6E030000 		.4byte	0x36e
+ 1697 035e 11       		.uleb128 0x11
+ 1698 035f F8030000 		.4byte	.LASF37
+ 1699 0363 01       		.byte	0x1
+ 1700 0364 9102     		.2byte	0x291
+ 1701 0366 83000000 		.4byte	0x83
+ 1702 036a 02       		.uleb128 0x2
+ 1703 036b 91       		.byte	0x91
+ 1704 036c 74       		.sleb128 -12
+ 1705 036d 00       		.byte	0
+ 1706 036e 10       		.uleb128 0x10
+ 1707 036f 33050000 		.4byte	.LASF45
+ 1708 0373 01       		.byte	0x1
+ 1709 0374 A802     		.2byte	0x2a8
+ 1710 0376 00000000 		.4byte	.LFB14
+ 1711 037a E4000000 		.4byte	.LFE14-.LFB14
+ 1712 037e 01       		.uleb128 0x1
+ 1713 037f 9C       		.byte	0x9c
+ 1714 0380 94030000 		.4byte	0x394
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 47
+
+
+ 1715 0384 0F       		.uleb128 0xf
+ 1716 0385 29050000 		.4byte	.LASF46
+ 1717 0389 01       		.byte	0x1
+ 1718 038a B402     		.2byte	0x2b4
+ 1719 038c 6B000000 		.4byte	0x6b
+ 1720 0390 02       		.uleb128 0x2
+ 1721 0391 91       		.byte	0x91
+ 1722 0392 6F       		.sleb128 -17
+ 1723 0393 00       		.byte	0
+ 1724 0394 17       		.uleb128 0x17
+ 1725 0395 40000000 		.4byte	.LASF48
+ 1726 0399 01       		.byte	0x1
+ 1727 039a 0603     		.2byte	0x306
+ 1728 039c 00000000 		.4byte	.LFB15
+ 1729 03a0 58000000 		.4byte	.LFE15-.LFB15
+ 1730 03a4 01       		.uleb128 0x1
+ 1731 03a5 9C       		.byte	0x9c
+ 1732 03a6 18       		.uleb128 0x18
+ 1733 03a7 9B020000 		.4byte	.LASF49
+ 1734 03ab 04       		.byte	0x4
+ 1735 03ac 43       		.byte	0x43
+ 1736 03ad 6B000000 		.4byte	0x6b
+ 1737 03b1 18       		.uleb128 0x18
+ 1738 03b2 2C000000 		.4byte	.LASF50
+ 1739 03b6 04       		.byte	0x4
+ 1740 03b7 44       		.byte	0x44
+ 1741 03b8 6B000000 		.4byte	0x6b
+ 1742 03bc 18       		.uleb128 0x18
+ 1743 03bd AD000000 		.4byte	.LASF51
+ 1744 03c1 04       		.byte	0x4
+ 1745 03c2 45       		.byte	0x45
+ 1746 03c3 6B000000 		.4byte	0x6b
+ 1747 03c7 18       		.uleb128 0x18
+ 1748 03c8 EE040000 		.4byte	.LASF52
+ 1749 03cc 04       		.byte	0x4
+ 1750 03cd 55       		.byte	0x55
+ 1751 03ce 6B000000 		.4byte	0x6b
+ 1752 03d2 18       		.uleb128 0x18
+ 1753 03d3 9A030000 		.4byte	.LASF53
+ 1754 03d7 04       		.byte	0x4
+ 1755 03d8 56       		.byte	0x56
+ 1756 03d9 6B000000 		.4byte	0x6b
+ 1757 03dd 19       		.uleb128 0x19
+ 1758 03de D5040000 		.4byte	.LASF54
+ 1759 03e2 01       		.byte	0x1
+ 1760 03e3 41       		.byte	0x41
+ 1761 03e4 66010000 		.4byte	0x166
+ 1762 03e8 05       		.uleb128 0x5
+ 1763 03e9 03       		.byte	0x3
+ 1764 03ea 00000000 		.4byte	I2C_1_configEzI2C
+ 1765 03ee 19       		.uleb128 0x19
+ 1766 03ef 19050000 		.4byte	.LASF55
+ 1767 03f3 01       		.byte	0x1
+ 1768 03f4 1B       		.byte	0x1b
+ 1769 03f5 A4000000 		.4byte	0xa4
+ 1770 03f9 05       		.uleb128 0x5
+ 1771 03fa 03       		.byte	0x3
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 48
+
+
+ 1772 03fb 00000000 		.4byte	I2C_1_curStatus
+ 1773 03ff 19       		.uleb128 0x19
+ 1774 0400 DF010000 		.4byte	.LASF56
+ 1775 0404 01       		.byte	0x1
+ 1776 0405 1C       		.byte	0x1c
+ 1777 0406 6B000000 		.4byte	0x6b
+ 1778 040a 05       		.uleb128 0x5
+ 1779 040b 03       		.byte	0x3
+ 1780 040c 00000000 		.4byte	I2C_1_fsmState
+ 1781 0410 19       		.uleb128 0x19
+ 1782 0411 49030000 		.4byte	.LASF57
+ 1783 0415 01       		.byte	0x1
+ 1784 0416 1F       		.byte	0x1f
+ 1785 0417 54020000 		.4byte	0x254
+ 1786 041b 05       		.uleb128 0x5
+ 1787 041c 03       		.byte	0x3
+ 1788 041d 00000000 		.4byte	I2C_1_dataBuffer1
+ 1789 0421 19       		.uleb128 0x19
+ 1790 0422 52020000 		.4byte	.LASF58
+ 1791 0426 01       		.byte	0x1
+ 1792 0427 20       		.byte	0x20
+ 1793 0428 77000000 		.4byte	0x77
+ 1794 042c 05       		.uleb128 0x5
+ 1795 042d 03       		.byte	0x3
+ 1796 042e 00000000 		.4byte	I2C_1_bufSizeBuf1
+ 1797 0432 19       		.uleb128 0x19
+ 1798 0433 B1040000 		.4byte	.LASF59
+ 1799 0437 01       		.byte	0x1
+ 1800 0438 21       		.byte	0x21
+ 1801 0439 77000000 		.4byte	0x77
+ 1802 043d 05       		.uleb128 0x5
+ 1803 043e 03       		.byte	0x3
+ 1804 043f 00000000 		.4byte	I2C_1_protectBuf1
+ 1805 0443 19       		.uleb128 0x19
+ 1806 0444 0D010000 		.4byte	.LASF60
+ 1807 0448 01       		.byte	0x1
+ 1808 0449 22       		.byte	0x22
+ 1809 044a 77000000 		.4byte	0x77
+ 1810 044e 05       		.uleb128 0x5
+ 1811 044f 03       		.byte	0x3
+ 1812 0450 00000000 		.4byte	I2C_1_offsetBuf1
+ 1813 0454 19       		.uleb128 0x19
+ 1814 0455 7E040000 		.4byte	.LASF61
+ 1815 0459 01       		.byte	0x1
+ 1816 045a 23       		.byte	0x23
+ 1817 045b 77000000 		.4byte	0x77
+ 1818 045f 05       		.uleb128 0x5
+ 1819 0460 03       		.byte	0x3
+ 1820 0461 00000000 		.4byte	I2C_1_indexBuf1
+ 1821 0465 19       		.uleb128 0x19
+ 1822 0466 C1000000 		.4byte	.LASF62
+ 1823 046a 01       		.byte	0x1
+ 1824 046b 26       		.byte	0x26
+ 1825 046c 6B000000 		.4byte	0x6b
+ 1826 0470 05       		.uleb128 0x5
+ 1827 0471 03       		.byte	0x3
+ 1828 0472 00000000 		.4byte	I2C_1_addrBuf1
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 49
+
+
+ 1829 0476 19       		.uleb128 0x19
+ 1830 0477 D0000000 		.4byte	.LASF63
+ 1831 047b 01       		.byte	0x1
+ 1832 047c 27       		.byte	0x27
+ 1833 047d 6B000000 		.4byte	0x6b
+ 1834 0481 05       		.uleb128 0x5
+ 1835 0482 03       		.byte	0x3
+ 1836 0483 00000000 		.4byte	I2C_1_addrBuf2
+ 1837 0487 19       		.uleb128 0x19
+ 1838 0488 5B030000 		.4byte	.LASF64
+ 1839 048c 01       		.byte	0x1
+ 1840 048d 2A       		.byte	0x2a
+ 1841 048e 54020000 		.4byte	0x254
+ 1842 0492 05       		.uleb128 0x5
+ 1843 0493 03       		.byte	0x3
+ 1844 0494 00000000 		.4byte	I2C_1_dataBuffer2
+ 1845 0498 19       		.uleb128 0x19
+ 1846 0499 64020000 		.4byte	.LASF65
+ 1847 049d 01       		.byte	0x1
+ 1848 049e 2B       		.byte	0x2b
+ 1849 049f 77000000 		.4byte	0x77
+ 1850 04a3 05       		.uleb128 0x5
+ 1851 04a4 03       		.byte	0x3
+ 1852 04a5 00000000 		.4byte	I2C_1_bufSizeBuf2
+ 1853 04a9 19       		.uleb128 0x19
+ 1854 04aa C3040000 		.4byte	.LASF66
+ 1855 04ae 01       		.byte	0x1
+ 1856 04af 2C       		.byte	0x2c
+ 1857 04b0 77000000 		.4byte	0x77
+ 1858 04b4 05       		.uleb128 0x5
+ 1859 04b5 03       		.byte	0x3
+ 1860 04b6 00000000 		.4byte	I2C_1_protectBuf2
+ 1861 04ba 19       		.uleb128 0x19
+ 1862 04bb 1E010000 		.4byte	.LASF67
+ 1863 04bf 01       		.byte	0x1
+ 1864 04c0 2D       		.byte	0x2d
+ 1865 04c1 77000000 		.4byte	0x77
+ 1866 04c5 05       		.uleb128 0x5
+ 1867 04c6 03       		.byte	0x3
+ 1868 04c7 00000000 		.4byte	I2C_1_offsetBuf2
+ 1869 04cb 19       		.uleb128 0x19
+ 1870 04cc 8E040000 		.4byte	.LASF68
+ 1871 04d0 01       		.byte	0x1
+ 1872 04d1 2E       		.byte	0x2e
+ 1873 04d2 77000000 		.4byte	0x77
+ 1874 04d6 05       		.uleb128 0x5
+ 1875 04d7 03       		.byte	0x3
+ 1876 04d8 00000000 		.4byte	I2C_1_indexBuf2
+ 1877 04dc 00       		.byte	0
+ 1878              		.section	.debug_abbrev,"",%progbits
+ 1879              	.Ldebug_abbrev0:
+ 1880 0000 01       		.uleb128 0x1
+ 1881 0001 11       		.uleb128 0x11
+ 1882 0002 01       		.byte	0x1
+ 1883 0003 25       		.uleb128 0x25
+ 1884 0004 0E       		.uleb128 0xe
+ 1885 0005 13       		.uleb128 0x13
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 50
+
+
+ 1886 0006 0B       		.uleb128 0xb
+ 1887 0007 03       		.uleb128 0x3
+ 1888 0008 0E       		.uleb128 0xe
+ 1889 0009 1B       		.uleb128 0x1b
+ 1890 000a 0E       		.uleb128 0xe
+ 1891 000b 55       		.uleb128 0x55
+ 1892 000c 17       		.uleb128 0x17
+ 1893 000d 11       		.uleb128 0x11
+ 1894 000e 01       		.uleb128 0x1
+ 1895 000f 10       		.uleb128 0x10
+ 1896 0010 17       		.uleb128 0x17
+ 1897 0011 00       		.byte	0
+ 1898 0012 00       		.byte	0
+ 1899 0013 02       		.uleb128 0x2
+ 1900 0014 24       		.uleb128 0x24
+ 1901 0015 00       		.byte	0
+ 1902 0016 0B       		.uleb128 0xb
+ 1903 0017 0B       		.uleb128 0xb
+ 1904 0018 3E       		.uleb128 0x3e
+ 1905 0019 0B       		.uleb128 0xb
+ 1906 001a 03       		.uleb128 0x3
+ 1907 001b 0E       		.uleb128 0xe
+ 1908 001c 00       		.byte	0
+ 1909 001d 00       		.byte	0
+ 1910 001e 03       		.uleb128 0x3
+ 1911 001f 24       		.uleb128 0x24
+ 1912 0020 00       		.byte	0
+ 1913 0021 0B       		.uleb128 0xb
+ 1914 0022 0B       		.uleb128 0xb
+ 1915 0023 3E       		.uleb128 0x3e
+ 1916 0024 0B       		.uleb128 0xb
+ 1917 0025 03       		.uleb128 0x3
+ 1918 0026 08       		.uleb128 0x8
+ 1919 0027 00       		.byte	0
+ 1920 0028 00       		.byte	0
+ 1921 0029 04       		.uleb128 0x4
+ 1922 002a 16       		.uleb128 0x16
+ 1923 002b 00       		.byte	0
+ 1924 002c 03       		.uleb128 0x3
+ 1925 002d 0E       		.uleb128 0xe
+ 1926 002e 3A       		.uleb128 0x3a
+ 1927 002f 0B       		.uleb128 0xb
+ 1928 0030 3B       		.uleb128 0x3b
+ 1929 0031 05       		.uleb128 0x5
+ 1930 0032 49       		.uleb128 0x49
+ 1931 0033 13       		.uleb128 0x13
+ 1932 0034 00       		.byte	0
+ 1933 0035 00       		.byte	0
+ 1934 0036 05       		.uleb128 0x5
+ 1935 0037 35       		.uleb128 0x35
+ 1936 0038 00       		.byte	0
+ 1937 0039 49       		.uleb128 0x49
+ 1938 003a 13       		.uleb128 0x13
+ 1939 003b 00       		.byte	0
+ 1940 003c 00       		.byte	0
+ 1941 003d 06       		.uleb128 0x6
+ 1942 003e 13       		.uleb128 0x13
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 51
+
+
+ 1943 003f 01       		.byte	0x1
+ 1944 0040 0B       		.uleb128 0xb
+ 1945 0041 0B       		.uleb128 0xb
+ 1946 0042 3A       		.uleb128 0x3a
+ 1947 0043 0B       		.uleb128 0xb
+ 1948 0044 3B       		.uleb128 0x3b
+ 1949 0045 0B       		.uleb128 0xb
+ 1950 0046 01       		.uleb128 0x1
+ 1951 0047 13       		.uleb128 0x13
+ 1952 0048 00       		.byte	0
+ 1953 0049 00       		.byte	0
+ 1954 004a 07       		.uleb128 0x7
+ 1955 004b 0D       		.uleb128 0xd
+ 1956 004c 00       		.byte	0
+ 1957 004d 03       		.uleb128 0x3
+ 1958 004e 0E       		.uleb128 0xe
+ 1959 004f 3A       		.uleb128 0x3a
+ 1960 0050 0B       		.uleb128 0xb
+ 1961 0051 3B       		.uleb128 0x3b
+ 1962 0052 0B       		.uleb128 0xb
+ 1963 0053 49       		.uleb128 0x49
+ 1964 0054 13       		.uleb128 0x13
+ 1965 0055 38       		.uleb128 0x38
+ 1966 0056 0B       		.uleb128 0xb
+ 1967 0057 00       		.byte	0
+ 1968 0058 00       		.byte	0
+ 1969 0059 08       		.uleb128 0x8
+ 1970 005a 16       		.uleb128 0x16
+ 1971 005b 00       		.byte	0
+ 1972 005c 03       		.uleb128 0x3
+ 1973 005d 0E       		.uleb128 0xe
+ 1974 005e 3A       		.uleb128 0x3a
+ 1975 005f 0B       		.uleb128 0xb
+ 1976 0060 3B       		.uleb128 0x3b
+ 1977 0061 0B       		.uleb128 0xb
+ 1978 0062 49       		.uleb128 0x49
+ 1979 0063 13       		.uleb128 0x13
+ 1980 0064 00       		.byte	0
+ 1981 0065 00       		.byte	0
+ 1982 0066 09       		.uleb128 0x9
+ 1983 0067 2E       		.uleb128 0x2e
+ 1984 0068 01       		.byte	0x1
+ 1985 0069 3F       		.uleb128 0x3f
+ 1986 006a 19       		.uleb128 0x19
+ 1987 006b 03       		.uleb128 0x3
+ 1988 006c 0E       		.uleb128 0xe
+ 1989 006d 3A       		.uleb128 0x3a
+ 1990 006e 0B       		.uleb128 0xb
+ 1991 006f 3B       		.uleb128 0x3b
+ 1992 0070 0B       		.uleb128 0xb
+ 1993 0071 27       		.uleb128 0x27
+ 1994 0072 19       		.uleb128 0x19
+ 1995 0073 11       		.uleb128 0x11
+ 1996 0074 01       		.uleb128 0x1
+ 1997 0075 12       		.uleb128 0x12
+ 1998 0076 06       		.uleb128 0x6
+ 1999 0077 40       		.uleb128 0x40
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 52
+
+
+ 2000 0078 18       		.uleb128 0x18
+ 2001 0079 9642     		.uleb128 0x2116
+ 2002 007b 19       		.uleb128 0x19
+ 2003 007c 01       		.uleb128 0x1
+ 2004 007d 13       		.uleb128 0x13
+ 2005 007e 00       		.byte	0
+ 2006 007f 00       		.byte	0
+ 2007 0080 0A       		.uleb128 0xa
+ 2008 0081 05       		.uleb128 0x5
+ 2009 0082 00       		.byte	0
+ 2010 0083 03       		.uleb128 0x3
+ 2011 0084 0E       		.uleb128 0xe
+ 2012 0085 3A       		.uleb128 0x3a
+ 2013 0086 0B       		.uleb128 0xb
+ 2014 0087 3B       		.uleb128 0x3b
+ 2015 0088 0B       		.uleb128 0xb
+ 2016 0089 49       		.uleb128 0x49
+ 2017 008a 13       		.uleb128 0x13
+ 2018 008b 02       		.uleb128 0x2
+ 2019 008c 18       		.uleb128 0x18
+ 2020 008d 00       		.byte	0
+ 2021 008e 00       		.byte	0
+ 2022 008f 0B       		.uleb128 0xb
+ 2023 0090 0F       		.uleb128 0xf
+ 2024 0091 00       		.byte	0
+ 2025 0092 0B       		.uleb128 0xb
+ 2026 0093 0B       		.uleb128 0xb
+ 2027 0094 49       		.uleb128 0x49
+ 2028 0095 13       		.uleb128 0x13
+ 2029 0096 00       		.byte	0
+ 2030 0097 00       		.byte	0
+ 2031 0098 0C       		.uleb128 0xc
+ 2032 0099 26       		.uleb128 0x26
+ 2033 009a 00       		.byte	0
+ 2034 009b 49       		.uleb128 0x49
+ 2035 009c 13       		.uleb128 0x13
+ 2036 009d 00       		.byte	0
+ 2037 009e 00       		.byte	0
+ 2038 009f 0D       		.uleb128 0xd
+ 2039 00a0 2E       		.uleb128 0x2e
+ 2040 00a1 00       		.byte	0
+ 2041 00a2 3F       		.uleb128 0x3f
+ 2042 00a3 19       		.uleb128 0x19
+ 2043 00a4 03       		.uleb128 0x3
+ 2044 00a5 0E       		.uleb128 0xe
+ 2045 00a6 3A       		.uleb128 0x3a
+ 2046 00a7 0B       		.uleb128 0xb
+ 2047 00a8 3B       		.uleb128 0x3b
+ 2048 00a9 05       		.uleb128 0x5
+ 2049 00aa 27       		.uleb128 0x27
+ 2050 00ab 19       		.uleb128 0x19
+ 2051 00ac 11       		.uleb128 0x11
+ 2052 00ad 01       		.uleb128 0x1
+ 2053 00ae 12       		.uleb128 0x12
+ 2054 00af 06       		.uleb128 0x6
+ 2055 00b0 40       		.uleb128 0x40
+ 2056 00b1 18       		.uleb128 0x18
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 53
+
+
+ 2057 00b2 9742     		.uleb128 0x2117
+ 2058 00b4 19       		.uleb128 0x19
+ 2059 00b5 00       		.byte	0
+ 2060 00b6 00       		.byte	0
+ 2061 00b7 0E       		.uleb128 0xe
+ 2062 00b8 2E       		.uleb128 0x2e
+ 2063 00b9 01       		.byte	0x1
+ 2064 00ba 3F       		.uleb128 0x3f
+ 2065 00bb 19       		.uleb128 0x19
+ 2066 00bc 03       		.uleb128 0x3
+ 2067 00bd 0E       		.uleb128 0xe
+ 2068 00be 3A       		.uleb128 0x3a
+ 2069 00bf 0B       		.uleb128 0xb
+ 2070 00c0 3B       		.uleb128 0x3b
+ 2071 00c1 05       		.uleb128 0x5
+ 2072 00c2 27       		.uleb128 0x27
+ 2073 00c3 19       		.uleb128 0x19
+ 2074 00c4 49       		.uleb128 0x49
+ 2075 00c5 13       		.uleb128 0x13
+ 2076 00c6 11       		.uleb128 0x11
+ 2077 00c7 01       		.uleb128 0x1
+ 2078 00c8 12       		.uleb128 0x12
+ 2079 00c9 06       		.uleb128 0x6
+ 2080 00ca 40       		.uleb128 0x40
+ 2081 00cb 18       		.uleb128 0x18
+ 2082 00cc 9642     		.uleb128 0x2116
+ 2083 00ce 19       		.uleb128 0x19
+ 2084 00cf 01       		.uleb128 0x1
+ 2085 00d0 13       		.uleb128 0x13
+ 2086 00d1 00       		.byte	0
+ 2087 00d2 00       		.byte	0
+ 2088 00d3 0F       		.uleb128 0xf
+ 2089 00d4 34       		.uleb128 0x34
+ 2090 00d5 00       		.byte	0
+ 2091 00d6 03       		.uleb128 0x3
+ 2092 00d7 0E       		.uleb128 0xe
+ 2093 00d8 3A       		.uleb128 0x3a
+ 2094 00d9 0B       		.uleb128 0xb
+ 2095 00da 3B       		.uleb128 0x3b
+ 2096 00db 05       		.uleb128 0x5
+ 2097 00dc 49       		.uleb128 0x49
+ 2098 00dd 13       		.uleb128 0x13
+ 2099 00de 02       		.uleb128 0x2
+ 2100 00df 18       		.uleb128 0x18
+ 2101 00e0 00       		.byte	0
+ 2102 00e1 00       		.byte	0
+ 2103 00e2 10       		.uleb128 0x10
+ 2104 00e3 2E       		.uleb128 0x2e
+ 2105 00e4 01       		.byte	0x1
+ 2106 00e5 3F       		.uleb128 0x3f
+ 2107 00e6 19       		.uleb128 0x19
+ 2108 00e7 03       		.uleb128 0x3
+ 2109 00e8 0E       		.uleb128 0xe
+ 2110 00e9 3A       		.uleb128 0x3a
+ 2111 00ea 0B       		.uleb128 0xb
+ 2112 00eb 3B       		.uleb128 0x3b
+ 2113 00ec 05       		.uleb128 0x5
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 54
+
+
+ 2114 00ed 27       		.uleb128 0x27
+ 2115 00ee 19       		.uleb128 0x19
+ 2116 00ef 11       		.uleb128 0x11
+ 2117 00f0 01       		.uleb128 0x1
+ 2118 00f1 12       		.uleb128 0x12
+ 2119 00f2 06       		.uleb128 0x6
+ 2120 00f3 40       		.uleb128 0x40
+ 2121 00f4 18       		.uleb128 0x18
+ 2122 00f5 9642     		.uleb128 0x2116
+ 2123 00f7 19       		.uleb128 0x19
+ 2124 00f8 01       		.uleb128 0x1
+ 2125 00f9 13       		.uleb128 0x13
+ 2126 00fa 00       		.byte	0
+ 2127 00fb 00       		.byte	0
+ 2128 00fc 11       		.uleb128 0x11
+ 2129 00fd 05       		.uleb128 0x5
+ 2130 00fe 00       		.byte	0
+ 2131 00ff 03       		.uleb128 0x3
+ 2132 0100 0E       		.uleb128 0xe
+ 2133 0101 3A       		.uleb128 0x3a
+ 2134 0102 0B       		.uleb128 0xb
+ 2135 0103 3B       		.uleb128 0x3b
+ 2136 0104 05       		.uleb128 0x5
+ 2137 0105 49       		.uleb128 0x49
+ 2138 0106 13       		.uleb128 0x13
+ 2139 0107 02       		.uleb128 0x2
+ 2140 0108 18       		.uleb128 0x18
+ 2141 0109 00       		.byte	0
+ 2142 010a 00       		.byte	0
+ 2143 010b 12       		.uleb128 0x12
+ 2144 010c 0B       		.uleb128 0xb
+ 2145 010d 01       		.byte	0x1
+ 2146 010e 11       		.uleb128 0x11
+ 2147 010f 01       		.uleb128 0x1
+ 2148 0110 12       		.uleb128 0x12
+ 2149 0111 06       		.uleb128 0x6
+ 2150 0112 00       		.byte	0
+ 2151 0113 00       		.byte	0
+ 2152 0114 13       		.uleb128 0x13
+ 2153 0115 2E       		.uleb128 0x2e
+ 2154 0116 01       		.byte	0x1
+ 2155 0117 3F       		.uleb128 0x3f
+ 2156 0118 19       		.uleb128 0x19
+ 2157 0119 03       		.uleb128 0x3
+ 2158 011a 0E       		.uleb128 0xe
+ 2159 011b 3A       		.uleb128 0x3a
+ 2160 011c 0B       		.uleb128 0xb
+ 2161 011d 3B       		.uleb128 0x3b
+ 2162 011e 05       		.uleb128 0x5
+ 2163 011f 27       		.uleb128 0x27
+ 2164 0120 19       		.uleb128 0x19
+ 2165 0121 49       		.uleb128 0x49
+ 2166 0122 13       		.uleb128 0x13
+ 2167 0123 11       		.uleb128 0x11
+ 2168 0124 01       		.uleb128 0x1
+ 2169 0125 12       		.uleb128 0x12
+ 2170 0126 06       		.uleb128 0x6
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 55
+
+
+ 2171 0127 40       		.uleb128 0x40
+ 2172 0128 18       		.uleb128 0x18
+ 2173 0129 9742     		.uleb128 0x2117
+ 2174 012b 19       		.uleb128 0x19
+ 2175 012c 01       		.uleb128 0x1
+ 2176 012d 13       		.uleb128 0x13
+ 2177 012e 00       		.byte	0
+ 2178 012f 00       		.byte	0
+ 2179 0130 14       		.uleb128 0x14
+ 2180 0131 2E       		.uleb128 0x2e
+ 2181 0132 01       		.byte	0x1
+ 2182 0133 3F       		.uleb128 0x3f
+ 2183 0134 19       		.uleb128 0x19
+ 2184 0135 03       		.uleb128 0x3
+ 2185 0136 0E       		.uleb128 0xe
+ 2186 0137 3A       		.uleb128 0x3a
+ 2187 0138 0B       		.uleb128 0xb
+ 2188 0139 3B       		.uleb128 0x3b
+ 2189 013a 05       		.uleb128 0x5
+ 2190 013b 27       		.uleb128 0x27
+ 2191 013c 19       		.uleb128 0x19
+ 2192 013d 11       		.uleb128 0x11
+ 2193 013e 01       		.uleb128 0x1
+ 2194 013f 12       		.uleb128 0x12
+ 2195 0140 06       		.uleb128 0x6
+ 2196 0141 40       		.uleb128 0x40
+ 2197 0142 18       		.uleb128 0x18
+ 2198 0143 9742     		.uleb128 0x2117
+ 2199 0145 19       		.uleb128 0x19
+ 2200 0146 01       		.uleb128 0x1
+ 2201 0147 13       		.uleb128 0x13
+ 2202 0148 00       		.byte	0
+ 2203 0149 00       		.byte	0
+ 2204 014a 15       		.uleb128 0x15
+ 2205 014b 2E       		.uleb128 0x2e
+ 2206 014c 01       		.byte	0x1
+ 2207 014d 03       		.uleb128 0x3
+ 2208 014e 0E       		.uleb128 0xe
+ 2209 014f 3A       		.uleb128 0x3a
+ 2210 0150 0B       		.uleb128 0xb
+ 2211 0151 3B       		.uleb128 0x3b
+ 2212 0152 05       		.uleb128 0x5
+ 2213 0153 27       		.uleb128 0x27
+ 2214 0154 19       		.uleb128 0x19
+ 2215 0155 49       		.uleb128 0x49
+ 2216 0156 13       		.uleb128 0x13
+ 2217 0157 11       		.uleb128 0x11
+ 2218 0158 01       		.uleb128 0x1
+ 2219 0159 12       		.uleb128 0x12
+ 2220 015a 06       		.uleb128 0x6
+ 2221 015b 40       		.uleb128 0x40
+ 2222 015c 18       		.uleb128 0x18
+ 2223 015d 9742     		.uleb128 0x2117
+ 2224 015f 19       		.uleb128 0x19
+ 2225 0160 01       		.uleb128 0x1
+ 2226 0161 13       		.uleb128 0x13
+ 2227 0162 00       		.byte	0
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 56
+
+
+ 2228 0163 00       		.byte	0
+ 2229 0164 16       		.uleb128 0x16
+ 2230 0165 2E       		.uleb128 0x2e
+ 2231 0166 00       		.byte	0
+ 2232 0167 3F       		.uleb128 0x3f
+ 2233 0168 19       		.uleb128 0x19
+ 2234 0169 03       		.uleb128 0x3
+ 2235 016a 0E       		.uleb128 0xe
+ 2236 016b 3A       		.uleb128 0x3a
+ 2237 016c 0B       		.uleb128 0xb
+ 2238 016d 3B       		.uleb128 0x3b
+ 2239 016e 05       		.uleb128 0x5
+ 2240 016f 27       		.uleb128 0x27
+ 2241 0170 19       		.uleb128 0x19
+ 2242 0171 49       		.uleb128 0x49
+ 2243 0172 13       		.uleb128 0x13
+ 2244 0173 11       		.uleb128 0x11
+ 2245 0174 01       		.uleb128 0x1
+ 2246 0175 12       		.uleb128 0x12
+ 2247 0176 06       		.uleb128 0x6
+ 2248 0177 40       		.uleb128 0x40
+ 2249 0178 18       		.uleb128 0x18
+ 2250 0179 9742     		.uleb128 0x2117
+ 2251 017b 19       		.uleb128 0x19
+ 2252 017c 00       		.byte	0
+ 2253 017d 00       		.byte	0
+ 2254 017e 17       		.uleb128 0x17
+ 2255 017f 2E       		.uleb128 0x2e
+ 2256 0180 00       		.byte	0
+ 2257 0181 3F       		.uleb128 0x3f
+ 2258 0182 19       		.uleb128 0x19
+ 2259 0183 03       		.uleb128 0x3
+ 2260 0184 0E       		.uleb128 0xe
+ 2261 0185 3A       		.uleb128 0x3a
+ 2262 0186 0B       		.uleb128 0xb
+ 2263 0187 3B       		.uleb128 0x3b
+ 2264 0188 05       		.uleb128 0x5
+ 2265 0189 27       		.uleb128 0x27
+ 2266 018a 19       		.uleb128 0x19
+ 2267 018b 11       		.uleb128 0x11
+ 2268 018c 01       		.uleb128 0x1
+ 2269 018d 12       		.uleb128 0x12
+ 2270 018e 06       		.uleb128 0x6
+ 2271 018f 40       		.uleb128 0x40
+ 2272 0190 18       		.uleb128 0x18
+ 2273 0191 9642     		.uleb128 0x2116
+ 2274 0193 19       		.uleb128 0x19
+ 2275 0194 00       		.byte	0
+ 2276 0195 00       		.byte	0
+ 2277 0196 18       		.uleb128 0x18
+ 2278 0197 34       		.uleb128 0x34
+ 2279 0198 00       		.byte	0
+ 2280 0199 03       		.uleb128 0x3
+ 2281 019a 0E       		.uleb128 0xe
+ 2282 019b 3A       		.uleb128 0x3a
+ 2283 019c 0B       		.uleb128 0xb
+ 2284 019d 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 57
+
+
+ 2285 019e 0B       		.uleb128 0xb
+ 2286 019f 49       		.uleb128 0x49
+ 2287 01a0 13       		.uleb128 0x13
+ 2288 01a1 3F       		.uleb128 0x3f
+ 2289 01a2 19       		.uleb128 0x19
+ 2290 01a3 3C       		.uleb128 0x3c
+ 2291 01a4 19       		.uleb128 0x19
+ 2292 01a5 00       		.byte	0
+ 2293 01a6 00       		.byte	0
+ 2294 01a7 19       		.uleb128 0x19
+ 2295 01a8 34       		.uleb128 0x34
+ 2296 01a9 00       		.byte	0
+ 2297 01aa 03       		.uleb128 0x3
+ 2298 01ab 0E       		.uleb128 0xe
+ 2299 01ac 3A       		.uleb128 0x3a
+ 2300 01ad 0B       		.uleb128 0xb
+ 2301 01ae 3B       		.uleb128 0x3b
+ 2302 01af 0B       		.uleb128 0xb
+ 2303 01b0 49       		.uleb128 0x49
+ 2304 01b1 13       		.uleb128 0x13
+ 2305 01b2 3F       		.uleb128 0x3f
+ 2306 01b3 19       		.uleb128 0x19
+ 2307 01b4 02       		.uleb128 0x2
+ 2308 01b5 18       		.uleb128 0x18
+ 2309 01b6 00       		.byte	0
+ 2310 01b7 00       		.byte	0
+ 2311 01b8 00       		.byte	0
+ 2312              		.section	.debug_aranges,"",%progbits
+ 2313 0000 84000000 		.4byte	0x84
+ 2314 0004 0200     		.2byte	0x2
+ 2315 0006 00000000 		.4byte	.Ldebug_info0
+ 2316 000a 04       		.byte	0x4
+ 2317 000b 00       		.byte	0
+ 2318 000c 0000     		.2byte	0
+ 2319 000e 0000     		.2byte	0
+ 2320 0010 00000000 		.4byte	.LFB2
+ 2321 0014 3C020000 		.4byte	.LFE2-.LFB2
+ 2322 0018 00000000 		.4byte	.LFB3
+ 2323 001c 24000000 		.4byte	.LFE3-.LFB3
+ 2324 0020 00000000 		.4byte	.LFB4
+ 2325 0024 8C000000 		.4byte	.LFE4-.LFB4
+ 2326 0028 00000000 		.4byte	.LFB5
+ 2327 002c 6C000000 		.4byte	.LFE5-.LFB5
+ 2328 0030 00000000 		.4byte	.LFB6
+ 2329 0034 38000000 		.4byte	.LFE6-.LFB6
+ 2330 0038 00000000 		.4byte	.LFB7
+ 2331 003c 48000000 		.4byte	.LFE7-.LFB7
+ 2332 0040 00000000 		.4byte	.LFB8
+ 2333 0044 1C000000 		.4byte	.LFE8-.LFB8
+ 2334 0048 00000000 		.4byte	.LFB9
+ 2335 004c 38000000 		.4byte	.LFE9-.LFB9
+ 2336 0050 00000000 		.4byte	.LFB10
+ 2337 0054 3C000000 		.4byte	.LFE10-.LFB10
+ 2338 0058 00000000 		.4byte	.LFB11
+ 2339 005c 14000000 		.4byte	.LFE11-.LFB11
+ 2340 0060 00000000 		.4byte	.LFB12
+ 2341 0064 48000000 		.4byte	.LFE12-.LFB12
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 58
+
+
+ 2342 0068 00000000 		.4byte	.LFB13
+ 2343 006c 1C000000 		.4byte	.LFE13-.LFB13
+ 2344 0070 00000000 		.4byte	.LFB14
+ 2345 0074 E4000000 		.4byte	.LFE14-.LFB14
+ 2346 0078 00000000 		.4byte	.LFB15
+ 2347 007c 58000000 		.4byte	.LFE15-.LFB15
+ 2348 0080 00000000 		.4byte	0
+ 2349 0084 00000000 		.4byte	0
+ 2350              		.section	.debug_ranges,"",%progbits
+ 2351              	.Ldebug_ranges0:
+ 2352 0000 00000000 		.4byte	.LFB2
+ 2353 0004 3C020000 		.4byte	.LFE2
+ 2354 0008 00000000 		.4byte	.LFB3
+ 2355 000c 24000000 		.4byte	.LFE3
+ 2356 0010 00000000 		.4byte	.LFB4
+ 2357 0014 8C000000 		.4byte	.LFE4
+ 2358 0018 00000000 		.4byte	.LFB5
+ 2359 001c 6C000000 		.4byte	.LFE5
+ 2360 0020 00000000 		.4byte	.LFB6
+ 2361 0024 38000000 		.4byte	.LFE6
+ 2362 0028 00000000 		.4byte	.LFB7
+ 2363 002c 48000000 		.4byte	.LFE7
+ 2364 0030 00000000 		.4byte	.LFB8
+ 2365 0034 1C000000 		.4byte	.LFE8
+ 2366 0038 00000000 		.4byte	.LFB9
+ 2367 003c 38000000 		.4byte	.LFE9
+ 2368 0040 00000000 		.4byte	.LFB10
+ 2369 0044 3C000000 		.4byte	.LFE10
+ 2370 0048 00000000 		.4byte	.LFB11
+ 2371 004c 14000000 		.4byte	.LFE11
+ 2372 0050 00000000 		.4byte	.LFB12
+ 2373 0054 48000000 		.4byte	.LFE12
+ 2374 0058 00000000 		.4byte	.LFB13
+ 2375 005c 1C000000 		.4byte	.LFE13
+ 2376 0060 00000000 		.4byte	.LFB14
+ 2377 0064 E4000000 		.4byte	.LFE14
+ 2378 0068 00000000 		.4byte	.LFB15
+ 2379 006c 58000000 		.4byte	.LFE15
+ 2380 0070 00000000 		.4byte	0
+ 2381 0074 00000000 		.4byte	0
+ 2382              		.section	.debug_line,"",%progbits
+ 2383              	.Ldebug_line0:
+ 2384 0000 AC020000 		.section	.debug_str,"MS",%progbits,1
+ 2384      02006800 
+ 2384      00000201 
+ 2384      FB0E0D00 
+ 2384      01010101 
+ 2385              	.LASF10:
+ 2386 0000 75696E74 		.ascii	"uint16\000"
+ 2386      313600
+ 2387              	.LASF70:
+ 2388 0007 47656E65 		.ascii	"Generated_Source\\PSoC4\\I2C_1_EZI2C.c\000"
+ 2388      72617465 
+ 2388      645F536F 
+ 2388      75726365 
+ 2388      5C50536F 
+ 2389              	.LASF50:
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 59
+
+
+ 2390 002c 4932435F 		.ascii	"I2C_1_scbEnableWake\000"
+ 2390      315F7363 
+ 2390      62456E61 
+ 2390      626C6557 
+ 2390      616B6500 
+ 2391              	.LASF48:
+ 2392 0040 4932435F 		.ascii	"I2C_1_EzI2CRestoreConfig\000"
+ 2392      315F457A 
+ 2392      49324352 
+ 2392      6573746F 
+ 2392      7265436F 
+ 2393              	.LASF33:
+ 2394 0059 4932435F 		.ascii	"I2C_1_EzI2CGetActivity\000"
+ 2394      315F457A 
+ 2394      49324347 
+ 2394      65744163 
+ 2394      74697669 
+ 2395              	.LASF7:
+ 2396 0070 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2396      206C6F6E 
+ 2396      6720756E 
+ 2396      7369676E 
+ 2396      65642069 
+ 2397              	.LASF23:
+ 2398 0087 73756241 		.ascii	"subAddrSize\000"
+ 2398      64647253 
+ 2398      697A6500 
+ 2399              	.LASF6:
+ 2400 0093 6C6F6E67 		.ascii	"long long int\000"
+ 2400      206C6F6E 
+ 2400      6720696E 
+ 2400      7400
+ 2401              	.LASF0:
+ 2402 00a1 7369676E 		.ascii	"signed char\000"
+ 2402      65642063 
+ 2402      68617200 
+ 2403              	.LASF51:
+ 2404 00ad 4932435F 		.ascii	"I2C_1_scbEnableIntr\000"
+ 2404      315F7363 
+ 2404      62456E61 
+ 2404      626C6549 
+ 2404      6E747200 
+ 2405              	.LASF62:
+ 2406 00c1 4932435F 		.ascii	"I2C_1_addrBuf1\000"
+ 2406      315F6164 
+ 2406      64724275 
+ 2406      663100
+ 2407              	.LASF63:
+ 2408 00d0 4932435F 		.ascii	"I2C_1_addrBuf2\000"
+ 2408      315F6164 
+ 2408      64724275 
+ 2408      663200
+ 2409              	.LASF28:
+ 2410 00df 4932435F 		.ascii	"I2C_1_EzI2CSetAddress1\000"
+ 2410      315F457A 
+ 2410      49324353 
+ 2410      65744164 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 60
+
+
+ 2410      64726573 
+ 2411              	.LASF42:
+ 2412 00f6 4932435F 		.ascii	"I2C_1_EzI2CSetAddress2\000"
+ 2412      315F457A 
+ 2412      49324353 
+ 2412      65744164 
+ 2412      64726573 
+ 2413              	.LASF60:
+ 2414 010d 4932435F 		.ascii	"I2C_1_offsetBuf1\000"
+ 2414      315F6F66 
+ 2414      66736574 
+ 2414      42756631 
+ 2414      00
+ 2415              	.LASF67:
+ 2416 011e 4932435F 		.ascii	"I2C_1_offsetBuf2\000"
+ 2416      315F6F66 
+ 2416      66736574 
+ 2416      42756632 
+ 2416      00
+ 2417              	.LASF4:
+ 2418 012f 6C6F6E67 		.ascii	"long int\000"
+ 2418      20696E74 
+ 2418      00
+ 2419              	.LASF24:
+ 2420 0138 656E6162 		.ascii	"enableWake\000"
+ 2420      6C655761 
+ 2420      6B6500
+ 2421              	.LASF71:
+ 2422 0143 433A5C55 		.ascii	"C:\\Users\\sergio\\Documents\\PSoC Creator\\Thermos"
+ 2422      73657273 
+ 2422      5C736572 
+ 2422      67696F5C 
+ 2422      446F6375 
+ 2423 0171 7461745F 		.ascii	"tat_test\\test.cydsn\000"
+ 2423      74657374 
+ 2423      5C746573 
+ 2423      742E6379 
+ 2423      64736E00 
+ 2424              	.LASF39:
+ 2425 0185 4932435F 		.ascii	"I2C_1_EzI2CSetReadBoundaryBuffer1\000"
+ 2425      315F457A 
+ 2425      49324353 
+ 2425      65745265 
+ 2425      6164426F 
+ 2426              	.LASF44:
+ 2427 01a7 4932435F 		.ascii	"I2C_1_EzI2CSetReadBoundaryBuffer2\000"
+ 2427      315F457A 
+ 2427      49324353 
+ 2427      65745265 
+ 2427      6164426F 
+ 2428              	.LASF9:
+ 2429 01c9 75696E74 		.ascii	"uint8\000"
+ 2429      3800
+ 2430              	.LASF32:
+ 2431 01cf 6D617463 		.ascii	"matchReg\000"
+ 2431      68526567 
+ 2431      00
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 61
+
+
+ 2432              	.LASF13:
+ 2433 01d8 646F7562 		.ascii	"double\000"
+ 2433      6C6500
+ 2434              	.LASF56:
+ 2435 01df 4932435F 		.ascii	"I2C_1_fsmState\000"
+ 2435      315F6673 
+ 2435      6D537461 
+ 2435      746500
+ 2436              	.LASF25:
+ 2437 01ee 656E6162 		.ascii	"enableByteMode\000"
+ 2437      6C654279 
+ 2437      74654D6F 
+ 2437      646500
+ 2438              	.LASF11:
+ 2439 01fd 75696E74 		.ascii	"uint32\000"
+ 2439      333200
+ 2440              	.LASF18:
+ 2441 0204 656E6162 		.ascii	"enableClockStretch\000"
+ 2441      6C65436C 
+ 2441      6F636B53 
+ 2441      74726574 
+ 2441      636800
+ 2442              	.LASF20:
+ 2443 0217 6E756D62 		.ascii	"numberOfAddresses\000"
+ 2443      65724F66 
+ 2443      41646472 
+ 2443      65737365 
+ 2443      7300
+ 2444              	.LASF8:
+ 2445 0229 756E7369 		.ascii	"unsigned int\000"
+ 2445      676E6564 
+ 2445      20696E74 
+ 2445      00
+ 2446              	.LASF72:
+ 2447 0236 4932435F 		.ascii	"I2C_1_EzI2CUpdateRxMatchReg\000"
+ 2447      315F457A 
+ 2447      49324355 
+ 2447      70646174 
+ 2447      6552784D 
+ 2448              	.LASF58:
+ 2449 0252 4932435F 		.ascii	"I2C_1_bufSizeBuf1\000"
+ 2449      315F6275 
+ 2449      6653697A 
+ 2449      65427566 
+ 2449      3100
+ 2450              	.LASF65:
+ 2451 0264 4932435F 		.ascii	"I2C_1_bufSizeBuf2\000"
+ 2451      315F6275 
+ 2451      6653697A 
+ 2451      65427566 
+ 2451      3200
+ 2452              	.LASF5:
+ 2453 0276 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2453      20756E73 
+ 2453      69676E65 
+ 2453      6420696E 
+ 2453      7400
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 62
+
+
+ 2454              	.LASF3:
+ 2455 0288 73686F72 		.ascii	"short unsigned int\000"
+ 2455      7420756E 
+ 2455      7369676E 
+ 2455      65642069 
+ 2455      6E7400
+ 2456              	.LASF49:
+ 2457 029b 4932435F 		.ascii	"I2C_1_scbMode\000"
+ 2457      315F7363 
+ 2457      624D6F64 
+ 2457      6500
+ 2458              	.LASF40:
+ 2459 02a9 61646472 		.ascii	"addr1\000"
+ 2459      3100
+ 2460              	.LASF41:
+ 2461 02af 61646472 		.ascii	"addr2\000"
+ 2461      3200
+ 2462              	.LASF69:
+ 2463 02b5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2463      43313120 
+ 2463      352E342E 
+ 2463      31203230 
+ 2463      31363036 
+ 2464 02e8 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 2464      20726576 
+ 2464      6973696F 
+ 2464      6E203233 
+ 2464      37373135 
+ 2465 031b 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 2465      66756E63 
+ 2465      74696F6E 
+ 2465      2D736563 
+ 2465      74696F6E 
+ 2466              	.LASF15:
+ 2467 0343 72656733 		.ascii	"reg32\000"
+ 2467      3200
+ 2468              	.LASF57:
+ 2469 0349 4932435F 		.ascii	"I2C_1_dataBuffer1\000"
+ 2469      315F6461 
+ 2469      74614275 
+ 2469      66666572 
+ 2469      3100
+ 2470              	.LASF64:
+ 2471 035b 4932435F 		.ascii	"I2C_1_dataBuffer2\000"
+ 2471      315F6461 
+ 2471      74614275 
+ 2471      66666572 
+ 2471      3200
+ 2472              	.LASF17:
+ 2473 036d 73697A65 		.ascii	"sizetype\000"
+ 2473      74797065 
+ 2473      00
+ 2474              	.LASF16:
+ 2475 0376 6C6F6E67 		.ascii	"long double\000"
+ 2475      20646F75 
+ 2475      626C6500 
+ 2476              	.LASF30:
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 63
+
+
+ 2477 0382 61646472 		.ascii	"address\000"
+ 2477      65737300 
+ 2478              	.LASF27:
+ 2479 038a 4932435F 		.ascii	"I2C_1_EzI2CInit\000"
+ 2479      315F457A 
+ 2479      49324349 
+ 2479      6E697400 
+ 2480              	.LASF53:
+ 2481 039a 4932435F 		.ascii	"I2C_1_subAddrSize\000"
+ 2481      315F7375 
+ 2481      62416464 
+ 2481      7253697A 
+ 2481      6500
+ 2482              	.LASF34:
+ 2483 03ac 4932435F 		.ascii	"I2C_1_EzI2CGetAddress1\000"
+ 2483      315F457A 
+ 2483      49324347 
+ 2483      65744164 
+ 2483      64726573 
+ 2484              	.LASF21:
+ 2485 03c3 7072696D 		.ascii	"primarySlaveAddr\000"
+ 2485      61727953 
+ 2485      6C617665 
+ 2485      41646472 
+ 2485      00
+ 2486              	.LASF12:
+ 2487 03d4 666C6F61 		.ascii	"float\000"
+ 2487      7400
+ 2488              	.LASF47:
+ 2489 03da 4932435F 		.ascii	"I2C_1_EzI2CStop\000"
+ 2489      315F457A 
+ 2489      49324353 
+ 2489      746F7000 
+ 2490              	.LASF1:
+ 2491 03ea 756E7369 		.ascii	"unsigned char\000"
+ 2491      676E6564 
+ 2491      20636861 
+ 2491      7200
+ 2492              	.LASF37:
+ 2493 03f8 7277426F 		.ascii	"rwBoundary\000"
+ 2493      756E6461 
+ 2493      727900
+ 2494              	.LASF35:
+ 2495 0403 4932435F 		.ascii	"I2C_1_EzI2CSetBuffer1\000"
+ 2495      315F457A 
+ 2495      49324353 
+ 2495      65744275 
+ 2495      66666572 
+ 2496              	.LASF43:
+ 2497 0419 4932435F 		.ascii	"I2C_1_EzI2CSetBuffer2\000"
+ 2497      315F457A 
+ 2497      49324353 
+ 2497      65744275 
+ 2497      66666572 
+ 2498              	.LASF2:
+ 2499 042f 73686F72 		.ascii	"short int\000"
+ 2499      7420696E 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 64
+
+
+ 2499      7400
+ 2500              	.LASF19:
+ 2501 0439 656E6162 		.ascii	"enableMedianFilter\000"
+ 2501      6C654D65 
+ 2501      6469616E 
+ 2501      46696C74 
+ 2501      657200
+ 2502              	.LASF36:
+ 2503 044c 62756653 		.ascii	"bufSize\000"
+ 2503      697A6500 
+ 2504              	.LASF14:
+ 2505 0454 63686172 		.ascii	"char\000"
+ 2505      00
+ 2506              	.LASF29:
+ 2507 0459 636F6E66 		.ascii	"config\000"
+ 2507      696700
+ 2508              	.LASF73:
+ 2509 0460 4932435F 		.ascii	"I2C_1_EzI2CGetAddress2\000"
+ 2509      315F457A 
+ 2509      49324347 
+ 2509      65744164 
+ 2509      64726573 
+ 2510              	.LASF38:
+ 2511 0477 62756666 		.ascii	"buffer\000"
+ 2511      657200
+ 2512              	.LASF61:
+ 2513 047e 4932435F 		.ascii	"I2C_1_indexBuf1\000"
+ 2513      315F696E 
+ 2513      64657842 
+ 2513      75663100 
+ 2514              	.LASF68:
+ 2515 048e 4932435F 		.ascii	"I2C_1_indexBuf2\000"
+ 2515      315F696E 
+ 2515      64657842 
+ 2515      75663200 
+ 2516              	.LASF22:
+ 2517 049e 7365636F 		.ascii	"secondarySlaveAddr\000"
+ 2517      6E646172 
+ 2517      79536C61 
+ 2517      76654164 
+ 2517      647200
+ 2518              	.LASF59:
+ 2519 04b1 4932435F 		.ascii	"I2C_1_protectBuf1\000"
+ 2519      315F7072 
+ 2519      6F746563 
+ 2519      74427566 
+ 2519      3100
+ 2520              	.LASF66:
+ 2521 04c3 4932435F 		.ascii	"I2C_1_protectBuf2\000"
+ 2521      315F7072 
+ 2521      6F746563 
+ 2521      74427566 
+ 2521      3200
+ 2522              	.LASF54:
+ 2523 04d5 4932435F 		.ascii	"I2C_1_configEzI2C\000"
+ 2523      315F636F 
+ 2523      6E666967 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cchSrVJR.s 			page 65
+
+
+ 2523      457A4932 
+ 2523      4300
+ 2524              	.LASF31:
+ 2525 04e7 73746174 		.ascii	"status\000"
+ 2525      757300
+ 2526              	.LASF52:
+ 2527 04ee 4932435F 		.ascii	"I2C_1_numberOfAddr\000"
+ 2527      315F6E75 
+ 2527      6D626572 
+ 2527      4F664164 
+ 2527      647200
+ 2528              	.LASF26:
+ 2529 0501 4932435F 		.ascii	"I2C_1_EZI2C_INIT_STRUCT\000"
+ 2529      315F455A 
+ 2529      4932435F 
+ 2529      494E4954 
+ 2529      5F535452 
+ 2530              	.LASF55:
+ 2531 0519 4932435F 		.ascii	"I2C_1_curStatus\000"
+ 2531      315F6375 
+ 2531      72537461 
+ 2531      74757300 
+ 2532              	.LASF46:
+ 2533 0529 656E6162 		.ascii	"enableInt\000"
+ 2533      6C65496E 
+ 2533      7400
+ 2534              	.LASF45:
+ 2535 0533 4932435F 		.ascii	"I2C_1_EzI2CSaveConfig\000"
+ 2535      315F457A 
+ 2535      49324353 
+ 2535      61766543 
+ 2535      6F6E6669 
+ 2536              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
