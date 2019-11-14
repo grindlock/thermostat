@@ -60,6 +60,18 @@
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\LowF_out.h" value="HEADER;;;;;LowF_out" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\LowF_out_aliases.h" value="HEADER;;;;;LowF_out" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\LowF_out_PM.c" value="SOURCE_C;CortexM0;;;;LowF_out" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RelayLF_1.c" value="SOURCE_C;CortexM0;;;;RelayLF_1" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RelayLF_1.h" value="HEADER;;;;;RelayLF_1" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RelayLF_1_aliases.h" value="HEADER;;;;;RelayLF_1" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RelayLF_1_PM.c" value="SOURCE_C;CortexM0;;;;RelayLF_1" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RelayHF_2.c" value="SOURCE_C;CortexM0;;;;RelayHF_2" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RelayHF_2.h" value="HEADER;;;;;RelayHF_2" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RelayHF_2_aliases.h" value="HEADER;;;;;RelayHF_2" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RelayHF_2_PM.c" value="SOURCE_C;CortexM0;;;;RelayHF_2" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RelayC_3.c" value="SOURCE_C;CortexM0;;;;RelayC_3" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RelayC_3.h" value="HEADER;;;;;RelayC_3" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RelayC_3_aliases.h" value="HEADER;;;;;RelayC_3" />
+  <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\RelayC_3_PM.c" value="SOURCE_C;CortexM0;;;;RelayC_3" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\I2C_1_SCBCLK.c" value="SOURCE_C;CortexM0;;;;I2C_1_SCBCLK" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\I2C_1_SCBCLK.h" value="HEADER;;;;;I2C_1_SCBCLK" />
   <file name="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\codegentemp\I2C_1_sda.c" value="SOURCE_C;CortexM0;;;;I2C_1_sda" />

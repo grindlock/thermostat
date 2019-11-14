@@ -144,6 +144,18 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LowF_out.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LowF_out_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LowF_out_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayLF_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayLF_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayLF_1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayLF_1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayHF_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayHF_2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayHF_2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayHF_2_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayC_3.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayC_3.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayC_3_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayC_3_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">

@@ -49,6 +49,12 @@
 <dep name=".\Generated_Source\PSoC4\MyUART_PVT.h" />
 <dep name=".\Generated_Source\PSoC4\RED.h" />
 <dep name=".\Generated_Source\PSoC4\RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\RelayC_3.h" />
+<dep name=".\Generated_Source\PSoC4\RelayC_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\RelayHF_2.h" />
+<dep name=".\Generated_Source\PSoC4\RelayHF_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\RelayLF_1.h" />
+<dep name=".\Generated_Source\PSoC4\RelayLF_1_aliases.h" />
 <dep name=".\Generated_Source\PSoC4\cmsis_armcc.h" />
 <dep name=".\Generated_Source\PSoC4\cmsis_compiler.h" />
 <dep name=".\Generated_Source\PSoC4\cmsis_gcc.h" />
@@ -102,6 +108,12 @@
 <file name=".\Generated_Source\PSoC4\MyUART_PVT.h" />
 <file name=".\Generated_Source\PSoC4\RED.h" />
 <file name=".\Generated_Source\PSoC4\RED_aliases.h" />
+<file name=".\Generated_Source\PSoC4\RelayC_3.h" />
+<file name=".\Generated_Source\PSoC4\RelayC_3_aliases.h" />
+<file name=".\Generated_Source\PSoC4\RelayHF_2.h" />
+<file name=".\Generated_Source\PSoC4\RelayHF_2_aliases.h" />
+<file name=".\Generated_Source\PSoC4\RelayLF_1.h" />
+<file name=".\Generated_Source\PSoC4\RelayLF_1_aliases.h" />
 <file name=".\Generated_Source\PSoC4\cmsis_armcc.h" />
 <file name=".\Generated_Source\PSoC4\cmsis_compiler.h" />
 <file name=".\Generated_Source\PSoC4\cmsis_gcc.h" />
@@ -551,6 +563,66 @@
 <dep name=".\Generated_Source\PSoC4\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC4\RED_PM.c" />
+<file name=".\CortexM0\ARM_GCC_541\Debug\RelayC_3.o">
+<dep name=".\Generated_Source\PSoC4\RelayC_3.c" />
+<dep name=".\Generated_Source\PSoC4\RelayC_3.h" />
+<dep name=".\Generated_Source\PSoC4\RelayC_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\RelayC_3.c" />
+<file name=".\CortexM0\ARM_GCC_541\Debug\RelayC_3_PM.o">
+<dep name=".\Generated_Source\PSoC4\RelayC_3.h" />
+<dep name=".\Generated_Source\PSoC4\RelayC_3_PM.c" />
+<dep name=".\Generated_Source\PSoC4\RelayC_3_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\RelayC_3_PM.c" />
+<file name=".\CortexM0\ARM_GCC_541\Debug\RelayHF_2.o">
+<dep name=".\Generated_Source\PSoC4\RelayHF_2.c" />
+<dep name=".\Generated_Source\PSoC4\RelayHF_2.h" />
+<dep name=".\Generated_Source\PSoC4\RelayHF_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\RelayHF_2.c" />
+<file name=".\CortexM0\ARM_GCC_541\Debug\RelayHF_2_PM.o">
+<dep name=".\Generated_Source\PSoC4\RelayHF_2.h" />
+<dep name=".\Generated_Source\PSoC4\RelayHF_2_PM.c" />
+<dep name=".\Generated_Source\PSoC4\RelayHF_2_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\RelayHF_2_PM.c" />
+<file name=".\CortexM0\ARM_GCC_541\Debug\RelayLF_1.o">
+<dep name=".\Generated_Source\PSoC4\RelayLF_1.c" />
+<dep name=".\Generated_Source\PSoC4\RelayLF_1.h" />
+<dep name=".\Generated_Source\PSoC4\RelayLF_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\RelayLF_1.c" />
+<file name=".\CortexM0\ARM_GCC_541\Debug\RelayLF_1_PM.o">
+<dep name=".\Generated_Source\PSoC4\RelayLF_1.h" />
+<dep name=".\Generated_Source\PSoC4\RelayLF_1_PM.c" />
+<dep name=".\Generated_Source\PSoC4\RelayLF_1_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\RelayLF_1_PM.c" />
 <file name=".\CortexM0\ARM_GCC_541\Debug\cyPm.o">
 <dep name=".\Generated_Source\PSoC4\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
@@ -1339,6 +1411,12 @@
 <dep name=".\CortexM0\ARM_GCC_541\Debug\HighF_out_PM.o" />
 <dep name=".\CortexM0\ARM_GCC_541\Debug\LowF_out.o" />
 <dep name=".\CortexM0\ARM_GCC_541\Debug\LowF_out_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_541\Debug\RelayLF_1.o" />
+<dep name=".\CortexM0\ARM_GCC_541\Debug\RelayLF_1_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_541\Debug\RelayHF_2.o" />
+<dep name=".\CortexM0\ARM_GCC_541\Debug\RelayHF_2_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_541\Debug\RelayC_3.o" />
+<dep name=".\CortexM0\ARM_GCC_541\Debug\RelayC_3_PM.o" />
 <dep name=".\CortexM0\ARM_GCC_541\Debug\test.a" />
 </file>
 </CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021>
@@ -1428,6 +1506,12 @@
 <name_val_pair name="Generated_Source\PSoC4\HighF_out_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0" />
 <name_val_pair name="Generated_Source\PSoC4\LowF_out.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0" />
 <name_val_pair name="Generated_Source\PSoC4\LowF_out_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0" />
+<name_val_pair name="Generated_Source\PSoC4\RelayLF_1.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0" />
+<name_val_pair name="Generated_Source\PSoC4\RelayLF_1_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0" />
+<name_val_pair name="Generated_Source\PSoC4\RelayHF_2.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0" />
+<name_val_pair name="Generated_Source\PSoC4\RelayHF_2_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0" />
+<name_val_pair name="Generated_Source\PSoC4\RelayC_3.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0" />
+<name_val_pair name="Generated_Source\PSoC4\RelayC_3_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\sergio\AppData\Local\Cypress Semiconductor\PSoC Creator\4.2&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p &quot;C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\test.cyprj&quot; -d CYBLE-012011-00 -s &quot;C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\Generated_Source\PSoC4&quot; -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
@@ -1817,13 +1901,25 @@
 <v>Generated_Source\PSoC4\LowF_out.h</v>
 <v>Generated_Source\PSoC4\LowF_out_aliases.h</v>
 <v>Generated_Source\PSoC4\LowF_out_PM.c</v>
+<v>Generated_Source\PSoC4\RelayLF_1.c</v>
+<v>Generated_Source\PSoC4\RelayLF_1.h</v>
+<v>Generated_Source\PSoC4\RelayLF_1_aliases.h</v>
+<v>Generated_Source\PSoC4\RelayLF_1_PM.c</v>
+<v>Generated_Source\PSoC4\RelayHF_2.c</v>
+<v>Generated_Source\PSoC4\RelayHF_2.h</v>
+<v>Generated_Source\PSoC4\RelayHF_2_aliases.h</v>
+<v>Generated_Source\PSoC4\RelayHF_2_PM.c</v>
+<v>Generated_Source\PSoC4\RelayC_3.c</v>
+<v>Generated_Source\PSoC4\RelayC_3.h</v>
+<v>Generated_Source\PSoC4\RelayC_3_aliases.h</v>
+<v>Generated_Source\PSoC4\RelayC_3_PM.c</v>
 </gen_list>
 <warp_dep>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 </warp_dep>
-<deps_time v="132180622679449626" />
+<deps_time v="132181632264338257" />
 <top_block v="TopDesign" />
 <last_generation v="5" />
 <pdl_path v="" />
@@ -1833,7 +1929,7 @@
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0" v="132181008315275246" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0" v="132181645506306210" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>

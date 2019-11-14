@@ -1,5 +1,5 @@
 # test
-# 2019-11-12 19:57:44Z
+# 2019-11-14 00:00:21Z
 
 # IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
 dont_use_io iocell 0 6
@@ -28,3 +28,6 @@ set_io "\I2C_1:scl(0)\" iocell 5 1
 set_io "Comp_out(0)" iocell 2 6
 set_io "HighF_out(0)" iocell 2 3
 set_io "LowF_out(0)" iocell 2 2
+set_io "RelayLF_1(0)" iocell 3 4
+set_io "RelayHF_2(0)" iocell 3 3
+set_io "RelayC_3(0)" iocell 3 5

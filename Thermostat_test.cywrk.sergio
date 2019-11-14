@@ -67,12 +67,11 @@
 <v>Thermostat_test\test\Generated_Source\PSoC4\LowF_out</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\MyUART</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\RED</v>
+<v>Thermostat_test\test\Generated_Source\PSoC4\RelayC_3</v>
+<v>Thermostat_test\test\Generated_Source\PSoC4\RelayHF_2</v>
+<v>Thermostat_test\test\Generated_Source\PSoC4\RelayLF_1</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\cycodeshareexport.ld</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\cycodeshareimport.ld</v>
-<v>Thermostat_test\test\Generated_Source\PSoC4\cycodeshareimport.scat</v>
-<v>Thermostat_test\test\Generated_Source\PSoC4\cydevice_trm.h</v>
-<v>Thermostat_test\test\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
-<v>Thermostat_test\test\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -131,6 +130,12 @@
 <v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\MyUART_AsmGnu.lst</v>
 <v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\RED.lst</v>
 <v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\RED_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\RelayC_3.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\RelayC_3_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\RelayHF_2.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\RelayHF_2_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\RelayLF_1.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\RelayLF_1_PM.lst</v>
 <v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\test.elf</v>
 <v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\test.hex</v>
 <v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\test.map</v>
@@ -141,6 +146,42 @@
 <VisibleNodeIds>
 <v>Thermostat_test</v>
 <v>Thermostat_test\test</v>
+<v>Thermostat_test\test\CortexM0</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLUE.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLUE_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CEPIN.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CEPIN_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\Comp_out.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\Comp_out_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\GREEN.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\GREEN_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\HighF_out.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\HighF_out_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1_BOOT.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1_I2C.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1_I2C_BOOT.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1_I2C_INT.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1_I2C_MASTER.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1_SCB_IRQ.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1_SCBCLK.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1_scl.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1_scl_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1_sda.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -189,6 +230,8 @@
 <name v=".\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C_MASTER.c" />
 <name v=".\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C.c" />
 <name v=".\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C.h" />
+<name v=".\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C_BOOT.c" />
+<name v=".\test.cydsn\Generated_Source\PSoC4\I2C_1_BOOT.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -196,7 +239,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1378, 532" SelectedTabbedMdiWindow="50189a90-9c51-4140-bebd-790a2070a815"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b990e5fa-1205-4506-b06e-092eede234c7" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\TopDesign\TopDesign.cysch" Guid="121fdb37-1118-482b-af34-ee4885c0803e" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\test.cydwr" Guid="382dc410-6eec-4ac3-acec-f0ad9b094eee" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\main.c" Guid="50189a90-9c51-4140-bebd-790a2070a815" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C_MASTER.c" Guid="b521b5c7-2fb0-4ef7-93ac-502e0c52dba7" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C.c" Guid="0cf6a6eb-d03e-469a-a554-9f55354c75b8" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C.h" Guid="0185f0fe-a035-4637-9056-4bac471c1b85" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="969, 360" SelectedTabbedMdiWindow="50189a90-9c51-4140-bebd-790a2070a815"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b990e5fa-1205-4506-b06e-092eede234c7" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\TopDesign\TopDesign.cysch" Guid="121fdb37-1118-482b-af34-ee4885c0803e" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\test.cydwr" Guid="382dc410-6eec-4ac3-acec-f0ad9b094eee" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\main.c" Guid="50189a90-9c51-4140-bebd-790a2070a815" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C_MASTER.c" Guid="b521b5c7-2fb0-4ef7-93ac-502e0c52dba7" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C.c" Guid="0cf6a6eb-d03e-469a-a554-9f55354c75b8" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C.h" Guid="0185f0fe-a035-4637-9056-4bac471c1b85" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C_BOOT.c" Guid="103a6aaa-a705-4ca9-b276-cbf902c4be05" /><DocumentWindow Key="C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\Generated_Source\PSoC4\I2C_1_BOOT.h" Guid="36649f91-a5de-48f6-8a0b-b31c985e69ad" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2019-11-12T19:57:45Z")
+ (DATE "2019-11-14T00:00:22Z")
  (DESIGN "test")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -27,6 +27,9 @@
     (INTERCONNECT Comp_out\(0\)_PAD Comp_out\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT HighF_out\(0\)_PAD HighF_out\(0\).pad_in (0.000:0.000:0.000))
     (INTERCONNECT LowF_out\(0\)_PAD LowF_out\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT RelayLF_1\(0\)_PAD RelayLF_1\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT RelayHF_2\(0\)_PAD RelayHF_2\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT RelayC_3\(0\)_PAD RelayC_3\(0\).pad_in (0.000:0.000:0.000))
    )
   )
  )
