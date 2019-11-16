@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
    8:Generated_Source\PSoC4/MyUART.c **** ********************************************************************************
    9:Generated_Source\PSoC4/MyUART.c **** * Copyright 2013-2015, Cypress Semiconductor Corporation.  All rights reserved.
   10:Generated_Source\PSoC4/MyUART.c **** * You may use this file only in accordance with the license, terms, conditions,
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 2
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 2
 
 
   11:Generated_Source\PSoC4/MyUART.c **** * disclaimers, and limitations in the end user license agreement accompanying
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
   55:Generated_Source\PSoC4/MyUART.c **** 
   56:Generated_Source\PSoC4/MyUART.c ****     }
   58              		.loc 1 56 0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 3
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 3
 
 
   59 0004 C046     		nop
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
   96:Generated_Source\PSoC4/MyUART.c ****                                                                                 MyUART_PORT_CNF_DR_
   97:Generated_Source\PSoC4/MyUART.c ****                 CY_SYS_PINS_SET_PIN(portDataRegAddr, pin);
   98:Generated_Source\PSoC4/MyUART.c ****                 MyUART_pinDrAdress = portDataRegAddr;
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 4
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 4
 
 
   99:Generated_Source\PSoC4/MyUART.c ****             #endif /* (!CY_PSOC4) */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  127:Generated_Source\PSoC4/MyUART.c **** /*******************************************************************************
  128:Generated_Source\PSoC4/MyUART.c **** * Function Name: MyUART_PutString
  129:Generated_Source\PSoC4/MyUART.c **** ********************************************************************************
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 5
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 5
 
 
  130:Generated_Source\PSoC4/MyUART.c **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  133              		.loc 1 150 0
  134 0028 0F23     		movs	r3, #15
  135 002a FB18     		adds	r3, r7, r3
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 6
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 6
 
 
  136 002c 1B78     		ldrb	r3, [r3]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  165:Generated_Source\PSoC4/MyUART.c **** *  byteCount: Number of bytes to be transmitted
  166:Generated_Source\PSoC4/MyUART.c **** *
  167:Generated_Source\PSoC4/MyUART.c **** * Return:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 7
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 7
 
 
  168:Generated_Source\PSoC4/MyUART.c **** *  None
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  215              		@ sp needed
  216 0032 80BD     		pop	{r7, pc}
  217              		.cfi_endproc
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 8
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 8
 
 
  218              	.LFE3:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  249 0016 094B     		ldr	r3, .L10
  250 0018 9B5C     		ldrb	r3, [r3, r2]
  251 001a 1800     		movs	r0, r3
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 9
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 9
 
 
  252 001c FFF7FEFF 		bl	MyUART_PutChar
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  284              		.cfi_startproc
  285              		@ args = 0, pretend = 0, frame = 8
  286              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 10
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 10
 
 
  287 0000 80B5     		push	{r7, lr}
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  237:Generated_Source\PSoC4/MyUART.c **** * Parameters:
  238:Generated_Source\PSoC4/MyUART.c **** *  None
  239:Generated_Source\PSoC4/MyUART.c **** *
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 11
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 11
 
 
  240:Generated_Source\PSoC4/MyUART.c **** * Return:
@@ -657,8 +657,8 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  369 000c B7000000 		.4byte	.LASF36
  370 0010 0C       		.byte	0xc
  371 0011 5E000000 		.4byte	.LASF37
- 372 0015 E4010000 		.4byte	.LASF38
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 12
+ 372 0015 15020000 		.4byte	.LASF38
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 12
 
 
  373 0019 00000000 		.4byte	.Ldebug_ranges0+0
@@ -687,7 +687,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  396 0048 02       		.uleb128 0x2
  397 0049 04       		.byte	0x4
  398 004a 07       		.byte	0x7
- 399 004b 38020000 		.4byte	.LASF5
+ 399 004b F6010000 		.4byte	.LASF5
  400 004f 02       		.uleb128 0x2
  401 0050 08       		.byte	0x8
  402 0051 05       		.byte	0x5
@@ -715,10 +715,10 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  424 007d E501     		.2byte	0x1e5
  425 007f 3A000000 		.4byte	0x3a
  426 0083 04       		.uleb128 0x4
- 427 0084 31020000 		.4byte	.LASF11
+ 427 0084 EF010000 		.4byte	.LASF11
  428 0088 02       		.byte	0x2
  429 0089 E601     		.2byte	0x1e6
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 13
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 13
 
 
  430 008b 48000000 		.4byte	0x48
@@ -729,7 +729,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  435 0096 02       		.uleb128 0x2
  436 0097 08       		.byte	0x8
  437 0098 04       		.byte	0x4
- 438 0099 4A020000 		.4byte	.LASF13
+ 438 0099 08020000 		.4byte	.LASF13
  439 009d 04       		.uleb128 0x4
  440 009e 22000000 		.4byte	.LASF14
  441 00a2 02       		.byte	0x2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  484 00fb 8F       		.byte	0x8f
  485 00fc 6B000000 		.4byte	0x6b
  486 0100 02       		.uleb128 0x2
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 14
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 14
 
 
  487 0101 91       		.byte	0x91
@@ -807,7 +807,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  510 012d 9C       		.byte	0x9c
  511 012e 5D010000 		.4byte	0x15d
  512 0132 07       		.uleb128 0x7
- 513 0133 51020000 		.4byte	.LASF23
+ 513 0133 0F020000 		.4byte	.LASF23
  514 0137 01       		.byte	0x1
  515 0138 AB       		.byte	0xab
  516 0139 5D010000 		.4byte	0x15d
@@ -815,7 +815,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  518 013e 91       		.byte	0x91
  519 013f 6C       		.sleb128 -20
  520 0140 07       		.uleb128 0x7
- 521 0141 7A020000 		.4byte	.LASF24
+ 521 0141 6F020000 		.4byte	.LASF24
  522 0145 01       		.byte	0x1
  523 0146 AB       		.byte	0xab
  524 0147 83000000 		.4byte	0x83
@@ -823,7 +823,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  526 014c 91       		.byte	0x91
  527 014d 68       		.sleb128 -24
  528 014e 08       		.uleb128 0x8
- 529 014f 26020000 		.4byte	.LASF25
+ 529 014f E4010000 		.4byte	.LASF25
  530 0153 01       		.byte	0x1
  531 0154 AD       		.byte	0xad
  532 0155 83000000 		.4byte	0x83
@@ -837,8 +837,8 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  540 0163 0A       		.uleb128 0xa
  541 0164 6B000000 		.4byte	0x6b
  542 0168 06       		.uleb128 0x6
- 543 0169 68020000 		.4byte	.LASF26
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 15
+ 543 0169 5D020000 		.4byte	.LASF26
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 15
 
 
  544 016d 01       		.byte	0x1
@@ -857,7 +857,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  557 0189 91       		.byte	0x91
  558 018a 77       		.sleb128 -9
  559 018b 08       		.uleb128 0x8
- 560 018c 97020000 		.4byte	.LASF28
+ 560 018c 8C020000 		.4byte	.LASF28
  561 0190 01       		.byte	0x1
  562 0191 C8       		.byte	0xc8
  563 0192 B4010000 		.4byte	0x1b4
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  598 01dc 00       		.byte	0
  599 01dd 0D       		.uleb128 0xd
  600 01de 13000000 		.4byte	.LASF32
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 16
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 16
 
 
  601 01e2 01       		.byte	0x1
@@ -908,7 +908,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  605 01ec 01       		.uleb128 0x1
  606 01ed 9C       		.byte	0x9c
  607 01ee 0E       		.uleb128 0xe
- 608 01ef 57020000 		.4byte	.LASF33
+ 608 01ef 4C020000 		.4byte	.LASF33
  609 01f3 01       		.byte	0x1
  610 01f4 12       		.byte	0x12
  611 01f5 83000000 		.4byte	0x83
@@ -924,7 +924,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  621 020b 03       		.byte	0x3
  622 020c 00000000 		.4byte	MyUART_pinPortNumber
  623 0210 0E       		.uleb128 0xe
- 624 0211 84020000 		.4byte	.LASF35
+ 624 0211 79020000 		.4byte	.LASF35
  625 0215 01       		.byte	0x1
  626 0216 17       		.byte	0x17
  627 0217 83000000 		.4byte	0x83
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  655 0015 00       		.byte	0
  656 0016 0B       		.uleb128 0xb
  657 0017 0B       		.uleb128 0xb
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 17
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 17
 
 
  658 0018 3E       		.uleb128 0x3e
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  712 004f 2E       		.uleb128 0x2e
  713 0050 01       		.byte	0x1
  714 0051 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 18
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 18
 
 
  715 0052 19       		.uleb128 0x19
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  769 0089 0B       		.uleb128 0xb
  770 008a 0B       		.uleb128 0xb
  771 008b 49       		.uleb128 0x49
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 19
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 19
 
 
  772 008c 13       		.uleb128 0x13
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  826 00c3 03       		.uleb128 0x3
  827 00c4 0E       		.uleb128 0xe
  828 00c5 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 20
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 20
 
 
  829 00c6 0B       		.uleb128 0xb
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  883              		.section	.debug_line,"",%progbits
  884              	.Ldebug_line0:
  885 0000 DE000000 		.section	.debug_str,"MS",%progbits,1
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 21
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 21
 
 
  885      02004300 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  910              	.LASF34:
  911 0092 4D795541 		.ascii	"MyUART_pinPortNumber\000"
  911      52545F70 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 22
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 22
 
 
  911      696E506F 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  931      00
  932              	.LASF8:
  933 019a 756E7369 		.ascii	"unsigned int\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 23
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 23
 
 
  933      676E6564 
@@ -1346,63 +1346,61 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 1
  942              	.LASF15:
  943 01df 63686172 		.ascii	"char\000"
  943      00
- 944              	.LASF38:
- 945 01e4 433A5C55 		.ascii	"C:\\Users\\sergio\\Documents\\PSoC Creator\\Thermos"
- 945      73657273 
- 945      5C736572 
- 945      67696F5C 
- 945      446F6375 
- 946 0212 7461745F 		.ascii	"tat_test\\test.cydsn\000"
- 946      74657374 
- 946      5C746573 
- 946      742E6379 
- 946      64736E00 
- 947              	.LASF25:
- 948 0226 61727261 		.ascii	"arrayIndex\000"
- 948      79496E64 
- 948      657800
- 949              	.LASF11:
- 950 0231 75696E74 		.ascii	"uint32\000"
- 950      333200
- 951              	.LASF5:
- 952 0238 6C6F6E67 		.ascii	"long unsigned int\000"
- 952      20756E73 
- 952      69676E65 
- 952      6420696E 
- 952      7400
- 953              	.LASF13:
- 954 024a 646F7562 		.ascii	"double\000"
- 954      6C6500
- 955              	.LASF23:
- 956 0251 61727261 		.ascii	"array\000"
- 956      7900
+ 944              	.LASF25:
+ 945 01e4 61727261 		.ascii	"arrayIndex\000"
+ 945      79496E64 
+ 945      657800
+ 946              	.LASF11:
+ 947 01ef 75696E74 		.ascii	"uint32\000"
+ 947      333200
+ 948              	.LASF5:
+ 949 01f6 6C6F6E67 		.ascii	"long unsigned int\000"
+ 949      20756E73 
+ 949      69676E65 
+ 949      6420696E 
+ 949      7400
+ 950              	.LASF13:
+ 951 0208 646F7562 		.ascii	"double\000"
+ 951      6C6500
+ 952              	.LASF23:
+ 953 020f 61727261 		.ascii	"array\000"
+ 953      7900
+ 954              	.LASF38:
+ 955 0215 433A5C55 		.ascii	"C:\\Users\\sergio\\Documents\\GitHub\\thermostat\\t"
+ 955      73657273 
+ 955      5C736572 
+ 955      67696F5C 
+ 955      446F6375 
+ 956 0242 6573742E 		.ascii	"est.cydsn\000"
+ 956      63796473 
+ 956      6E00
  957              	.LASF33:
- 958 0257 4D795541 		.ascii	"MyUART_pinNumber\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccO6KDOt.s 			page 24
-
-
+ 958 024c 4D795541 		.ascii	"MyUART_pinNumber\000"
  958      52545F70 
  958      696E4E75 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cc5nexqz.s 			page 24
+
+
  958      6D626572 
  958      00
  959              	.LASF26:
- 960 0268 4D795541 		.ascii	"MyUART_PutHexByte\000"
+ 960 025d 4D795541 		.ascii	"MyUART_PutHexByte\000"
  960      52545F50 
  960      75744865 
  960      78427974 
  960      6500
  961              	.LASF24:
- 962 027a 62797465 		.ascii	"byteCount\000"
+ 962 026f 62797465 		.ascii	"byteCount\000"
  962      436F756E 
  962      7400
  963              	.LASF35:
- 964 0284 4D795541 		.ascii	"MyUART_pinDrAdress\000"
+ 964 0279 4D795541 		.ascii	"MyUART_pinDrAdress\000"
  964      52545F70 
  964      696E4472 
  964      41647265 
  964      737300
  965              	.LASF28:
- 966 0297 4D795541 		.ascii	"MyUART_hex\000"
+ 966 028c 4D795541 		.ascii	"MyUART_hex\000"
  966      52545F68 
  966      657800
  967              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

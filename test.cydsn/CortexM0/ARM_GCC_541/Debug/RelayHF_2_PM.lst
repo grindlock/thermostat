@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccQRWuaY.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
   22:Generated_Source\PSoC4/RelayHF_2_PM.c **** 
   23:Generated_Source\PSoC4/RelayHF_2_PM.c **** /*******************************************************************************
   24:Generated_Source\PSoC4/RelayHF_2_PM.c **** * Function Name: RelayHF_2_Sleep
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 2
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccQRWuaY.s 			page 2
 
 
   25:Generated_Source\PSoC4/RelayHF_2_PM.c **** ****************************************************************************//**
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
   49 000e BD46     		mov	sp, r7
   50              		@ sp needed
   51 0010 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 3
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccQRWuaY.s 			page 3
 
 
   52              	.L3:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
   82 000a 1360     		str	r3, [r2]
   86:Generated_Source\PSoC4/RelayHF_2_PM.c ****     #else
   87:Generated_Source\PSoC4/RelayHF_2_PM.c ****         #if (CY_PSOC4_4200L)
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 4
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccQRWuaY.s 			page 4
 
 
   88:Generated_Source\PSoC4/RelayHF_2_PM.c ****             /* Restore the regulator state and come out of suspend mode */
@@ -215,48 +215,48 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
  104 0006 00000000 		.4byte	.Ldebug_abbrev0
  105 000a 04       		.byte	0x4
  106 000b 01       		.uleb128 0x1
- 107 000c 87000000 		.4byte	.LASF20
+ 107 000c B1000000 		.4byte	.LASF20
  108 0010 0C       		.byte	0xc
- 109 0011 CB010000 		.4byte	.LASF21
- 110 0015 3B010000 		.4byte	.LASF22
+ 109 0011 C0010000 		.4byte	.LASF21
+ 110 0015 67000000 		.4byte	.LASF22
  111 0019 00000000 		.4byte	.Ldebug_ranges0+0
  112 001d 00000000 		.4byte	0
  113 0021 00000000 		.4byte	.Ldebug_line0
  114 0025 02       		.uleb128 0x2
  115 0026 01       		.byte	0x1
  116 0027 06       		.byte	0x6
- 117 0028 F1010000 		.4byte	.LASF0
+ 117 0028 E6010000 		.4byte	.LASF0
  118 002c 02       		.uleb128 0x2
  119 002d 01       		.byte	0x1
  120 002e 08       		.byte	0x8
- 121 002f 54000000 		.4byte	.LASF1
+ 121 002f 47000000 		.4byte	.LASF1
  122 0033 02       		.uleb128 0x2
  123 0034 02       		.byte	0x2
  124 0035 05       		.byte	0x5
- 125 0036 B0010000 		.4byte	.LASF2
+ 125 0036 A5010000 		.4byte	.LASF2
  126 003a 02       		.uleb128 0x2
  127 003b 02       		.byte	0x2
  128 003c 07       		.byte	0x7
- 129 003d 74000000 		.4byte	.LASF3
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 5
+ 129 003d 9E000000 		.4byte	.LASF3
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccQRWuaY.s 			page 5
 
 
  130 0041 02       		.uleb128 0x2
  131 0042 04       		.byte	0x4
  132 0043 05       		.byte	0x5
- 133 0044 C2010000 		.4byte	.LASF4
+ 133 0044 B7010000 		.4byte	.LASF4
  134 0048 02       		.uleb128 0x2
  135 0049 04       		.byte	0x4
  136 004a 07       		.byte	0x7
- 137 004b 62000000 		.4byte	.LASF5
+ 137 004b 55000000 		.4byte	.LASF5
  138 004f 02       		.uleb128 0x2
  139 0050 08       		.byte	0x8
  140 0051 05       		.byte	0x5
- 141 0052 9D010000 		.4byte	.LASF6
+ 141 0052 92010000 		.4byte	.LASF6
  142 0056 02       		.uleb128 0x2
  143 0057 08       		.byte	0x8
  144 0058 07       		.byte	0x7
- 145 0059 7D010000 		.4byte	.LASF7
+ 145 0059 72010000 		.4byte	.LASF7
  146 005d 03       		.uleb128 0x3
  147 005e 04       		.byte	0x4
  148 005f 05       		.byte	0x5
@@ -264,24 +264,24 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
  150 0064 02       		.uleb128 0x2
  151 0065 04       		.byte	0x4
  152 0066 07       		.byte	0x7
- 153 0067 1F000000 		.4byte	.LASF8
+ 153 0067 65010000 		.4byte	.LASF8
  154 006b 04       		.uleb128 0x4
- 155 006c 1C010000 		.4byte	.LASF12
+ 155 006c 46010000 		.4byte	.LASF12
  156 0070 02       		.byte	0x2
  157 0071 E601     		.2byte	0x1e6
  158 0073 48000000 		.4byte	0x48
  159 0077 02       		.uleb128 0x2
  160 0078 04       		.byte	0x4
  161 0079 04       		.byte	0x4
- 162 007a 3D000000 		.4byte	.LASF9
+ 162 007a 30000000 		.4byte	.LASF9
  163 007e 02       		.uleb128 0x2
  164 007f 08       		.byte	0x8
  165 0080 04       		.byte	0x4
- 166 0081 15010000 		.4byte	.LASF10
+ 166 0081 3F010000 		.4byte	.LASF10
  167 0085 02       		.uleb128 0x2
  168 0086 01       		.byte	0x1
  169 0087 08       		.byte	0x8
- 170 0088 AB010000 		.4byte	.LASF11
+ 170 0088 A0010000 		.4byte	.LASF11
  171 008c 04       		.uleb128 0x4
  172 008d 00000000 		.4byte	.LASF13
  173 0091 02       		.byte	0x2
@@ -295,16 +295,16 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
  181 00a0 21       		.byte	0x21
  182 00a1 CA000000 		.4byte	0xca
  183 00a5 07       		.uleb128 0x7
- 184 00a6 BA010000 		.4byte	.LASF14
+ 184 00a6 AF010000 		.4byte	.LASF14
  185 00aa 03       		.byte	0x3
  186 00ab 23       		.byte	0x23
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 6
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccQRWuaY.s 			page 6
 
 
  187 00ac 6B000000 		.4byte	0x6b
  188 00b0 00       		.byte	0
  189 00b1 07       		.uleb128 0x7
- 190 00b2 94010000 		.4byte	.LASF15
+ 190 00b2 89010000 		.4byte	.LASF15
  191 00b6 03       		.byte	0x3
  192 00b7 24       		.byte	0x24
  193 00b8 6B000000 		.4byte	0x6b
@@ -317,7 +317,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
  200 00c8 08       		.byte	0x8
  201 00c9 00       		.byte	0
  202 00ca 08       		.uleb128 0x8
- 203 00cb 23010000 		.4byte	.LASF17
+ 203 00cb 4D010000 		.4byte	.LASF17
  204 00cf 03       		.byte	0x3
  205 00d0 26       		.byte	0x26
  206 00d1 9D000000 		.4byte	0x9d
@@ -330,7 +330,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
  213 00e4 01       		.uleb128 0x1
  214 00e5 9C       		.byte	0x9c
  215 00e6 09       		.uleb128 0x9
- 216 00e7 43000000 		.4byte	.LASF19
+ 216 00e7 36000000 		.4byte	.LASF19
  217 00eb 01       		.byte	0x1
  218 00ec 52       		.byte	0x52
  219 00ed 00000000 		.4byte	.LFB1
@@ -338,7 +338,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
  221 00f5 01       		.uleb128 0x1
  222 00f6 9C       		.byte	0x9c
  223 00f7 0A       		.uleb128 0xa
- 224 00f8 2C000000 		.4byte	.LASF23
+ 224 00f8 1F000000 		.4byte	.LASF23
  225 00fc 01       		.byte	0x1
  226 00fd 14       		.byte	0x14
  227 00fe CA000000 		.4byte	0xca
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
  241 0007 03       		.uleb128 0x3
  242 0008 0E       		.uleb128 0xe
  243 0009 1B       		.uleb128 0x1b
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 7
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccQRWuaY.s 			page 7
 
 
  244 000a 0E       		.uleb128 0xe
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
  298 0040 0B       		.uleb128 0xb
  299 0041 0B       		.uleb128 0xb
  300 0042 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 8
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccQRWuaY.s 			page 8
 
 
  301 0043 0B       		.uleb128 0xb
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
  355 0079 9742     		.uleb128 0x2117
  356 007b 19       		.uleb128 0x19
  357 007c 00       		.byte	0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 9
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccQRWuaY.s 			page 9
 
 
  358 007d 00       		.byte	0
@@ -538,129 +538,127 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 1
  404              	.LASF16:
  405 0016 75736253 		.ascii	"usbState\000"
  405      74617465 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 10
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccQRWuaY.s 			page 10
 
 
  405      00
- 406              	.LASF8:
- 407 001f 756E7369 		.ascii	"unsigned int\000"
- 407      676E6564 
- 407      20696E74 
+ 406              	.LASF23:
+ 407 001f 52656C61 		.ascii	"RelayHF_2_backup\000"
+ 407      7948465F 
+ 407      325F6261 
+ 407      636B7570 
  407      00
- 408              	.LASF23:
- 409 002c 52656C61 		.ascii	"RelayHF_2_backup\000"
- 409      7948465F 
- 409      325F6261 
- 409      636B7570 
- 409      00
- 410              	.LASF9:
- 411 003d 666C6F61 		.ascii	"float\000"
- 411      7400
- 412              	.LASF19:
- 413 0043 52656C61 		.ascii	"RelayHF_2_Wakeup\000"
- 413      7948465F 
- 413      325F5761 
- 413      6B657570 
- 413      00
- 414              	.LASF1:
- 415 0054 756E7369 		.ascii	"unsigned char\000"
- 415      676E6564 
- 415      20636861 
- 415      7200
- 416              	.LASF5:
- 417 0062 6C6F6E67 		.ascii	"long unsigned int\000"
- 417      20756E73 
- 417      69676E65 
- 417      6420696E 
- 417      7400
- 418              	.LASF3:
- 419 0074 73686F72 		.ascii	"short unsigned int\000"
- 419      7420756E 
- 419      7369676E 
- 419      65642069 
- 419      6E7400
- 420              	.LASF20:
- 421 0087 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 421      43313120 
- 421      352E342E 
- 421      31203230 
- 421      31363036 
- 422 00ba 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 422      20726576 
- 422      6973696F 
- 422      6E203233 
- 422      37373135 
- 423 00ed 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 423      66756E63 
- 423      74696F6E 
- 423      2D736563 
- 423      74696F6E 
- 424              	.LASF10:
- 425 0115 646F7562 		.ascii	"double\000"
- 425      6C6500
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 11
+ 408              	.LASF9:
+ 409 0030 666C6F61 		.ascii	"float\000"
+ 409      7400
+ 410              	.LASF19:
+ 411 0036 52656C61 		.ascii	"RelayHF_2_Wakeup\000"
+ 411      7948465F 
+ 411      325F5761 
+ 411      6B657570 
+ 411      00
+ 412              	.LASF1:
+ 413 0047 756E7369 		.ascii	"unsigned char\000"
+ 413      676E6564 
+ 413      20636861 
+ 413      7200
+ 414              	.LASF5:
+ 415 0055 6C6F6E67 		.ascii	"long unsigned int\000"
+ 415      20756E73 
+ 415      69676E65 
+ 415      6420696E 
+ 415      7400
+ 416              	.LASF22:
+ 417 0067 433A5C55 		.ascii	"C:\\Users\\sergio\\Documents\\GitHub\\thermostat\\t"
+ 417      73657273 
+ 417      5C736572 
+ 417      67696F5C 
+ 417      446F6375 
+ 418 0094 6573742E 		.ascii	"est.cydsn\000"
+ 418      63796473 
+ 418      6E00
+ 419              	.LASF3:
+ 420 009e 73686F72 		.ascii	"short unsigned int\000"
+ 420      7420756E 
+ 420      7369676E 
+ 420      65642069 
+ 420      6E7400
+ 421              	.LASF20:
+ 422 00b1 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 422      43313120 
+ 422      352E342E 
+ 422      31203230 
+ 422      31363036 
+ 423 00e4 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 423      20726576 
+ 423      6973696F 
+ 423      6E203233 
+ 423      37373135 
+ 424 0117 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 424      66756E63 
+ 424      74696F6E 
+ 424      2D736563 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccQRWuaY.s 			page 11
 
 
- 426              	.LASF12:
- 427 011c 75696E74 		.ascii	"uint32\000"
- 427      333200
- 428              	.LASF17:
- 429 0123 52656C61 		.ascii	"RelayHF_2_BACKUP_STRUCT\000"
- 429      7948465F 
- 429      325F4241 
- 429      434B5550 
- 429      5F535452 
- 430              	.LASF22:
- 431 013b 433A5C55 		.ascii	"C:\\Users\\sergio\\Documents\\PSoC Creator\\Thermos"
- 431      73657273 
- 431      5C736572 
- 431      67696F5C 
- 431      446F6375 
- 432 0169 7461745F 		.ascii	"tat_test\\test.cydsn\000"
- 432      74657374 
- 432      5C746573 
- 432      742E6379 
- 432      64736E00 
+ 424      74696F6E 
+ 425              	.LASF10:
+ 426 013f 646F7562 		.ascii	"double\000"
+ 426      6C6500
+ 427              	.LASF12:
+ 428 0146 75696E74 		.ascii	"uint32\000"
+ 428      333200
+ 429              	.LASF17:
+ 430 014d 52656C61 		.ascii	"RelayHF_2_BACKUP_STRUCT\000"
+ 430      7948465F 
+ 430      325F4241 
+ 430      434B5550 
+ 430      5F535452 
+ 431              	.LASF8:
+ 432 0165 756E7369 		.ascii	"unsigned int\000"
+ 432      676E6564 
+ 432      20696E74 
+ 432      00
  433              	.LASF7:
- 434 017d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 434 0172 6C6F6E67 		.ascii	"long long unsigned int\000"
  434      206C6F6E 
  434      6720756E 
  434      7369676E 
  434      65642069 
  435              	.LASF15:
- 436 0194 73696F53 		.ascii	"sioState\000"
+ 436 0189 73696F53 		.ascii	"sioState\000"
  436      74617465 
  436      00
  437              	.LASF6:
- 438 019d 6C6F6E67 		.ascii	"long long int\000"
+ 438 0192 6C6F6E67 		.ascii	"long long int\000"
  438      206C6F6E 
  438      6720696E 
  438      7400
  439              	.LASF11:
- 440 01ab 63686172 		.ascii	"char\000"
+ 440 01a0 63686172 		.ascii	"char\000"
  440      00
  441              	.LASF2:
- 442 01b0 73686F72 		.ascii	"short int\000"
+ 442 01a5 73686F72 		.ascii	"short int\000"
  442      7420696E 
  442      7400
  443              	.LASF14:
- 444 01ba 70635374 		.ascii	"pcState\000"
+ 444 01af 70635374 		.ascii	"pcState\000"
  444      61746500 
  445              	.LASF4:
- 446 01c2 6C6F6E67 		.ascii	"long int\000"
+ 446 01b7 6C6F6E67 		.ascii	"long int\000"
  446      20696E74 
  446      00
  447              	.LASF21:
- 448 01cb 47656E65 		.ascii	"Generated_Source\\PSoC4\\RelayHF_2_PM.c\000"
+ 448 01c0 47656E65 		.ascii	"Generated_Source\\PSoC4\\RelayHF_2_PM.c\000"
  448      72617465 
  448      645F536F 
  448      75726365 
  448      5C50536F 
  449              	.LASF0:
- 450 01f1 7369676E 		.ascii	"signed char\000"
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccNreetQ.s 			page 12
-
-
+ 450 01e6 7369676E 		.ascii	"signed char\000"
  450      65642063 
  450      68617200 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccQRWuaY.s 			page 12
+
+
  451              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

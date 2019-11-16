@@ -1,6 +1,6 @@
-C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\test.cyprj|46da8d08-7f00-47b9-8a87-795c8e835818
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|c981ef8f-f56f-49f0-92a8-051bcc730609
-C:\Users\sergio\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|c59dc492-d812-4363-93b2-ffbc9557cd71
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|a5fe7bf0-b105-4a6c-9c35-1b596e5d8b50
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|bed9fdef-211f-47c5-b02d-ba6f745f0425
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|4f81f721-b74b-44af-8004-b2dcc681e9ce
+C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\test.cyprj|f2a521b9-ad67-4a76-ae9d-5bbe976d00fe
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f621de05-c4fb-492d-9adc-6357ab58d1a4
+C:\Users\sergio\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|5a7e3943-518d-46a9-8c87-8e7c0e8c72e0
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|4145f599-47e1-4694-818e-6355f40b5889
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|5923521b-7370-42e4-935a-b0858eaae502
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|c202ab78-fb42-4be9-979e-4d9220d2e06b

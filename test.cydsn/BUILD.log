@@ -1,21 +1,14 @@
---------------- Build Started: 11/13/2019 19:22:29 Project: test, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 11/15/2019 22:24:42 Project: test, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
-main.c: In function 'main':
-main.c:151:13: warning: unused variable 'nfacto' [-Wunused-variable]
-     uint8_t nfacto = 0;
-             ^
-main.c:150:9: warning: unused variable 'loop' [-Wunused-variable]
-     int loop =  15;
-         ^
 arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_541\Debug\test.a .\CortexM0\ARM_GCC_541\Debug\I2C_1.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C_INT.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C_BOOT.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_BOOT.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C_MASTER.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_SCBCLK.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_sda.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_sda_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_scl.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_scl_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_SCB_IRQ.o .\CortexM0\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM0\ARM_GCC_541\Debug\CyFlash.o .\CortexM0\ARM_GCC_541\Debug\CyLib.o .\CortexM0\ARM_GCC_541\Debug\cyPm.o .\CortexM0\ARM_GCC_541\Debug\cyutils.o .\CortexM0\ARM_GCC_541\Debug\CyLFClk.o .\CortexM0\ARM_GCC_541\Debug\GREEN.o .\CortexM0\ARM_GCC_541\Debug\GREEN_PM.o .\CortexM0\ARM_GCC_541\Debug\BLUE.o .\CortexM0\ARM_GCC_541\Debug\BLUE_PM.o .\CortexM0\ARM_GCC_541\Debug\RED.o .\CortexM0\ARM_GCC_541\Debug\RED_PM.o .\CortexM0\ARM_GCC_541\Debug\CEPIN.o .\CortexM0\ARM_GCC_541\Debug\CEPIN_PM.o .\CortexM0\ARM_GCC_541\Debug\MyUART.o .\CortexM0\ARM_GCC_541\Debug\Comp_out.o .\CortexM0\ARM_GCC_541\Debug\Comp_out_PM.o .\CortexM0\ARM_GCC_541\Debug\HighF_out.o .\CortexM0\ARM_GCC_541\Debug\HighF_out_PM.o .\CortexM0\ARM_GCC_541\Debug\LowF_out.o .\CortexM0\ARM_GCC_541\Debug\LowF_out_PM.o .\CortexM0\ARM_GCC_541\Debug\RelayLF_1.o .\CortexM0\ARM_GCC_541\Debug\RelayLF_1_PM.o .\CortexM0\ARM_GCC_541\Debug\RelayHF_2.o .\CortexM0\ARM_GCC_541\Debug\RelayHF_2_PM.o .\CortexM0\ARM_GCC_541\Debug\RelayC_3.o .\CortexM0\ARM_GCC_541\Debug\RelayC_3_PM.o .\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_541\Debug\MyUART_AsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_541\Debug\test.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o "C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\CortexM0\ARM_GCC_541\Debug\test.elf" .\CortexM0\ARM_GCC_541\Debug\main.o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_541\Debug\cymetadata.o .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o .\CortexM0\ARM_GCC_541\Debug\test.a -mcpu=cortex-m0 -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0\ARM_GCC_541\Debug/test.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -O0 -ffat-lto-objects -Wl,--end-group
-cyelftool.exe -C "C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\CortexM0\ARM_GCC_541\Debug\test.elf" --flash_row_size 128 --flash_size 131072 --flash_offset 0x00000000
+arm-none-eabi-gcc.exe -Wl,--start-group -o C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\CortexM0\ARM_GCC_541\Debug\test.elf .\CortexM0\ARM_GCC_541\Debug\main.o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_541\Debug\cymetadata.o .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o .\CortexM0\ARM_GCC_541\Debug\test.a -mcpu=cortex-m0 -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0\ARM_GCC_541\Debug/test.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -O0 -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\CortexM0\ARM_GCC_541\Debug\test.elf --flash_row_size 128 --flash_size 131072 --flash_offset 0x00000000
 No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
-cyelftool.exe -S "C:\Users\sergio\Documents\PSoC Creator\Thermostat_test\test.cydsn\CortexM0\ARM_GCC_541\Debug\test.elf"
-Flash used: 11630 of 131072 bytes (8.9%).
+cyelftool.exe -S C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\CortexM0\ARM_GCC_541\Debug\test.elf
+Flash used: 10862 of 131072 bytes (8.3%).
 SRAM used: 2644 of 16384 bytes (16.1%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 11/13/2019 19:22:30 ---------------
+--------------- Build Succeeded: 11/15/2019 22:24:44 ---------------

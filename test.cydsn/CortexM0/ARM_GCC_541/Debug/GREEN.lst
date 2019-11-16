@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
   28:Generated_Source\PSoC4/GREEN.c **** #else
   29:Generated_Source\PSoC4/GREEN.c ****     #if (CY_PSOC4_4200L)
   30:Generated_Source\PSoC4/GREEN.c ****         #define GREEN_SetP4PinDriveMode(shift, mode)  \
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 2
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 2
 
 
   31:Generated_Source\PSoC4/GREEN.c ****         do { \
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
   39              		.cfi_def_cfa_register 7
   40 0006 0200     		movs	r2, r0
   41 0008 FB1D     		adds	r3, r7, #7
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 3
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 3
 
 
   42 000a 1A70     		strb	r2, [r3]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
   94:Generated_Source\PSoC4/GREEN.c **** * \param value
   95:Generated_Source\PSoC4/GREEN.c **** *  Value to write to the component instance.
   96:Generated_Source\PSoC4/GREEN.c **** *
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 4
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 4
 
 
   97:Generated_Source\PSoC4/GREEN.c **** * \return 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  115:Generated_Source\PSoC4/GREEN.c ****     GREEN_DR = (uint32)drVal;
  112              		.loc 1 115 0
  113 0032 044B     		ldr	r3, .L5
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 5
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 5
 
 
  114 0034 0F22     		movs	r2, #15
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  146              		.cfi_offset 14, -4
  147 0002 00AF     		add	r7, sp, #0
  148              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 6
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 6
 
 
  138:Generated_Source\PSoC4/GREEN.c ****     return (uint8)((GREEN_PS & GREEN_MASK) >> GREEN_SHIFT);
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  165:Generated_Source\PSoC4/GREEN.c **** {
  176              		.loc 1 165 0
  177              		.cfi_startproc
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 7
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 7
 
 
  178              		@ args = 0, pretend = 0, frame = 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  185:Generated_Source\PSoC4/GREEN.c **** *  interrupt mode of all the pins in the Pins component.       
  186:Generated_Source\PSoC4/GREEN.c **** *  - GREEN_0_INTR       (First pin in the list)
  187:Generated_Source\PSoC4/GREEN.c **** *  - GREEN_1_INTR       (Second pin in the list)
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 8
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 8
 
 
  188:Generated_Source\PSoC4/GREEN.c **** *  - ...
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  242 0024 391D     		adds	r1, r7, #4
  243 0026 1288     		ldrh	r2, [r2]
  244 0028 0988     		ldrh	r1, [r1]
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 9
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 9
 
 
  245 002a 0A40     		ands	r2, r1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  274              		@ args = 0, pretend = 0, frame = 8
  275              		@ frame_needed = 1, uses_anonymous_args = 0
  276 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 10
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 10
 
 
  277              		.cfi_def_cfa_offset 8
@@ -593,12 +593,12 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  322 0006 00000000 		.4byte	.Ldebug_abbrev0
  323 000a 04       		.byte	0x4
  324 000b 01       		.uleb128 0x1
- 325 000c 88000000 		.4byte	.LASF28
+ 325 000c B2000000 		.4byte	.LASF28
  326 0010 0C       		.byte	0xc
- 327 0011 16010000 		.4byte	.LASF29
- 328 0015 67010000 		.4byte	.LASF30
+ 327 0011 40010000 		.4byte	.LASF29
+ 328 0015 68000000 		.4byte	.LASF30
  329 0019 00000000 		.4byte	.Ldebug_ranges0+0
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 11
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 11
 
 
  330 001d 00000000 		.4byte	0
@@ -606,35 +606,35 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  332 0025 02       		.uleb128 0x2
  333 0026 01       		.byte	0x1
  334 0027 06       		.byte	0x6
- 335 0028 2A020000 		.4byte	.LASF0
+ 335 0028 1F020000 		.4byte	.LASF0
  336 002c 02       		.uleb128 0x2
  337 002d 01       		.byte	0x1
  338 002e 08       		.byte	0x8
- 339 002f 4F000000 		.4byte	.LASF1
+ 339 002f 42000000 		.4byte	.LASF1
  340 0033 02       		.uleb128 0x2
  341 0034 02       		.byte	0x2
  342 0035 05       		.byte	0x5
- 343 0036 11020000 		.4byte	.LASF2
+ 343 0036 06020000 		.4byte	.LASF2
  344 003a 02       		.uleb128 0x2
  345 003b 02       		.byte	0x2
  346 003c 07       		.byte	0x7
- 347 003d 75000000 		.4byte	.LASF3
+ 347 003d 9F000000 		.4byte	.LASF3
  348 0041 02       		.uleb128 0x2
  349 0042 04       		.byte	0x4
  350 0043 05       		.byte	0x5
- 351 0044 21020000 		.4byte	.LASF4
+ 351 0044 16020000 		.4byte	.LASF4
  352 0048 02       		.uleb128 0x2
  353 0049 04       		.byte	0x4
  354 004a 07       		.byte	0x7
- 355 004b 63000000 		.4byte	.LASF5
+ 355 004b 56000000 		.4byte	.LASF5
  356 004f 02       		.uleb128 0x2
  357 0050 08       		.byte	0x8
  358 0051 05       		.byte	0x5
- 359 0052 DA010000 		.4byte	.LASF6
+ 359 0052 CF010000 		.4byte	.LASF6
  360 0056 02       		.uleb128 0x2
  361 0057 08       		.byte	0x8
  362 0058 07       		.byte	0x7
- 363 0059 A9010000 		.4byte	.LASF7
+ 363 0059 9E010000 		.4byte	.LASF7
  364 005d 03       		.uleb128 0x3
  365 005e 04       		.byte	0x4
  366 005f 05       		.byte	0x5
@@ -642,37 +642,37 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  368 0064 02       		.uleb128 0x2
  369 0065 04       		.byte	0x4
  370 0066 07       		.byte	0x7
- 371 0067 3C000000 		.4byte	.LASF8
+ 371 0067 91010000 		.4byte	.LASF8
  372 006b 04       		.uleb128 0x4
- 373 006c 1B020000 		.4byte	.LASF9
+ 373 006c 10020000 		.4byte	.LASF9
  374 0070 02       		.byte	0x2
  375 0071 E401     		.2byte	0x1e4
  376 0073 2C000000 		.4byte	0x2c
  377 0077 04       		.uleb128 0x4
- 378 0078 48010000 		.4byte	.LASF10
+ 378 0078 72010000 		.4byte	.LASF10
  379 007c 02       		.byte	0x2
  380 007d E501     		.2byte	0x1e5
  381 007f 3A000000 		.4byte	0x3a
  382 0083 04       		.uleb128 0x4
- 383 0084 58010000 		.4byte	.LASF11
+ 383 0084 82010000 		.4byte	.LASF11
  384 0088 02       		.byte	0x2
  385 0089 E601     		.2byte	0x1e6
  386 008b 48000000 		.4byte	0x48
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 12
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 12
 
 
  387 008f 02       		.uleb128 0x2
  388 0090 04       		.byte	0x4
  389 0091 04       		.byte	0x4
- 390 0092 49000000 		.4byte	.LASF12
+ 390 0092 3C000000 		.4byte	.LASF12
  391 0096 02       		.uleb128 0x2
  392 0097 08       		.byte	0x8
  393 0098 04       		.byte	0x4
- 394 0099 41010000 		.4byte	.LASF13
+ 394 0099 6B010000 		.4byte	.LASF13
  395 009d 02       		.uleb128 0x2
  396 009e 01       		.byte	0x1
  397 009f 08       		.byte	0x8
- 398 00a0 F5010000 		.4byte	.LASF14
+ 398 00a0 EA010000 		.4byte	.LASF14
  399 00a4 04       		.uleb128 0x4
  400 00a5 00000000 		.4byte	.LASF15
  401 00a9 02       		.byte	0x2
@@ -690,7 +690,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  413 00c5 9C       		.byte	0x9c
  414 00c6 D9000000 		.4byte	0xd9
  415 00ca 07       		.uleb128 0x7
- 416 00cb C0010000 		.4byte	.LASF18
+ 416 00cb B5010000 		.4byte	.LASF18
  417 00cf 01       		.byte	0x1
  418 00d0 48       		.byte	0x48
  419 00d1 6B000000 		.4byte	0x6b
@@ -699,7 +699,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  422 00d7 77       		.sleb128 -9
  423 00d8 00       		.byte	0
  424 00d9 06       		.uleb128 0x6
- 425 00da 35010000 		.4byte	.LASF17
+ 425 00da 5F010000 		.4byte	.LASF17
  426 00de 01       		.byte	0x1
  427 00df 6F       		.byte	0x6f
  428 00e0 00000000 		.4byte	.LFB1
@@ -708,7 +708,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  431 00e9 9C       		.byte	0x9c
  432 00ea 0B010000 		.4byte	0x10b
  433 00ee 07       		.uleb128 0x7
- 434 00ef 36000000 		.4byte	.LASF19
+ 434 00ef 2B000000 		.4byte	.LASF19
  435 00f3 01       		.byte	0x1
  436 00f4 6F       		.byte	0x6f
  437 00f5 6B000000 		.4byte	0x6b
@@ -716,9 +716,9 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  439 00fa 91       		.byte	0x91
  440 00fb 6F       		.sleb128 -17
  441 00fc 08       		.uleb128 0x8
- 442 00fd 5D000000 		.4byte	.LASF24
+ 442 00fd 50000000 		.4byte	.LASF24
  443 0101 01       		.byte	0x1
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 13
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 13
 
 
  444 0102 71       		.byte	0x71
@@ -728,7 +728,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  448 0109 77       		.sleb128 -9
  449 010a 00       		.byte	0
  450 010b 09       		.uleb128 0x9
- 451 010c 2B000000 		.4byte	.LASF20
+ 451 010c 31000000 		.4byte	.LASF20
  452 0110 01       		.byte	0x1
  453 0111 88       		.byte	0x88
  454 0112 6B000000 		.4byte	0x6b
@@ -746,7 +746,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  466 0133 01       		.uleb128 0x1
  467 0134 9C       		.byte	0x9c
  468 0135 06       		.uleb128 0x6
- 469 0136 FA010000 		.4byte	.LASF22
+ 469 0136 EF010000 		.4byte	.LASF22
  470 013a 01       		.byte	0x1
  471 013b CF       		.byte	0xcf
  472 013c 00000000 		.4byte	.LFB4
@@ -755,7 +755,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  475 0145 9C       		.byte	0x9c
  476 0146 75010000 		.4byte	0x175
  477 014a 07       		.uleb128 0x7
- 478 014b 4F010000 		.4byte	.LASF23
+ 478 014b 79010000 		.4byte	.LASF23
  479 014f 01       		.byte	0x1
  480 0150 CF       		.byte	0xcf
  481 0151 77000000 		.4byte	0x77
@@ -763,7 +763,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  483 0156 91       		.byte	0x91
  484 0157 6E       		.sleb128 -18
  485 0158 07       		.uleb128 0x7
- 486 0159 C0010000 		.4byte	.LASF18
+ 486 0159 B5010000 		.4byte	.LASF18
  487 015d 01       		.byte	0x1
  488 015e CF       		.byte	0xcf
  489 015f 77000000 		.4byte	0x77
@@ -771,19 +771,19 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  491 0164 91       		.byte	0x91
  492 0165 6C       		.sleb128 -20
  493 0166 08       		.uleb128 0x8
- 494 0167 5F010000 		.4byte	.LASF25
+ 494 0167 89010000 		.4byte	.LASF25
  495 016b 01       		.byte	0x1
  496 016c D1       		.byte	0xd1
  497 016d 83000000 		.4byte	0x83
  498 0171 02       		.uleb128 0x2
  499 0172 91       		.byte	0x91
  500 0173 74       		.sleb128 -12
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 14
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 14
 
 
  501 0174 00       		.byte	0
  502 0175 0A       		.uleb128 0xa
- 503 0176 C5010000 		.4byte	.LASF26
+ 503 0176 BA010000 		.4byte	.LASF26
  504 017a 01       		.byte	0x1
  505 017b EC       		.byte	0xec
  506 017c 6B000000 		.4byte	0x6b
@@ -792,7 +792,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  509 0188 01       		.uleb128 0x1
  510 0189 9C       		.byte	0x9c
  511 018a 08       		.uleb128 0x8
- 512 018b E8010000 		.4byte	.LASF27
+ 512 018b DD010000 		.4byte	.LASF27
  513 018f 01       		.byte	0x1
  514 0190 EE       		.byte	0xee
  515 0191 6B000000 		.4byte	0x6b
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  555 0020 00       		.byte	0
  556 0021 0B       		.uleb128 0xb
  557 0022 0B       		.uleb128 0xb
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 15
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 15
 
 
  558 0023 3E       		.uleb128 0x3e
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  612 005a 03       		.uleb128 0x3
  613 005b 0E       		.uleb128 0xe
  614 005c 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 16
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 16
 
 
  615 005d 0B       		.uleb128 0xb
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  669 0094 03       		.uleb128 0x3
  670 0095 0E       		.uleb128 0xe
  671 0096 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 17
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 17
 
 
  672 0097 0B       		.uleb128 0xb
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  726 0030 00000000 		.4byte	0
  727 0034 00000000 		.4byte	0
  728              		.section	.debug_line,"",%progbits
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 18
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 18
 
 
  729              	.Ldebug_line0:
@@ -1042,147 +1042,145 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 1
  736      61644461 
  736      74615265 
  736      6700
- 737              	.LASF20:
- 738 002b 47524545 		.ascii	"GREEN_Read\000"
- 738      4E5F5265 
- 738      616400
- 739              	.LASF19:
- 740 0036 76616C75 		.ascii	"value\000"
- 740      6500
- 741              	.LASF8:
- 742 003c 756E7369 		.ascii	"unsigned int\000"
- 742      676E6564 
- 742      20696E74 
- 742      00
- 743              	.LASF12:
- 744 0049 666C6F61 		.ascii	"float\000"
- 744      7400
- 745              	.LASF1:
- 746 004f 756E7369 		.ascii	"unsigned char\000"
- 746      676E6564 
- 746      20636861 
- 746      7200
- 747              	.LASF24:
- 748 005d 64725661 		.ascii	"drVal\000"
- 748      6C00
- 749              	.LASF5:
- 750 0063 6C6F6E67 		.ascii	"long unsigned int\000"
- 750      20756E73 
- 750      69676E65 
- 750      6420696E 
- 750      7400
- 751              	.LASF3:
- 752 0075 73686F72 		.ascii	"short unsigned int\000"
- 752      7420756E 
- 752      7369676E 
- 752      65642069 
- 752      6E7400
- 753              	.LASF28:
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 19
+ 737              	.LASF19:
+ 738 002b 76616C75 		.ascii	"value\000"
+ 738      6500
+ 739              	.LASF20:
+ 740 0031 47524545 		.ascii	"GREEN_Read\000"
+ 740      4E5F5265 
+ 740      616400
+ 741              	.LASF12:
+ 742 003c 666C6F61 		.ascii	"float\000"
+ 742      7400
+ 743              	.LASF1:
+ 744 0042 756E7369 		.ascii	"unsigned char\000"
+ 744      676E6564 
+ 744      20636861 
+ 744      7200
+ 745              	.LASF24:
+ 746 0050 64725661 		.ascii	"drVal\000"
+ 746      6C00
+ 747              	.LASF5:
+ 748 0056 6C6F6E67 		.ascii	"long unsigned int\000"
+ 748      20756E73 
+ 748      69676E65 
+ 748      6420696E 
+ 748      7400
+ 749              	.LASF30:
+ 750 0068 433A5C55 		.ascii	"C:\\Users\\sergio\\Documents\\GitHub\\thermostat\\t"
+ 750      73657273 
+ 750      5C736572 
+ 750      67696F5C 
+ 750      446F6375 
+ 751 0095 6573742E 		.ascii	"est.cydsn\000"
+ 751      63796473 
+ 751      6E00
+ 752              	.LASF3:
+ 753 009f 73686F72 		.ascii	"short unsigned int\000"
+ 753      7420756E 
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 19
 
 
- 754 0088 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 754      43313120 
- 754      352E342E 
- 754      31203230 
- 754      31363036 
- 755 00bb 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
- 755      20726576 
- 755      6973696F 
- 755      6E203233 
- 755      37373135 
- 756 00ee 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 756      66756E63 
- 756      74696F6E 
- 756      2D736563 
- 756      74696F6E 
- 757              	.LASF29:
- 758 0116 47656E65 		.ascii	"Generated_Source\\PSoC4\\GREEN.c\000"
- 758      72617465 
- 758      645F536F 
- 758      75726365 
- 758      5C50536F 
- 759              	.LASF17:
- 760 0135 47524545 		.ascii	"GREEN_Write\000"
- 760      4E5F5772 
- 760      69746500 
- 761              	.LASF13:
- 762 0141 646F7562 		.ascii	"double\000"
- 762      6C6500
- 763              	.LASF10:
- 764 0148 75696E74 		.ascii	"uint16\000"
- 764      313600
- 765              	.LASF23:
- 766 014f 706F7369 		.ascii	"position\000"
- 766      74696F6E 
- 766      00
- 767              	.LASF11:
- 768 0158 75696E74 		.ascii	"uint32\000"
- 768      333200
- 769              	.LASF25:
- 770 015f 696E7472 		.ascii	"intrCfg\000"
- 770      43666700 
- 771              	.LASF30:
- 772 0167 433A5C55 		.ascii	"C:\\Users\\sergio\\Documents\\PSoC Creator\\Thermos"
- 772      73657273 
- 772      5C736572 
- 772      67696F5C 
- 772      446F6375 
- 773 0195 7461745F 		.ascii	"tat_test\\test.cydsn\000"
- 773      74657374 
- 773      5C746573 
- 773      742E6379 
- 773      64736E00 
+ 753      7369676E 
+ 753      65642069 
+ 753      6E7400
+ 754              	.LASF28:
+ 755 00b2 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 755      43313120 
+ 755      352E342E 
+ 755      31203230 
+ 755      31363036 
+ 756 00e5 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 756      20726576 
+ 756      6973696F 
+ 756      6E203233 
+ 756      37373135 
+ 757 0118 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 757      66756E63 
+ 757      74696F6E 
+ 757      2D736563 
+ 757      74696F6E 
+ 758              	.LASF29:
+ 759 0140 47656E65 		.ascii	"Generated_Source\\PSoC4\\GREEN.c\000"
+ 759      72617465 
+ 759      645F536F 
+ 759      75726365 
+ 759      5C50536F 
+ 760              	.LASF17:
+ 761 015f 47524545 		.ascii	"GREEN_Write\000"
+ 761      4E5F5772 
+ 761      69746500 
+ 762              	.LASF13:
+ 763 016b 646F7562 		.ascii	"double\000"
+ 763      6C6500
+ 764              	.LASF10:
+ 765 0172 75696E74 		.ascii	"uint16\000"
+ 765      313600
+ 766              	.LASF23:
+ 767 0179 706F7369 		.ascii	"position\000"
+ 767      74696F6E 
+ 767      00
+ 768              	.LASF11:
+ 769 0182 75696E74 		.ascii	"uint32\000"
+ 769      333200
+ 770              	.LASF25:
+ 771 0189 696E7472 		.ascii	"intrCfg\000"
+ 771      43666700 
+ 772              	.LASF8:
+ 773 0191 756E7369 		.ascii	"unsigned int\000"
+ 773      676E6564 
+ 773      20696E74 
+ 773      00
  774              	.LASF7:
- 775 01a9 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 775 019e 6C6F6E67 		.ascii	"long long unsigned int\000"
  775      206C6F6E 
  775      6720756E 
  775      7369676E 
-ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczN8yUq.s 			page 20
-
-
  775      65642069 
  776              	.LASF18:
- 777 01c0 6D6F6465 		.ascii	"mode\000"
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cckW6nRe.s 			page 20
+
+
+ 777 01b5 6D6F6465 		.ascii	"mode\000"
  777      00
  778              	.LASF26:
- 779 01c5 47524545 		.ascii	"GREEN_ClearInterrupt\000"
+ 779 01ba 47524545 		.ascii	"GREEN_ClearInterrupt\000"
  779      4E5F436C 
  779      65617249 
  779      6E746572 
  779      72757074 
  780              	.LASF6:
- 781 01da 6C6F6E67 		.ascii	"long long int\000"
+ 781 01cf 6C6F6E67 		.ascii	"long long int\000"
  781      206C6F6E 
  781      6720696E 
  781      7400
  782              	.LASF27:
- 783 01e8 6D61736B 		.ascii	"maskedStatus\000"
+ 783 01dd 6D61736B 		.ascii	"maskedStatus\000"
  783      65645374 
  783      61747573 
  783      00
  784              	.LASF14:
- 785 01f5 63686172 		.ascii	"char\000"
+ 785 01ea 63686172 		.ascii	"char\000"
  785      00
  786              	.LASF22:
- 787 01fa 47524545 		.ascii	"GREEN_SetInterruptMode\000"
+ 787 01ef 47524545 		.ascii	"GREEN_SetInterruptMode\000"
  787      4E5F5365 
  787      74496E74 
  787      65727275 
  787      70744D6F 
  788              	.LASF2:
- 789 0211 73686F72 		.ascii	"short int\000"
+ 789 0206 73686F72 		.ascii	"short int\000"
  789      7420696E 
  789      7400
  790              	.LASF9:
- 791 021b 75696E74 		.ascii	"uint8\000"
+ 791 0210 75696E74 		.ascii	"uint8\000"
  791      3800
  792              	.LASF4:
- 793 0221 6C6F6E67 		.ascii	"long int\000"
+ 793 0216 6C6F6E67 		.ascii	"long int\000"
  793      20696E74 
  793      00
  794              	.LASF0:
- 795 022a 7369676E 		.ascii	"signed char\000"
+ 795 021f 7369676E 		.ascii	"signed char\000"
  795      65642063 
  795      68617200 
  796              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
