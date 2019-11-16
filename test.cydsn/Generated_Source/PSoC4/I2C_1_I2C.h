@@ -39,8 +39,8 @@
 #define I2C_1_I2C_DATA_RATE_ACTUAL       (100u)
 #define I2C_1_I2C_CLOCK_FROM_TERM        (0u)
 #define I2C_1_I2C_EXTERN_INTR_HANDLER    (0u)
-#define I2C_1_I2C_BYTE_MODE_ENABLE       (0u)
-#define I2C_1_I2C_MANUAL_OVS_CONTROL     (1u)
+#define I2C_1_I2C_BYTE_MODE_ENABLE       (1u)
+#define I2C_1_I2C_MANUAL_OVS_CONTROL     (0u)
 
 
 /***************************************
@@ -139,10 +139,10 @@
 
     /* Select oversampling factor low and high */
     #define I2C_1_I2C_OVS_FACTOR_LOW_MIN     ((0u != I2C_1_I2C_MANUAL_OVS_CONTROL) ? \
-                                                            (7u) : (7u))
+                                                            (7u) : (8u))
 
     #define I2C_1_I2C_OVS_FACTOR_HIGH_MIN    ((0u != I2C_1_I2C_MANUAL_OVS_CONTROL) ? \
-                                                            (13u) : (13u))
+                                                            (13u) : (8u))
 
 #endif /* (I2C_1_SCB_MODE_UNCONFIG_CONST_CFG) */
 

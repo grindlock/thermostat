@@ -2,7 +2,7 @@
 --	Conversion of test.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Fri Nov 15 22:06:04 2019
+--	Sat Nov 16 17:11:55 2019
 --
 
 USE cypress.cypress.all;
@@ -114,6 +114,12 @@ SIGNAL tmpFB_0__RelayC_3_net_0 : bit;
 SIGNAL tmpIO_0__RelayC_3_net_0 : bit;
 TERMINAL tmpSIOVREF__RelayC_3_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__RelayC_3_net_0 : bit;
+SIGNAL Net_360 : bit;
+SIGNAL \BLE_1:Net_15\ : bit;
+SIGNAL Net_362 : bit;
+SIGNAL \BLE_1:Net_53\ : bit;
+SIGNAL Net_361 : bit;
+SIGNAL \BLE_1:Net_55\ : bit;
 BEGIN
 
 zero <=  ('0') ;
@@ -475,7 +481,7 @@ RED:cy_psoc3_pins_v1_10
 		id=>"7ca9760e-6931-4b43-a74b-782f631c6518/2dc2d7a8-ce2b-43c7-af4a-821c8cd73ccf",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"500000000",
+		period=>"645161290.322581",
 		is_direct=>'0',
 		is_digital=>'0')
 	PORT MAP(clock_out=>\I2C_1:Net_847\,
@@ -1065,5 +1071,30 @@ RelayC_3:cy_psoc3_pins_v1_10
 		out_clock_en=>tmpOE__CEPIN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__RelayC_3_net_0);
+int_1:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>Net_360);
+GlobalSignal_2:cy_gsref_v1_0
+	GENERIC MAP(guid=>"1563FAA8-0748-4a1c-9785-CED309984BE3")
+	PORT MAP(sig_out=>Net_360);
+\BLE_1:cy_m0s8_ble\:cy_m0s8_ble_v1_0
+	GENERIC MAP(cy_registers=>"")
+	PORT MAP(interrupt=>\BLE_1:Net_15\,
+		rf_ext_pa_en=>Net_362);
+\BLE_1:bless_isr\:cy_isr_v1_0
+	GENERIC MAP(int_type=>"10",
+		is_nmi=>'0')
+	PORT MAP(int_signal=>\BLE_1:Net_15\);
+\BLE_1:LFCLK\:cy_clock_v1_0
+	GENERIC MAP(cy_registers=>"",
+		id=>"a32c7678-ff5a-4338-8185-d09d8f0d5786/5ae6fa4d-f41a-4a35-8821-7ce70389cb0c",
+		source_clock_id=>"9A908CA6-5BB3-4db0-B098-959E5D90882B",
+		divisor=>0,
+		period=>"0",
+		is_direct=>'1',
+		is_digital=>'0')
+	PORT MAP(clock_out=>\BLE_1:Net_53\,
+		dig_domain_out=>open);
 
 END R_T_L;

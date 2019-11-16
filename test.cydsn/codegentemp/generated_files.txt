@@ -72,6 +72,28 @@
   <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\RelayC_3.h" value="HEADER;;;;;RelayC_3" />
   <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\RelayC_3_aliases.h" value="HEADER;;;;;RelayC_3" />
   <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\RelayC_3_PM.c" value="SOURCE_C;CortexM0;;;;RelayC_3" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\int_1.c" value="SOURCE_C;CortexM0;;;;int_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\int_1.h" value="HEADER;;;;;int_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_gatt.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_gatt.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_eventHandler.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_HAL_INT.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_HAL_PVT.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_HAL_PVT.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_STACK_PVT.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_StackGap.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_StackGatt.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_StackGattDb.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_StackHostMain.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_StackL2cap.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_StackGattServer.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_StackGattClient.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_Stack.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_eventHandler.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_custom.h" value="HEADER;;;;;BLE_1" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_custom.c" value="SOURCE_C;CortexM0;;;;BLE_1" />
   <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\I2C_1_SCBCLK.c" value="SOURCE_C;CortexM0;;;;I2C_1_SCBCLK" />
   <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\I2C_1_SCBCLK.h" value="HEADER;;;;;I2C_1_SCBCLK" />
   <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\I2C_1_sda.c" value="SOURCE_C;CortexM0;;;;I2C_1_sda" />
@@ -84,6 +106,8 @@
   <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\I2C_1_scl_PM.c" value="SOURCE_C;CortexM0;;;;I2C_1_scl" />
   <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\I2C_1_SCB_IRQ.c" value="SOURCE_C;CortexM0;;;;I2C_1_SCB_IRQ" />
   <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\I2C_1_SCB_IRQ.h" value="HEADER;;;;;I2C_1_SCB_IRQ" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_bless_isr.c" value="SOURCE_C;CortexM0;;;;BLE_1_bless_isr" />
+  <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\BLE_1_bless_isr.h" value="HEADER;;;;;BLE_1_bless_isr" />
   <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\cy_em_eeprom.c" value="SOURCE_C;CortexM0;;;;Em_EEPROM_Dynamic" />
   <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\cy_em_eeprom.h" value="HEADER;;;;;Em_EEPROM_Dynamic" />
   <file name="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\codegentemp\cm0gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />

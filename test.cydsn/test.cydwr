@@ -10,6 +10,14 @@
   </Group>
   <Data key="DataVersionKey" value="2" />
   <Group key="DWRInstGuidMapping">
+    <Group key="Clock">
+      <Data key="7ca9760e-6931-4b43-a74b-782f631c6518/2dc2d7a8-ce2b-43c7-af4a-821c8cd73ccf" value="I2C_1_SCBCLK" />
+    </Group>
+    <Group key="Interrupt">
+      <Data key="7ca9760e-6931-4b43-a74b-782f631c6518/696fcfb7-e3b3-4302-9123-1e2c9e4522d2" value="I2C_1_SCB_IRQ" />
+      <Data key="9d85b07b-d0a3-43d5-9c79-a337709a4229" value="int_1" />
+      <Data key="a32c7678-ff5a-4338-8185-d09d8f0d5786/0bca1fc6-354d-4d61-89fa-de74f0d280d1" value="BLE_1_bless_isr" />
+    </Group>
     <Group key="Pin">
       <Data key="3eb3be75-347a-425a-bd2a-15f12a7995cc" value="Relay_3" />
       <Data key="5b20c758-a7eb-47d9-a93e-7774ecdc6c6e" value="GREEN" />
@@ -3110,7 +3118,48 @@
       </Group>
     </Group>
   </Group>
+  <Group key="Interrupt">
+    <Group key="7ca9760e-6931-4b43-a74b-782f631c6518/696fcfb7-e3b3-4302-9123-1e2c9e4522d2">
+      <Group key="CortexM0">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="1" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+    <Group key="a32c7678-ff5a-4338-8185-d09d8f0d5786/0bca1fc6-354d-4d61-89fa-de74f0d280d1">
+      <Group key="CortexM0">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="0" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+  </Group>
   <Group key="M0S8Clock">
+    <Group key="LocalClks">
+      <Group key="7ca9760e-6931-4b43-a74b-782f631c6518/2dc2d7a8-ce2b-43c7-af4a-821c8cd73ccf">
+        <Data key="check_tolerance" value="True" />
+        <Data key="derive_type" value="AUTO" />
+        <Data key="desired_freq" value="1.5499999999999998" />
+        <Data key="desired_unit" value="6" />
+        <Data key="divider" value="30" />
+        <Data key="enabled" value="True" />
+        <Data key="fract_divider_denominator" value="0" />
+        <Data key="fract_divider_numerator" value="0" />
+        <Data key="minus_tolerance" value="0" />
+        <Data key="name" value="I2C_1_SCBCLK" />
+        <Data key="netlist_name" value="\I2C_1:SCBCLK\" />
+        <Data key="ph_align_clock_id" value="413DE2EF-D9F2-4233-A808-DFAF137FD877" />
+        <Data key="ph_align_clock_name" value="HFCLK" />
+        <Data key="plus_tolerance" value="106.45161290322579" />
+        <Data key="scope" value="LOCAL" />
+        <Data key="sourceClk_minus_acuracy_name" value="2" />
+        <Data key="sourceClk_plus_acuracy_name" value="2" />
+        <Data key="src_clk_id" value="413DE2EF-D9F2-4233-A808-DFAF137FD877" />
+        <Data key="src_clk_name" value="HFClk" />
+        <Data key="start_on_reset" value="True" />
+        <Data key="uses_fract_divider" value="False" />
+      </Group>
+    </Group>
     <Group key="SystemClks">
       <Group key="1EB9C57A-B1AC-449a-92B8-1EB82F7A8FE5">
         <Data key="accuracy_display_unit" value="1" />
@@ -3346,15 +3395,15 @@
         <Data key="desired_freq" value="0" />
         <Data key="desired_unit" value="0" />
         <Data key="divider" value="15" />
-        <Data key="enabled" value="False" />
+        <Data key="enabled" value="True" />
         <Data key="minus_tolerance" value="0" />
         <Data key="name" value="Timer2 (WDT2)" />
         <Data key="netlist_name" value="Timer2 (WDT2)" />
         <Data key="operation_mode" value="1" />
         <Data key="plus_tolerance" value="0" />
         <Data key="scope" value="BUILTIN" />
-        <Data key="sourceClk_minus_acuracy_name" value="0" />
-        <Data key="sourceClk_plus_acuracy_name" value="0" />
+        <Data key="sourceClk_minus_acuracy_name" value="0.015" />
+        <Data key="sourceClk_plus_acuracy_name" value="0.015" />
         <Data key="src_clk_id" value="9A908CA6-5BB3-4db0-B098-959E5D90882B" />
         <Data key="src_clk_name" value="LFClk" />
         <Data key="start_on_reset" value="False" />
@@ -3461,7 +3510,7 @@
         <Data key="desired_unit" value="3" />
         <Data key="divider" value="0" />
         <Data key="enabled" value="True" />
-        <Data key="generate_isr" value="True" />
+        <Data key="generate_isr" value="False" />
         <Data key="minus_tolerance" value="0" />
         <Data key="name" value="Timer (WDT) ISR" />
         <Data key="netlist_name" value="Timer (WDT) ISR" />

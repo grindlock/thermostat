@@ -1,14 +1,43 @@
---------------- Build Started: 11/15/2019 22:24:42 Project: test, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 11/16/2019 17:47:45 Project: test, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
-arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_541\Debug\test.a .\CortexM0\ARM_GCC_541\Debug\I2C_1.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C_INT.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C_BOOT.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_BOOT.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C_MASTER.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_SCBCLK.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_sda.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_sda_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_scl.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_scl_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_SCB_IRQ.o .\CortexM0\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM0\ARM_GCC_541\Debug\CyFlash.o .\CortexM0\ARM_GCC_541\Debug\CyLib.o .\CortexM0\ARM_GCC_541\Debug\cyPm.o .\CortexM0\ARM_GCC_541\Debug\cyutils.o .\CortexM0\ARM_GCC_541\Debug\CyLFClk.o .\CortexM0\ARM_GCC_541\Debug\GREEN.o .\CortexM0\ARM_GCC_541\Debug\GREEN_PM.o .\CortexM0\ARM_GCC_541\Debug\BLUE.o .\CortexM0\ARM_GCC_541\Debug\BLUE_PM.o .\CortexM0\ARM_GCC_541\Debug\RED.o .\CortexM0\ARM_GCC_541\Debug\RED_PM.o .\CortexM0\ARM_GCC_541\Debug\CEPIN.o .\CortexM0\ARM_GCC_541\Debug\CEPIN_PM.o .\CortexM0\ARM_GCC_541\Debug\MyUART.o .\CortexM0\ARM_GCC_541\Debug\Comp_out.o .\CortexM0\ARM_GCC_541\Debug\Comp_out_PM.o .\CortexM0\ARM_GCC_541\Debug\HighF_out.o .\CortexM0\ARM_GCC_541\Debug\HighF_out_PM.o .\CortexM0\ARM_GCC_541\Debug\LowF_out.o .\CortexM0\ARM_GCC_541\Debug\LowF_out_PM.o .\CortexM0\ARM_GCC_541\Debug\RelayLF_1.o .\CortexM0\ARM_GCC_541\Debug\RelayLF_1_PM.o .\CortexM0\ARM_GCC_541\Debug\RelayHF_2.o .\CortexM0\ARM_GCC_541\Debug\RelayHF_2_PM.o .\CortexM0\ARM_GCC_541\Debug\RelayC_3.o .\CortexM0\ARM_GCC_541\Debug\RelayC_3_PM.o .\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_541\Debug\MyUART_AsmGnu.o
+main.c: In function 'bleStack':
+main.c:94:25: warning: unused variable 'localAddr' [-Wunused-variable]
+     CYBLE_GAP_BD_ADDR_T localAddr;
+                         ^
+main.c:93:24: warning: unused variable 'apiResult' [-Wunused-variable]
+     CYBLE_API_RESULT_T apiResult;
+                        ^
+main.c: In function 'main':
+main.c:348:20: warning: unused variable 'rBuff' [-Wunused-variable]
+     volatile uint8 rBuff[2] = {0u, 0u};
+                    ^
+main.c:347:11: warning: unused variable 'wBuff' [-Wunused-variable]
+     uint8 wBuff[2] = {0x00, 0u};
+           ^
+main.c:324:9: warning: unused variable 'tempR22' [-Wunused-variable]
+ uint8_t tempR22 = 0;
+         ^
+main.c:323:9: warning: unused variable 'tempR12' [-Wunused-variable]
+ uint8_t tempR12 = 0;    
+         ^
+main.c:321:7: warning: unused variable 'tempR2' [-Wunused-variable]
+ uint8 tempR2 = 0;
+       ^
+main.c:320:7: warning: unused variable 'tempR1' [-Wunused-variable]
+ uint8 tempR1 = 0;
+       ^
+main.c:319:7: warning: unused variable 'temp1' [-Wunused-variable]
+ uint8 temp1 = 0;
+       ^
+arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_541\Debug\test.a .\CortexM0\ARM_GCC_541\Debug\I2C_1.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C_INT.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C_BOOT.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_BOOT.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C_MASTER.o .\CortexM0\ARM_GCC_541\Debug\BLE_1.o .\CortexM0\ARM_GCC_541\Debug\BLE_1_gatt.o .\CortexM0\ARM_GCC_541\Debug\BLE_1_eventHandler.o .\CortexM0\ARM_GCC_541\Debug\BLE_1_HAL_INT.o .\CortexM0\ARM_GCC_541\Debug\BLE_1_HAL_PVT.o .\CortexM0\ARM_GCC_541\Debug\BLE_1_custom.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_SCBCLK.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_sda.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_sda_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_scl.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_scl_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_SCB_IRQ.o .\CortexM0\ARM_GCC_541\Debug\BLE_1_bless_isr.o .\CortexM0\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM0\ARM_GCC_541\Debug\CyFlash.o .\CortexM0\ARM_GCC_541\Debug\CyLib.o .\CortexM0\ARM_GCC_541\Debug\cyPm.o .\CortexM0\ARM_GCC_541\Debug\cyutils.o .\CortexM0\ARM_GCC_541\Debug\CyLFClk.o .\CortexM0\ARM_GCC_541\Debug\GREEN.o .\CortexM0\ARM_GCC_541\Debug\GREEN_PM.o .\CortexM0\ARM_GCC_541\Debug\BLUE.o .\CortexM0\ARM_GCC_541\Debug\BLUE_PM.o .\CortexM0\ARM_GCC_541\Debug\RED.o .\CortexM0\ARM_GCC_541\Debug\RED_PM.o .\CortexM0\ARM_GCC_541\Debug\CEPIN.o .\CortexM0\ARM_GCC_541\Debug\CEPIN_PM.o .\CortexM0\ARM_GCC_541\Debug\MyUART.o .\CortexM0\ARM_GCC_541\Debug\Comp_out.o .\CortexM0\ARM_GCC_541\Debug\Comp_out_PM.o .\CortexM0\ARM_GCC_541\Debug\HighF_out.o .\CortexM0\ARM_GCC_541\Debug\HighF_out_PM.o .\CortexM0\ARM_GCC_541\Debug\LowF_out.o .\CortexM0\ARM_GCC_541\Debug\LowF_out_PM.o .\CortexM0\ARM_GCC_541\Debug\RelayLF_1.o .\CortexM0\ARM_GCC_541\Debug\RelayLF_1_PM.o .\CortexM0\ARM_GCC_541\Debug\RelayHF_2.o .\CortexM0\ARM_GCC_541\Debug\RelayHF_2_PM.o .\CortexM0\ARM_GCC_541\Debug\RelayC_3.o .\CortexM0\ARM_GCC_541\Debug\RelayC_3_PM.o .\CortexM0\ARM_GCC_541\Debug\int_1.o .\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_541\Debug\MyUART_AsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_541\Debug\test.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\CortexM0\ARM_GCC_541\Debug\test.elf .\CortexM0\ARM_GCC_541\Debug\main.o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_541\Debug\cymetadata.o .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o .\CortexM0\ARM_GCC_541\Debug\test.a -mcpu=cortex-m0 -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0\ARM_GCC_541\Debug/test.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -O0 -ffat-lto-objects -Wl,--end-group
+arm-none-eabi-gcc.exe -Wl,--start-group -o C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\CortexM0\ARM_GCC_541\Debug\test.elf .\CortexM0\ARM_GCC_541\Debug\main.o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_541\Debug\cymetadata.o .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o .\CortexM0\ARM_GCC_541\Debug\test.a "..\..\..\PSoC Creator\4.2\Downloads ( 4.2).cylib\BLE_v3_61\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a" -mcpu=cortex-m0 -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0\ARM_GCC_541\Debug/test.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -O0 -ffat-lto-objects -Wl,--end-group
 cyelftool.exe -C C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\CortexM0\ARM_GCC_541\Debug\test.elf --flash_row_size 128 --flash_size 131072 --flash_offset 0x00000000
 No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\CortexM0\ARM_GCC_541\Debug\test.elf
-Flash used: 10862 of 131072 bytes (8.3%).
-SRAM used: 2644 of 16384 bytes (16.1%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 11/15/2019 22:24:44 ---------------
+Flash used: 92468 of 131072 bytes (70.5%).
+SRAM used: 11240 of 16384 bytes (68.6%). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Build Succeeded: 11/16/2019 17:47:47 ---------------

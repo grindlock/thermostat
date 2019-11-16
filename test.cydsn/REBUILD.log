@@ -1,0 +1,28 @@
+--------------- Rebuild Started: 11/16/2019 13:24:26 Project: main.c, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
+main.c: In function 'main':
+main.c:135:5: warning: implicit declaration of function 'isr_1_StartEx' [-Wimplicit-function-declaration]
+     isr_1_StartEx(my_interrupt);
+     ^
+main.c:220:11: warning: unused variable 'rBuff' [-Wunused-variable]
+     uint8 rBuff[2] = {0u, 0u};
+           ^
+main.c:219:11: warning: unused variable 'wBuff' [-Wunused-variable]
+     uint8 wBuff[2] = {0u, 0u};
+           ^
+main.c:197:9: warning: unused variable 'tempR22' [-Wunused-variable]
+ uint8_t tempR22 = 0;
+         ^
+main.c:196:9: warning: unused variable 'tempR12' [-Wunused-variable]
+ uint8_t tempR12 = 0;    
+         ^
+main.c:194:7: warning: unused variable 'tempR2' [-Wunused-variable]
+ uint8 tempR2 = 0;
+       ^
+main.c:193:7: warning: unused variable 'tempR1' [-Wunused-variable]
+ uint8 tempR1 = 0;
+       ^
+main.c:192:7: warning: unused variable 'temp1' [-Wunused-variable]
+ uint8 temp1 = 0;
+       ^
+--------------- Rebuild Succeeded: 11/16/2019 13:24:27 ---------------

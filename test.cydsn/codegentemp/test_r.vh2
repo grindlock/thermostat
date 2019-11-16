@@ -1,5 +1,5 @@
 -- Project:   test
--- Generated: 11/15/2019 22:06:05
+-- Generated: 11/16/2019 17:11:56
 -- PSoC Creator  4.2
 
 ENTITY test IS
@@ -52,10 +52,13 @@ ARCHITECTURE __DEFAULT__ OF test IS
     SIGNAL Net_224 : bit;
     SIGNAL Net_331 : bit;
     SIGNAL Net_332 : bit;
+    SIGNAL Net_362 : bit;
     SIGNAL RED(0)__PA : bit;
     SIGNAL RelayC_3(0)__PA : bit;
     SIGNAL RelayHF_2(0)__PA : bit;
     SIGNAL RelayLF_1(0)__PA : bit;
+    SIGNAL WDT_INT_OUT : bit;
+    SIGNAL \BLE_1:Net_15\ : bit;
     SIGNAL \I2C_1:Net_847_ff1\ : bit;
     ATTRIBUTE global_signal OF \I2C_1:Net_847_ff1\ : SIGNAL IS true;
     SIGNAL \I2C_1:miso_s_wire\ : bit;
@@ -108,6 +111,10 @@ ARCHITECTURE __DEFAULT__ OF test IS
     ATTRIBUTE Location OF RelayC_3(0) : LABEL IS "P3[5]";
     ATTRIBUTE Location OF \I2C_1:SCB_IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(10)]";
     ATTRIBUTE Location OF \I2C_1:SCB\ : LABEL IS "F(SCB,1)";
+    ATTRIBUTE Location OF int_1 : LABEL IS "[IntrContainer=(0)][IntrId=(8)]";
+    ATTRIBUTE Location OF \BLE_1:cy_m0s8_ble\ : LABEL IS "F(BLE,0)";
+    ATTRIBUTE Location OF \BLE_1:bless_isr\ : LABEL IS "[IntrContainer=(0)][IntrId=(12)]";
+    ATTRIBUTE Location OF SRSS : LABEL IS "F(SRSS,0)";
     COMPONENT interrupt
         PORT (
             interrupt : IN std_ulogic;
@@ -290,6 +297,29 @@ ARCHITECTURE __DEFAULT__ OF test IS
             i2c_sda : IN std_ulogic;
             tr_rx_req : OUT std_ulogic;
             tr_tx_req : OUT std_ulogic);
+    END COMPONENT;
+    COMPONENT m0s8srsscell
+        PORT (
+            clock_pump : IN std_ulogic;
+            clock_ss : IN std_ulogic;
+            dsi_ss_code_0 : IN std_ulogic;
+            dsi_ss_code_1 : IN std_ulogic;
+            dsi_ss_code_2 : IN std_ulogic;
+            dsi_ss_code_3 : IN std_ulogic;
+            dsi_ss_code_4 : IN std_ulogic;
+            dsi_ss_updown : OUT std_ulogic;
+            interrupt_wdt : OUT std_ulogic;
+            interrupt_pwr : OUT std_ulogic);
+    END COMPONENT;
+    COMPONENT p4blecell
+        PORT (
+            interrupt : OUT std_ulogic;
+            rfctrl_extpa_en : OUT std_ulogic;
+            wco_in : IN std_ulogic;
+            wco_out : OUT std_ulogic;
+            ext_pa_tx_ctl : OUT std_ulogic;
+            ext_lna_rx_ctl : OUT std_ulogic;
+            ext_pa_lna_chip_en : OUT std_ulogic);
     END COMPONENT;
 BEGIN
 
@@ -1517,5 +1547,32 @@ BEGIN
             i2c_sda => Net_332,
             tr_tx_req => Net_224,
             tr_rx_req => Net_223);
+
+    int_1:interrupt
+        GENERIC MAP(
+            int_type => "10",
+            is_nmi => 0)
+        PORT MAP(
+            interrupt => WDT_INT_OUT,
+            clock => ClockBlock_HFClk);
+
+    \BLE_1:cy_m0s8_ble\:p4blecell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            interrupt => \BLE_1:Net_15\,
+            rfctrl_extpa_en => Net_362);
+
+    \BLE_1:bless_isr\:interrupt
+        GENERIC MAP(
+            int_type => "10",
+            is_nmi => 0)
+        PORT MAP(
+            interrupt => \BLE_1:Net_15\,
+            clock => ClockBlock_HFClk);
+
+    SRSS:m0s8srsscell
+        PORT MAP(
+            interrupt_wdt => WDT_INT_OUT);
 
 END __DEFAULT__;

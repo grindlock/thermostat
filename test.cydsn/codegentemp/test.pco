@@ -1,5 +1,5 @@
 # test
-# 2019-11-16 03:06:05Z
+# 2019-11-16 22:11:56Z
 
 # IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
 dont_use_io iocell 0 6
@@ -34,3 +34,7 @@ set_io "RelayHF_2(0)" iocell 3 3
 set_io "RelayC_3(0)" iocell 3 5
 set_location "\I2C_1:SCB_IRQ\" interrupt -1 -1 10
 set_location "\I2C_1:SCB\" m0s8scbcell -1 -1 1
+set_location "int_1" interrupt -1 -1 8
+set_location "\BLE_1:cy_m0s8_ble\" p4blecell -1 -1 0
+set_location "\BLE_1:bless_isr\" interrupt -1 -1 12
+set_location "SRSS" m0s8srsscell -1 -1 0
