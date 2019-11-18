@@ -1,51 +1,51 @@
---------------- Build Started: 11/17/2019 22:56:45 Project: test, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 11/18/2019 15:55:35 Project: test, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
 main.c: In function 'bleStack':
-main.c:119:25: warning: unused variable 'localAddr' [-Wunused-variable]
+main.c:121:25: warning: unused variable 'localAddr' [-Wunused-variable]
      CYBLE_GAP_BD_ADDR_T localAddr;
                          ^
-main.c:118:24: warning: unused variable 'apiResult' [-Wunused-variable]
+main.c:120:24: warning: unused variable 'apiResult' [-Wunused-variable]
      CYBLE_API_RESULT_T apiResult;
                         ^
 main.c: In function 'main':
-main.c:402:20: warning: unused variable 'rBuff' [-Wunused-variable]
+main.c:404:20: warning: unused variable 'rBuff' [-Wunused-variable]
      volatile uint8 rBuff[2] = {0u, 0u};
                     ^
-main.c:401:11: warning: unused variable 'wBuff' [-Wunused-variable]
+main.c:403:11: warning: unused variable 'wBuff' [-Wunused-variable]
      uint8 wBuff[2] = {0x00, 0u};
            ^
-main.c:367:9: warning: unused variable 'tempR22' [-Wunused-variable]
+main.c:369:9: warning: unused variable 'tempR22' [-Wunused-variable]
  uint8_t tempR22 = 0;
          ^
-main.c:366:9: warning: unused variable 'tempR12' [-Wunused-variable]
+main.c:368:9: warning: unused variable 'tempR12' [-Wunused-variable]
  uint8_t tempR12 = 0;    
          ^
-main.c:364:7: warning: unused variable 'tempR2' [-Wunused-variable]
+main.c:366:7: warning: unused variable 'tempR2' [-Wunused-variable]
  uint8 tempR2 = 0;
        ^
-main.c:363:7: warning: unused variable 'tempR1' [-Wunused-variable]
+main.c:365:7: warning: unused variable 'tempR1' [-Wunused-variable]
  uint8 tempR1 = 0;
        ^
-main.c:362:7: warning: unused variable 'temp1' [-Wunused-variable]
+main.c:364:7: warning: unused variable 'temp1' [-Wunused-variable]
  uint8 temp1 = 0;
        ^
-main.c:545:17: warning: 'xMSB' may be used uninitialized in this function [-Wmaybe-uninitialized]
+main.c:547:17: warning: 'xMSB' may be used uninitialized in this function [-Wmaybe-uninitialized]
  sensorData.accX = (xMSB );
                  ^
-main.c:546:17: warning: 'yMSB' may be used uninitialized in this function [-Wmaybe-uninitialized]
+main.c:548:17: warning: 'yMSB' may be used uninitialized in this function [-Wmaybe-uninitialized]
  sensorData.accY = (yMSB );
                  ^
-main.c:547:17: warning: 'zMSB' may be used uninitialized in this function [-Wmaybe-uninitialized]
+main.c:549:17: warning: 'zMSB' may be used uninitialized in this function [-Wmaybe-uninitialized]
  sensorData.accZ = (zMSB );
                  ^
-main.c:551:1: warning: 'xLSB' may be used uninitialized in this function [-Wmaybe-uninitialized]
+main.c:553:1: warning: 'xLSB' may be used uninitialized in this function [-Wmaybe-uninitialized]
  sprintf(str,"\nX: %d %d    12 bit x: %d\n", xMSB, xLSB, sensorData.accX);
  ^
-main.c:553:1: warning: 'yLSB' may be used uninitialized in this function [-Wmaybe-uninitialized]
+main.c:555:1: warning: 'yLSB' may be used uninitialized in this function [-Wmaybe-uninitialized]
  sprintf(str,"y: %d %d      12 bit y: %d\n", yMSB, yLSB, sensorData.accY);
  ^
-main.c:555:1: warning: 'zLSB' may be used uninitialized in this function [-Wmaybe-uninitialized]
+main.c:557:1: warning: 'zLSB' may be used uninitialized in this function [-Wmaybe-uninitialized]
  sprintf(str,"Z: %d %d      12 bit z: %d\n\n\n", zMSB, zLSB, sensorData.accZ);
  ^
 arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_541\Debug\test.a .\CortexM0\ARM_GCC_541\Debug\I2C_1.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C_INT.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C_BOOT.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_BOOT.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_I2C_MASTER.o .\CortexM0\ARM_GCC_541\Debug\BLE_1.o .\CortexM0\ARM_GCC_541\Debug\BLE_1_gatt.o .\CortexM0\ARM_GCC_541\Debug\BLE_1_eventHandler.o .\CortexM0\ARM_GCC_541\Debug\BLE_1_HAL_INT.o .\CortexM0\ARM_GCC_541\Debug\BLE_1_HAL_PVT.o .\CortexM0\ARM_GCC_541\Debug\BLE_1_custom.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_SCBCLK.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_sda.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_sda_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_scl.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_scl_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_1_SCB_IRQ.o .\CortexM0\ARM_GCC_541\Debug\BLE_1_bless_isr.o .\CortexM0\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM0\ARM_GCC_541\Debug\CyFlash.o .\CortexM0\ARM_GCC_541\Debug\CyLib.o .\CortexM0\ARM_GCC_541\Debug\cyPm.o .\CortexM0\ARM_GCC_541\Debug\cyutils.o .\CortexM0\ARM_GCC_541\Debug\CyLFClk.o .\CortexM0\ARM_GCC_541\Debug\GREEN.o .\CortexM0\ARM_GCC_541\Debug\GREEN_PM.o .\CortexM0\ARM_GCC_541\Debug\BLUE.o .\CortexM0\ARM_GCC_541\Debug\BLUE_PM.o .\CortexM0\ARM_GCC_541\Debug\RED.o .\CortexM0\ARM_GCC_541\Debug\RED_PM.o .\CortexM0\ARM_GCC_541\Debug\CEPIN.o .\CortexM0\ARM_GCC_541\Debug\CEPIN_PM.o .\CortexM0\ARM_GCC_541\Debug\MyUART.o .\CortexM0\ARM_GCC_541\Debug\Comp_out.o .\CortexM0\ARM_GCC_541\Debug\Comp_out_PM.o .\CortexM0\ARM_GCC_541\Debug\HighF_out.o .\CortexM0\ARM_GCC_541\Debug\HighF_out_PM.o .\CortexM0\ARM_GCC_541\Debug\LowF_out.o .\CortexM0\ARM_GCC_541\Debug\LowF_out_PM.o .\CortexM0\ARM_GCC_541\Debug\RelayLF_1.o .\CortexM0\ARM_GCC_541\Debug\RelayLF_1_PM.o .\CortexM0\ARM_GCC_541\Debug\RelayHF_2.o .\CortexM0\ARM_GCC_541\Debug\RelayHF_2_PM.o .\CortexM0\ARM_GCC_541\Debug\RelayC_3.o .\CortexM0\ARM_GCC_541\Debug\RelayC_3_PM.o .\CortexM0\ARM_GCC_541\Debug\int_1.o .\CortexM0\ARM_GCC_541\Debug\MyADC.o .\CortexM0\ARM_GCC_541\Debug\MyADC_PM.o .\CortexM0\ARM_GCC_541\Debug\MyADC_INT.o .\CortexM0\ARM_GCC_541\Debug\ADC.o .\CortexM0\ARM_GCC_541\Debug\ADC_PM.o .\CortexM0\ARM_GCC_541\Debug\MyADC_IRQ.o .\CortexM0\ARM_GCC_541\Debug\MyADC_intClock.o .\CortexM0\ARM_GCC_541\Debug\AF.o .\CortexM0\ARM_GCC_541\Debug\AF_PM.o .\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_541\Debug\MyUART_AsmGnu.o
@@ -56,6 +56,6 @@ No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\CortexM0\ARM_GCC_541\Debug\test.elf
-Flash used: 96172 of 131072 bytes (73.4%).
+Flash used: 92988 of 131072 bytes (70.9%).
 SRAM used: 11256 of 16384 bytes (68.7%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 11/17/2019 22:56:47 ---------------
+--------------- Build Succeeded: 11/18/2019 15:55:37 ---------------

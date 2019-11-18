@@ -27,7 +27,9 @@ CYBLE_GATT_HANDLE_VALUE_PAIR_T thermoHandle;
 #define ADDR_POWER3 (0x76)
 #define REG_POWER_VERSION (0x04)
 
-int interruptFlag= 0;
+// the address fro the temp sensor are 0x4C for A model and 0x4D for B model.
+
+int interruptFlag = 0;
 uint8 isNotify = 0;
 uint8 updateIsNotifyCCCDAttr = 0;
 uint8 bleConnected = 0;
@@ -97,7 +99,7 @@ uint8 prevComp = 0;
 uint8 prevLFan = 0;
 uint8 prevHFan = 0;
 
-// the address fro the temp sensor are 0x4C and 0x4D
+
 
 void updateThermostatData(void){
     
@@ -379,19 +381,19 @@ uint8_t tempR22 = 0;
 
 if(interruptFlag == 1){
     
-    MyADC_StartConvert();
-    adcRead =  MyADC_GetResult16(0);
-    MyADC_SetGain(0, 1100);
-    adcRead = MyADC_CountsTo_Volts(0, adcRead);
-    MyADC_StopConvert();
-    //MyADC_CountsTo_Volts(0, adcRead);
-    
-    sprintf(uartStr, "*-*-*-*-*-*-*-*-  ADC is: %d -*-*-*-*-*-*-*-*-\n", adcRead);
-    MyUART_PutString(uartStr);
-    
-   if(adcRead >= 14){
-//        if(adcRead > 510){
-       CEPIN_Write(1);
+//    MyADC_StartConvert();
+//    adcRead =  MyADC_GetResult16(0);
+//    MyADC_SetGain(0, 1100);
+//    adcRead = MyADC_CountsTo_Volts(0, adcRead);
+//    MyADC_StopConvert();
+//    //MyADC_CountsTo_Volts(0, adcRead);
+//    
+//    sprintf(uartStr, "*-*-*-*-*-*-*-*-  ADC is: %d -*-*-*-*-*-*-*-*-\n", adcRead);
+//    MyUART_PutString(uartStr);
+//    
+//   if(adcRead >= 14){
+////        if(adcRead > 510){
+//       CEPIN_Write(1);
    
        
     volatile uint8 read_buff[2] = {0,0};
@@ -755,12 +757,12 @@ MyUART_PutString(str);
 
 
 //       }
-  }// end of adc
-   else if(adcRead <= 10) {
-//        if(adcRead <395){
-            CEPIN_Write(0);
-//        }
-    }
+//  }// end of adc
+//   else if(adcRead <= 10) {
+////        if(adcRead <395){
+//            CEPIN_Write(0);
+////        }
+//    }
 
 // --------------- AIR FLOW -------------
 
@@ -842,26 +844,66 @@ if (bleConnected == 1){
         }
         
         else if(thermo.test ==1){
-            
-            if(thermo.compressor == 1){
-                if(sensorData.voltCompressor > 0){
-                    if(sensorData.currentCompressor > 0){
-                        RelayC_3_Write(!thermo.compressor);
-                        Comp_out_Write(thermo.compressor);
-                    }
-                }
-                    else{
-                    }
-            }
-                       
-     
+            if(thermo.power == 0){
+                 RelayC_3_Write(1);
+                 Comp_out_Write(0);
                 
+                 RelayLF_1_Write(1);
+                 LowF_out_Write(0);
             
-            RelayLF_1_Write(!thermo.fanLow);
-            LowF_out_Write(thermo.fanLow);
-            
-            RelayHF_2_Write(!thermo.fanHigh);
-            LowF_out_Write(thermo.fanHigh);
+                 RelayHF_2_Write(1);
+                 LowF_out_Write(0);
+            }
+                
+            else if(thermo.power == 1){
+                if(thermo.compressor == 1){
+                    //if(sensorData.voltCompressor > 0){
+                        //if(sensorData.currentCompressor > 0){
+                            RelayC_3_Write(!thermo.compressor);
+                            Comp_out_Write(thermo.compressor);
+                        //}
+                    //}
+                   // else{
+                    //}
+                }
+                else if(thermo.compressor == 0){
+                       RelayC_3_Write(!thermo.compressor);
+                       Comp_out_Write(thermo.compressor);
+                }
+                
+                 if(thermo.fanLow == 1){
+                    //if(sensorData.voltCompressor > 0){
+                        //if(sensorData.currentCompressor > 0){
+              
+                            RelayLF_1_Write(!thermo.fanLow);
+                            LowF_out_Write(thermo.fanLow);
+                        //}
+                    //}
+                   // else{
+                    //}
+                }
+                else if(thermo.fanLow == 0){
+                    RelayLF_1_Write(!thermo.fanLow);
+                    LowF_out_Write(thermo.fanLow);
+                }
+                
+                if(thermo.fanLow == 1){
+                 //if(sensorData.voltCompressor > 0){
+                    //if(sensorData.currentCompressor > 0){
+                    
+                    RelayHF_2_Write(!thermo.fanHigh);
+                    LowF_out_Write(thermo.fanHigh);
+                    //}
+                    //}
+                   // else{
+                    //}
+                }
+                 else if(thermo.fanHigh == 0){
+                    RelayHF_2_Write(!thermo.fanHigh);
+                    LowF_out_Write(thermo.fanHigh);
+                }
+                
+            }
         }
   
 } // end of ble connected 
