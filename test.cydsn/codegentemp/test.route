@@ -6,6 +6,8 @@ net ClockBlock_HFClk
 	term   ":interrupt_8.clock"
 	switch ":m0s8clockblockcell.hfclk==>:interrupt_12.clock"
 	term   ":interrupt_12.clock"
+	switch ":m0s8clockblockcell.hfclk==>:interrupt_15.clock"
+	term   ":interrupt_15.clock"
 end ClockBlock_HFClk
 net Net_221
 	term   ":m0s8scbcell_1.interrupt"
@@ -39,3 +41,9 @@ net \BLE_1:Net_15\
 	switch ":interrupt_idmux_12.interrupt_idmux_12__out==>:interrupt_12.interrupt"
 	term   ":interrupt_12.interrupt"
 end \BLE_1:Net_15\
+net \MyADC:Net_3112\
+	term   ":p4sarcell.irq"
+	switch ":p4sarcell.irq==>:interrupt_idmux_15.in_0"
+	switch ":interrupt_idmux_15.interrupt_idmux_15__out==>:interrupt_15.interrupt"
+	term   ":interrupt_15.interrupt"
+end \MyADC:Net_3112\

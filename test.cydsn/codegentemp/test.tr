@@ -16,7 +16,7 @@
 ##################################################################### 
                     1::Clock Frequency Summary
 ===================================================================== 
-Number of clocks: 11
+Number of clocks: 13
 Clock: ClockBlock/ff_div_2  | N/A  | Target: 100.00 MHz  | 
 Clock: CyECO                | N/A  | Target: 24.00 MHz   | 
 Clock: CyHFClk              | N/A  | Target: 48.00 MHz   | 
@@ -28,6 +28,8 @@ Clock: CySysClk             | N/A  | Target: 48.00 MHz   |
 Clock: CyWCO                | N/A  | Target: 0.03 MHz    | 
 Clock: I2C_1_SCBCLK         | N/A  | Target: 1.60 MHz    | 
 Clock: I2C_1_SCBCLK(FFB)    | N/A  | Target: 1.60 MHz    | 
+Clock: MyADC_intClock       | N/A  | Target: 1.00 MHz    | 
+Clock: MyADC_intClock(FFB)  | N/A  | Target: 1.00 MHz    | 
 
  =====================================================================
                     End of Clock Frequency Summary

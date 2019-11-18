@@ -19,17 +19,19 @@
       <Data key="a32c7678-ff5a-4338-8185-d09d8f0d5786/0bca1fc6-354d-4d61-89fa-de74f0d280d1" value="BLE_1_bless_isr" />
     </Group>
     <Group key="Pin">
-      <Data key="3eb3be75-347a-425a-bd2a-15f12a7995cc" value="Relay_3" />
+      <Data key="3eb3be75-347a-425a-bd2a-15f12a7995cc" value="RelayC_3" />
       <Data key="5b20c758-a7eb-47d9-a93e-7774ecdc6c6e" value="GREEN" />
-      <Data key="5bc56c93-b310-44cb-b946-0287f4f975c4" value="Relay_1" />
+      <Data key="5bc56c93-b310-44cb-b946-0287f4f975c4" value="RelayLF_1" />
       <Data key="7ca9760e-6931-4b43-a74b-782f631c6518/8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="I2C_1_uart_tx_i2c_scl_spi_miso" />
       <Data key="7ca9760e-6931-4b43-a74b-782f631c6518/623cf4ef-0c2b-44fc-b194-745c5896f04e" value="I2C_1_uart_rx_i2c_sda_spi_mosi" />
       <Data key="7ca9760e-6931-4b43-a74b-782f631c6518/5382e105-1382-4a2e-b9f4-3bb2feba71e0" value="I2C_1_sda" />
       <Data key="7ca9760e-6931-4b43-a74b-782f631c6518/22863ebe-a37b-476f-b252-6e49a8c00b12" value="I2C_1_scl" />
+      <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="ADC" />
       <Data key="9c416bdb-3b4f-4952-8e71-c07cb13cfb6f" value="CEPIN" />
-      <Data key="9d908906-84b3-4320-a8f7-672796303a63" value="Relay_2" />
+      <Data key="9d908906-84b3-4320-a8f7-672796303a63" value="RelayHF_2" />
       <Data key="13b39836-a6a1-4674-bba1-e488ee9ab587" value="Comp_out" />
       <Data key="264be2d3-9481-494b-8d9c-c1905a45e9cc" value="Pin_1" />
+      <Data key="916a9613-ead3-4fa3-804f-b7c0f8806587" value="AF" />
       <Data key="4309abf7-5637-4b04-bbfc-ab55aefd7283" value="BLUE" />
       <Data key="c3d7048a-de48-4db2-8444-aa40dfe5a04f/52f31aa9-2f0a-497d-9a1f-1424095e13e6" value="MyUART_tx" />
       <Data key="d44d0fea-0085-48a1-82c3-354be77a6259" value="ADC_In" />
@@ -3646,6 +3648,11 @@
         <Data key="Port Format" value="5,1" />
       </Group>
     </Group>
+    <Group key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba">
+      <Group key="0">
+        <Data key="Port Format" value="3,2" />
+      </Group>
+    </Group>
     <Group key="9c416bdb-3b4f-4952-8e71-c07cb13cfb6f">
       <Group key="0">
         <Data key="Port Format" value="0,5" />
@@ -3664,6 +3671,11 @@
     <Group key="264be2d3-9481-494b-8d9c-c1905a45e9cc">
       <Group key="0">
         <Data key="Port Format" value="5,1" />
+      </Group>
+    </Group>
+    <Group key="916a9613-ead3-4fa3-804f-b7c0f8806587">
+      <Group key="0">
+        <Data key="Port Format" value="0,4" />
       </Group>
     </Group>
     <Group key="4309abf7-5637-4b04-bbfc-ab55aefd7283">

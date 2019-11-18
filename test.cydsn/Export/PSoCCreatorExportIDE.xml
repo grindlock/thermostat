@@ -180,6 +180,22 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\RelayC_3_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\int_1.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\int_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MyADC.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MyADC.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MyADC_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MyADC_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MyADC_IRQ.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MyADC_IRQ.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MyADC_intClock.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\MyADC_intClock.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\AF.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\AF.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\AF_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\AF_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\Export\ARM_GCC_Generic\BLE_v3_61">
