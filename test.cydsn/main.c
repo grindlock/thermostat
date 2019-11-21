@@ -22,9 +22,9 @@ CYBLE_GATT_HANDLE_VALUE_PAIR_T thermoHandle;
 #define REG_WRITE (0x01)
 #define REG_CONFIG (0x03)
 
-#define ADDR_POWER1 (0x74)
-#define ADDR_POWER2 (0x75)
-#define ADDR_POWER3 (0x76)
+#define ADDR_POWER1 (0x74) // compressor
+#define ADDR_POWER2 (0x75) // High Fan
+#define ADDR_POWER3 (0x76) // Low Fan
 #define REG_POWER_VERSION (0x04)
 
 // the address fro the temp sensor are 0x4C for A model and 0x4D for B model.
@@ -246,17 +246,18 @@ void send_Thermo_to_phone(){
 void SendDataNotify( ){
     CYBLE_GATTS_HANDLE_VALUE_NTF_T notiHandle;
     
-      uint8 dataForBLE[] = {sensorData.localTemp, sensorData.remoteTemp1, sensorData.remoteTemp2, sensorData.remoteTemp3, sensorData.remoteTemp4, sensorData.accX, sensorData.accY, sensorData.accZ, sensorData.humidity};
-    /*{sensorData.localTemp/10,sensorData.localTemp%10,sensorData.remoteTemp1/10, sensorData.remoteTemp1%10, sensorData.remoteTemp2/10, sensorData.remoteTemp2%10, 
-        sensorData.remoteTemp3/10, sensorData.remoteTemp3%10, sensorData.humidity/10, sensorData.humidity%10, sensorData.voltCompressor/10, sensorData.voltCompressor%10, sensorData.voltFan/10,
-        sensorData.voltFan%10, sensorData.volt/10, sensorData.volt%10, sensorData.currentCompressor/10, sensorData.currentCompressor%10, sensorData.currentFan/10, sensorData.currentFan%10, sensorData.current/10,
-        sensorData.current%10, sensorData.lineFreqComp/10, sensorData.lineFreqComp%10, sensorData.lineFreqFan/10, sensorData.lineFreqFan%10, sensorData.lineFreq/10, sensorData.lineFreq%10, sensorData.airFlow/10, sensorData.airFlow%10,
-        sensorData.accX/10, sensorData.accX%10, sensorData.accY/10, sensorData.accY%10, sensorData.accZ/10, sensorData.accZ%10};*/
+      uint8 dataForBLE[] = {sensorData.localTemp, sensorData.humidity, sensorData.remoteTemp1, sensorData.remoteTemp2, sensorData.remoteTemp3, sensorData.remoteTemp4,
+        (sensorData.voltCompressor/10), (sensorData.voltCompressor%10), (sensorData.voltFan/10), (sensorData.voltFan%10),
+        (sensorData.volt/10), (sensorData.volt%10), (sensorData.currentCompressor/1000), (sensorData.currentCompressor/100),
+        (sensorData.currentCompressor/10), (sensorData.currentCompressor%10), (sensorData.currentFan/1000), (sensorData.currentFan/100),
+        (sensorData.currentFan/10),(sensorData.currentFan%10),(sensorData.current/1000), (sensorData.current/100), (sensorData.current/10),
+        (sensorData.current%10),(sensorData.lineFreqComp/10), (sensorData.lineFreqComp%10), (sensorData.lineFreqFan/10),
+        (sensorData.lineFreqFan%10), (sensorData.lineFreq/10), (sensorData.lineFreq%10), sensorData.accX, sensorData.accY, sensorData.accZ, sensorData.airFlow};
     
 
      notiHandle.attrHandle = CYBLE_RVAC_SENSORS_CHAR_HANDLE;
      notiHandle.value.val = (uint8 *) &dataForBLE;     //(uint8 *) dataForBLE; // collectedData; //dataForBLE;
-     notiHandle.value.len = 9; //36;
+     notiHandle.value.len = 34;
         
         CyBle_GattsNotification(cyBle_connHandle, &notiHandle);
 
@@ -288,6 +289,9 @@ void initialized_input_gpioExp(){
    I2C_1_I2CMasterWriteByte(REG_CONFIG, 100u);
    I2C_1_I2CMasterWriteByte(0xFF, 100u);
    I2C_1_I2CMasterSendStop(100u);
+    I2C_1_Sleep();
+    I2C_1_Wakeup();
+
 }
 
 uint8 read_thermostat_pins(){
@@ -476,23 +480,25 @@ int main (void)
     
     I2C_1_Start();
     
-     MyUART_Start();
+    MyUART_Start();
     
     MyADC_Start();
     
     MyADC_StartConvert();
     
     // call after I2C have been initiated
-    configure_temperature_sensor2();
-    configure_temperature_sensor1();
+//    configure_temperature_sensor2();
+//    configure_temperature_sensor1();
     initialized_input_gpioExp();
-    // only need to calibrate the firt time
-    auto_calibrate_gain(ADDR_POWER1);
-    auto_calibrate_gain(ADDR_POWER2);
-    auto_calibrate_gain(ADDR_POWER3);
+    
+    // only need to calibrate the firt time the board is ever used
+//   auto_calibrate_gain(ADDR_POWER1);
+//    auto_calibrate_gain(ADDR_POWER2);
+//    auto_calibrate_gain(ADDR_POWER3);
     
     // start BLE
-    CyBle_Start(bleStack);
+   // CyBle_Start(bleStack);
+    
     // 1sec interrupt
     CySysWdtEnable(CY_SYS_WDT_COUNTER2);
     int_1_StartEx(my_interrupt);
@@ -501,41 +507,37 @@ int main (void)
 //uint8 temp1 = 0;
 //uint8 tempR1 = 0;
 //uint8 tempR2 = 0;
-uint8_t temp2 = 0;
+ uint8_t temp2 = 0;
 //uint8_t tempR12 = 0;    
 //uint8_t tempR22 = 0;
    // volatile thermostatData thermo;
    // volatile dataCollected sensorData;
 thermo.setTemperature = 0;
 thermo.ambientTemp = 0;
- int comp = 0u;
- int fanL = 0u;
- int fanH = 0u;
+ uint8 comp = 0u;
+ uint8 fanL = 0u;
+ uint8 fanH = 0u;
     
     int counter =0;
-   
     
     for(;;){
 
-if(interruptFlag == 1){
+ if(interruptFlag == 1){
     
     if(MyADC_IsEndConversion(MyADC_RETURN_STATUS)){
         adcRead = MyADC_GetResult16(0);
-        
-        
-    
 //    
     sprintf(uartStr, "*-*-*-*-*-*-*-*-  ADC is: %d -*-*-*-*-*-*-*-*-\n", adcRead);
     MyUART_PutString(uartStr);
     }
 //    
   // if(adcRead < 1300){
-    if(adcRead < 1270){
-       CEPIN_Write(0);
-     }
+   // if(adcRead < 1501){
+       //CEPIN_Write(0);
+    // }
   // }
-    else if(adcRead > 1500){
-       CEPIN_Write(1);
+    //else if(adcRead > 1500){
+     //  CEPIN_Write(1);
        
     volatile uint8 read_buff[2] = {0,0};
     
@@ -544,225 +546,222 @@ if(interruptFlag == 1){
         
     // -----------------------read temperatures--------------------------------------
     char str[50];
-    //uint8 wBuff[2] = {0x00, 0u};
-    //volatile uint8 rBuff[2] = {0u, 0u};
-    
-
     
 //   ID  TMP432A
 
-   statusStart = I2C_1_I2CMasterSendStart(0x4C, I2C_1_I2C_WRITE_XFER_MODE, 0);
-if ((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_ERR_ADDR_NAK)==1){ MyUART_PutString("slave NACK address\n");}
-   I2C_1_I2CMasterWriteByte(0xFD, 0); // check ID 
-if ((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT)==1){ MyUART_PutString("writing error\n");}
-   I2C_1_I2CMasterSendRestart(0x4C,I2C_1_I2C_READ_XFER_MODE, 0);
-
-   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &thermo.ambientTemp, 0);
-if ((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_RD_CMPLT)==1){ MyUART_PutString("reading error\n");}
-   I2C_1_I2CMasterSendStop(0);
-
-
-  sprintf(str, "counter: %d\n\n status start: %d\n ID: %x\n", counter,statusStart, thermo.ambientTemp);
-    MyUART_PutString(str);
-    counter +=1;
-//  READ local sensor  TMP432A
-    I2C_1_I2CMasterSendStart(0x4C, I2C_1_I2C_WRITE_XFER_MODE, 0u);
-   I2C_1_I2CMasterWriteByte(0x00, 0u);
-   I2C_1_I2CMasterSendRestart(0x4C,I2C_1_I2C_READ_XFER_MODE, 0u);
-   //I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0],100u);
-   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &sensorData.localTemp,0u);
-   I2C_1_I2CMasterSendStop(0u);
-    
-////  READ remote sensor 1 TMP432A
-  I2C_1_I2CMasterSendStart(0x4C, I2C_1_I2C_WRITE_XFER_MODE, 0u);
-   I2C_1_I2CMasterWriteByte(0x01, 0u);
-   I2C_1_I2CMasterSendRestart(0x4C,I2C_1_I2C_READ_XFER_MODE, 0u);
-   //I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0],100u);
-   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &sensorData.remoteTemp1,0u);
-   I2C_1_I2CMasterSendStop(0u);
+//  I2C_1_I2CMasterSendStart(0x4C, I2C_1_I2C_WRITE_XFER_MODE, 0);
+//if ((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_ERR_ADDR_NAK)==1){ MyUART_PutString("slave NACK address\n");}
+//   I2C_1_I2CMasterWriteByte(0xFD, 0); // check ID 
+//if ((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT)==1){ MyUART_PutString("writing error\n");}
+//   I2C_1_I2CMasterSendRestart(0x4C,I2C_1_I2C_READ_XFER_MODE, 0);
+//
+//   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &thermo.ambientTemp, 0);
+//if ((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_RD_CMPLT)==1){ MyUART_PutString("reading error\n");}
+//   I2C_1_I2CMasterSendStop(0);
 //
 //
-////  READ remote sensor 2   TMP432A
-  I2C_1_I2CMasterSendStart(0x4C, I2C_1_I2C_WRITE_XFER_MODE, 100u);
-   I2C_1_I2CMasterWriteByte(0x23, 100u);
-   I2C_1_I2CMasterSendRestart(0x4C,I2C_1_I2C_READ_XFER_MODE, 100u);
-   //I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0],100u);
-   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &sensorData.remoteTemp2,100u);
-   I2C_1_I2CMasterSendStop(100u);
+//  sprintf(str, "counter: %d\n\n status start: %d\n ID: %x\n", counter,statusStart, thermo.ambientTemp);
+//    MyUART_PutString(str);
+//    counter +=1;
+//    
+////  READ local sensor  TMP432A
+//    I2C_1_I2CMasterSendStart(0x4C, I2C_1_I2C_WRITE_XFER_MODE, 0u);
+//   I2C_1_I2CMasterWriteByte(0x00, 0u);
+//   I2C_1_I2CMasterSendRestart(0x4C,I2C_1_I2C_READ_XFER_MODE, 0u);
+//   //I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0],100u);
+//   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &sensorData.localTemp,0u);
+//   I2C_1_I2CMasterSendStop(0u);
+//    
+//////  READ remote sensor 1 TMP432A
+//  I2C_1_I2CMasterSendStart(0x4C, I2C_1_I2C_WRITE_XFER_MODE, 0u);
+//   I2C_1_I2CMasterWriteByte(0x01, 0u);
+//   I2C_1_I2CMasterSendRestart(0x4C,I2C_1_I2C_READ_XFER_MODE, 0u);
+//   //I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0],100u);
+//   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &sensorData.remoteTemp1,0u);
+//   I2C_1_I2CMasterSendStop(0u);
+////
+////
+//////  READ remote sensor 2   TMP432A
+//  I2C_1_I2CMasterSendStart(0x4C, I2C_1_I2C_WRITE_XFER_MODE, 0u);
+//   I2C_1_I2CMasterWriteByte(0x23, 0u);
+//   I2C_1_I2CMasterSendRestart(0x4C,I2C_1_I2C_READ_XFER_MODE, 0u);
+//   //I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0],100u);
+//   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &sensorData.remoteTemp2,0u);
+//   I2C_1_I2CMasterSendStop(0u);
+////
+////
+////
+////
+//sprintf(str, "Sensor 1 temperature is %d\n", sensorData.localTemp-64);
+//MyUART_PutString(str);
+//
+//sprintf(str, "Sensor 1 Remote temperature 1 is %d \n", (sensorData.remoteTemp1-64));
+//MyUART_PutString(str);
+//
+//
+//sprintf(str, "Sensor 1 Remote temperature 2 is %d \n", (sensorData.remoteTemp2-64));
+//MyUART_PutString(str);
+//
+//
+////
+//////   ID  TMP432B
+//   I2C_1_I2CMasterSendStart(0x4D, I2C_1_I2C_WRITE_XFER_MODE, 0u);
+//if ((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_ERR_ADDR_NAK)==1){ MyUART_PutString("slave NACK address\n");}
+//   I2C_1_I2CMasterWriteByte(0xFD, 0u); // check ID 
+//if ((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT)==1){ MyUART_PutString("writing error\n");}
+//   I2C_1_I2CMasterSendRestart(0x4D,I2C_1_I2C_READ_XFER_MODE, 0u);
+//temp2 =0;
+//   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &temp2, 0u);
+//if ((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_RD_CMPLT)==1){ MyUART_PutString("reading error\n");}
+//   I2C_1_I2CMasterSendStop(0);
+//
+//
+//  sprintf(str, "\n\nTMP432B           ID: %x\n", temp2);
+//    MyUART_PutString(str);
+//
+////temp = tempR1 = tempR2 = 0;
+//  //READ local sensor  2  TMP432B
+//   I2C_1_I2CMasterSendStart(0x4D, I2C_1_I2C_WRITE_XFER_MODE, 0u);
+//   I2C_1_I2CMasterWriteByte(0x00, 0u);
+//   I2C_1_I2CMasterSendRestart(0x4D,I2C_1_I2C_READ_XFER_MODE, 0u);
+//   //I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0],100u);
+//   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &temp2,0u);
+//   I2C_1_I2CMasterSendStop(0u);
+//
+////  READ remote 2 sensor 1 TMP432B
+//  I2C_1_I2CMasterSendStart(0x4D, I2C_1_I2C_WRITE_XFER_MODE, 0u);
+//   I2C_1_I2CMasterWriteByte(0x01, 0u);
+//   I2C_1_I2CMasterSendRestart(0x4D,I2C_1_I2C_READ_XFER_MODE, 0u);
+//   //I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0],100u);
+//   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &sensorData.remoteTemp3,0u);
+//   I2C_1_I2CMasterSendStop(0u);
+//
+//
+////  READ remote 2 sensor 2  TMP432B
+//  I2C_1_I2CMasterSendStart(0x4D, I2C_1_I2C_WRITE_XFER_MODE, 0u);
+//   I2C_1_I2CMasterWriteByte(0x23, 0u);
+//   I2C_1_I2CMasterSendRestart(0x4D,I2C_1_I2C_READ_XFER_MODE, 0u);
+//   //I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0],100u);
+//   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &sensorData.remoteTemp4,0u);
+//   I2C_1_I2CMasterSendStop(0u);
+//
+//
+////sensorData.localTemp = (sensorData.localTemp+temp2)/2;
+//
+//sprintf(str, "Sensor 2 temperature is %d\n", (temp2-64));
+//MyUART_PutString(str);
+//
+//sprintf(str, "Sensor 2 Remote temperature 1 is %d \n", (sensorData.remoteTemp3-64));
+//MyUART_PutString(str);
+//
+//
+//sprintf(str, "Sensor 2 Remote temperature 2 is %d \n\n\n\n", (sensorData.remoteTemp4-64));
+//MyUART_PutString(str);
 //
 //
 //
+///*  ---------------------------- ACCELEROMETER -----------------------------------   */
 //
-sprintf(str, "Sensor 1 temperature is %d\n", sensorData.localTemp-64);
-MyUART_PutString(str);
-
-sprintf(str, "Sensor 1 Remote temperature 1 is %d \n", (sensorData.remoteTemp1-64));
-MyUART_PutString(str);
-
-
-sprintf(str, "Sensor 1 Remote temperature 2 is %d \n", (sensorData.remoteTemp2-64));
-MyUART_PutString(str);
-
-
+//uint8 xLSB;
+//uint8 xMSB;
+//uint8 yLSB;
+//uint8 yMSB;
+//uint8 zLSB;
+//uint8 zMSB;
 //
-////   ID  TMP432B
-   I2C_1_I2CMasterSendStart(0x4D, I2C_1_I2C_WRITE_XFER_MODE, 0);
-if ((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_ERR_ADDR_NAK)==1){ MyUART_PutString("slave NACK address\n");}
-   I2C_1_I2CMasterWriteByte(0xFD, 0); // check ID 
-if ((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT)==1){ MyUART_PutString("writing error\n");}
-   I2C_1_I2CMasterSendRestart(0x4D,I2C_1_I2C_READ_XFER_MODE, 0);
-temp2 =0;
-   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &temp2, 0);
-if ((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_RD_CMPLT)==1){ MyUART_PutString("reading error\n");}
-   I2C_1_I2CMasterSendStop(0);
-
-
-  sprintf(str, "\n\nTMP432B           ID: %x\n", temp2);
-    MyUART_PutString(str);
-
-//temp = tempR1 = tempR2 = 0;
-  //READ local sensor  2  TMP432B
-   I2C_1_I2CMasterSendStart(0x4D, I2C_1_I2C_WRITE_XFER_MODE, 0u);
-   I2C_1_I2CMasterWriteByte(0x00, 0u);
-   I2C_1_I2CMasterSendRestart(0x4D,I2C_1_I2C_READ_XFER_MODE, 0u);
-   //I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0],100u);
-   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &temp2,0u);
-   I2C_1_I2CMasterSendStop(0u);
-
-//  READ remote 2 sensor 1 TMP432B
-  I2C_1_I2CMasterSendStart(0x4D, I2C_1_I2C_WRITE_XFER_MODE, 0u);
-   I2C_1_I2CMasterWriteByte(0x01, 0u);
-   I2C_1_I2CMasterSendRestart(0x4D,I2C_1_I2C_READ_XFER_MODE, 0u);
-   //I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0],100u);
-   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &sensorData.remoteTemp3,0);
-   I2C_1_I2CMasterSendStop(0u);
-
-
-//  READ remote 2 sensor 2  TMP432B
-  I2C_1_I2CMasterSendStart(0x4D, I2C_1_I2C_WRITE_XFER_MODE, 100u);
-   I2C_1_I2CMasterWriteByte(0x23, 100u);
-   I2C_1_I2CMasterSendRestart(0x4D,I2C_1_I2C_READ_XFER_MODE, 100u);
-   //I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0],100u);
-   I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &sensorData.remoteTemp4,100u);
-   I2C_1_I2CMasterSendStop(100u);
-
-
-
-
-sprintf(str, "Sensor 2 temperature is %d\n", (temp2-64));
-MyUART_PutString(str);
-
-sprintf(str, "Sensor 2 Remote temperature 1 is %d \n", (sensorData.remoteTemp3-64));
-MyUART_PutString(str);
-
-
-sprintf(str, "Sensor 2 Remote temperature 2 is %d \n\n\n\n", (sensorData.remoteTemp4-64));
-MyUART_PutString(str);
-
-
-
-/*  ---------------------------- ACCELEROMETER -----------------------------------   */
-
-uint8 xLSB;
-uint8 xMSB;
-uint8 yLSB;
-uint8 yMSB;
-uint8 zLSB;
-uint8 zMSB;
-
-I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
-I2C_1_I2CMasterWriteByte(0x02, 100u);
-I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
-I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &xLSB ,100u);
-I2C_1_I2CMasterSendStop(100u);
-
-I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
-I2C_1_I2CMasterWriteByte(0x03, 100u);
-I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
-I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &xMSB ,100u);
-I2C_1_I2CMasterSendStop(100u);
-
-I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
-I2C_1_I2CMasterWriteByte(0x04, 100u);
-I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
-I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &yLSB ,100u);
-I2C_1_I2CMasterSendStop(100u);
-
-I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
-I2C_1_I2CMasterWriteByte(0x05, 100u);
-I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
-I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &yMSB ,100u);
-I2C_1_I2CMasterSendStop(100u);
-
-I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
-I2C_1_I2CMasterWriteByte(0x06, 100u);
-I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
-I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &zLSB ,100u);
-I2C_1_I2CMasterSendStop(100u);
-
-I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
-I2C_1_I2CMasterWriteByte(0x07, 100u);
-I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
-I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &zMSB ,100u);
-I2C_1_I2CMasterSendStop(100u);
-
-sensorData.accX = (xMSB );
-sensorData.accY = (yMSB );
-sensorData.accZ = (zMSB );
-
-
-
-sprintf(str,"\nX: %d %d    12 bit x: %d\n", xMSB, xLSB, sensorData.accX);
-MyUART_PutString(str);
-sprintf(str,"y: %d %d      12 bit y: %d\n", yMSB, yLSB, sensorData.accY);
-MyUART_PutString(str);
-sprintf(str,"Z: %d %d      12 bit z: %d\n\n\n", zMSB, zLSB, sensorData.accZ);
-MyUART_PutString(str);
-
-// ---------------  Read humidity ---------------
-read_buff[0]=0;
-read_buff[1]=0;
-I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 0u);
-I2C_1_I2CMasterWriteByte(0x07, 0u);
-I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 0u);
-I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0] ,0u);
-I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &read_buff[1] ,0u);
-I2C_1_I2CMasterSendStop(0u);
-
-uint16 rh = ((read_buff[0] << 8) | read_buff[1]);
-
-sensorData.humidity = ((125 * rh)/65536)-6; 
-
-sprintf(str, "\nThe humidity is %d\n", sensorData.humidity);
-MyUART_PutString(str);
+//I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
+//I2C_1_I2CMasterWriteByte(0x02, 100u);
+//I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &xLSB ,100u);
+//I2C_1_I2CMasterSendStop(100u);
+//
+//I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
+//I2C_1_I2CMasterWriteByte(0x03, 100u);
+//I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &xMSB ,100u);
+//I2C_1_I2CMasterSendStop(100u);
+//
+//I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
+//I2C_1_I2CMasterWriteByte(0x04, 100u);
+//I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &yLSB ,100u);
+//I2C_1_I2CMasterSendStop(100u);
+//
+//I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
+//I2C_1_I2CMasterWriteByte(0x05, 100u);
+//I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &yMSB ,100u);
+//I2C_1_I2CMasterSendStop(100u);
+//
+//I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
+//I2C_1_I2CMasterWriteByte(0x06, 100u);
+//I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &zLSB ,100u);
+//I2C_1_I2CMasterSendStop(100u);
+//
+//I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
+//I2C_1_I2CMasterWriteByte(0x07, 100u);
+//I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &zMSB ,100u);
+//I2C_1_I2CMasterSendStop(100u);
+//
+//sensorData.accX = (xMSB );
+//sensorData.accY = (yMSB );
+//sensorData.accZ = (zMSB );
+//
+//
+//
+//sprintf(str,"\nX: %d %d    12 bit x: %d\n", xMSB, xLSB, sensorData.accX);
+//MyUART_PutString(str);
+//sprintf(str,"y: %d %d      12 bit y: %d\n", yMSB, yLSB, sensorData.accY);
+//MyUART_PutString(str);
+//sprintf(str,"Z: %d %d      12 bit z: %d\n\n\n", zMSB, zLSB, sensorData.accZ);
+//MyUART_PutString(str);
+//
+//// ---------------  Read humidity ---------------
+//read_buff[0]=0;
+//read_buff[1]=0;
+//I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 0u);
+//I2C_1_I2CMasterWriteByte(0x07, 0u);
+//I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 0u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0] ,0u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &read_buff[1] ,0u);
+//I2C_1_I2CMasterSendStop(0u);
+//
+//uint16 rh = ((read_buff[0] << 8) | read_buff[1]);
+//
+//sensorData.humidity = ((125 * rh)/65536)-6; 
+//
+//sprintf(str, "\nThe humidity is %d\n", sensorData.humidity);
+//MyUART_PutString(str);
 
 // ---------------------  Read thermostat pins ---------------------
 
-//gpioPins = read_thermostat_pins();
- comp = (gpioPins & 0x04);
- fanL = (gpioPins & 0x08);
- fanH = (gpioPins & 0x10);
+ gpioPins = read_thermostat_pins();
+ comp = (gpioPins & 0x04)== 0x04? 1:0;
+ fanH = (gpioPins & 0x08) == 0x08? 1:0;
+ fanL = (gpioPins & 0x10) == 0x10? 1:0;
 
 
-sprintf(str, "\nThermostast pins are 0x%x\n", gpioPins);
+sprintf(str, "\nThermostast pins are 0x%x com%x, Lf%x, Hf%x\n", gpioPins, comp, fanL, fanH);
 MyUART_PutString(str);
 
 
 //// ------------------------------- power sensors check version  -----------------------
 
-        read_power_chips(ADDR_POWER1);
-        sprintf(str, "\nComp volt: %d  freq: %d  current: %lu\n", sensorData.voltCompressor, sensorData.lineFreqComp, sensorData.currentCompressor);
-        MyUART_PutString(str);
-        
-        read_power_chips(ADDR_POWER2);
-        sprintf(str, "\nLow Fan volt: %d  freq: %d  current: %lu\n", sensorData.volt, sensorData.lineFreq, sensorData.current);
-        MyUART_PutString(str);
-        
-        read_power_chips(ADDR_POWER3);
-        sprintf(str, "\nLow Fan volt: %d  freq: %d  current: %lu\n", sensorData.voltFan, sensorData.lineFreqFan, sensorData.currentFan);
-        MyUART_PutString(str);
+//        read_power_chips(ADDR_POWER1);
+//        sprintf(str, "\nComp volt: %d  freq: %d  current: %lu\n", sensorData.voltCompressor, sensorData.lineFreqComp, sensorData.currentCompressor);
+//        MyUART_PutString(str);
+//        
+//        read_power_chips(ADDR_POWER2);
+//        sprintf(str, "\nLow Fan volt: %d  freq: %d  current: %lu\n", sensorData.volt, sensorData.lineFreq, sensorData.current);
+//        MyUART_PutString(str);
+//        
+//        read_power_chips(ADDR_POWER3);
+//        sprintf(str, "\nLow Fan volt: %d  freq: %d  current: %lu\n", sensorData.voltFan, sensorData.lineFreqFan, sensorData.currentFan);
+//        MyUART_PutString(str);
 
-   } //end of  if adc result is > 1500 turn regulator
+  // } //end of  if adc result is > 1500 turn regulator
 
 // --------------- AIR FLOW ------------
 
@@ -857,8 +856,8 @@ if (bleConnected == 1){
                 
             else if(thermo.power == 1){
                 if(thermo.compressor == 1){
-                    if(sensorData.voltCompressor < 112){
-                        if(sensorData.currentCompressor < 50){
+                    if(sensorData.voltCompressor < 2){
+                        if(sensorData.currentCompressor < 1000){
                             RelayC_3_Write(!thermo.compressor);
                             Comp_out_Write(thermo.compressor);
                         }
@@ -876,8 +875,8 @@ if (bleConnected == 1){
                 }
                 
                  if(thermo.fanLow == 1){
-                    if(sensorData.volt < 112){
-                        if(sensorData.current < 50){
+                    if(sensorData.volt < 2){
+                        if(sensorData.current < 1000){
               
                             RelayLF_1_Write(!thermo.fanLow);
                             LowF_out_Write(thermo.fanLow);
@@ -896,8 +895,8 @@ if (bleConnected == 1){
                 }
                 
                 if(thermo.fanHigh == 1){
-                 if(sensorData.voltFan < 112){
-                    if(sensorData.currentFan < 50){
+                 if(sensorData.voltFan < 2){
+                    if(sensorData.currentFan < 1000){
                     
                     RelayHF_2_Write(!thermo.fanHigh);
                     HighF_out_Write(thermo.fanHigh);
@@ -922,23 +921,31 @@ if (bleConnected == 1){
 else{
    
     
-    RelayC_3_Write( !comp);
-    Comp_out_Write(comp);
+    RelayC_3_Write(0);
+    Comp_out_Write(1);
     thermo.compressor = comp;
+    sprintf(uartStr,"read pin switch comp: %d\n", Comp_out_Read());
+    MyUART_PutString(uartStr);
     
-    
-    RelayLF_1_Write(!fanL);
-    LowF_out_Write(fanL);
-    thermo.fanLow = fanL;
-    
-    RelayHF_2_Write(!fanH);
-    LowF_out_Write(fanH);
-    thermo.fanHigh = fanH;
+    if((fanL == 1) && (fanH == 0)){
+        RelayLF_1_Write(0);
+        LowF_out_Write(0);
+        thermo.fanLow = fanL;
+        sprintf(uartStr,"read pin switch low F: %d\n", LowF_out_Read());
+        MyUART_PutString(uartStr);
+    }
+    else if((fanL ==0) && (fanH == 1)){
+        RelayHF_2_Write(0);
+        HighF_out_Write(1);//fanH);
+        thermo.fanHigh = fanH;
+        sprintf(uartStr,"read pin switch high F: %d\n", HighF_out_Read());
+        MyUART_PutString(uartStr);
+    }
    }
 
-   
-        send_Thermo_to_phone();
-        CyBle_ProcessEvents();
+//        send_Error_Power_to_Phone();
+//        send_Thermo_to_phone();
+//        CyBle_ProcessEvents();
    
     } // end for loop
     

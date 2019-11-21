@@ -163,6 +163,42 @@
 <VisibleNodeIds>
 <v>Thermostat_test</v>
 <v>Thermostat_test\test</v>
+<v>Thermostat_test\test\CortexM0</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\AF.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\AF_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_bless_isr.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_custom.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_eventHandler.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_gatt.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_HAL_INT.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_HAL_PVT.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLUE.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\BLUE_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CEPIN.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CEPIN_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\Comp_out.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\Comp_out_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\GREEN.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\GREEN_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\HighF_out.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\HighF_out_PM.lst</v>
+<v>Thermostat_test\test\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_1.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -227,7 +263,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="476, 514" SelectedTabbedMdiWindow="9e943bb6-aeb5-4ab0-87f3-3ec5e02c9124"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b990e5fa-1205-4506-b06e-092eede234c7" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\main.c" Guid="9e943bb6-aeb5-4ab0-87f3-3ec5e02c9124" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\TopDesign\TopDesign.cysch" Guid="dac7f5ed-be99-48e9-b070-ea0192bcff92" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\test.cydwr" Guid="31423af8-3610-4092-b03e-c4410e244a62" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C.c" Guid="53766a6b-2d85-4b1f-8f9e-a9e4776c1b8f" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\Generated_Source\PSoC4\I2C_1.c" Guid="4a8fe0b8-29b2-4b4f-ba0e-a76103c2bb2e" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C_MASTER.c" Guid="a954f1da-b071-4c24-98f6-4c44bbe54895" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C.h" Guid="2ef463b6-cd57-4feb-a02f-8c65e95cc069" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1198, 523" SelectedTabbedMdiWindow="9e943bb6-aeb5-4ab0-87f3-3ec5e02c9124"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="b990e5fa-1205-4506-b06e-092eede234c7" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\main.c" Guid="9e943bb6-aeb5-4ab0-87f3-3ec5e02c9124" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\TopDesign\TopDesign.cysch" Guid="dac7f5ed-be99-48e9-b070-ea0192bcff92" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\test.cydwr" Guid="31423af8-3610-4092-b03e-c4410e244a62" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C.c" Guid="53766a6b-2d85-4b1f-8f9e-a9e4776c1b8f" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\Generated_Source\PSoC4\I2C_1.c" Guid="4a8fe0b8-29b2-4b4f-ba0e-a76103c2bb2e" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C_MASTER.c" Guid="a954f1da-b071-4c24-98f6-4c44bbe54895" /><DocumentWindow Key="C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\Generated_Source\PSoC4\I2C_1_I2C.h" Guid="2ef463b6-cd57-4feb-a02f-8c65e95cc069" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

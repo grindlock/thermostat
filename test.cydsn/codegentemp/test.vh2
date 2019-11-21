@@ -2,7 +2,7 @@
 --	Conversion of test.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Nov 18 23:02:45 2019
+--	Wed Nov 20 15:41:39 2019
 --
 
 USE cypress.cypress.all;
