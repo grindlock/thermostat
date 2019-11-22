@@ -113,7 +113,7 @@ CYBLE_STATE_T cyBle_state;
     0x000Fu,    /* Handle of the Client Characteristic Configuration descriptor */
 };
     
-    static uint8 cyBle_attValues[0xAAu] = {
+    static uint8 cyBle_attValues[0xA2u] = {
     /* Device Name */
     (uint8)'R', (uint8)'V', (uint8)'A', (uint8)'C', (uint8)'S', (uint8)'D', (uint8)'_', (uint8)'M', (uint8)'V',
     (uint8)'P', (uint8)' ',
@@ -134,8 +134,7 @@ CYBLE_STATE_T cyBle_state;
     0x00u, 0x00u, 0x00u, 0x00u,
 
     /* Sensors */
-    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
-    0x00u, 0x00u,
+    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
 
     /* sensorUserCCCD */
     (uint8)'S', (uint8)'e', (uint8)'n', (uint8)'s', (uint8)'o', (uint8)'r', (uint8)' ', (uint8)'N', (uint8)'o',
@@ -180,15 +179,15 @@ CYBLE_GATTS_ATT_GEN_VAL_LEN_T cyBle_attValuesLen[CYBLE_GATT_DB_ATT_VAL_COUNT] = 
     { 0x0001u, (void *)&cyBle_attValues[22] }, /* Resolvable Private Address Only */
     { 0x0004u, (void *)&cyBle_attValues[23] }, /* Service Changed */
     { 0x0002u, (void *)&cyBle_attValuesCCCD[0] }, /* Client Characteristic Configuration */
-    { 0x0012u, (void *)&cyBle_attValues[27] }, /* Sensors */
-    { 0x0014u, (void *)&cyBle_attValues[45] }, /* sensorUserCCCD */
+    { 0x000Au, (void *)&cyBle_attValues[27] }, /* Sensors */
+    { 0x0014u, (void *)&cyBle_attValues[37] }, /* sensorUserCCCD */
     { 0x0002u, (void *)&cyBle_attValuesCCCD[2] }, /* sensorCCCD */
-    { 0x0007u, (void *)&cyBle_attValues[65] }, /* Thermostat */
-    { 0x0001u, (void *)&cyBle_attValues[72] }, /* thermoCCCD */
-    { 0x0017u, (void *)&cyBle_attValues[89] }, /* thermoUserCCCD */
-    { 0x0006u, (void *)&cyBle_attValues[112] }, /* Error_Codes */
-    { 0x0001u, (void *)&cyBle_attValues[118] }, /* errorCCCD */
-    { 0x0023u, (void *)&cyBle_attValues[135] }, /* Characteristic User Description */
+    { 0x0007u, (void *)&cyBle_attValues[57] }, /* Thermostat */
+    { 0x0001u, (void *)&cyBle_attValues[64] }, /* thermoCCCD */
+    { 0x0017u, (void *)&cyBle_attValues[81] }, /* thermoUserCCCD */
+    { 0x0006u, (void *)&cyBle_attValues[104] }, /* Error_Codes */
+    { 0x0001u, (void *)&cyBle_attValues[110] }, /* errorCCCD */
+    { 0x0023u, (void *)&cyBle_attValues[127] }, /* Characteristic User Description */
 };
 
 const CYBLE_GATTS_DB_T cyBle_gattDB[0x1Cu] = {
@@ -209,7 +208,7 @@ const CYBLE_GATTS_DB_T cyBle_gattDB[0x1Cu] = {
     { 0x000Fu, 0x2902u /* Client Characteristic Configuration */, 0x010A0101u /* rd,wr  */, 0x000Fu, {{0x0002u, (void *)&cyBle_attValuesLen[6]}} },
     { 0x0010u, 0x2800u /* Primary service                     */, 0x00000001u /*        */, 0x001Cu, {{0xD0AFu, NULL}}                           },
     { 0x0011u, 0x2803u /* Characteristic                      */, 0x00120001u /* rd,ntf */, 0x0014u, {{0x6B7Bu, NULL}}                           },
-    { 0x0012u, 0x6B7Bu /* Sensors                             */, 0x01120001u /* rd,ntf */, 0x0014u, {{0x0012u, (void *)&cyBle_attValuesLen[7]}} },
+    { 0x0012u, 0x6B7Bu /* Sensors                             */, 0x01120001u /* rd,ntf */, 0x0014u, {{0x000Au, (void *)&cyBle_attValuesLen[7]}} },
     { 0x0013u, 0x2901u /* sensorUserCCCD                      */, 0x01020001u /* rd     */, 0x0013u, {{0x0014u, (void *)&cyBle_attValuesLen[8]}} },
     { 0x0014u, 0x2902u /* sensorCCCD                          */, 0x010A0101u /* rd,wr  */, 0x0014u, {{0x0002u, (void *)&cyBle_attValuesLen[9]}} },
     { 0x0015u, 0x2803u /* Characteristic                      */, 0x000A0001u /* rd,wr  */, 0x0018u, {{0x7B53u, NULL}}                           },

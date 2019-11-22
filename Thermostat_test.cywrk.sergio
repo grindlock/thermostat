@@ -34,9 +34,6 @@
 <v>Thermostat_test\test\Generated_Source\PSoC4</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>Thermostat_test</v>
-<v>Thermostat_test\test</v>
-<v>Thermostat_test\test\TopDesign</v>
 <v>Thermostat_test\test\test.cydwr</v>
 <v>Thermostat_test\test\test.cydwr\Pins</v>
 <v>Thermostat_test\test\test.cydwr\Analog</v>
@@ -72,6 +69,9 @@
 <v>Thermostat_test\test\Generated_Source\PSoC4\LowF_out</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\MyADC</v>
 <v>Thermostat_test\test\Generated_Source\PSoC4\MyADC_intClock</v>
+<v>Thermostat_test\test\Generated_Source\PSoC4\MyADC_IRQ</v>
+<v>Thermostat_test\test\Generated_Source\PSoC4\MyUART</v>
+<v>Thermostat_test\test\Generated_Source\PSoC4\RED</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
