@@ -2,7 +2,7 @@
 --	Conversion of test.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Nov 20 15:41:39 2019
+--	Thu Nov 21 14:59:08 2019
 --
 
 USE cypress.cypress.all;
@@ -994,7 +994,7 @@ RelayLF_1:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"5bc56c93-b310-44cb-b946-0287f4f975c4",
 		drive_mode=>"110",
 		ibuf_enabled=>"1",
-		init_dr_st=>"0",
+		init_dr_st=>"1",
 		input_sync=>"1",
 		input_clk_en=>'0',
 		input_sync_mode=>"0",
@@ -1064,7 +1064,7 @@ RelayHF_2:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"9d908906-84b3-4320-a8f7-672796303a63",
 		drive_mode=>"110",
 		ibuf_enabled=>"1",
-		init_dr_st=>"0",
+		init_dr_st=>"1",
 		input_sync=>"1",
 		input_clk_en=>'0',
 		input_sync_mode=>"0",
@@ -1134,7 +1134,7 @@ RelayC_3:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"3eb3be75-347a-425a-bd2a-15f12a7995cc",
 		drive_mode=>"110",
 		ibuf_enabled=>"1",
-		init_dr_st=>"0",
+		init_dr_st=>"1",
 		input_sync=>"1",
 		input_clk_en=>'0',
 		input_sync_mode=>"0",

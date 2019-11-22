@@ -1,5 +1,5 @@
 -- Project:   test
--- Generated: 11/20/2019 15:41:40
+-- Generated: 11/21/2019 14:59:09
 -- PSoC Creator  4.2
 
 ENTITY test IS
@@ -1329,7 +1329,7 @@ BEGIN
             drive_mode => "110",
             ibuf_enabled => "1",
             id => "5bc56c93-b310-44cb-b946-0287f4f975c4",
-            init_dr_st => "0",
+            init_dr_st => "1",
             input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "1",
@@ -1419,7 +1419,7 @@ BEGIN
             drive_mode => "110",
             ibuf_enabled => "1",
             id => "9d908906-84b3-4320-a8f7-672796303a63",
-            init_dr_st => "0",
+            init_dr_st => "1",
             input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "1",
@@ -1509,7 +1509,7 @@ BEGIN
             drive_mode => "110",
             ibuf_enabled => "1",
             id => "3eb3be75-347a-425a-bd2a-15f12a7995cc",
-            init_dr_st => "0",
+            init_dr_st => "1",
             input_buffer_sel => "00",
             input_clk_en => 0,
             input_sync => "1",

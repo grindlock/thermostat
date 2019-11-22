@@ -1,6 +1,6 @@
 // ======================================================================
 // test.v generated from TopDesign.cysch
-// 11/20/2019 at 15:41
+// 11/21/2019 at 14:59
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1771,7 +1771,7 @@ module top ;
 		#(.id("5bc56c93-b310-44cb-b946-0287f4f975c4"),
 		  .drive_mode(3'b110),
 		  .ibuf_enabled(1'b1),
-		  .init_dr_st(1'b0),
+		  .init_dr_st(1'b1),
 		  .input_clk_en(0),
 		  .input_sync(1'b1),
 		  .input_sync_mode(1'b0),
@@ -1846,7 +1846,7 @@ module top ;
 		#(.id("9d908906-84b3-4320-a8f7-672796303a63"),
 		  .drive_mode(3'b110),
 		  .ibuf_enabled(1'b1),
-		  .init_dr_st(1'b0),
+		  .init_dr_st(1'b1),
 		  .input_clk_en(0),
 		  .input_sync(1'b1),
 		  .input_sync_mode(1'b0),
@@ -1921,7 +1921,7 @@ module top ;
 		#(.id("3eb3be75-347a-425a-bd2a-15f12a7995cc"),
 		  .drive_mode(3'b110),
 		  .ibuf_enabled(1'b1),
-		  .init_dr_st(1'b0),
+		  .init_dr_st(1'b1),
 		  .input_clk_en(0),
 		  .input_sync(1'b1),
 		  .input_sync_mode(1'b0),
