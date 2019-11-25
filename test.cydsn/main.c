@@ -509,12 +509,12 @@ void run_ac(){
             if(acStates != 0x14){
                 RelayC_3_Write(1);
                 RelayHF_2_Write(1);
-                Comp_out_Write(0);
-                HighF_out_Write(0);
+                Comp_out_Write(1);
+                HighF_out_Write(1);
                    MyUART_PutString("setting up state 14\n");
                     if(counter == 2){
                         RelayLF_1_Write(0);
-                        LowF_out_Write(1);
+                        LowF_out_Write(0);
                         MyUART_PutString("state 14 counter 2\n");
                     }
                     if(counter == 4){
@@ -531,9 +531,9 @@ void run_ac(){
                     RelayLF_1_Write(0);
                     RelayC_3_Write(0);
                     
-                    HighF_out_Write(0);
-                    LowF_out_Write(1);
-                    Comp_out_Write(1);
+                    HighF_out_Write(1);
+                    LowF_out_Write(0);
+                    Comp_out_Write(0);
                     MyUART_PutString("state 14 already setup\n");
                 }
             }
@@ -548,18 +548,18 @@ void run_ac(){
                 counter = 0;
              }
             if(acStates != 0x0C){
-                // RelayC_3_Write(1);
+                RelayC_3_Write(1);
                 RelayLF_1_Write(1);
-                Comp_out_Write(0);
-                LowF_out_Write(0);
+                Comp_out_Write(1);
+                LowF_out_Write(1);
                     
                     if(counter == 2){
                         RelayHF_2_Write(0);
-                        HighF_out_Write(1);
+                        HighF_out_Write(0);
                     }
                     if(counter == 4){
                         RelayC_3_Write(0);
-                        Comp_out_Write(1);
+                        Comp_out_Write(0);
                        // counter = 0;
                         acStates = 0x0C;
                     }
@@ -570,9 +570,9 @@ void run_ac(){
                 RelayHF_2_Write(0);
                 RelayC_3_Write(0);
                 
-                LowF_out_Write(0);
-                HighF_out_Write(1);
-                Comp_out_Write(1);
+                LowF_out_Write(1);
+                HighF_out_Write(0);
+                Comp_out_Write(0);
                 }
             }
             sprintf(uartStr,"0x0C switch gpio: %x  acstate: %x LF: %d, HF: %d, Comp:%d\n",gpioPins, acStates, 
@@ -587,12 +587,12 @@ void run_ac(){
                 RelayC_3_Write(1);
                 RelayLF_1_Write(1);
                 
-                LowF_out_Write(0);
-                Comp_out_Write(0);
+                LowF_out_Write(1);
+                Comp_out_Write(1);
                     
                     if(counter == 2){
                         RelayHF_2_Write(0);
-                        HighF_out_Write(1);
+                        HighF_out_Write(0);
                         acStates = 0x08;
                     }
             }
@@ -602,9 +602,9 @@ void run_ac(){
                 RelayLF_1_Write(1);
                 RelayHF_2_Write(0);
                 
-                Comp_out_Write(0);
-                LowF_out_Write(0);
-                HighF_out_Write(1);
+                Comp_out_Write(1);
+                LowF_out_Write(1);
+                HighF_out_Write(0);
                 }
             }
             sprintf(uartStr,"0x08  switch gpio: %x  acstate: %x LF: %d, HF: %d, Comp:%d\n",gpioPins, acStates, 
@@ -619,12 +619,12 @@ void run_ac(){
                 RelayC_3_Write(1);
                 RelayHF_2_Write(1);
                 
-                HighF_out_Write(0);
-                Comp_out_Write(0);
+                HighF_out_Write(1);
+                Comp_out_Write(1);
                     
                 if(counter == 2){
                     RelayLF_1_Write(0);
-                    LowF_out_Write(1);
+                    LowF_out_Write(0);
                     acStates = 0x10;
                 }
             }
@@ -634,9 +634,9 @@ void run_ac(){
                     RelayHF_2_Write(1);
                     RelayLF_1_Write(0);
                     
-                     HighF_out_Write(0);
-                LowF_out_Write(1);
-                Comp_out_Write(0);
+                     HighF_out_Write(1);
+                LowF_out_Write(0);
+                Comp_out_Write(1);
                 }
             }
             sprintf(uartStr,"0x10  switch gpio: %x  acstate: %x LF: %d, HF: %d, Comp:%d\n",gpioPins, acStates, 
@@ -668,9 +668,9 @@ void run_ac(){
                     RelayHF_2_Write(1);
                     RelayLF_1_Write(1);
                     
-                    HighF_out_Write(0);
-                    LowF_out_Write(0);
-                    Comp_out_Write(0);
+                    HighF_out_Write(1);
+                    LowF_out_Write(1);
+                    Comp_out_Write(1);
                 }
             }
             
@@ -984,14 +984,14 @@ read_buff[1]=0;
 //tp = ((175.72 * tp)/65536) - 46.85;
 
 //sprintf(str, "\nThe humidity is %d   temp = %d\n", sensorData.humidity, tp);
-MyUART_PutString(str);
+//MyUART_PutString(str);
 
 
 
 // ---------------------  Read thermostat pins ---------------------
 
  gpioPins = read_thermostat_pins();
-if(bleConnected != 1){ thermoState = (gpioPins & 0x1F);}
+if(bleConnected == 0){ thermoState = (gpioPins & 0x1F);}
 // comp = (gpioPins & 0x01)==  0x04? 1:0;
 // fanH = (gpioPins & 0x08) == 0x08? 1:0;
 // fanL = (gpioPins & 0x10) == 0x10? 1:0;
@@ -1084,6 +1084,7 @@ if (bleConnected == 1){
                 // if the temperature of ambient is higher than the temprature set turn on the compressor.
                 if(sensorData.localTemp > (thermo.setTemperature + 2)){
                     if(sensorData.localTemp > thermo.setTemperature){
+                        
                         if(thermo.power == 1 && thermo.fanLow == 1 && thermo.compressor == 1 && thermo.fanHigh == 0 ){
                             thermoState = 0x14;
                             run_ac();
@@ -1097,10 +1098,12 @@ if (bleConnected == 1){
                 // if the ambient temperature is equal or less to the set temperature turn off the compressor.
                 else if(sensorData.localTemp <= (thermo.setTemperature - 2)){
                     if(sensorData.localTemp <= thermo.setTemperature){
-                        if (thermo.power == 1 && thermo.fanLow == 1 && thermo.fanHigh == 0 && thermo.compressor == 1){
+                        
+                        if (thermo.power == 1 && thermo.fanLow == 1 && thermo.fanHigh == 0 && thermo.compressor == 0){
                             thermoState = 0x10;
+                            run_ac();
                         }
-                        else if(thermo.power == 1 && thermo.fanLow == 0 && thermo.fanHigh == 1 && thermo.compressor == 1){
+                        else if(thermo.power == 1 && thermo.fanLow == 0 && thermo.fanHigh == 1 && thermo.compressor == 0){
                             thermoState = 0x08;
                             run_ac();
                         }
