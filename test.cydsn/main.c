@@ -22,10 +22,34 @@ CYBLE_GATT_HANDLE_VALUE_PAIR_T thermoHandle;
 #define REG_WRITE (0x01)
 #define REG_CONFIG (0x03)
 
+
 #define ADDR_POWER1 (0x74)
 #define ADDR_POWER2 (0x75)
 #define ADDR_POWER3 (0x76)
 #define REG_POWER_VERSION (0x04)
+
+#define REG_POWER_VERSION           (0x04)
+#define POWER_CHIP_COMP             (0x74)
+#define POWER_CHIP_HIGH_FAN         (0x75)
+#define POWER_CHIP_LOW_FAN          (0x76)
+#define POWER_CHIP_HEADER_BYTE      (0xA5)
+#define POWER_CHIP_READ             (0x4E)
+#define POWER_CHIP_WRITE            (0x4D)
+#define POWER_CHIP_SET_ADD_PTR      (0x41)
+#define POWER_CHIP_AUTO_GAIN_CAL    (0x5A)
+#define POWER_CHIP_AUTO_FREQ_CAL    (0x7A)
+#define POWER_CHIP_AUTO_REAC_GAIN   (0x41)
+#define POWER_CHIP_GEN_HIGH_ADDRESS (0x00)
+#define POWER_CHIP_LOW_VRMS_ADDRESS (0x06)
+#define POWER_CHIP_LOW_IRMS_ADDRESS (0x0E)
+#define POWER_CHIP_AUTO_REAC_GAIN   (0x41)
+#define POWER_CHIP_READ_REGISTER    (0x4E)
+#define POWER_CHIP_WRITE_REGISTER   (0x4D)
+#define POWER_CHIP_CHECKSUM         (0x5E)
+#define POWER_CHIP_LOW_ID_ADDRESS   (0x04)
+#define POWER_CHIP_LOW_IG_ADDRESS   (0x60)
+#define POWER_CHIP_LOW_VG_ADDRESS   (0x62)
+
 
 // the address fro the temp sensor are 0x4C for A model and 0x4D for B model.
 
@@ -37,7 +61,9 @@ char uartStr[50];
 
 uint8 gpioPins = 0u;
 uint16 adcRead = 0u;
-
+uint8 acStates = 0u;
+uint8 thermoState = 0u;
+int32 counter;
 
 typedef struct{
     
@@ -49,16 +75,16 @@ typedef struct{
     uint8 remoteTemp4;
     
     uint16 voltCompressor;
-    uint16 voltFan;
-    uint16 volt;
+    uint16 voltFanLow;
+    uint16 voltFanHigh;
     
     uint32 currentCompressor;
-    uint32 currentFan; 
-    uint32 current;
+    uint32 currentFanLow; 
+    uint32 currentFanHigh;
     
     uint16 lineFreqComp;
-    uint16 lineFreqFan;
-    uint16 lineFreq;
+    uint16 lineFreqFanLow;
+    uint16 lineFreqFanHigh;
     
     
     uint8 accX;
@@ -79,6 +105,12 @@ typedef struct{
     uint8 ambientTemp;
     uint8 power;
     uint8 test;
+    uint8 err_Comp_volt;
+    int8 err_Comp_curr;
+    int8 err_LFan_volt;
+    int8 err_LFan_curr;
+    int8 err_HFan_volt;
+    int8 err_HFan_curr;
 } thermostatData ;
 
 
@@ -141,12 +173,12 @@ void bleStack(uint32 event, void *eventParam){
 //            DBG_PRINTF("\r\n");
             break; //(Claudio Modified) Is there a reason why we didn't have a break expression in this case? 
         case CYBLE_EVT_GAP_DEVICE_CONNECTED:
-            CyBle_GappStopAdvertisement(); 
+            //CyBle_GappStopAdvertisement(); 
             break;
         case CYBLE_EVT_GAP_DEVICE_DISCONNECTED:
             CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
             isNotify = 0;
-            bleConnected = 0; // test this
+           // bleConnected = 0; // test this
             break;
         case CYBLE_EVT_GAPP_ADVERTISEMENT_START_STOP:
              if(CyBle_GetState() == CYBLE_STATE_DISCONNECTED){
@@ -226,7 +258,7 @@ void send_Error_Power_to_Phone(){
 void send_Thermo_to_phone(){
     CYBLE_GATT_HANDLE_VALUE_PAIR_T thermoRead;
     
-    uint8 readThermo[7]; 
+    uint8 readThermo[13]; 
     readThermo[0] = thermo.compressor;
     readThermo[1] = thermo.fanLow;
     readThermo[2] = thermo.fanHigh;
@@ -234,11 +266,17 @@ void send_Thermo_to_phone(){
     readThermo[4] = thermo.ambientTemp;
     readThermo[5] = thermo.power;
     readThermo[6] = thermo.test;
+    readThermo[7] = thermo.err_Comp_volt;
+    readThermo[8] = thermo.err_Comp_curr;
+    readThermo[9] = thermo.err_LFan_volt;
+    readThermo[10] = thermo.err_LFan_curr;
+    readThermo[11] = thermo.err_HFan_volt;
+    readThermo[12] = thermo.err_HFan_curr;
    
     
      thermoRead.attrHandle = CYBLE_RVAC_THERMOSTAT_CHAR_HANDLE;
         thermoRead.value.val = (uint8 *) &readThermo;
-        thermoRead.value.len = 7;
+        thermoRead.value.len = 13;
     
    CyBle_GattsWriteAttributeValue(&thermoRead, 0, &cyBle_connHandle, CYBLE_GATT_DB_PEER_INITIATED);
 }
@@ -388,6 +426,103 @@ void auto_calibrate_gain(uint32 address){
     
 }
 
+void set_Vrms_gain(uint32 address){
+    // gain value is 4
+    uint16 checksum = (POWER_CHIP_HEADER_BYTE + 0x0A + POWER_CHIP_SET_ADD_PTR + POWER_CHIP_LOW_VG_ADDRESS + POWER_CHIP_WRITE_REGISTER + 0x02 + 0x00 + 0x04) % 0x100; 
+    I2C_1_I2CMasterSendStart(address, I2C_1_I2C_WRITE_XFER_MODE, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_HEADER_BYTE, 100u);
+    I2C_1_I2CMasterWriteByte(0x0A, 100u);//# in frame
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_SET_ADD_PTR, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_GEN_HIGH_ADDRESS, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_LOW_VG_ADDRESS, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_WRITE_REGISTER, 100u);
+    I2C_1_I2CMasterWriteByte(0x02, 100u);//# to read
+    I2C_1_I2CMasterWriteByte(0x00, 100u);
+    I2C_1_I2CMasterWriteByte(0x04, 100u);
+    I2C_1_I2CMasterWriteByte(checksum, 100u);
+    I2C_1_I2CMasterSendStop(100u);
+    
+}
+
+uint16_t VRMS_Read(uint8_t address){
+    uint16_t ack, checksum, numBytes, resbyte2, resbyte1;
+    uint16_t VRMS;
+    I2C_1_I2CMasterSendStart(address, I2C_1_I2C_WRITE_XFER_MODE, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_HEADER_BYTE, 100u);
+    I2C_1_I2CMasterWriteByte(0x08, 100u);//# in frame
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_SET_ADD_PTR, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_GEN_HIGH_ADDRESS, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_LOW_VRMS_ADDRESS, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_READ_REGISTER, 100u);
+    I2C_1_I2CMasterWriteByte(0x02, 100u);//# to read
+    I2C_1_I2CMasterWriteByte(0x44, 100u);
+    I2C_1_I2CMasterSendStop(100u);
+    
+    I2C_1_Sleep();
+    I2C_1_Wakeup();
+    
+    I2C_1_I2CMasterSendStart(address, I2C_1_I2C_READ_XFER_MODE, 100u);
+    I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA, (uint8_t*) &ack,100u);
+    I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA, (uint8_t*) &numBytes,100u);
+    I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA, (uint8_t*) &resbyte2,100u);
+    I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA, (uint8_t*) &resbyte1,100u);
+    I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA, (uint8_t*) &checksum,100u);
+    I2C_1_I2CMasterSendStop(100u);
+    
+    VRMS = (resbyte2 << 8) | resbyte1;
+    return VRMS;
+}
+
+void set_Irms_gain(uint32 address){
+    // gain value is 6
+    uint16 checksum = (POWER_CHIP_HEADER_BYTE + 0x0A + POWER_CHIP_SET_ADD_PTR + POWER_CHIP_LOW_IG_ADDRESS + POWER_CHIP_WRITE_REGISTER + 0x02 + 0x00 + 0x06) % 0x100;
+    
+    I2C_1_I2CMasterSendStart(address, I2C_1_I2C_WRITE_XFER_MODE, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_HEADER_BYTE, 100u);
+    I2C_1_I2CMasterWriteByte(0x0A, 100u);//# in frame
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_SET_ADD_PTR, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_GEN_HIGH_ADDRESS, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_LOW_IG_ADDRESS, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_WRITE_REGISTER, 100u);
+    I2C_1_I2CMasterWriteByte(0x02, 100u);//# to read
+    I2C_1_I2CMasterWriteByte(0x00, 100u);
+    I2C_1_I2CMasterWriteByte(0x06, 100u);
+    I2C_1_I2CMasterWriteByte(checksum, 100u);
+    I2C_1_I2CMasterSendStop(100u);
+}
+
+uint16_t IRMS_Read(uint8_t address){
+    uint16_t ack, checksum, numBytes, resbyte2, resbyte1;
+    uint32_t resbyte4, resbyte3;
+    uint16_t IRMS;
+    I2C_1_I2CMasterSendStart(address, I2C_1_I2C_WRITE_XFER_MODE, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_HEADER_BYTE, 100u);
+    I2C_1_I2CMasterWriteByte(0x08, 100u);//# in frame
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_SET_ADD_PTR, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_GEN_HIGH_ADDRESS, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_LOW_IRMS_ADDRESS, 100u);
+    I2C_1_I2CMasterWriteByte(POWER_CHIP_READ_REGISTER, 100u);
+    I2C_1_I2CMasterWriteByte(0x02, 100u);//# to read
+    I2C_1_I2CMasterWriteByte(0x4C, 100u);
+    I2C_1_I2CMasterSendStop(100u);
+    
+    I2C_1_Sleep();
+    I2C_1_Wakeup();
+    
+    I2C_1_I2CMasterSendStart(address, I2C_1_I2C_READ_XFER_MODE, 100u);
+    I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA, (uint8_t*) &ack,100u);
+    I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA, (uint8_t*) &numBytes,100u);
+    I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA, (uint8_t*) &resbyte4,100u);
+    I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA, (uint8_t*) &resbyte3,100u);
+    I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA, (uint8_t*) &resbyte2,100u);
+    I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA, (uint8_t*) &resbyte1,100u);
+    I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA, (uint8_t*) &checksum,100u);
+    I2C_1_I2CMasterSendStop(100u);
+    
+    IRMS = (resbyte4 << 24) | (resbyte3 <<16 ) | (resbyte2 << 8) | resbyte1;
+    return IRMS;
+}
+
 void read_power_chips(uint32 address){
     
     uint8 rBuff[35];
@@ -421,15 +556,15 @@ void read_power_chips(uint32 address){
             break;
             
             case 0x75:
-                sensorData.volt = (rBuff[7] << 8) | rBuff[6];
-                sensorData.lineFreq = (rBuff[9] << 8) | rBuff[8];
-                sensorData.current = (rBuff[17] << 24) | (rBuff[16] << 16) | (rBuff[15] << 8) | rBuff[14];
+                sensorData.voltFanHigh = (rBuff[7] << 8) | rBuff[6];
+                sensorData.lineFreqFanHigh = (rBuff[9] << 8) | rBuff[8];
+                sensorData.currentFanHigh = (rBuff[17] << 24) | (rBuff[16] << 16) | (rBuff[15] << 8) | rBuff[14];
             break;
             
             case 0x76:
-                sensorData.voltFan = (rBuff[7] << 8) | rBuff[6];
-                sensorData.lineFreqFan = (rBuff[9] << 8) | rBuff[8];
-                sensorData.currentFan = (rBuff[17] << 24) | (rBuff[16] << 16) | (rBuff[15] << 8) | rBuff[14];
+                sensorData.voltFanLow = (rBuff[7] << 8) | rBuff[6];
+                sensorData.lineFreqFanLow = (rBuff[9] << 8) | rBuff[8];
+                sensorData.currentFanLow = (rBuff[17] << 24) | (rBuff[16] << 16) | (rBuff[15] << 8) | rBuff[14];
             break;
             
             default:
@@ -456,6 +591,198 @@ void my_interrupt(){
    
      CySysWdtClearInterrupt(CY_SYS_WDT_COUNTER2_INT);
 }
+
+
+
+void run_ac(){
+    
+    switch(thermoState){
+        case 0x14: // Low fan and compressor
+            if(acStates != 0x14 && counter >= 5){
+             counter = 0;
+                MyUART_PutString("state 14 setting counter to 0\n");
+        
+            }
+            if(acStates != 0x14){
+                RelayC_3_Write(1);
+                RelayHF_2_Write(1);
+                
+                Comp_out_Write(1);
+                HighF_out_Write(1);
+                
+                   MyUART_PutString("setting up state 14\n");
+                    if(counter == 2){
+                        RelayLF_1_Write(0);
+                        LowF_out_Write(0);
+                        MyUART_PutString("state 14 counter 2\n");
+                    }
+                    if(counter == 4){
+                        RelayC_3_Write(0);
+                        Comp_out_Write(0);
+                        acStates = 0x14;
+                        MyUART_PutString("state 14 counter 4\n");
+                    }
+            }
+            else{
+               if(acStates == 0x14){
+                    RelayHF_2_Write(1);
+                    RelayLF_1_Write(0);
+                    RelayC_3_Write(0);
+                    
+                    HighF_out_Write(1);
+                    LowF_out_Write(0);
+                    Comp_out_Write(0);
+                    MyUART_PutString("state 14 already setup\n");
+                }
+            }
+       sprintf(uartStr,"switch gpio: %x  acstate: %x LF: %d, HF: %d, Comp:%d\n",gpioPins, acStates, 
+        RelayLF_1_Read(), RelayHF_2_Read(),RelayC_3_Read());
+       MyUART_PutString(uartStr);
+    
+            break;
+        
+        case 0x0C: //High fan and compressor
+             if(acStates != 0x0C && counter >= 5){
+                counter = 0;
+             }
+            if(acStates != 0x0C){
+                RelayC_3_Write(1);
+                RelayLF_1_Write(1);
+                
+                 Comp_out_Write(1);
+                 LowF_out_Write(1);
+                    
+                    if(counter == 2){
+                        RelayHF_2_Write(0);
+                        HighF_out_Write(0);
+                    }
+                    if(counter == 4){
+                        RelayC_3_Write(0);
+                        Comp_out_Write(0);
+                        acStates = 0x0C;
+                    }
+            }
+            else{
+               if(acStates == 0x0C){
+                RelayLF_1_Write(1);
+                RelayHF_2_Write(0);
+                RelayC_3_Write(0);
+                
+                LowF_out_Write(1);
+                HighF_out_Write(0);
+                Comp_out_Write(0);
+                }
+            }
+            sprintf(uartStr,"switch gpio: %x  acstate: %x LF: %d, HF: %d, Comp:%d\n",gpioPins, acStates, 
+        RelayLF_1_Read(), RelayHF_2_Read(),RelayC_3_Read());
+            MyUART_PutString(uartStr);
+                break;
+        case 0x08:  // high fan
+            if(acStates != 0x08 && counter >= 3){
+             counter = 0;
+            }
+            if(acStates != 0x08){
+                RelayC_3_Write(1);
+                RelayLF_1_Write(1);
+                
+                LowF_out_Write(1);
+                Comp_out_Write(1);
+                    
+                    if(counter == 2){
+                        RelayHF_2_Write(0);
+                        HighF_out_Write(0);
+                        acStates = 0x08;
+                    }
+            }
+            else{
+               if(acStates == 0x08){
+                RelayC_3_Write(1);
+                RelayLF_1_Write(1);
+                RelayHF_2_Write(0);
+                
+                Comp_out_Write(1);
+                LowF_out_Write(1);
+                HighF_out_Write(0);
+                }
+            }
+            sprintf(uartStr,"switch gpio: %x  acstate: %x LF: %d, HF: %d, Comp:%d\n",gpioPins, acStates, 
+        RelayLF_1_Read(), RelayHF_2_Read(),RelayC_3_Read());
+            MyUART_PutString(uartStr);
+                break;
+        case 0x10: // low fan
+            if(acStates != 0x10 && counter >= 3){
+             counter = 0;
+            }
+            if(acStates != 0x10){
+                RelayC_3_Write(1);
+                RelayHF_2_Write(1);
+                
+                HighF_out_Write(1);
+                Comp_out_Write(1);
+                    
+                if(counter == 2){
+                    RelayLF_1_Write(0);
+                    LowF_out_Write(0);
+                    acStates = 0x10;
+                }
+            }
+            else{
+               if(acStates == 0x10){
+                    RelayC_3_Write(1);
+                    RelayHF_2_Write(1);
+                    RelayLF_1_Write(0);
+                    
+                    HighF_out_Write(1);
+                    LowF_out_Write(0);
+                    Comp_out_Write(1);
+                }
+            }
+            sprintf(uartStr,"switch gpio: %x  acstate: %x LF: %d, HF: %d, Comp:%d\n",gpioPins, acStates, 
+            RelayLF_1_Read(), RelayHF_2_Read(),RelayC_3_Read());
+            MyUART_PutString(uartStr);
+                break;
+        case 0x00:
+            if(acStates != 0x0 && counter >= 4){
+                 counter = 0;
+            }
+            if(acStates != 0x0){
+                if(counter == 1){
+                    RelayC_3_Write(1);
+                    Comp_out_Write(1);
+                }
+                if(counter == 2){
+                    RelayHF_2_Write(1);
+                    HighF_out_Write(1);
+                }
+                if(counter == 3){
+                    RelayLF_1_Write(1);
+                    LowF_out_Write(1);
+                    acStates = 0x0;
+                }
+            }
+            else{
+               if(acStates == 0x00){
+                    RelayC_3_Write(1);
+                    RelayHF_2_Write(1);
+                    RelayLF_1_Write(1);
+                    
+                    HighF_out_Write(1);
+                    LowF_out_Write(1);
+                    Comp_out_Write(1);
+                }
+            }
+            
+            sprintf(uartStr,"switch gpio: %x  acstate: %x LF: %d, HF: %d, Comp:%d\n",gpioPins, acStates, 
+            RelayLF_1_Read(), RelayHF_2_Read(),RelayC_3_Read());
+            MyUART_PutString(uartStr);
+            
+            break;  
+        default:
+            break;
+    }
+
+}
+
 
 int main (void)
 {
@@ -487,15 +814,30 @@ int main (void)
     configure_temperature_sensor1();
     initialized_input_gpioExp();
     // only need to calibrate the firt time
-    auto_calibrate_gain(ADDR_POWER1);
-    auto_calibrate_gain(ADDR_POWER2);
-    auto_calibrate_gain(ADDR_POWER3);
+//    auto_calibrate_gain(ADDR_POWER1);
+//    auto_calibrate_gain(ADDR_POWER2);
+//    auto_calibrate_gain(ADDR_POWER3);
     
     // start BLE
     CyBle_Start(bleStack);
     // 1sec interrupt
     CySysWdtEnable(CY_SYS_WDT_COUNTER2);
     int_1_StartEx(my_interrupt);
+
+
+    
+    RelayLF_1_Write(1);
+    HighF_out_Write(1);
+    
+    RelayHF_2_Write(1);
+    LowF_out_Write(1);
+    
+    RelayC_3_Write(1);
+    Comp_out_Write(1);
+    
+acStates = 0u;
+thermoState = 0u;
+
 
     
 //uint8 temp1 = 0;
@@ -530,12 +872,14 @@ if(interruptFlag == 1){
     }
 //    
   // if(adcRead < 1300){
-    if(adcRead < 1270){
+
+    if(adcRead < 1496){
        CEPIN_Write(0);
      }
   // }
-    else if(adcRead > 1500){
-       CEPIN_Write(1);
+   else if(adcRead > 1500 && adcRead < 1710){
+      CEPIN_Write(1);
+
        
     volatile uint8 read_buff[2] = {0,0};
     
@@ -663,12 +1007,12 @@ MyUART_PutString(str);
 
 /*  ---------------------------- ACCELEROMETER -----------------------------------   */
 
-uint8 xLSB;
-uint8 xMSB;
-uint8 yLSB;
-uint8 yMSB;
-uint8 zLSB;
-uint8 zMSB;
+uint8 xLSB=0;
+uint8 xMSB=0;
+uint8 yLSB=0;
+uint8 yMSB=0;
+uint8 zLSB=0;
+uint8 zMSB=0;
 
 I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 100u);
 I2C_1_I2CMasterWriteByte(0x02, 100u);
@@ -711,7 +1055,6 @@ sensorData.accY = (yMSB );
 sensorData.accZ = (zMSB );
 
 
-
 sprintf(str,"\nX: %d %d    12 bit x: %d\n", xMSB, xLSB, sensorData.accX);
 MyUART_PutString(str);
 sprintf(str,"y: %d %d      12 bit y: %d\n", yMSB, yLSB, sensorData.accY);
@@ -722,19 +1065,46 @@ MyUART_PutString(str);
 // ---------------  Read humidity ---------------
 read_buff[0]=0;
 read_buff[1]=0;
-I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 0u);
-I2C_1_I2CMasterWriteByte(0x07, 0u);
-I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 0u);
-I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0] ,0u);
-I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &read_buff[1] ,0u);
-I2C_1_I2CMasterSendStop(0u);
 
+uint8 write_buff[] ={0xE5, 0};
+uint8 check = 0;
+//I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 0u);
+//I2C_1_I2CMasterWriteByte(0xE5, 0u);
+//I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 100u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0] ,100u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &read_buff[1] ,100u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA, (uint8 *) &check, 0u);
+//I2C_1_I2CMasterSendStop(0u);
+
+ I2C_1_I2CMasterWriteBuf(0x18, (uint8 *) write_buff, 1, I2C_1_I2C_MODE_NO_STOP);
+    while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT) == 0){}
+    
+     I2C_1_I2CMasterReadBuf(0x18, (uint8 *) read_buff, 2, I2C_1_I2C_MODE_REPEAT_START);
+    while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_RD_CMPLT) == 0){}
+//
+////    I2C_1_Sleep();
+////    I2C_1_Wakeup();
+//
 uint16 rh = ((read_buff[0] << 8) | read_buff[1]);
 
 sensorData.humidity = ((125 * rh)/65536)-6; 
+rh = 0;
 
-sprintf(str, "\nThe humidity is %d\n", sensorData.humidity);
+//I2C_1_I2CMasterSendStart(0x18,I2C_1_I2C_WRITE_XFER_MODE, 0u);
+//I2C_1_I2CMasterWriteByte(0xE3, 0u);
+//I2C_1_I2CMasterSendRestart(0x18, I2C_1_I2C_READ_XFER_MODE, 0u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_ACK_DATA,(uint8 *) &read_buff[0] ,0u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA,(uint8 *) &read_buff[1] ,0u);
+//I2C_1_I2CMasterReadByte(I2C_1_I2C_NAK_DATA, (uint8 *) &check, 0u);
+//I2C_1_I2CMasterSendStop(0u);
+//
+//uint16 tp = ((read_buff[0] << 8) | read_buff[1]);
+//tp = ((175.72 * tp)/65536) - 46.85;
+
+sprintf(str, "\n -------------------The humidity is %d   check %d\n", sensorData.humidity, check);
 MyUART_PutString(str);
+ 
+
 
 // ---------------------  Read thermostat pins ---------------------
 
@@ -744,25 +1114,81 @@ MyUART_PutString(str);
  fanH = (gpioPins & 0x10);
 
 
-sprintf(str, "\nThermostast pins are 0x%x\n", gpioPins);
+
+sprintf(str, "\nThermostast pins are 0x%x thermoState 0x%x\n\n", gpioPins, thermoState);
+
 MyUART_PutString(str);
 
 
 //// ------------------------------- power sensors check version  -----------------------
 
-        read_power_chips(ADDR_POWER1);
-        sprintf(str, "\nComp volt: %d  freq: %d  current: %lu\n", sensorData.voltCompressor, sensorData.lineFreqComp, sensorData.currentCompressor);
-        MyUART_PutString(str);
-        
-        read_power_chips(ADDR_POWER2);
-        sprintf(str, "\nLow Fan volt: %d  freq: %d  current: %lu\n", sensorData.volt, sensorData.lineFreq, sensorData.current);
-        MyUART_PutString(str);
-        
-        read_power_chips(ADDR_POWER3);
-        sprintf(str, "\nLow Fan volt: %d  freq: %d  current: %lu\n", sensorData.voltFan, sensorData.lineFreqFan, sensorData.currentFan);
-        MyUART_PutString(str);
 
-   } //end of  if adc result is > 1500 turn regulator
+  uint8 wBuff[] = {0xA5, 0x08, 0x41,0x00, 0x02,0x4E,0x20,0x5E};
+uint8 rBuff[35];
+ I2C_1_I2CMasterWriteBuf(POWER_CHIP_COMP, (uint8 *) wBuff, 8, I2C_1_I2C_MODE_NO_STOP);
+    while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT) == 0){}
+    
+     I2C_1_I2CMasterReadBuf(POWER_CHIP_COMP, (uint8 *) rBuff, 35, I2C_1_I2C_MODE_REPEAT_START);
+    while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_RD_CMPLT) == 0){}
+    
+                sensorData.voltCompressor = (rBuff[7] << 8) | rBuff[6];
+                sensorData.lineFreqComp = (rBuff[9] << 8) | rBuff[8];
+                sensorData.currentCompressor = (rBuff[17] << 24) | (rBuff[16] << 16) | (rBuff[15] << 8) | rBuff[14];
+
+//       // read_power_chips(ADDR_POWER1);
+//        set_Vrms_gain(POWER_CHIP_COMP);
+//        sensorData.voltCompressor = VRMS_Read(POWER_CHIP_COMP);
+//        
+//        set_Irms_gain(POWER_CHIP_COMP);
+//        sensorData.currentCompressor = IRMS_Read(POWER_CHIP_COMP);
+    sprintf(str, "\nComp volt: %d  freq: %d  current: %lu\n", sensorData.voltCompressor, sensorData.lineFreqComp, sensorData.currentCompressor);
+    MyUART_PutString(str);
+//        
+//        //read_power_chips(ADDR_POWER2);
+//        set_Vrms_gain(POWER_CHIP_LOW_FAN);
+//        sensorData.voltFanLow = VRMS_Read(POWER_CHIP_LOW_FAN);
+//        
+//        set_Irms_gain(POWER_CHIP_LOW_FAN);
+//        sensorData.currentFanLow = IRMS_Read(POWER_CHIP_LOW_FAN);
+//    
+    I2C_1_I2CMasterWriteBuf(POWER_CHIP_HIGH_FAN, (uint8 *) wBuff, 8, I2C_1_I2C_MODE_NO_STOP);
+    while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT) == 0){}
+    
+     I2C_1_I2CMasterReadBuf(POWER_CHIP_HIGH_FAN, (uint8 *) rBuff, 35, I2C_1_I2C_MODE_REPEAT_START);
+    while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_RD_CMPLT) == 0){}
+    
+                sensorData.voltFanHigh = (rBuff[7] << 8) | rBuff[6];
+                sensorData.lineFreqFanHigh = (rBuff[9] << 8) | rBuff[8];
+                sensorData.currentFanHigh = (rBuff[17] << 24) | (rBuff[16] << 16) | (rBuff[15] << 8) | rBuff[14];
+    
+        sprintf(str, "\nLow Fan volt: %d  freq: %d  current: %lu\n", sensorData.voltFanHigh, sensorData.lineFreqFanHigh, sensorData.currentFanHigh);
+        MyUART_PutString(str);
+//        
+//       // read_power_chips(ADDR_POWER3);
+//        set_Vrms_gain(POWER_CHIP_HIGH_FAN);
+//        sensorData.voltFanHigh = VRMS_Read(POWER_CHIP_HIGH_FAN);
+//        
+//        set_Irms_gain(POWER_CHIP_HIGH_FAN);
+//        sensorData.currentFanHigh = IRMS_Read(POWER_CHIP_HIGH_FAN);
+        
+        I2C_1_I2CMasterWriteBuf(POWER_CHIP_LOW_FAN, (uint8 *) wBuff, 8, I2C_1_I2C_MODE_NO_STOP);
+    while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_WR_CMPLT) == 0){}
+    
+     I2C_1_I2CMasterReadBuf(POWER_CHIP_LOW_FAN, (uint8 *) rBuff, 35, I2C_1_I2C_MODE_REPEAT_START);
+    while((I2C_1_I2CMasterStatus() & I2C_1_I2C_MSTAT_RD_CMPLT) == 0){}
+    
+                sensorData.voltFanLow = (rBuff[7] << 8) | rBuff[6];
+                sensorData.lineFreqFanLow = (rBuff[9] << 8) | rBuff[8];
+                sensorData.currentFanLow = (rBuff[17] << 24) | (rBuff[16] << 16) | (rBuff[15] << 8) | rBuff[14];
+        sprintf(str, "\nHigh Fan volt: %d  freq: %d  current: %lu\n\n", sensorData.voltFanLow, sensorData.lineFreqFanLow, sensorData.currentFanLow);
+        MyUART_PutString(str);
+        
+        
+//        I2C_1_Stop();
+//        I2C_1_Enable();
+
+} //end of  if adc result is > 1500 turn regulator
+
 
 // --------------- AIR FLOW ------------
 
@@ -778,6 +1204,7 @@ MyUART_PutString(str);
             
             if(isNotify == 1){
                 GREEN_Write(1);
+                
                 if(CyBle_GattGetBusStatus() == CYBLE_STACK_STATE_FREE){
                  BLUE_Write(!BLUE_Read());
                     SendDataNotify();
@@ -788,13 +1215,14 @@ MyUART_PutString(str);
                 thermo.ambientTemp = sensorData.localTemp;
                 
                 GREEN_Write(0);
+                BLUE_Write(1);
                 
             } //end of read/write 
         } // end ble connected if  
     else{
         RED_Write(!RED_Read());
         GREEN_Write(1);
-        BLUE_Write(1);
+        BLUE_Write(!BLUE_Read());
     }
     interruptFlag = 0;
     }// end if int flag
@@ -804,139 +1232,190 @@ MyUART_PutString(str);
 
 if (bleConnected == 1){
 
+
         if(thermo.power == 1){
+
+    
+//    if(thermo.power == 1 && thermo.fanLow == 1 && thermo.compressor == 1){           // Asking for Low Fan and Compressor
+//        thermoState = 0x14;
+//    }
+//    else if(thermo.power == 1 && thermo.fanHigh == 1 && thermo.compressor == 1){     // Asking for High Fan and Compressor
+//        thermoState = 0x0C;
+//    }
+//    else if (thermo.power == 1 && thermo.fanLow == 1 && thermo.compressor == 0){    // Asking .
+//        thermoState = 0x10;
+//    }
+//    else if(thermo.power == 1 && thermo.fanHigh == 1 && thermo.compressor == 0){
+//        thermoState = 0x08;
+//    }else if(thermo.power == 0){
+//        thermoState = 0x00;
+//    }
+
+        if(thermo.power == 1 && thermo.test == 0){
+
             if(thermo.compressor == 1){
                 //if the temperature of ambient is higher than the temprature set turn on the compressor.
                 if(sensorData.localTemp > (thermo.setTemperature+2)){
                     if(sensorData.localTemp > thermo.setTemperature){
-                       RelayC_3_Write(0);
-                       Comp_out_Write(1);
+
+                        if(thermo.power == 1 && thermo.fanLow == 1 && thermo.compressor == 1 && thermo.fanHigh == 0 ){
+                            thermoState = 0x14;
+                            run_ac();
+                        }
+                        else if(thermo.power == 1 && thermo.fanHigh == 1 && thermo.compressor == 1 && thermo.fanLow == 0){
+                            thermoState = 0x0C;
+                            run_ac();
+                        }
+
                     }
                 }
                 // if the ambient temperature is equal or less to the set temperature turn off the compressor.
                 else if(sensorData.localTemp <= (thermo.setTemperature-2)){
                     if(sensorData.localTemp <= thermo.setTemperature){
-                      RelayC_3_Write(1);
-                      Comp_out_Write(0);
+
+                        if (thermo.power == 1 && thermo.fanLow == 1 && thermo.fanHigh == 0 && thermo.compressor == 0){
+                            thermoState = 0x10;
+                            run_ac();
+                        }
+                        else if(thermo.power == 1 && thermo.fanLow == 0 && thermo.fanHigh == 1 && thermo.compressor == 0){
+                            thermoState = 0x08;
+                            run_ac();
+                        }
+
                     }
                 }
              } // end comp on
-           else{
-             RelayC_3_Write(1);
-             Comp_out_Write(0);
-           }
-            
-            RelayLF_1_Write(!thermo.fanLow);
-            LowF_out_Write(thermo.fanLow);
-            
-            RelayHF_2_Write(!thermo.fanHigh);
-            LowF_out_Write(thermo.fanHigh);
-        }
-        else if(thermo.power == 0){
-            RelayC_3_Write(1);
-            Comp_out_Write(0);
-            
-            RelayLF_1_Write(1);
-            LowF_out_Write(0);
-            
-            RelayHF_2_Write(1);
-            LowF_out_Write(0);
-        }
-        
-        else if(thermo.test ==1){
-            if(thermo.power == 0){
-                 RelayC_3_Write(1);
-                 Comp_out_Write(0);
-                
-                 RelayLF_1_Write(1);
-                 LowF_out_Write(0);
-            
-                 RelayHF_2_Write(1);
-                 LowF_out_Write(0);
+           
+            else if(thermo.power == 0 && thermo.test == 0){
+                thermoState = 0x00;
+                run_ac();
             }
-                
-            else if(thermo.power == 1){
-                if(thermo.compressor == 1){
-                    if(sensorData.voltCompressor < 112){
-                        if(sensorData.currentCompressor < 50){
-                            RelayC_3_Write(!thermo.compressor);
-                            Comp_out_Write(thermo.compressor);
-                        }
-                        else{
-                            errorPower.err_Comp_curr = 1;
+        }
+        else if(thermo.test == 1){
+            if(thermo.compressor == 1){
+                RelayC_3_Write(0);
+                Comp_out_Write(0);
+                  
+                    if(sensorData.voltCompressor > 99){
+                        thermo.err_Comp_volt = 1;
+                        thermo.compressor = 0u;
+                       if(sensorData.currentCompressor > 190000){
+                        thermo.err_Comp_curr = 1;
+                           thermo.compressor = 0u;
+                        
+                       }
+                       else{
+                          
+                           thermo.compressor = 1u;
+
                         }
                     }
                     else{
-                        errorPower.err_Comp_volt = 1; 
+                        thermo.compressor = 1u; 
+
                     }
-                }
+                
+                } // end compressor on
                 else if(thermo.compressor == 0){
-                       RelayC_3_Write(1);
-                       Comp_out_Write(0);
-                }
+                    RelayC_3_Write(1);
+                    Comp_out_Write(1);
+                    thermo.compressor = 0;
+                    
+                    if(sensorData.voltCompressor > 2){
+                        thermo.err_Comp_volt = 1;
+                        if(sensorData.currentCompressor > 1000){
+                          thermo.err_Comp_curr = 1;
+                        }
+                    }
+                } // end compressor on
                 
-                 if(thermo.fanLow == 1){
-                    if(sensorData.volt < 112){
-                        if(sensorData.current < 50){
-              
-                            RelayLF_1_Write(!thermo.fanLow);
-                            LowF_out_Write(thermo.fanLow);
+                if(thermo.fanLow == 1){
+                    RelayLF_1_Write(0);
+                    LowF_out_Write(0);
+                    
+               
+                    
+                    if(sensorData.voltFanLow < 98){
+                        thermo.fanLow = 0;
+                        thermo.err_LFan_volt = 1;
+                        if(sensorData.currentFanLow < 190000){
+                            thermo.err_LFan_curr = 1;
+                           thermo.fanLow = 0;
                         }
                         else{
-                            errorPower.err_LFan_curr = 1;
+                           
+                           thermo.fanLow = 1;
+
                         }
                     }
                     else{
-                        errorPower.err_LFan_volt = 1; 
+                         thermo.fanLow = 1;
+
                     }
-                }
+                
+                } // end of low fan on
                 else if(thermo.fanLow == 0){
                     RelayLF_1_Write(1);
-                    LowF_out_Write(0);
-                }
+                    LowF_out_Write(1);
+                    
+                    if(sensorData.voltFanLow > 2){
+                        thermo.err_Comp_volt = 1;
+                        
+                        if(sensorData.currentFanLow > 1000){
+                            thermo.err_Comp_curr = 1;
+                        }
+                    }
+                } // end of low fan off
+
                 
                 if(thermo.fanHigh == 1){
-                 if(sensorData.voltFan < 112){
-                    if(sensorData.currentFan < 50){
-                    
-                    RelayHF_2_Write(!thermo.fanHigh);
-                    HighF_out_Write(thermo.fanHigh);
+                    RelayHF_2_Write(0);
+                    HighF_out_Write(0);
+
+                    if(sensorData.voltFanHigh < 98){ 
+                        thermo.err_HFan_volt = 1;
+                        thermo.fanHigh = 0u;
+                        
+                        if(sensorData.currentFanHigh < 190000){
+                            thermo.err_HFan_curr = 1;
+                            thermo.fanHigh = 0u;
+                        }
+                        else{
+                            
+                            thermo.fanHigh = 1;
+                        }
                     }
                     else{
-                            errorPower.err_HFan_curr = 1;
-                        }
-                 }
-                  else{
-                     errorPower.err_HFan_volt = 1;
-                  }
-                }
-                 else if(thermo.fanHigh == 0){
+                        
+                        thermo.fanHigh = 1;
+                    }
+                } // end of High fan on
+                else if(thermo.fanHigh == 0){
                     RelayHF_2_Write(1);
-                    HighF_out_Write(0);
-                }
-                
+                    HighF_out_Write(1);
+                    
+                    if(sensorData.voltFanHigh > 2){
+                        thermo.err_HFan_volt = 1;
+                        
+                        if(sensorData.currentFanHigh > 1000){
+                            thermo.err_HFan_curr = 1;
+                        }
+                    }
+                } //end of high fan off
+
             } // end of power on
         } // end of test
   
 } // end of ble connected 
 else{
    
+    run_ac();
     
-    RelayC_3_Write( !comp);
-    Comp_out_Write(comp);
-    thermo.compressor = comp;
-    
-    
-    RelayLF_1_Write(!fanL);
-    LowF_out_Write(fanL);
-    thermo.fanLow = fanL;
-    
-    RelayHF_2_Write(!fanH);
-    LowF_out_Write(fanH);
-    thermo.fanHigh = fanH;
    }
 
-   
+
+        //send_Error_Power_to_Phone();
+
         send_Thermo_to_phone();
         CyBle_ProcessEvents();
    

@@ -10707,7 +10707,7 @@ ARM GAS  Generated_Source\PSoC4\MyUART_AsmGnu.s 			page 1
  692              	.set I2C_1_SCB_IRQ__INTC_MASK, 0x400
  693              	.set I2C_1_SCB_IRQ__INTC_NUMBER, 10
  694              	.set I2C_1_SCB_IRQ__INTC_PRIOR_MASK, 0xC00000
- 695              	.set I2C_1_SCB_IRQ__INTC_PRIOR_NUM, 1
+ 695              	.set I2C_1_SCB_IRQ__INTC_PRIOR_NUM, 2
  696              	.set I2C_1_SCB_IRQ__INTC_PRIOR_REG, CYREG_CM0_IPR2
  697              	.set I2C_1_SCB_IRQ__INTC_SET_EN_REG, CYREG_CM0_ISER
  698              	.set I2C_1_SCB_IRQ__INTC_SET_PD_REG, CYREG_CM0_ISPR

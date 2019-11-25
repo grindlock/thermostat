@@ -1,5 +1,9 @@
 # test
+<<<<<<< Updated upstream
 # 2019-11-19 04:02:47Z
+=======
+# 2019-11-25 00:12:00Z
+>>>>>>> Stashed changes
 
 # IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
 dont_use_io iocell 0 6

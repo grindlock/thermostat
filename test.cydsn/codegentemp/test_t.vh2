@@ -1,5 +1,9 @@
 -- Project:   C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\test.cyprj
+<<<<<<< Updated upstream
 -- Generated: 11/18/2019 23:02:47
+=======
+-- Generated: 11/24/2019 19:12:01
+>>>>>>> Stashed changes
 -- PSoC Creator  4.2
 
 ENTITY test IS

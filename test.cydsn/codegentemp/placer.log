@@ -6,7 +6,11 @@
 
 #Build Date:         Dec  5 2017 15:35:27
 
+<<<<<<< Updated upstream
 #File Generated:     Nov 18 2019 23:02:46
+=======
+#File Generated:     Nov 24 2019 19:11:59
+>>>>>>> Stashed changes
 
 #Purpose:            
 
@@ -69,5 +73,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 0.4 sec.
+I2076: Total run-time: 0.5 sec.
 

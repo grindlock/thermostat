@@ -17,6 +17,7 @@
       <Data key="7ca9760e-6931-4b43-a74b-782f631c6518/696fcfb7-e3b3-4302-9123-1e2c9e4522d2" value="I2C_1_SCB_IRQ" />
       <Data key="9d85b07b-d0a3-43d5-9c79-a337709a4229" value="int_1" />
       <Data key="a32c7678-ff5a-4338-8185-d09d8f0d5786/0bca1fc6-354d-4d61-89fa-de74f0d280d1" value="BLE_1_bless_isr" />
+      <Data key="fad374d8-c0e7-43d1-a455-08ddcd3ade73/a1033dc5-f595-4313-8eee-ea9108ee36fd" value="MyADC_IRQ" />
     </Group>
     <Group key="Pin">
       <Data key="3eb3be75-347a-425a-bd2a-15f12a7995cc" value="RelayC_3" />
@@ -3124,7 +3125,7 @@
     <Group key="7ca9760e-6931-4b43-a74b-782f631c6518/696fcfb7-e3b3-4302-9123-1e2c9e4522d2">
       <Group key="CortexM0">
         <Data key="Assigned" value="True" />
-        <Data key="Priority" value="1" />
+        <Data key="Priority" value="2" />
         <Data key="Vector" value="-1" />
       </Group>
     </Group>

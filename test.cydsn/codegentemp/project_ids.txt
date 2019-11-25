@@ -1,6 +1,15 @@
+<<<<<<< Updated upstream
 C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\test.cyprj|65574d8f-478f-4065-9004-6f608313b2f9
 C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f835d7d0-8a71-47fa-b118-26f43a13d7f9
 C:\Users\sergio\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|e6138a98-1df8-409d-95fb-362bc2edf7cb
 C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|99125295-4558-45a8-8d30-b52cbf51cc95
 C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|38d89102-835f-407b-aa34-088f7f0a0c75
 C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|832a490d-2c4f-4f1a-b018-d2c8cbac5318
+=======
+C:\Users\sergio\Documents\GitHub\thermostat\test.cydsn\test.cyprj|0129465e-bcd5-4091-a8ee-ffe259b4e7d6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|db4cab16-86ac-4113-ad1c-23784cf72110
+C:\Users\sergio\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|29480d13-1d10-405e-b5d2-7c5f3a7cfbe2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|6e207876-ecc2-4fa2-8c68-a5adf9a1ef93
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|c72e02a8-aee1-4ae0-bb95-2e6f93cd698e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|82e84af6-53dd-48b1-bdf9-a2b3e2c5b10b
+>>>>>>> Stashed changes

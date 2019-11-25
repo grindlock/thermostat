@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 1
+>>>>>>> Stashed changes
 
 
    1              		.syntax unified
@@ -58,7 +62,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
    2:Generated_Source\PSoC4/BLE_1_eventHandler.c **** * \file CYBLE_eventHandler.c
    3:Generated_Source\PSoC4/BLE_1_eventHandler.c **** * \version 3.61
    4:Generated_Source\PSoC4/BLE_1_eventHandler.c **** * 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 2
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 2
+>>>>>>> Stashed changes
 
 
    5:Generated_Source\PSoC4/BLE_1_eventHandler.c **** * \brief
@@ -118,7 +126,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
   59:Generated_Source\PSoC4/BLE_1_eventHandler.c **** CYBLE_CONN_HANDLE_T cyBle_connHandle;
   60:Generated_Source\PSoC4/BLE_1_eventHandler.c **** 
   61:Generated_Source\PSoC4/BLE_1_eventHandler.c **** volatile uint8 cyBle_eventHandlerFlag;
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 3
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 3
+>>>>>>> Stashed changes
 
 
   62:Generated_Source\PSoC4/BLE_1_eventHandler.c **** volatile uint8 cyBle_busyStatus;
@@ -178,7 +190,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  116:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_ANS_CLIENT */
  117:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_BAS_CLIENT
  118:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     {{CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE}, CYBLE_UUID_BAS_S
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 4
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 4
+>>>>>>> Stashed changes
 
 
  119:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     #if(CYBLE_BASC_SERVICE_COUNT > 1u) /* Generate it by GUI */
@@ -238,7 +254,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  173:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_IAS_CLIENT
  174:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     {{CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE}, CYBLE_UUID_IMMED
  175:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_IAS_CLIENT */
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 5
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 5
+>>>>>>> Stashed changes
 
 
  176:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_IPS_CLIENT
@@ -298,7 +318,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  230:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     (CYBLE_GAP_SEC_MODE_1 | CYBLE_GAP_SEC_LEVEL_1 ), /* uint8 security */
  231:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     CYBLE_GAP_BONDING, /* uint8 bonding */
  232:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     0x10u,      /* uint8 ekeySize */
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 6
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 6
+>>>>>>> Stashed changes
 
 
  233:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     CYBLE_GAP_AUTH_ERROR_NONE, /* CYBLE_AUTH_FAILED_REASON_T authErr */
@@ -358,7 +382,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  265:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_AIOS_SERVER */
  266:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_ANCS_SERVER
  267:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     if(((cyBle_eventHandlerFlag & CYBLE_CALLBACK) != 0u) && (gattErr == CYBLE_GATT_ERR_NONE))
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 7
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 7
+>>>>>>> Stashed changes
 
 
  268:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     {
@@ -418,7 +446,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  322:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     {
  323:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         gattErr = CyBle_CscssWriteEventHandler(eventParam);
  324:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     }
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 8
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 8
+>>>>>>> Stashed changes
 
 
  325:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_CSCS_SERVER */
@@ -478,7 +510,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  379:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_LLS_SERVER */
  380:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_LNS_SERVER
  381:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     if(((cyBle_eventHandlerFlag & CYBLE_CALLBACK) != 0u) && (gattErr == CYBLE_GATT_ERR_NONE))
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 9
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 9
+>>>>>>> Stashed changes
 
 
  382:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     {
@@ -538,7 +574,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  436:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     {
  437:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         gattErr = CyBle_WsssWriteEventHandler(eventParam);
  438:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     }
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 10
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 10
+>>>>>>> Stashed changes
 
 
  439:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_WSS_SERVER */
@@ -598,7 +638,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  115 0058 FFF7FEFF 		bl	CyBle_GattsErrorRsp
  116              	.LBE2:
  454:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         }
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 11
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 11
+>>>>>>> Stashed changes
 
 
  455:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         else
@@ -658,7 +702,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  148              		@ frame_needed = 1, uses_anonymous_args = 0
  149 0000 80B5     		push	{r7, lr}
  150              		.cfi_def_cfa_offset 8
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 12
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 12
+>>>>>>> Stashed changes
 
 
  151              		.cfi_offset 7, -8
@@ -718,7 +766,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  524:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         if((cyBle_eventHandlerFlag & CYBLE_CALLBACK) != 0u)
  525:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         {
  526:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             CyBle_GlssConfirmationEventHandler(eventParam);
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 13
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 13
+>>>>>>> Stashed changes
 
 
  527:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         }
@@ -778,7 +830,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  581:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         {
  582:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             CyBle_WsssConfirmationEventHandler(eventParam);
  583:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         }
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 14
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 14
+>>>>>>> Stashed changes
 
 
  584:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     #endif /* CYBLE_WSS_SERVER */
@@ -838,7 +894,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  622:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         CyBle_AnscWriteResponseEventHandler(eventParam);
  623:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     }
  624:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_ANS_CLIENT */
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 15
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 15
+>>>>>>> Stashed changes
 
 
  625:Generated_Source\PSoC4/BLE_1_eventHandler.c **** 
@@ -898,7 +958,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  679:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     }
  680:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_CTS_CLIENT */
  681:Generated_Source\PSoC4/BLE_1_eventHandler.c **** 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 16
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 16
+>>>>>>> Stashed changes
 
 
  682:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_ESS_CLIENT
@@ -958,7 +1022,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  736:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_LLS_CLIENT */
  737:Generated_Source\PSoC4/BLE_1_eventHandler.c **** 
  738:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_LNS_CLIENT
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 17
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 17
+>>>>>>> Stashed changes
 
 
  739:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     if((cyBle_eventHandlerFlag & CYBLE_CALLBACK) != 0u)
@@ -1018,7 +1086,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  793:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_WPTS_CLIENT
  794:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     if((cyBle_eventHandlerFlag & CYBLE_CALLBACK) != 0u)
  795:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     {
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 18
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 18
+>>>>>>> Stashed changes
 
 
  796:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         CyBle_WptscWriteResponseEventHandler(eventParam);
@@ -1078,7 +1150,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  850:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     if((cyBle_eventHandlerFlag & CYBLE_CALLBACK) != 0u)
  851:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     {
  852:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         CyBle_CgmscNotificationEventHandler(eventParam);
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 19
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 19
+>>>>>>> Stashed changes
 
 
  853:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     }
@@ -1138,7 +1214,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  907:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     }
  908:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_HTS_CLIENT */
  909:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_LNS_CLIENT
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 20
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 20
+>>>>>>> Stashed changes
 
 
  910:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     if((cyBle_eventHandlerFlag & CYBLE_CALLBACK) != 0u)
@@ -1198,7 +1278,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  964:Generated_Source\PSoC4/BLE_1_eventHandler.c **** *  Handles the Indication event from BLE stack.
  965:Generated_Source\PSoC4/BLE_1_eventHandler.c **** * 
  966:Generated_Source\PSoC4/BLE_1_eventHandler.c **** *  \param eventParam: event parameter
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 21
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 21
+>>>>>>> Stashed changes
 
 
  967:Generated_Source\PSoC4/BLE_1_eventHandler.c **** * 
@@ -1258,7 +1342,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1021:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_GLS_CLIENT */
 1022:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_HTS_CLIENT
 1023:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     if((cyBle_eventHandlerFlag & CYBLE_CALLBACK) != 0u)
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 22
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 22
+>>>>>>> Stashed changes
 
 
 1024:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     {
@@ -1318,7 +1406,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1078:Generated_Source\PSoC4/BLE_1_eventHandler.c **** *  \param eventParam: event parameter
 1079:Generated_Source\PSoC4/BLE_1_eventHandler.c **** * 
 1080:Generated_Source\PSoC4/BLE_1_eventHandler.c **** * \return
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 23
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 23
+>>>>>>> Stashed changes
 
 
 1081:Generated_Source\PSoC4/BLE_1_eventHandler.c **** *  None
@@ -1378,7 +1470,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1135:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_ANS_CLIENT
 1136:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     if((cyBle_eventHandlerFlag & CYBLE_CALLBACK) != 0u)
 1137:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     {
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 24
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 24
+>>>>>>> Stashed changes
 
 
 1138:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         CyBle_AnscReadResponseEventHandler(eventParam);
@@ -1438,7 +1534,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1192:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         CyBle_DiscReadResponseEventHandler(eventParam);
 1193:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     }
 1194:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_DIS_CLIENT */
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 25
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 25
+>>>>>>> Stashed changes
 
 
 1195:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_ESS_CLIENT
@@ -1498,7 +1598,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1249:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_NDCS_CLIENT
 1250:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     if((cyBle_eventHandlerFlag & CYBLE_CALLBACK) != 0u)
 1251:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     {
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 26
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 26
+>>>>>>> Stashed changes
 
 
 1252:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         CyBle_NdcscReadResponseEventHandler(eventParam);
@@ -1558,7 +1662,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1306:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         CyBle_WptscReadResponseEventHandler(eventParam);
 1307:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     }
 1308:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #endif /* CYBLE_WPTS_CLIENT */
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 27
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 27
+>>>>>>> Stashed changes
 
 
 1309:Generated_Source\PSoC4/BLE_1_eventHandler.c **** #ifdef CYBLE_WSS_CLIENT
@@ -1618,7 +1726,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1363:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     #ifdef CYBLE_CUSTOM_CLIENT
 1364:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         cyBle_discInclInfo.inclDefHandle = 0u;
 1365:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     #endif /* CYBLE_CUSTOM_CLIENT */
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 28
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 28
+>>>>>>> Stashed changes
 
 
 1366:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     }
@@ -1678,7 +1790,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1402:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             CyBle_SetClientState(CYBLE_CLIENT_STATE_DISCONNECTED);
 1403:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         }
 1404:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     #endif /* CYBLE_GATT_ROLE_CLIENT */
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 29
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 29
+>>>>>>> Stashed changes
 
 
 1405:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         
@@ -1738,7 +1854,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1440:Generated_Source\PSoC4/BLE_1_eventHandler.c **** *  \param eventParam: The pointer to a structure of type CYBLE_TO_REASON_CODE_T.
 1441:Generated_Source\PSoC4/BLE_1_eventHandler.c **** * 
 1442:Generated_Source\PSoC4/BLE_1_eventHandler.c **** * \return
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 30
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 30
+>>>>>>> Stashed changes
 
 
 1443:Generated_Source\PSoC4/BLE_1_eventHandler.c **** *  None
@@ -1798,7 +1918,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1484:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         {
 1485:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             (void)CyBle_GapcCancelDeviceConnection();
 1486:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         }
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 31
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 31
+>>>>>>> Stashed changes
 
 
 1487:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     #endif /* CYBLE_GAP_ROLE_CENTRAL */
@@ -1858,7 +1982,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1515:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     
 1516:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     #ifdef CYBLE_LLS_SERVER
 1517:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         CyBle_LlssConnectEventHandler();
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 32
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 32
+>>>>>>> Stashed changes
 
 
 1518:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     #endif /* CYBLE_LLS_SERVER */
@@ -1918,7 +2046,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  274 0002 84B0     		sub	sp, sp, #16
  275              		.cfi_def_cfa_offset 24
  276 0004 00AF     		add	r7, sp, #0
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 33
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 33
+>>>>>>> Stashed changes
 
 
  277              		.cfi_def_cfa_register 7
@@ -1978,7 +2110,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  319 0046 1A70     		strb	r2, [r3]
  320              	.L15:
 1553:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         {
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 34
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 34
+>>>>>>> Stashed changes
 
 
  321              		.loc 1 1553 0 is_stmt 0 discriminator 1
@@ -2038,7 +2174,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  350              		@ args = 0, pretend = 0, frame = 8
  351              		@ frame_needed = 1, uses_anonymous_args = 0
  352 0000 80B5     		push	{r7, lr}
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 35
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 35
+>>>>>>> Stashed changes
 
 
  353              		.cfi_def_cfa_offset 8
@@ -2098,7 +2238,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  381              		@ args = 0, pretend = 0, frame = 8
  382              		@ frame_needed = 1, uses_anonymous_args = 0
  383 0000 80B5     		push	{r7, lr}
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 36
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 36
+>>>>>>> Stashed changes
 
 
  384              		.cfi_def_cfa_offset 8
@@ -2158,7 +2302,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  412              		@ frame_needed = 1, uses_anonymous_args = 0
  413 0000 80B5     		push	{r7, lr}
  414              		.cfi_def_cfa_offset 8
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 37
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 37
+>>>>>>> Stashed changes
 
 
  415              		.cfi_offset 7, -8
@@ -2218,7 +2366,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1651:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             bleSsPowerLevel.bleSsChId = CYBLE_LL_ADV_CH_TYPE;
 1652:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             (void) CyBle_SetTxPowerLevel (&bleSsPowerLevel);
 1653:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             bleSsPowerLevel.blePwrLevelInDbm = CYBLE_TX_POWER_LEVEL_CONN;
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 38
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 38
+>>>>>>> Stashed changes
 
 
 1654:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             bleSsPowerLevel.bleSsChId = CYBLE_LL_CONN_CH_TYPE;
@@ -2278,7 +2430,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1708:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             /* Set device IO Capability  */
 1709:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             (void) CyBle_GapSetIoCap(CYBLE_IO_CAPABILITY);    
 1710:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             {
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 39
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 39
+>>>>>>> Stashed changes
 
 
 1711:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                 /* Enable all 4.1 events and configured 4.2 events */
@@ -2338,7 +2494,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1765:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             {
 1766:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                 /* If the responding device does not support pairing then the responding 
 1767:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                    device shall respond using the Pairing Failed message with the error 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 40
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 40
+>>>>>>> Stashed changes
 
 
 1768:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                    code "Pairing Not Supported" otherwise it responds with a Pairing 
@@ -2398,7 +2558,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1822:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                 if(cyBle_connectingTimeout != 0u)
 1823:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                 {
 1824:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                    (void)CyBle_StopTimer();
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 41
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 41
+>>>>>>> Stashed changes
 
 
 1825:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                 }
@@ -2458,7 +2622,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1879:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                             {
 1880:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                                 CyBle_SetState(CYBLE_STATE_ADVERTISING);
 1881:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                             }
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 42
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 42
+>>>>>>> Stashed changes
 
 
 1882:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                         }
@@ -2518,7 +2686,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1936:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             break;
 1937:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         
 1938:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         /**********************************************************
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 43
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 43
+>>>>>>> Stashed changes
 
 
 1939:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         * GATT events
@@ -2578,7 +2750,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1993:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         case CYBLE_EVT_GATTS_WRITE_CMD_REQ:
 1994:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         #ifdef CYBLE_AIOS_SERVER
 1995:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             if((cyBle_eventHandlerFlag & CYBLE_CALLBACK) != 0u)
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 44
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 44
+>>>>>>> Stashed changes
 
 
 1996:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             {
@@ -2638,7 +2814,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 2050:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             {
 2051:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                 CyBle_EsssPrepareWriteRequestEventHandler((CYBLE_GATTS_PREP_WRITE_REQ_PARAM_T *)eve
 2052:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             }
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 45
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 45
+>>>>>>> Stashed changes
 
 
 2053:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         #endif /* CYBLE_ESS_SERVER */
@@ -2698,7 +2878,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 2107:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             
 2108:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         case CYBLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ:
 2109:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         #ifdef CYBLE_UDS_SERVER
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 46
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 46
+>>>>>>> Stashed changes
 
 
 2110:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             CyBle_UdssReadRequestEventHandler((CYBLE_GATTS_CHAR_VAL_READ_REQ_T *)eventParam);
@@ -2758,7 +2942,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 2164:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             CyBle_GattcIndicationEventHandler((CYBLE_GATTC_HANDLE_VALUE_IND_PARAM_T *)eventParam);
 2165:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             CyBle_IndicationEventHandler((CYBLE_GATTC_HANDLE_VALUE_IND_PARAM_T *)eventParam);
 2166:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 47
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 47
+>>>>>>> Stashed changes
 
 
 2167:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             /* Respond with a Handle Value Confirmation when request handled */
@@ -2818,7 +3006,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 2221:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             
 2222:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     #endif /* CYBLE_GATT_ROLE_CLIENT */
 2223:Generated_Source\PSoC4/BLE_1_eventHandler.c **** 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 48
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 48
+>>>>>>> Stashed changes
 
 
 2224:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     #if((CYBLE_GAP_ROLE_PERIPHERAL || CYBLE_GAP_ROLE_CENTRAL) && (CYBLE_BONDING_REQUIREMENT == CYBL
@@ -2878,7 +3070,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  495              		.loc 1 2233 0
  496 0070 CFE1     		b	.L53
  497              	.L24:
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 49
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 49
+>>>>>>> Stashed changes
 
 
 1639:Generated_Source\PSoC4/BLE_1_eventHandler.c ****     {
@@ -2938,7 +3134,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  549 00b4 ADE1     		b	.L53
  550              	.L29:
  551              	.LBB3:
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 50
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 50
+>>>>>>> Stashed changes
 
 
 1650:Generated_Source\PSoC4/BLE_1_eventHandler.c ****             bleSsPowerLevel.bleSsChId = CYBLE_LL_ADV_CH_TYPE;
@@ -2998,7 +3198,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1678:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                 #if(CYBLE_GAP_ROLE_PERIPHERAL || CYBLE_GAP_ROLE_BROADCASTER)
  597              		.loc 1 1678 0
  598 0102 884B     		ldr	r3, .L73+4
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 51
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 51
+>>>>>>> Stashed changes
 
 
  599 0104 1B68     		ldr	r3, [r3]
@@ -3058,7 +3262,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  645 0152 FE23     		movs	r3, #254
  646 0154 1B04     		lsls	r3, r3, #16
  647 0156 0B40     		ands	r3, r1
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 52
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 52
+>>>>>>> Stashed changes
 
 
 1689:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                     ((uint32)(((uint32)CYBLE_SFLASH_DIE_Y_REG) & ((uint32)CYBLE_SFLASH_DIE_Y_MASK))
@@ -3118,7 +3326,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  693 01a2 0C23     		movs	r3, #12
  694 01a4 FB18     		adds	r3, r7, r3
  695 01a6 0022     		movs	r2, #0
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 53
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 53
+>>>>>>> Stashed changes
 
 
  696 01a8 5A70     		strb	r2, [r3, #1]
@@ -3178,7 +3390,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  740 01e4 0BD1     		bne	.L55
  741              	.LBB7:
 1746:Generated_Source\PSoC4/BLE_1_eventHandler.c ****                     gPrepWriteReqMem.totalAttrValueLength = CYBLE_GATT_PREPARE_LENGTH_ALIGN;
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 54
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 54
+>>>>>>> Stashed changes
 
 
  742              		.loc 1 1746 0
@@ -3238,7 +3454,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  788              		.loc 1 1773 0
  789 0228 484B     		ldr	r3, .L73+44
  790 022a 0522     		movs	r2, #5
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 55
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 55
+>>>>>>> Stashed changes
 
 
  791 022c DA70     		strb	r2, [r3, #3]
@@ -3298,7 +3518,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
 1802:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         
  839              		.loc 1 1802 0
  840 0278 CBE0     		b	.L53
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 56
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 56
+>>>>>>> Stashed changes
 
 
  841              	.L37:
@@ -3358,7 +3582,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  885 02b6 1A4B     		ldr	r3, .L73
  886 02b8 1B78     		ldrb	r3, [r3]
  887 02ba DBB2     		uxtb	r3, r3
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 57
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 57
+>>>>>>> Stashed changes
 
 
  888 02bc 1A00     		movs	r2, r3
@@ -3418,7 +3646,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  934 0304 1B78     		ldrb	r3, [r3]
  935 0306 032B     		cmp	r3, #3
  936 0308 00D0     		beq	.LCB753
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 58
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 58
+>>>>>>> Stashed changes
 
 
  937 030a 81E0     		b	.L71	@long jump
@@ -3478,7 +3710,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  984              		.loc 1 1948 0
  985 0372 354B     		ldr	r3, .L75
  986 0374 1B78     		ldrb	r3, [r3]
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 59
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 59
+>>>>>>> Stashed changes
 
 
  987 0376 9E33     		adds	r3, r3, #158
@@ -3538,7 +3774,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1033 03be 1A88     		ldrh	r2, [r3]
  1034 03c0 0023     		movs	r3, #0
  1035 03c2 1204     		lsls	r2, r2, #16
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 60
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 60
+>>>>>>> Stashed changes
 
 
  1036 03c4 120C     		lsrs	r2, r2, #16
@@ -3598,7 +3838,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1080 0400 C046     		nop
  1081 0402 06E0     		b	.L53
  1082              	.L68:
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 61
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 61
+>>>>>>> Stashed changes
 
 
 2102:Generated_Source\PSoC4/BLE_1_eventHandler.c ****         
@@ -3658,7 +3902,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1125 043e C046     		nop
  1126 0440 BD46     		mov	sp, r7
  1127 0442 08B0     		add	sp, sp, #32
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 62
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 62
+>>>>>>> Stashed changes
 
 
  1128              		@ sp needed
@@ -3718,7 +3966,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1181 0034 02       		.byte	0x2
  1182 0035 05       		.byte	0x5
  1183 0036 811E0000 		.4byte	.LASF2
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 63
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 63
+>>>>>>> Stashed changes
 
 
  1184 003a 02       		.uleb128 0x2
@@ -3778,7 +4030,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1238 00a0 400A0000 		.4byte	.LASF14
  1239 00a4 05       		.uleb128 0x5
  1240 00a5 6B000000 		.4byte	0x6b
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 64
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 64
+>>>>>>> Stashed changes
 
 
  1241 00a9 02       		.uleb128 0x2
@@ -3838,7 +4094,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1295 0113 5A120000 		.4byte	.LASF26
  1296 0117 22       		.byte	0x22
  1297 0118 0B       		.uleb128 0xb
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 65
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 65
+>>>>>>> Stashed changes
 
 
  1298 0119 BB170000 		.4byte	.LASF27
@@ -3898,7 +4158,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1352 0185 44200000 		.4byte	.LASF45
  1353 0189 35       		.byte	0x35
  1354 018a 0B       		.uleb128 0xb
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 66
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 66
+>>>>>>> Stashed changes
 
 
  1355 018b 29040000 		.4byte	.LASF46
@@ -3958,7 +4222,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1409 01f7 731F0000 		.4byte	.LASF64
  1410 01fb 50       		.byte	0x50
  1411 01fc 0B       		.uleb128 0xb
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 67
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 67
+>>>>>>> Stashed changes
 
 
  1412 01fd B20B0000 		.4byte	.LASF65
@@ -4018,7 +4286,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1466 0269 E6230000 		.4byte	.LASF83
  1467 026d 7A       		.byte	0x7a
  1468 026e 0B       		.uleb128 0xb
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 68
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 68
+>>>>>>> Stashed changes
 
 
  1469 026f 19140000 		.4byte	.LASF84
@@ -4078,7 +4350,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1523 02dc 0B       		.uleb128 0xb
  1524 02dd EC030000 		.4byte	.LASF100
  1525 02e1 0B       		.byte	0xb
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 69
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 69
+>>>>>>> Stashed changes
 
 
  1526 02e2 0B       		.uleb128 0xb
@@ -4138,7 +4414,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1580 034f 0C       		.uleb128 0xc
  1581 0350 E1170000 		.4byte	.LASF119
  1582 0354 0101     		.2byte	0x101
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 70
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 70
+>>>>>>> Stashed changes
 
 
  1583 0356 0C       		.uleb128 0xc
@@ -4198,7 +4478,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1637 03c8 0A       		.uleb128 0xa
  1638 03c9 01       		.byte	0x1
  1639 03ca 2C000000 		.4byte	0x2c
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 71
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 71
+>>>>>>> Stashed changes
 
 
  1640 03ce 03       		.byte	0x3
@@ -4258,7 +4542,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1694 043e 04       		.uleb128 0x4
  1695 043f AF220000 		.4byte	.LASF143
  1696 0443 03       		.byte	0x3
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 72
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 72
+>>>>>>> Stashed changes
 
 
  1697 0444 F104     		.2byte	0x4f1
@@ -4318,7 +4606,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1751 04b9 05       		.byte	0x5
  1752 04ba 00       		.byte	0
  1753 04bb 04       		.uleb128 0x4
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 73
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 73
+>>>>>>> Stashed changes
 
 
  1754 04bc FD1B0000 		.4byte	.LASF150
@@ -4378,7 +4670,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1808 052a 01       		.byte	0x1
  1809 052b 2C000000 		.4byte	0x2c
  1810 052f 05       		.byte	0x5
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 74
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 74
+>>>>>>> Stashed changes
 
 
  1811 0530 2701     		.2byte	0x127
@@ -4438,7 +4734,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1865 059e 0B       		.uleb128 0xb
  1866 059f A2090000 		.4byte	.LASF176
  1867 05a3 0A       		.byte	0xa
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 75
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 75
+>>>>>>> Stashed changes
 
 
  1868 05a4 0B       		.uleb128 0xb
@@ -4498,7 +4798,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1922 0613 CF050000 		.4byte	0x5cf
  1923 0617 03       		.byte	0x3
  1924 0618 0E       		.uleb128 0xe
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 76
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 76
+>>>>>>> Stashed changes
 
 
  1925 0619 941D0000 		.4byte	.LASF189
@@ -4558,7 +4862,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  1979 068d 01       		.byte	0x1
  1980 068e 0B       		.uleb128 0xb
  1981 068f 390B0000 		.4byte	.LASF197
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 77
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 77
+>>>>>>> Stashed changes
 
 
  1982 0693 02       		.byte	0x2
@@ -4618,7 +4926,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2036 06ff 52       		.byte	0x52
  2037 0700 0B       		.uleb128 0xb
  2038 0701 C4010000 		.4byte	.LASF216
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 78
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 78
+>>>>>>> Stashed changes
 
 
  2039 0705 16       		.byte	0x16
@@ -4678,7 +4990,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2093 076e 49180000 		.4byte	.LASF232
  2094 0772 07       		.byte	0x7
  2095 0773 0B       		.uleb128 0xb
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 79
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 79
+>>>>>>> Stashed changes
 
 
  2096 0774 90150000 		.4byte	.LASF233
@@ -4738,7 +5054,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2150 07e0 E30D0000 		.4byte	.LASF251
  2151 07e4 81       		.byte	0x81
  2152 07e5 0B       		.uleb128 0xb
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 80
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 80
+>>>>>>> Stashed changes
 
 
  2153 07e6 3D1D0000 		.4byte	.LASF252
@@ -4798,7 +5118,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2207 0855 9A01     		.2byte	0x19a
  2208 0857 6B000000 		.4byte	0x6b
  2209 085b 00       		.byte	0
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 81
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 81
+>>>>>>> Stashed changes
 
 
  2210 085c 0E       		.uleb128 0xe
@@ -4858,7 +5182,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2264 08ce 06       		.byte	0x6
  2265 08cf D601     		.2byte	0x1d6
  2266 08d1 3A080000 		.4byte	0x83a
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 82
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 82
+>>>>>>> Stashed changes
 
 
  2267 08d5 08       		.byte	0x8
@@ -4918,7 +5246,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2321 0944 04       		.uleb128 0x4
  2322 0945 8C110000 		.4byte	.LASF279
  2323 0949 06       		.byte	0x6
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 83
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 83
+>>>>>>> Stashed changes
 
 
  2324 094a 0F02     		.2byte	0x20f
@@ -4978,7 +5310,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2378 09b4 04       		.uleb128 0x4
  2379 09b5 8F030000 		.4byte	.LASF285
  2380 09b9 08       		.byte	0x8
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 84
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 84
+>>>>>>> Stashed changes
 
 
  2381 09ba 0502     		.2byte	0x205
@@ -5038,7 +5374,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2435 0a2f 0A       		.uleb128 0xa
  2436 0a30 01       		.byte	0x1
  2437 0a31 2C000000 		.4byte	0x2c
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 85
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 85
+>>>>>>> Stashed changes
 
 
  2438 0a35 0A       		.byte	0xa
@@ -5098,7 +5438,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2492 0aa5 61200000 		.4byte	.LASF301
  2493 0aa9 0A       		.byte	0xa
  2494 0aaa 120A     		.2byte	0xa12
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 86
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 86
+>>>>>>> Stashed changes
 
 
  2495 0aac 3A080000 		.4byte	0x83a
@@ -5158,7 +5502,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2549 0b18 A9090000 		.4byte	0x9a9
  2550 0b1c 1E       		.uleb128 0x1e
  2551 0b1d 1D150000 		.4byte	.LASF307
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 87
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 87
+>>>>>>> Stashed changes
 
 
  2552 0b21 01       		.byte	0x1
@@ -5218,7 +5566,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2606 0b95 01       		.byte	0x1
  2607 0b96 DE05     		.2byte	0x5de
  2608 0b98 00000000 		.4byte	.LFB6
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 88
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 88
+>>>>>>> Stashed changes
 
 
  2609 0b9c 0A000000 		.4byte	.LFE6-.LFB6
@@ -5278,7 +5630,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2663 0c0e 01       		.byte	0x1
  2664 0c0f 2E06     		.2byte	0x62e
  2665 0c11 77000000 		.4byte	0x77
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 89
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 89
+>>>>>>> Stashed changes
 
 
  2666 0c15 02       		.uleb128 0x2
@@ -5338,7 +5694,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2720 0c83 3E000000 		.4byte	.LBE3-.LBB3
  2721 0c87 9B0C0000 		.4byte	0xc9b
  2722 0c8b 1D       		.uleb128 0x1d
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 90
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 90
+>>>>>>> Stashed changes
 
 
  2723 0c8c 351B0000 		.4byte	.LASF318
@@ -5398,7 +5758,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2777 0d06 05       		.uleb128 0x5
  2778 0d07 03       		.byte	0x3
  2779 0d08 00000000 		.4byte	gPrepWriteReqMem.6680
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 91
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 91
+>>>>>>> Stashed changes
 
 
  2780 0d0c 00       		.byte	0
@@ -5458,7 +5822,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2834 0d80 670D0000 		.4byte	0xd67
  2835 0d84 27       		.uleb128 0x27
  2836 0d85 9B0B0000 		.4byte	.LASF327
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 92
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 92
+>>>>>>> Stashed changes
 
 
  2837 0d89 01       		.byte	0x1
@@ -5518,7 +5886,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2891 0e02 20       		.uleb128 0x20
  2892 0e03 240A0000 		.4byte	0xa24
  2893 0e07 26       		.uleb128 0x26
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 93
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 93
+>>>>>>> Stashed changes
 
 
  2894 0e08 5E1D0000 		.4byte	.LASF335
@@ -5578,7 +5950,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  2948 000d 11       		.uleb128 0x11
  2949 000e 01       		.uleb128 0x1
  2950 000f 10       		.uleb128 0x10
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 94
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 94
+>>>>>>> Stashed changes
 
 
  2951 0010 17       		.uleb128 0x17
@@ -5638,7 +6014,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3005 0046 00       		.byte	0
  3006 0047 0B       		.uleb128 0xb
  3007 0048 0B       		.uleb128 0xb
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 95
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 95
+>>>>>>> Stashed changes
 
 
  3008 0049 49       		.uleb128 0x49
@@ -5698,7 +6078,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3062 007f 13       		.uleb128 0x13
  3063 0080 01       		.byte	0x1
  3064 0081 0B       		.uleb128 0xb
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 96
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 96
+>>>>>>> Stashed changes
 
 
  3065 0082 0B       		.uleb128 0xb
@@ -5758,7 +6142,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3119 00b8 13       		.uleb128 0x13
  3120 00b9 00       		.byte	0
  3121 00ba 00       		.byte	0
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 97
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 97
+>>>>>>> Stashed changes
 
 
  3122 00bb 12       		.uleb128 0x12
@@ -5818,7 +6206,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3176 00f1 00       		.byte	0
  3177 00f2 00       		.byte	0
  3178 00f3 16       		.uleb128 0x16
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 98
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 98
+>>>>>>> Stashed changes
 
 
  3179 00f4 13       		.uleb128 0x13
@@ -5878,7 +6270,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3233 012b 19       		.uleb128 0x19
  3234 012c 01       		.uleb128 0x1
  3235 012d 13       		.uleb128 0x13
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 99
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 99
+>>>>>>> Stashed changes
 
 
  3236 012e 00       		.byte	0
@@ -5938,7 +6334,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3290 0164 00       		.byte	0
  3291 0165 00       		.byte	0
  3292 0166 1E       		.uleb128 0x1e
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 100
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 100
+>>>>>>> Stashed changes
 
 
  3293 0167 2E       		.uleb128 0x2e
@@ -5998,7 +6398,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3347 019e 19       		.uleb128 0x19
  3348 019f 11       		.uleb128 0x11
  3349 01a0 01       		.uleb128 0x1
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 101
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 101
+>>>>>>> Stashed changes
 
 
  3350 01a1 12       		.uleb128 0x12
@@ -6058,7 +6462,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3404 01d9 19       		.uleb128 0x19
  3405 01da 03       		.uleb128 0x3
  3406 01db 0E       		.uleb128 0xe
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 102
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 102
+>>>>>>> Stashed changes
 
 
  3407 01dc 3A       		.uleb128 0x3a
@@ -6118,7 +6526,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3461 0213 0B       		.uleb128 0xb
  3462 0214 49       		.uleb128 0x49
  3463 0215 13       		.uleb128 0x13
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 103
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 103
+>>>>>>> Stashed changes
 
 
  3464 0216 3F       		.uleb128 0x3f
@@ -6178,7 +6590,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3518 0000 00000000 		.4byte	.LFB2
  3519 0004 74000000 		.4byte	.LFE2
  3520 0008 00000000 		.4byte	.LFB3
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 104
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 104
+>>>>>>> Stashed changes
 
 
  3521 000c 10000000 		.4byte	.LFE3
@@ -6238,7 +6654,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3552      505F4E55 
  3552      4D455249 
  3553              	.LASF323:
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 105
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 105
+>>>>>>> Stashed changes
 
 
  3554 0084 61706952 		.ascii	"apiResult\000"
@@ -6298,7 +6718,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3574      6E646C65 
  3575              	.LASF138:
  3576 016c 626C6550 		.ascii	"blePwrLevelInDbm\000"
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 106
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 106
+>>>>>>> Stashed changes
 
 
  3576      77724C65 
@@ -6358,7 +6782,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3594      455F4741 
  3594      54545F56 
  3594      414C5545 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 107
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 107
+>>>>>>> Stashed changes
 
 
  3594      5F5400
@@ -6418,7 +6846,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3615      5454435F 
  3615      48414E44 
  3616              	.LASF25:
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 108
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 108
+>>>>>>> Stashed changes
 
 
  3617 03c1 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_REQ\000"
@@ -6478,7 +6910,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3635      6E646C65 
  3635      00
  3636              	.LASF255:
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 109
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 109
+>>>>>>> Stashed changes
 
 
  3637 04bc 4359424C 		.ascii	"CYBLE_GATTS_ERR_NETWORK_NOT_AVAILABLE\000"
@@ -6538,7 +6974,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3655      505F5345 
  3655      435F4C45 
  3655      56454C5F 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 110
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 110
+>>>>>>> Stashed changes
 
 
  3656              	.LASF158:
@@ -6598,7 +7038,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3674              	.LASF120:
  3675 06df 4359424C 		.ascii	"CYBLE_ERROR_CHAR_IS_NOT_DISCOVERED\000"
  3675      455F4552 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 111
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 111
+>>>>>>> Stashed changes
 
 
  3675      524F525F 
@@ -6658,7 +7102,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3695 07e7 4359424C 		.ascii	"CYBLE_GATT_FIND_INFO_REQ\000"
  3695      455F4741 
  3695      54545F46 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 112
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 112
+>>>>>>> Stashed changes
 
 
  3695      494E445F 
@@ -6718,7 +7166,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3714      455F4741 
  3714      5454535F 
  3714      4552525F 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 113
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 113
+>>>>>>> Stashed changes
 
 
  3714      50415241 
@@ -6778,7 +7230,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3734      545F4741 
  3734      5454435F 
  3734      46494E44 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 114
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 114
+>>>>>>> Stashed changes
 
 
  3735              	.LASF40:
@@ -6838,7 +7294,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3754      54545F45 
  3754      52525F55 
  3754      4E4C494B 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 115
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 115
+>>>>>>> Stashed changes
 
 
  3755              	.LASF42:
@@ -6898,7 +7358,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3774              	.LASF160:
  3775 0c29 4359424C 		.ascii	"CYBLE_GAP_SEC_LEVEL_MASK\000"
  3775      455F4741 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 116
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 116
+>>>>>>> Stashed changes
 
 
  3775      505F5345 
@@ -6958,7 +7422,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3794              	.LASF179:
  3795 0d29 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_BR_EDR_PAIRING_IN_PROGRESS\000"
  3795      455F4741 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 117
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 117
+>>>>>>> Stashed changes
 
 
  3795      505F4155 
@@ -7018,7 +7486,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3813      4341505F 
  3813      434F4E4E 
  3814              	.LASF183:
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 118
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 118
+>>>>>>> Stashed changes
 
 
  3815 0e61 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_LINK_DISCONNECTED\000"
@@ -7078,7 +7550,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3832              	.LASF122:
  3833 0fa4 4359424C 		.ascii	"CYBLE_ERROR_STACK_BUSY\000"
  3833      455F4552 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 119
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 119
+>>>>>>> Stashed changes
 
 
  3833      524F525F 
@@ -7138,7 +7614,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3852              	.LASF142:
  3853 10b2 4359424C 		.ascii	"CYBLE_INVALID_REQUEST\000"
  3853      455F494E 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 120
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 120
+>>>>>>> Stashed changes
 
 
  3853      56414C49 
@@ -7198,7 +7678,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3871      4154455F 
  3871      494E4954 
  3871      49414C49 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 121
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 121
+>>>>>>> Stashed changes
 
 
  3872              	.LASF324:
@@ -7258,7 +7742,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3891 1300 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_INSUFFICIENT_ENCRYPTION_KEY_SI"
  3891      455F4741 
  3891      505F4155 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 122
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 122
+>>>>>>> Stashed changes
 
 
  3891      54485F45 
@@ -7318,7 +7806,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3912      545F5045 
  3912      4E44494E 
  3912      475F464C 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 123
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 123
+>>>>>>> Stashed changes
 
 
  3913              	.LASF237:
@@ -7378,7 +7870,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3932      524F525F 
  3932      464C4153 
  3932      485F5752 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 124
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 124
+>>>>>>> Stashed changes
 
 
  3933              	.LASF71:
@@ -7438,7 +7934,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3954      5F434F4E 
  3954      4E5F4348 
  3954      5F545950 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 125
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 125
+>>>>>>> Stashed changes
 
 
  3955              	.LASF248:
@@ -7498,7 +7998,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3974      505F4155 
  3974      54485F46 
  3974      41494C45 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 126
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 126
+>>>>>>> Stashed changes
 
 
  3975              	.LASF60:
@@ -7558,7 +8062,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  3993              	.LASF77:
  3994 1883 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_CONN_CNF\000"
  3994      455F4556 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 127
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 127
+>>>>>>> Stashed changes
 
 
  3994      545F4C32 
@@ -7618,7 +8126,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  4012      43525950 
  4013              	.LASF276:
  4014 1983 71756575 		.ascii	"queueBuffer\000"
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 128
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 128
+>>>>>>> Stashed changes
 
 
  4014      65427566 
@@ -7678,7 +8190,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  4033      645F536F 
  4033      75726365 
  4033      5C50536F 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 129
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 129
+>>>>>>> Stashed changes
 
 
  4034              	.LASF19:
@@ -7738,7 +8254,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  4053      6C6C6261 
  4053      636B00
  4054              	.LASF114:
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 130
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 130
+>>>>>>> Stashed changes
 
 
  4055 1ba6 4359424C 		.ascii	"CYBLE_ERROR_FLASH_WRITE\000"
@@ -7798,7 +8318,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  4073      6E744861 
  4074              	.LASF171:
  4075 1c73 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_PAIRING_NOT_SUPPORTED\000"
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 131
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 131
+>>>>>>> Stashed changes
 
 
  4075      455F4741 
@@ -7858,7 +8382,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  4094 1d94 70616972 		.ascii	"pairingProperties\000"
  4094      696E6750 
  4094      726F7065 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 132
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 132
+>>>>>>> Stashed changes
 
 
  4094      72746965 
@@ -7918,7 +8446,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  4116 1e8b 61757468 		.ascii	"authErr\000"
  4116      45727200 
  4117              	.LASF112:
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 133
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 133
+>>>>>>> Stashed changes
 
 
  4118 1e93 4359424C 		.ascii	"CYBLE_ERROR_HARDWARE_FAILURE\000"
@@ -7978,7 +8510,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  4137 1fb6 4359424C 		.ascii	"CYBLE_GATT_ERR_CODE_T\000"
  4137      455F4741 
  4137      54545F45 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 134
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 134
+>>>>>>> Stashed changes
 
 
  4137      52525F43 
@@ -8038,7 +8574,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  4157      00
  4158              	.LASF206:
  4159 20ba 4359424C 		.ascii	"CYBLE_GATT_READ_RSP\000"
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 135
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 135
+>>>>>>> Stashed changes
 
 
  4159      455F4741 
@@ -8098,7 +8638,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  4178              	.LASF101:
  4179 218f 4359424C 		.ascii	"CYBLE_ERROR_SEC_FAILED\000"
  4179      455F4552 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 136
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 136
+>>>>>>> Stashed changes
 
 
  4179      524F525F 
@@ -8158,7 +8702,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  4197      434F4E4E 
  4198              	.LASF143:
  4199 22af 4359424C 		.ascii	"CYBLE_PROTOCOL_REQ_T\000"
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 137
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 137
+>>>>>>> Stashed changes
 
 
  4199      455F5052 
@@ -8218,7 +8766,11 @@ ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 1
  4220              	.LASF21:
  4221 2393 4359424C 		.ascii	"CYBLE_EVT_HCI_STATUS\000"
  4221      455F4556 
+<<<<<<< Updated upstream
 ARM GAS  C:\Users\sergio\AppData\Local\Temp\ccA336nh.s 			page 138
+=======
+ARM GAS  C:\Users\sergio\AppData\Local\Temp\cczEK0jY.s 			page 138
+>>>>>>> Stashed changes
 
 
  4221      545F4843 
