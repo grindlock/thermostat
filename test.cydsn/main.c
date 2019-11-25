@@ -550,8 +550,8 @@ void run_ac(){
             if(acStates != 0x09){
                 // RelayC_3_Write(1);
                 RelayLF_1_Write(1);
-                 Comp_out_Write(0);
-                    LowF_out_Write(0);
+                Comp_out_Write(0);
+                LowF_out_Write(0);
                     
                     if(counter == 2){
                         RelayHF_2_Write(0);
@@ -760,12 +760,12 @@ thermo.ambientTemp = 0;
 
  if(interruptFlag == 1){
     
-    if(MyADC_IsEndConversion(MyADC_RETURN_STATUS)){
-        adcRead = MyADC_GetResult16(0);
-//    
-    sprintf(uartStr, "*-*-*-*-*-*-*-*-  ADC is: %d -*-*-*-*-*-*-*-*-\n", adcRead);
-    MyUART_PutString(uartStr);
-    }
+//    if(MyADC_IsEndConversion(MyADC_RETURN_STATUS)){
+//        adcRead = MyADC_GetResult16(0);
+////    
+//    sprintf(uartStr, "*-*-*-*-*-*-*-*-  ADC is: %d -*-*-*-*-*-*-*-*-\n", adcRead);
+//    MyUART_PutString(uartStr);
+//    }
 //    
   // if(adcRead < 1300){
    // if(adcRead < 1501){
@@ -991,7 +991,7 @@ MyUART_PutString(str);
 // ---------------------  Read thermostat pins ---------------------
 
  gpioPins = read_thermostat_pins();
-thermoState = (gpioPins &0x1F);
+if(bleConnected != 1){ thermoState = (gpioPins & 0x1F);}
 // comp = (gpioPins & 0x01)==  0x04? 1:0;
 // fanH = (gpioPins & 0x08) == 0x08? 1:0;
 // fanL = (gpioPins & 0x10) == 0x10? 1:0;
@@ -1027,13 +1027,14 @@ MyUART_PutString(str);
 
 
      if(bleConnected == 1){ ///
-                RED_Write(1);
-                BLUE_Write(!BLUE_Read());
-                
+//                RED_Write(1);
+//                BLUE_Write(1);
+//                GREEN_Write(1);
             updateNotificationCCCD();
             
             if(isNotify == 1){
                 GREEN_Write(1);
+                RED_Write(1);
                 if(CyBle_GattGetBusStatus() == CYBLE_STACK_STATE_FREE){
                  BLUE_Write(!BLUE_Read());
                     SendDataNotify();
@@ -1044,12 +1045,14 @@ MyUART_PutString(str);
                 thermo.ambientTemp = sensorData.localTemp;
                 
                 GREEN_Write(0);
+                RED_Write(1);
+                BLUE_Write(1);
                 
             } //end of read/write 
         } // end ble connected if  
     else{
         RED_Write(!RED_Read());
-        GREEN_Write(1);
+        GREEN_Write(!GREEN_Read());
         BLUE_Write(1);
     }
     counter +=1;
@@ -1097,7 +1100,7 @@ if (bleConnected == 1){
                         if (thermo.power == 1 && thermo.fanLow == 1 && thermo.fanHigh == 0 && thermo.compressor == 0){
                             thermoState = 0x10;
                         }
-                        else if(thermo.power == 1 && thermo.fanLow == 1 && thermo.fanHigh == 1 && thermo.compressor == 0){
+                        else if(thermo.power == 1 && thermo.fanLow == 0 && thermo.fanHigh == 1 && thermo.compressor == 0){
                             thermoState = 0x08;
                             run_ac();
                         }
@@ -1231,7 +1234,7 @@ else{
     run_ac();
 }
 
-        send_Error_Power_to_Phone();
+        //send_Error_Power_to_Phone();
         send_Thermo_to_phone();
         CyBle_ProcessEvents();
    
